@@ -1,6 +1,6 @@
 # Voting - Voter Records Interchange (VRI) CDF Specification
 
-This directory holds voter records interchange (VRI) specification common data format and related information and files that are being created by NIST and collaborators.  
+This repository holds voter records interchange (VRI) specification common data format and related information and files that are being created by NIST and collaborators.  The nist-pages branch of this repository holds documentation files for an HTML version located on https://pages.nist.gov/VoterRecordsInterchange.
 
 The VRI specification will support the following list of use cases:
 
@@ -20,6 +20,5 @@ The VRI specification will support the following list of use cases:
 
 The UML model and XML schema are under development but exepected to be finalized in time to be considered in the next VVSG under development by NIST and the Election Assistance Commission (EAC).  
 
-An eventual nist-pages branch holds documentation files for an HTML version located on https://pages.nist.gov/VoterRecordsInterchange.
 
 Contact [John P. Wack](mailto:john.wack@nist.gov) for questions and more information.
