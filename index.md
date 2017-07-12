@@ -3,7 +3,7 @@
 
 <br>
 
-This is a draft specification on a common data format (CDF) for voter records interchange (VRI) transactions.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  It currently contains a brief introduction and overview of the supported use cases, as well as a description of the UML model/XML schema.  Future sections will cover the use cases in greater detail.  
+This is a draft specification on a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification currently contains a brief introduction and overview of the supported use cases, as well as a description of the UML model/XML schema.  Future sections will cover the use cases in greater detail.  
 
 The VRI specification currently supports voter registration record exchanges between voter registration portals/centers and voter registration systems, using the NVRA and FPCA forms.  The specification potentially will support the following list of use cases:
 
