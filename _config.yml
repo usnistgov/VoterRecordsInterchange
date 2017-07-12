@@ -1,0 +1,36 @@
+# Site settings
+title: Draft CDF specification for Voter Records Interchange
+description: "Draft CDF specification for Voter Records Interchange"
+baseurl: "/VoterRecordsInterchange" # the subpath of your site, e.g. /blog
+url: "https://pages.nist.gov/" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+
+exclude:
+- ".ruby-version"
+- ".jekyll-metadata"
+- ".gitignore"
+- ".travis.yml"
+- todo.txt
+- resources
+- Gemfile
+- Gemfile.lock
+- Makefile
+- vendor
+- README.md
+- CONTRIBUTING.md
+- LICENSE.md
+
+# GitHub information
+org_name: usnistgov
+repo_name: VoterRecordsInterchange
+
+# Navigation
+# List links that should appear in the site sidebar here
+navigation:
+- text: Home
+  url: /VoterRecordsInterchange/
+
+host: 0.0.0.0
