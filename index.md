@@ -3,9 +3,9 @@
 
 <br>
 
-This document is a draft specification on a common data format (CDF) for voter records interchange (VRI).  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  It currently contains a brief introduction and overview of the supported use cases, as well as a description of the UML model/XML schema.  Future sections will cover the use cases in greater detail.  
+This is a draft specification on a common data format (CDF) for voter records interchange (VRI) transactions.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  It currently contains a brief introduction and overview of the supported use cases, as well as a description of the UML model/XML schema.  Future sections will cover the use cases in greater detail.  
 
-The VRI specification currently supports voter registration records exchanges between online voter registration portals/centers and voter registration systems, using the NVRA and FPCA forms.  The specification potentially will support the following list of use cases:
+The VRI specification currently supports voter registration record exchanges between voter registration portals/centers and voter registration systems, using the NVRA and FPCA forms.  The specification potentially will support the following list of use cases:
 
 * Digital VR applications transmitted within State OVR systems, or to state OVR systems by third party OVR systems, or by Motor Vehicle or other NVRA agencies, including digital versions of the NVRA form, the FPCA form, or state specific forms.
 
@@ -1425,12 +1425,12 @@ For defining items pertaining to the status of a response to a voter records req
 `<VoterRecordsResponse>` is an abstract element with three `xsi:type`s that get used according to the type of response:
 
 *	`<VoterRecordsResponse xsi:type="RegistrationAcknowledgement">`, used to indicate
-an acknowledgement only 
+an acknowledgement only
 *	`<VoterRecordsResponse xsi:type="RegistrationRejection">`, used to indicate a
 failure and the type of failure
 *	`<VoterRecordsResponse xsi:type="RegistrationSuccess">`, used to indication that a
 successful registration action occurred and the type of registration action, which may
-differ from the type of registration action requested 
+differ from the type of registration action requested
 
 `<VoterRecordsResponse>` optionally includes the `<TransactionId>` sub-element associated
 with the voter records request.  The optional `<Signature>` sub-element is used for an XML
