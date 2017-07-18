@@ -1,5 +1,4 @@
-<br><br>
-# **Draft - NIST Public Working Group Voter Records Interchange (VRI) Common Data Format Specification**
+# **NIST SP 1500-xxx Voter Records Interchange Common Data Format Specification Version 1.0**
 
 <br>
 
