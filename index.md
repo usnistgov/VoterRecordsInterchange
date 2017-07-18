@@ -1,4 +1,4 @@
-# **NIST SP 1500-xxx Voter Records Interchange Common Data Format Specification Version 1.0**
+# **NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Version 1.0**
 
 <br>
 
