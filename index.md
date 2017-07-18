@@ -1790,24 +1790,26 @@ U.S. citizens residing outside the United States.
 <br>
 
 ## References
-Election Assistance Commission, Election Administration and Voting Survey,
+Bipartisan Policy Center, The American Voting Experience: Report and Recommendations of the Presidential Commission on Election Administration [https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/](https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/).
+
+Election Assistance Commission, Election Administration and Voting Survey (EAVS),
 [http://www.eac.gov](http://www.eac.gov).
 
+Election Assistance Commission, National Voter Registration Form (NVRA), [https://www.eac.gov/voters/national-mail-voter-registration-form/](https://www.eac.gov/voters/national-mail-voter-registration-form/).
+
+Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
+
 Federal Geographic Data Committee (FGDC), United States Thoroughfare,
-Landmark, And Postal Address Data Standard,
+Landmark, and Postal Address Data Standard,
 [http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html](http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html).
+
+Federal Voting Assistance Program (FVAP), Federal Post Card Application (FPCA), [https://www.fvap.gov/eo/overview/materials/forms](https://www.fvap.gov/eo/overview/materials/forms).
 
 Object Management Group (OMG), UML Specification version 1.1 (OMG
 document ad/97-08-11) September 22, 2011, [http://omg.org/](http://omg.org/).
 
 Open Civic Data, OCD Identifiers,
 [http://opencivicdata.readthedocs.org/en/latest/ocdids.html](http://opencivicdata.readthedocs.org/en/latest/ocdids.html).
-
-
-
-PCEA - need to add
-
-
 
 W3C, Extensible Markup Language (XML) 1.0 (Fifth Edition), W3C
 Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org/TR/xml/).
