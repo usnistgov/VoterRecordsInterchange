@@ -29,6 +29,71 @@
 
 ## Table of Contents
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
+
+- [Acknowledgements](#acknowledgements)
+- [Executive Summary](#executive-summary)
+- [Introduction](#introduction)
+	- [Purpose](#purpose)
+	- [Audience](#audience)
+	- [Motivation and Methodology](#motivation-and-methodology)
+- [Voter Records Interchange XML Schema](#voter-records-interchange-xml-schema)
+	- [Schema Stylistic Conventions](#schema-stylistic-conventions)
+	- [Imports](#imports)
+	- [Roots](#roots)
+	- [Enumerations](#enumerations)
+		- [*The **AssertionValue** Enumeration*](#the-assertionvalue-enumeration)
+		- [*The **BallotReceiptMethod** Enumeration*](#the-ballotreceiptmethod-enumeration)
+		- [*The **ContactMethodType** Enumeration*](#the-contactmethodtype-enumeration)
+		- [*The **IdentifierType** Enumeration*](#the-identifiertype-enumeration)
+		- [*The **PhoneCapability** Enumeration*](#the-phonecapability-enumeration)
+		- [*The **RegistrationError** Enumeration*](#the-registrationerror-enumeration)
+		- [*The **RegistrationForm** Enumeration*](#the-registrationform-enumeration)
+		- [*The **RegistrationHelperType** Enumeration*](#the-registrationhelpertype-enumeration)
+		- [*The **RegistrationMethod** Enumeration*](#the-registrationmethod-enumeration)
+		- [*The **RegistrationProxy** Enumeration*](#the-registrationproxy-enumeration)
+		- [*The **RegistrationRequestType** Enumeration*](#the-registrationrequesttype-enumeration)
+		- [*The **ReportingUnitType** Enumeration*](#the-reportingunittype-enumeration)
+		- [*The **SignatureSource** Enumeration*](#the-signaturesource-enumeration)
+		- [*The **SignatureType** Enumeration*](#the-signaturetype-enumeration)
+		- [*The **SuccessAction** Enumeration*](#the-successaction-enumeration)
+		- [*The **VoterClassificationType** Enumeration*](#the-voterclassificationtype-enumeration)
+		- [*The **VoterIdType** Enumeration*](#the-voteridtype-enumeration)
+	- [Interfaces](#interfaces)
+	- [Classes (Elements)](#classes-elements)
+		- [*The **AbsenteeBallotRequest** Element*](#the-absenteeballotrequest-element)
+		- [*The **AdditionalInfo** Element*](#the-additionalinfo-element)
+		- [*The **ContactMethod** Element/Extension Base*](#the-contactmethod-elementextension-base)
+			- [*The **PhoneContactMethod** xsi:type*](#the-phonecontactmethod-xsitype)
+		- [*The **ElectionAdministration** Element*](#the-electionadministration-element)
+		- [*The **ExternalIdentifier** Element*](#the-externalidentifier-element)
+		- [*The **File** Element/Extension Base*](#the-file-elementextension-base)
+			- [*The **Image** xsi:type*](#the-image-xsitype)
+		- [*The **LatLng** Element*](#the-latlng-element)
+		- [*The **Location** Element*](#the-location-element)
+		- [*The **Name> (PreviousName)** Element*](#the-name-previousname-element)
+		- [*The **Party** Element*](#the-party-element)
+		- [*The **RegistrationHelper** Element*](#the-registrationhelper-element)
+		- [*The **RegistrationProxy** Element*](#the-registrationproxy-element)
+		- [*The **Signature (PreviousSignature)** Element*](#the-signature-previoussignature-element)
+		- [*The **VoterClassification** Element*](#the-voterclassification-element)
+		- [*The **VoterId** Element*](#the-voterid-element)
+		- [*The **VoterRecordsRequest** Element*](#the-voterrecordsrequest-element)
+		- [*The **VoterRecordsResponse** Element/Extension Base*](#the-voterrecordsresponse-elementextension-base)
+			- [*The **RegistrationAcknowledgement** xsi:type*](#the-registrationacknowledgement-xsitype)
+			- [*The **RegistrationRejection** xsi:type*](#the-registrationrejection-xsitype)
+			- [*The **RegistrationSuccess** xsi:type*](#the-registrationsuccess-xsitype)
+		- [*The **VoterRegistration** Element*](#the-voterregistration-element)
+- [Appendices](#appendices)
+	- [Acronyms](#acronyms)
+	- [Glossary](#glossary)
+	- [References](#references)
+	- [UML Class Diagrams](#uml-class-diagrams)
+	- [File Download Locations](#file-download-locations)
+	- [XML Schema](#xml-schema)
+
+<!-- /TOC -->
+
 <br>
 
 ## Acknowledgements
@@ -43,43 +108,6 @@ In addition to the above acknowledgments, the editor also gratefully acknowledge
 <br>
 
 # Executive Summary
-This publication is a specification for a common data format (CDF) for the election-related logging information produced by election devices, including voting devices in polling places or other voting equipment used to manage elections. This publication contains a definition for an XML (eXtensible Markup Language) schema that specifies the common data format and how it is used.
-
-Election logs generally contain information relevant to the conduct of the election for which the election device is being used. This information includes important events such as when voting operations are enabled on the device, or when a voter initiates a voting session, or when the device records that the voter has cast her ballot.  Logs can include errors such as the inability of a device to record a vote due to an internal error or that the polls have been opened or closed prematurely multiple times during the election day. Election analysts can use this information to determine not only whether the device itself was performing correctly but also whether the device was used correctly in the election, that is, used accordingly to election procedures. Additionally, analysts can derive various statistics from the log files, such as how often voters arrived and initiated voting sessions or the amount of time on average it took to cast a ballot.   
-
-Currently, election devices do not create election logs in an interoperable common data format, but rather the log files are in proprietary formats and thus are more difficult for election analysts to read and analyze.  If the election logging documentation is not at hand, the logs can be indecipherable.  Thus, a common format for the election log information will make it easier for election officials and analysts and testing labs to understand the log files and, potentially, make more informed use of the log files for purposes of election auditing, research, and testing.
-
-This publication contains discussion of the requirements in the Election Assistance Commission's (EAC) Voluntary Voting System Guidelines (VVSG) Version 1.1 [2] that specify the required and optional election event information to be logged. The publication also includes a second schema for manufacturers to associate their specific event code documentation with the log files.
-
-This specification is geared towards the following audiences:
-
-* Election officials;
-* Voting equipment manufacturers;
-* Voting system testing laboratories;
-* Election-affiliated organizations;
-* Election analysts and the public.
-
-The XML schema associated with this specification is generated from a UML (Unified Modeling Language) model that defines the types, structure, and interrelationships of the data used in election event logs. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML or other formats can be generated or derived from the UML model.
-
-
-
-
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-
 This is a draft specification on a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification currently contains a brief introduction and overview of the supported use cases, as well as a description of the UML model/XML schema.  Future sections will cover the use cases in greater detail.  
 
 The VRI specification currently supports voter registration record exchanges between voter registration portals/centers and voter registration systems, using the NVRA and FPCA forms.  The specification potentially will support the following list of use cases:
@@ -98,12 +126,17 @@ The VRI specification currently supports voter registration record exchanges bet
 
 * Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS reporting
 
+This specification is geared towards the following audiences:
+
+* Election officials;
+* Voting equipment manufacturers;
+* Voting system testing laboratories;
+* Election-affiliated organizations;
+* Election analysts and the public.
+
+The XML schema associated with this specification is generated from a UML (Unified Modeling Language) model that defines the types, structure, and interrelationships of the data used in election event logs. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML or other formats can be generated or derived from the UML model.
+
 The UML model and XML schema are expected to be finalized in time to be considered in the next VVSG under development by NIST and the Election Assistance Commission (EAC).
-
-<br>
-
-# Table of Contents
-
 
 <br>
 
