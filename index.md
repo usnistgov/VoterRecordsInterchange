@@ -122,9 +122,7 @@ The VRI specification currently supports voter registration record exchanges bet
 
 * Data exchanged by DMV or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested new voter registration; similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration; other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
-* Data interchange between state VR systems for records matching (e.g., use of the ERIC system).
-
-* Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS reporting
+* Data interchange between state VR systems and ERIC ([http://www.ericstates.org/](The Electronic Registration Information Center)).
 
 This specification is geared towards the following audiences:
 
