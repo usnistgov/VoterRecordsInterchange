@@ -14,11 +14,9 @@ The VRI specification will support the following list of use cases:
 
 5. Data exchanged by DMV or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested new voter registration; similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration; other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
-6. Data interchange between state VR systems for records matching (e.g. Kansas Project activity, or use of the ERIC system).
+6. Data interchange between state VR systems and ERIC ([http://www.ericstates.org/](The Electronic Registration Information Center)).
 
-7. Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS reporting
-
-The UML model and XML schema are under development but exepected to be finalized in time to be considered in the next VVSG under development by NIST and the Election Assistance Commission (EAC).  
+The UML model and XML schema are planned to be finalized in time to be considered in the next VVSG under development by NIST and the Election Assistance Commission (EAC).  
 
 
 Contact [John P. Wack](mailto:john.wack@nist.gov) for questions and more information.
