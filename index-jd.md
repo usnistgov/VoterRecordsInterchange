@@ -135,7 +135,7 @@ This specification is geared towards the following audiences:
 * Election-affiliated organizations;
 * Election analysts and the public.
 
-The XML schema associated with this specification is generated from a UML[\[1\]](#uml) (Unified Modeling Language) model that defines the types, structure, and interrelationships of the data used in election event logs. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML or other formats can be generated or derived from the UML model.
+The XML schema associated with this specification is generated from a UML[\[1\]](#uml-ref) (Unified Modeling Language) model that defines the types, structure, and interrelationships of the data used in election event logs. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML or other formats can be generated or derived from the UML model.
 
 The UML model and XML schema are expected to be finalized in time to be considered in the next VVSG under development by NIST and the Election Assistance Commission (EAC).
 
@@ -1795,7 +1795,7 @@ Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org
 W3C, XML Signature Syntax and Processing (Second Edition), W3C
 Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w3.org/TR/xmldsig-core/).
 
-[uml]\[1\] UML reference
+{uml-ref}\[1\] UML reference
 
 <br>
 
