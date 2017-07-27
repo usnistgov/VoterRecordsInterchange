@@ -109,13 +109,15 @@ In addition to the above acknowledgments, the editor also gratefully acknowledge
 <br>
 
 # Executive Summary
-This is a draft specification on a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification currently contains a brief introduction and overview of the supported use cases, as well as a description of the UML model/XML schema.  Future sections will cover the use cases in greater detail.  
+This is a draft specification on a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification contains an overview of the supported use cases as well as a documentation and usage of an XML schema that was generated from a UML model.
 
-The VRI specification currently supports voter registration record exchanges between voter registration portals/centers and voter registration systems, using the NVRA and FPCA forms.  The specification potentially will support the following list of use cases:
+The VRI specification currently supports the following list of use cases:
 
 * Digital VR applications transmitted within State OVR systems, or to state OVR systems by third party OVR systems, or by Motor Vehicle or other NVRA agencies, including digital versions of the NVRA form, the FPCA form, or state specific forms.
 
 * Similar applications for voter registration update (change of name, change of address); absentee ballot request; change of voter status, or type of requested modification already supported in NVRA form, FPCA form, or state specific forms.
+
+Future versions of this specification may include support for the following use cases:
 
 * Subsets of such digital applications used for 3rd-party registrars to transfer users and user data to state OVR systems, or for Motor Vehicle or other NVRA agencies to transfer customer data to state OVR systems.
 
@@ -133,22 +135,24 @@ This specification is geared towards the following audiences:
 * Election-affiliated organizations;
 * Election analysts and the public.
 
-The XML schema associated with this specification is generated from a UML (Unified Modeling Language) model that defines the types, structure, and interrelationships of the data used in election event logs. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML or other formats can be generated or derived from the UML model.
+The XML schema associated with this specification is generated from a UML[\[1\]](#uml) (Unified Modeling Language) model that defines the types, structure, and interrelationships of the data used in election event logs. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML or other formats can be generated or derived from the UML model.
 
 The UML model and XML schema are expected to be finalized in time to be considered in the next VVSG under development by NIST and the Election Assistance Commission (EAC).
 
 <br>
 
 # Introduction
-This document is a specification for a common data format (CDF) for voter records data interchange related to registration. The specification includes a data model in UML (Unified Modeling Language) that itemizes and defines the data involved in voter records data interchange related to registration. The XML format is derived from the UML model, as may be other non-XML formats such as JSON and CSV.
+This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration or similar portals. The specification includes a data model in UML (Unified Modeling Language) that itemizes and defines the data involved in voter records data interchange related to registration. The XML format is derived from the UML model, as may be other non-XML formats such as JSON and CSV.
 
 The primary features of this specification include:
 
-* Major data elements and their attributes and associations are fully defined in a UML data model.
+* Capability to specify voter registration requests and responses when using the NVRA or FPCA forms.
 
-* The data model can be used to generate data formats for today’s voter records systems as well as for future systems to be developed.
+* Detailed instructions for implementation and use of the XML schema.
 
-Detailed instructions for implementation and use of the XML schema are also included.
+* Use of a UML data model facilitates updates by generate XML or other data formats for today’s voter records systems as well as for future systems to be developed.
+
+
 
 ## Purpose
 The purpose of this specification is to provide a data interchange format for voter records, with particular but not exclusive focus on interchange related to voter registration, especially online voter registration. A goal for specification is to include not only a concrete representation in XML (for use by interoperating systems to exchange voter record data with high fidelity to the semantics of the UML model), but also examples in lighter-weight formats such as JSON and CSV.
@@ -1126,7 +1130,7 @@ Schema definition:
 ### *The **Location** Element*
 Used in response transactions.  
 
-`<ReportingUnit>` optionally includes this element to specify the address and directions to a voter's voting location. The `<LatLng>` element can be included to specify the latitude and longitude of the voting location.
+`<ReportingUnit>` optionally includes this element to specify the address and directions to a location such as for a voting location. The `<LatLng>` element can be included to specify the latitude and longitude of the voting location.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
@@ -1790,6 +1794,8 @@ Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org
 
 W3C, XML Signature Syntax and Processing (Second Edition), W3C
 Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w3.org/TR/xmldsig-core/).
+
+[1] UML reference
 
 <br>
 
