@@ -1795,7 +1795,8 @@ Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org
 W3C, XML Signature Syntax and Processing (Second Edition), W3C
 Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w3.org/TR/xmldsig-core/).
 
-{uml-ref}\[1\] UML reference
+###### \[1\]
+UML reference
 
 <br>
 
