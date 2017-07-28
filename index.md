@@ -208,10 +208,12 @@ The digital NVRA voter registration form, as well as the digital FPCA form, are 
 <img src="Figures/NVRA.png" height="600"/>
 
 **Figure 1 - National Voter Registration Act form**
+
 <br>
+
 <img src="Figures/FPCA.png" height="600"/>
 
-**Figure 2 - VFederal PostCard Application form**
+**Figure 2 - Federal PostCard Application form**
 </div>
 
 The use case for a digital OVR submission includes:
