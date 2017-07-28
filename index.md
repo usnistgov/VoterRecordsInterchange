@@ -253,24 +253,24 @@ Analogous to the above use case, but based on the FPCA form.This use case also i
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
 Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address data Standard [TBD ref], issued by the Federal Geographic Data Committee (FGDC) [need ref] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS.
 
-Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups, with the fourth type being useful for holding unstructured overseas addresses:
+Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups and 11 address types, with the fourth class being useful for holding unstructured overseas addresses:
 
 1. Thoroughfare Classes
 2. Landmark Classes
 3. Postal Deliver Classes
 4. General Class
 
-The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the Address type to the 10 different address types associated with the 4 classes, as shown in figure XX.
+The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the `Address` group to the 11 different address types associated with the 4 classes, as shown in figure 3.
 
 <div class="text-center" markdown="1">
-<img src="Figures/addrxsd.png" height="600"/>
+<img src="Figures/addrxsd.png"/>
 
 **Figure 3 - Interface to FGDC Address Types schema**
 </div>
 
-The following sections contain brief overviews of each of the address classes and types.
-
 <br>
+
+The following sections contain brief overviews of each of the address classes and their types.
 
 ### Thoroughfare Classes
 Thoroughfare addresses specify a location by reference to a thoroughfare. A thoroughfare is defined as a "road or part of a road or other access route along which a delivery point can be accessed"(UPU Publication S42-4 (sec. 5.2.9)). A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
