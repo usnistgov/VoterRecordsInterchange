@@ -49,7 +49,7 @@
 		- [Thoroughfare Classes](#thoroughfare-classes)
 		- [Landmark Classes](#landmark-classes)
 		- [Postal Delivery Classes](#postal-delivery-classes)
-	- [General Class](#general-class)
+		- [General Class](#general-class)
 	- [XML Usage examples](#xml-usage-examples)
 - [Voter Records Interchange XML Schema](#voter-records-interchange-xml-schema)
 	- [Schema Stylistic Conventions](#schema-stylistic-conventions)
@@ -202,7 +202,7 @@ This section presents an overview of the digital OVR voter registration transact
 <br>
 
 ## Digital OVR Submission
-The digital NVRA voter registration form, as well as the digital FPCA form, for the basis for digital OVR submission.  The use case for a digital OVR submission includes:
+The digital NVRA voter registration form, as well as the digital FPCA form, are the basis for digital OVR submission.  The use case for a digital OVR submission includes:
 
 - a client IT system “submitter”,
 - a service IT system “VR authority”, and
@@ -234,6 +234,9 @@ Accordingly, the UML data model built for the digital OVR submission use case in
 
 ## Voter Records Request Transaction
 
+Need to describe data model elements and show zoomed data model.
+
+
 <br>
 
 ## Voter Records Request Transaction
@@ -248,14 +251,26 @@ Analogous to the above use case, but based on the FPCA form.This use case also i
 <br>
 
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
-Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses : the U.S. Thoroughfare, Landmark, and Postal Address data standard [TBD ref], issued by the Federal Geographic Data Committee (FGDC) [need ref] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS.
+Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address data Standard [TBD ref], issued by the Federal Geographic Data Committee (FGDC) [need ref] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS.
 
-The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress. Each of these is thus represented by an address class from the FGDC's standard.  Briefly, the standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups, with the fourth type being useful for holding unstructured overseas addresses:
+Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups, with the fourth type being useful for holding unstructured overseas addresses:
 
-1. Thoroughfare Classes.
-2. Landmark Classes.
-3. Postal Deliver Classes.
-4. General Class.
+1. Thoroughfare Classes
+2. Landmark Classes
+3. Postal Deliver Classes
+4. General Class
+
+The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the Address type to the 10 different address types associated with the 4 classes, as shown in figure XX.
+
+<div class="text-center" markdown="1">
+<img src="Figures/addrxsd" height="600"/>
+
+**Figure 3 - Interface to FGDC Address Types schema**
+</div>
+
+The following sections contain brief overviews of each of the address classes and types.
+
+<br>
 
 ### Thoroughfare Classes
 Thoroughfare addresses specify a location by reference to a thoroughfare. A thoroughfare is defined as a "road or part of a road or other access route along which a delivery point can be accessed"(UPU Publication S42-4 (sec. 5.2.9)). A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
@@ -266,8 +281,11 @@ Thoroughfare addresses specify a location by reference to a thoroughfare. A thor
 - Four Number Address Range ("900-962, 901-963 Milton Street")
 - Unnumbered Thoroughfare Address ("Forest Service Road 698")
 
+Most business and residential addresses are Numbered Thoroughfare Addresses. Unnumbered Thoroughfare Addresses are used for those areas where no address numbers have been assigned and the addresses often include only the thoroughfare name.
+
+
 ### Landmark Classes
-Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context, e.g., a large statue or structure. The landmark address classes are:
+Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context, e.g., a large statue or structure such as an apartment complex. The landmark address classes are:
 
 - Landmark Address ("Statue of Liberty")
 - Community Address ("123 Urbanizacion Los Olmos")
@@ -279,14 +297,14 @@ Postal delivery addresses specify points of postal delivery that have no definit
 - USPS Postal Delivery Route ("RR 1, Box 100")
 - USPS General Delivery Office ("General Delivery")
 
-## General Class
+### General Class
 The general class provides a "catch-all" way to handle addresses that do not conform to any of the thoroughfare, landmark, or postal classes, including non-U.S. addresses. There are three types:
 
 1. The complete address as a single unparsed string of text (Voter Address = PO Box 1511, Ames, IA 50010)
 2. The complete address with place, state and zip code parsed out to a single field (Voter Address = PO Box 1511; Place State ZIP = Ames, IA 50010)
 3. The complete address with place, state and zip code parsed out to separate fields (Voter Address = PO Box 1511; Complete Place Name = Ames; State Name = IA; Zip Code = 50010)
 
-A complete overview of this standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation [need ref].
+A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples [need ref].
 <br>
 
 ## XML Usage examples
