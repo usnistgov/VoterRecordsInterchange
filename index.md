@@ -43,8 +43,8 @@
 	- [Motivation and Methodology](#motivation-and-methodology)
 - [Overview of Digital OVR Transactions as Implemented by this Specification](#overview-of-digital-ovr-transactions-as-implemented-by-this-specification)
 	- [Digital OVR Submission](#digital-ovr-submission)
-	- [Voter Records Request Transaction](#voter-records-request-transaction)
-	- [Voter Records Request Transaction](#voter-records-request-transaction)
+	  - [Voter Records Request Transaction](#voter-records-request-transaction)
+	  - [Voter Records Request Transaction](#voter-records-request-transaction)
 	- [The U.S. Thoroughfare, Landmark, and Postal Address Data Standard](#the-us-thoroughfare-landmark-and-postal-address-data-standard)
 		- [Thoroughfare Classes](#thoroughfare-classes)
 		- [Landmark Classes](#landmark-classes)
@@ -232,14 +232,14 @@ Accordingly, the UML data model built for the digital OVR submission use case in
 
 <br>
 
-## Voter Records Request Transaction
+### Voter Records Request Transaction
 
 Need to describe data model elements and show zoomed data model.
 
 
 <br>
 
-## Voter Records Request Transaction
+### Voter Records Request Transaction
 
 
 *This use case also includes the use of the same data to request a change of address and/or name to an existing voter record -- just as a paper NVRA form can be used both registration and update.
