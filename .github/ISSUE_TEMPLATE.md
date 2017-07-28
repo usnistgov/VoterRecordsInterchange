@@ -1,5 +1,15 @@
-## SP 800-63-3 Public Comment Period has closed!
+**Organization Name**:
 
-The editorial team is in the process of incorporating responses to the comments and completing editing of the documents. All further issues received will be automatically closed.
+**Organization Type**:
 
-Thank you for your interest in supporting and improving NIST SP 800-63-3.
+**Document (e.g., VoterRecordsInterchange)**:
+
+**Reference (Include section and paragraph number)**:
+
+**Comment (Include rationale for comment)**:
+
+**Suggested Change**:
+
+---
+
+Organization Type: 1 = Federal, 2 = Industry, 3 = Academia, 4 = Self, 5 = Other
