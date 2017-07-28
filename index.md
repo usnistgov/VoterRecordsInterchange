@@ -263,7 +263,7 @@ Briefly, the FGDC standard classifies all US addresses into a simple, complete t
 The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the Address type to the 10 different address types associated with the 4 classes, as shown in figure XX.
 
 <div class="text-center" markdown="1">
-<img src="Figures/addrxsd" height="600"/>
+<img src="Figures/addrxsd.png" height="600"/>
 
 **Figure 3 - Interface to FGDC Address Types schema**
 </div>
