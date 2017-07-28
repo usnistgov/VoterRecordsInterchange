@@ -213,16 +213,18 @@ The submission of a digital registration form to a VR authority represents a "re
 Accordingly, the UML data model built for the digital OVR submission use case includes two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration request transaction, as shown in the following figures and described in the succeeding sections:
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequestV23.png" height="400"/>
+<img src="Figures/VoterRegistrationRequestV23.png" height="600"/>
 
 **Figure 1 - Voter Records Request UML class diagram**
+</div>
 
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponseV23.png" height="400"/>
+<img src="Figures/VoterRegistrationResponseV23.png" height="600"/>
 
 **Figure 2 - Voter Records Response UML class diagram**
+</div>
 
 <br>
 
