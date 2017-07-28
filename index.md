@@ -31,14 +31,22 @@
 
 ## Table of Contents
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Acknowledgements](#acknowledgements)
+- [**NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0**](#nist-sp-1500-103-voter-records-interchange-common-data-format-specification-draft-version-10)
+	- [Table of Contents](#table-of-contents)
+	- [Acknowledgements](#acknowledgements)
 - [Executive Summary](#executive-summary)
 - [Introduction](#introduction)
 	- [Purpose](#purpose)
 	- [Audience](#audience)
 	- [Motivation and Methodology](#motivation-and-methodology)
+- [Overview of Digital OVR Transactions as Implemented by this Specification](#overview-of-digital-ovr-transactions-as-implemented-by-this-specification)
+	- [Digital OVR Submission](#digital-ovr-submission)
+	- [Voter Records Request Transaction](#voter-records-request-transaction)
+	- [Voter Records Request Transaction](#voter-records-request-transaction)
+	- [The U.S. Thoroughfare, Landmark, and Postal Address Data Standard](#the-us-thoroughfare-landmark-and-postal-address-data-standard)
+	- [XML Usage examples](#xml-usage-examples)
 - [Voter Records Interchange XML Schema](#voter-records-interchange-xml-schema)
 	- [Schema Stylistic Conventions](#schema-stylistic-conventions)
 	- [Imports](#imports)
@@ -62,7 +70,7 @@
 		- [*The **VoterClassificationType** Enumeration*](#the-voterclassificationtype-enumeration)
 		- [*The **VoterIdType** Enumeration*](#the-voteridtype-enumeration)
 	- [Interfaces](#interfaces)
-	- [Classes (Elements)](#classes-elements)		
+	- [Classes (Elements)](#classes-elements)
 		- [*The **AdditionalInfo** Element*](#the-additionalinfo-element)
 		- [*The **ContactMethod** Element/Extension Base*](#the-contactmethod-elementextension-base)
 			- [*The **PhoneContactMethod** xsi:type*](#the-phonecontactmethod-xsitype)
@@ -89,6 +97,7 @@
 	- [Acronyms](#acronyms)
 	- [Glossary](#glossary)
 	- [References](#references)
+					- [\[1\]](#1)
 	- [UML Class Diagrams](#uml-class-diagrams)
 	- [File Download Locations](#file-download-locations)
 	- [XML Schema](#xml-schema)
@@ -159,23 +168,23 @@ This document was motivated primarily to reduce the inherent diversity for U.S. 
 
 NIST and a community of U.S. election officials, analysts, and voting system technologists analyzed varying VR scenarios and their associated data interchanges, to analyze existing practices and to create a standard data interchange format for emerging OVR systems. From this preliminary analysis, a number of use cases were developed:
 
-1.	Digital OVR Submission: Digital VR applications forms transmitted within state OVR systems, or to state OVR systems by third party OVR systems, following the formats of the NVRA and FPCA voter registration application forms, including state-specific additions to these forms.
+1.	Digital OVR Submission: Digital VR applications forms transmitted within state OVR systems or to state OVR systems by third party OVR systems, following the formats of the NVRA and FPCA voter registration application forms, including state-specific additions to these forms.
 
-2.	Digital VR Update Submission: Similar application forms including: voter registration update (change of name, change of address); change of voter status; absentee ballot request.
+2.	Digital VR Update Submission: Similar application forms including: voter registration update (change of name, change of address), change of voter status, and absentee ballot request.
 
 3.	OVR Transfer: Subsets of such digital applications used for 3rd-party OVR registrars to transfer users and user data to state OVR systems.
 
 4.	DMV Match: Subsets of such digital applications exchanged between state VR systems and DMV or similar systems, to perform driver's license data matching as part of OVR processing.
 
-5.	DMV Notification: Data exchanged by DMV or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration; or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
+5.	DMV Notification: Data exchanged by DMV or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
-6.	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC system, or as part of inter-state cross-check activities.
+6.	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC system [need a ref], or as part of inter-state cross-check activities.
 
-7.	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS reporting.
+7.	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS [need a ref]reporting.
 
-The focus of this specification is implementation of the first use case for digital OVR submission, because it is the common basis of current efforts to develop new OVR systems, as an increasing number of states pass legislation enabling or requiring it. This initial focus was intended to quickly establish a baseline abstract data model as the basis for extension in later work on other use cases.
+The focus of this specification is implementation of the first use case for digital OVR submission, because it is the common basis of current efforts to develop new OVR systems, as an increasing number of states pass legislation enabling or requiring it. This initial focus was intended to quickly establish a baseline abstract data model as the basis for extension in later versions on other use cases.
 
-A UML data model was subsequently generated to represent the data associated with digital OVR submission, and to show how the data elements are related and organized. Finally, an XML schema was generated from the UML data model. The XML schema defines the rules of the XML format.
+A UML data model was subsequently generated to represent the data associated with digital OVR submission and to show how the data elements are related and organized. Finally, an XML schema was generated from the UML data model. The XML schema defines the rules of the XML format.
 
 The advantages of using a UML data model as an intermediate step to generating an XML schema include that the model is independent of the concrete XML format (or other potential formats that could be derived); relationships between data elements are easier to correctly define and visualize when they are independent of any specific data format. If changes are needed to the XML format, one can make changes to the UML model and then generate a new version of the format using commercial products.
 
@@ -183,28 +192,59 @@ Note that this specification addresses U.S. governmental elections and is not in
 
 <br>
 
-# Overview of Digital OVR VR Transactions as Implemented by this specification
-This section presents an overview of the digital OVR VR transactions supported by this specification and examples of how these transactions are implemented in XML.  It also contains an overview of the FGDC
+# Overview of Digital OVR Transactions as Implemented by this Specification
+This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [TBD ref], which is used for voter addresses in this specification.
 
 <br>
 
-## Digital OVR VR transactions
-A digital NVRA voter registration form is pretty much the base use case for OVR, because use of the paper NVRA form is the base case for VR. A 1622 OVR CDF would very likely include representation of a digital NVRA form: field definitions for each of the elements of the paper form, using common existing data types for names, addresses, etc.
+## Digital OVR Submission
+The digital NVRA voter registration form, as well as the digital FPCA form, for the basis for digital OVR submission.  The use case for a digital OVR submission includes:
 
-The use cases for a digital NVRA submission are variations on the same theme: a client IT system “submitter”, a service IT system “VR authority”, the submission a digital NVRA “form” via transmission from submitter to VR authority. Currently, VR authorities are the back-end components of actual state OVR system, while submitters include clients of state OVR systems, and other clients that are operated by 3rd party VR orgs and that integrate with OVR system by sending all or part of an NVRA dataset collected by the client from a human registrant.
+- a client IT system “submitter”,
+- a service IT system “VR authority”, and
+- the submission a digital NVRA “form” via transmission from submitter to VR authority.
 
-This use case also includes the use of the same data to request a change of address and/or name to an existing voter record -- just as a paper NVRA form can be used both registration and update.
+[need a pic representing this]
+
+Currently, VR authorities are the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA, and other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
+
+The submission of a digital registration form to a VR authority represents a "request transaction".  The "response transaction" from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  For a successful registration, the response could also include additional information such as the voter's polling place and list of districts that the voter resides within.
+
+Accordingly, the UML data model built for the digital OVR submission use case includes two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration request transaction, as shown in the following figures and described in the succeeding sections:
+
+<div class="text-center" markdown="1">
+<img src="Figures/VoterRegistrationRequestV23.png" height="400"/>
+
+**Figure 1 - Voter Records Request UML class diagram**
+
+<br>
+
+<div class="text-center" markdown="1">
+<img src="Figures/VoterRegistrationResponseV23.png" height="400"/>
+
+**Figure 2 - Voter Records Response UML class diagram**
+
+<br>
+
+## Voter Records Request Transaction
+
+<br>
+
+## Voter Records Request Transaction
+
+
+*This use case also includes the use of the same data to request a change of address and/or name to an existing voter record -- just as a paper NVRA form can be used both registration and update.
 
 Use Case: Digital FPCA Submission
 
-Analogous to the above use case, but based on the FPCA form.This use case also includes the use of the same data to request a change of address and/or name and/or absentee voter status to an existing voter record. It can also include state-specific fields (see below).
+Analogous to the above use case, but based on the FPCA form.This use case also includes the use of the same data to request a change of address and/or name and/or absentee voter status to an existing voter record. It can also include state-specific fields (see below).*
 
 <br>
 
-## The FGDC Addressing specification
+## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
 Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses : the U.S. Thoroughfare, Landmark, and Postal Address data standard [TBD ref], issued by the Federal Geographic Data Committee (FGDC) [need ref] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS.
 
-The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress. Each of these is thus represented by an address class from the FGDC's standard.  Briefly, the standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups:
+The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress. Each of these is thus represented by an address class from the FGDC's standard.  Briefly, the standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups, with the fourth type being useful for holding unstructured overseas addresses:
 
 1. Thoroughfare Classes.
 2. Landmark Classes.
@@ -219,7 +259,7 @@ The VoterRegistration class in the UML model has four distinct types of addresse
 - Four Number Address Range ("900-962, 901-963 Milton Street")
 - Unnumbered Thoroughfare Address ("Forest Service Road 698")
 
-**Landmark Classes** - Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context" (definition adapted from U.S. Board on Geographic Names, 2003, p. 48). The landmark address classes are:
+**Landmark Classes** - Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context, e.g., a large statue or structure. The landmark address classes are:
 
 - Landmark Address ("Statue of Liberty")
 - Community Address ("123 Urbanizacion Los Olmos")
