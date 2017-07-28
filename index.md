@@ -46,6 +46,10 @@
 	- [Voter Records Request Transaction](#voter-records-request-transaction)
 	- [Voter Records Request Transaction](#voter-records-request-transaction)
 	- [The U.S. Thoroughfare, Landmark, and Postal Address Data Standard](#the-us-thoroughfare-landmark-and-postal-address-data-standard)
+		- [Thoroughfare Classes](#thoroughfare-classes)
+		- [Landmark Classes](#landmark-classes)
+		- [Postal Delivery Classes](#postal-delivery-classes)
+	- [General Class](#general-class)
 	- [XML Usage examples](#xml-usage-examples)
 - [Voter Records Interchange XML Schema](#voter-records-interchange-xml-schema)
 	- [Schema Stylistic Conventions](#schema-stylistic-conventions)
@@ -253,7 +257,8 @@ The VoterRegistration class in the UML model has four distinct types of addresse
 3. Postal Deliver Classes.
 4. General Class.
 
-**Thoroughfare Classes** - Thoroughfare addresses specify a location by reference to a thoroughfare. A thoroughfare is defined as a "road or part of a road or other access route along which a delivery point can be accessed"(UPU Publication S42-4 (sec. 5.2.9)). A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
+### Thoroughfare Classes
+Thoroughfare addresses specify a location by reference to a thoroughfare. A thoroughfare is defined as a "road or part of a road or other access route along which a delivery point can be accessed"(UPU Publication S42-4 (sec. 5.2.9)). A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
 
 - Numbered Thoroughfare Address ("123 Main Street")
 - Intersection Address ("Fifth Avenue and Main Street")
@@ -261,18 +266,21 @@ The VoterRegistration class in the UML model has four distinct types of addresse
 - Four Number Address Range ("900-962, 901-963 Milton Street")
 - Unnumbered Thoroughfare Address ("Forest Service Road 698")
 
-**Landmark Classes** - Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context, e.g., a large statue or structure. The landmark address classes are:
+### Landmark Classes
+Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context, e.g., a large statue or structure. The landmark address classes are:
 
 - Landmark Address ("Statue of Liberty")
 - Community Address ("123 Urbanizacion Los Olmos")
 
-**Postal Delivery Classes** - Postal delivery addresses specify points of postal delivery that have no definite relation to the location of the recipient, such as a post office box, rural route box, overseas military address, or general delivery office. The USPS specifies each class in detail in USPS Publication 28 [need ref]. The postal delivery classes are:
+### Postal Delivery Classes
+Postal delivery addresses specify points of postal delivery that have no definite relation to the location of the recipient, such as a post office box, rural route box, overseas military address, or general delivery office. The USPS specifies each class in detail in USPS Publication 28 [need ref]. The postal delivery classes are:
 
 - USPS Postal Delivery Box ("PO Box 16953")
 - USPS Postal Delivery Route ("RR 1, Box 100")
 - USPS General Delivery Office ("General Delivery")
 
-**General Class** - The general class provides a "catch-all" way to handle addresses that do not conform to any of the thoroughfare, landmark, or postal classes, including non-U.S. addresses. There are three types:
+## General Class
+The general class provides a "catch-all" way to handle addresses that do not conform to any of the thoroughfare, landmark, or postal classes, including non-U.S. addresses. There are three types:
 
 1. The complete address as a single unparsed string of text (Voter Address = PO Box 1511, Ames, IA 50010)
 2. The complete address with place, state and zip code parsed out to a single field (Voter Address = PO Box 1511; Place State ZIP = Ames, IA 50010)
