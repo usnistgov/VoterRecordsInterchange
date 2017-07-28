@@ -202,24 +202,36 @@ This section presents an overview of the digital OVR voter registration transact
 <br>
 
 ## Digital OVR Submission
-The digital NVRA voter registration form, as well as the digital FPCA form, are the basis for digital OVR submission.  The use case for a digital OVR submission includes:
+The digital NVRA voter registration form, as well as the digital FPCA form, are the basis for digital OVR submission.  The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military to register and, if desired, request a ballot at the same time.
+
+<div class="text-center" markdown="1">
+<img src="Figures/NVRA.png" height="600"/>
+
+**Figure 1 - National Voter Registration Act form**
+<br>
+<img src="Figures/FPCA.png" height="600"/>
+
+**Figure 2 - VFederal PostCard Application form**
+</div>
+
+The use case for a digital OVR submission includes:
 
 - a client IT system “submitter”,
 - a service IT system “VR authority”, and
 - the submission a digital NVRA “form” via transmission from submitter to VR authority.
 
-[need a pic representing this]
+[need a pic representing this - Figure 3]
 
 Currently, VR authorities are typically the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA or other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
 
 The submission of a digital registration form to a VR authority represents a "request" transaction.  The "response" transaction from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  For a successful registration, the response could also include additional information such as the voter's polling place and list of districts that the voter resides within.
 
-Accordingly, the UML data model built for the digital OVR submission use case in reality is two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration request transaction, as shown in the following figures and described in the succeeding sections:
+Accordingly, the UML data model built for the digital OVR submission use case in reality is two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration response transaction, as shown in the following figures and described in the succeeding sections:
 
 <div class="text-center" markdown="1">
 <img src="Figures/VoterRegistrationRequestV23.png" height="600"/>
 
-**Figure 1 - Voter Records Request UML class diagram**
+**Figure 4 - Voter Records Request UML class diagram**
 </div>
 
 <br>
@@ -227,12 +239,19 @@ Accordingly, the UML data model built for the digital OVR submission use case in
 <div class="text-center" markdown="1">
 <img src="Figures/VoterRegistrationResponseV23.png" height="600"/>
 
-**Figure 2 - Voter Records Response UML class diagram**
+**Figure 5 - Voter Records Response UML class diagram**
 </div>
 
 <br>
 
 ### Voter Records Request Transaction
+The voter records request UML model shows 3 types of transaction requests:
+
+Request a registration with the NVRA form
+Request a registration via the FPCA form
+Request a ballot along with the FPCA registration
+
+The VoterRegistration class contains data elements for voter name, address, etc., with other associated classes to describe items such as
 
 Need to describe data model elements and show zoomed data model.
 
@@ -260,17 +279,17 @@ Briefly, the FGDC standard classifies all US addresses into a simple, complete t
 3. Postal Deliver Classes - 3 address types
 4. General Class - 3 address types
 
-The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the `<Address>` group to the 13 different address types that constitute the 4 classes, as shown in figure 3.
+The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the `<Address>` group to the 13 different address types that constitute the 4 classes, as shown in figure 6.
 
 <div class="text-center" markdown="1">
 <img src="Figures/addrxsd.png" height="600"/>
 
-**Figure 3 - Interface to FGDC Address Types schema**
+**Figure 6 - Interface to FGDC Address Types schema**
 </div>
 
 <br>
 
-There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of 1 of the 3 different types.  The following sections contain brief overviews of each of the address classes and their types.
+There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of the 3 different types.  The following sections contain brief overviews of each of the address classes and their types.
 
 ### Thoroughfare Classes
 Thoroughfare addresses specify a location by reference to a thoroughfare. A thoroughfare is defined as a "road or part of a road or other access route along which a delivery point can be accessed"(UPU Publication S42-4 (sec. 5.2.9)). A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
