@@ -197,7 +197,7 @@ Note that this specification addresses U.S. governmental elections and is not in
 <br>
 
 # Overview of Digital OVR Transactions as Implemented by this Specification
-This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [TBD ref], which is used for voter addresses in this specification.
+This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [TBD ref], which is used for voter addresses in this specification.  Lastly, it includes some examples of XML usage.
 
 <br>
 
@@ -210,11 +210,11 @@ The digital NVRA voter registration form, as well as the digital FPCA form, are 
 
 [need a pic representing this]
 
-Currently, VR authorities are the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA, and other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
+Currently, VR authorities are typically the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA or other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
 
-The submission of a digital registration form to a VR authority represents a "request transaction".  The "response transaction" from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  For a successful registration, the response could also include additional information such as the voter's polling place and list of districts that the voter resides within.
+The submission of a digital registration form to a VR authority represents a "request" transaction.  The "response" transaction from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  For a successful registration, the response could also include additional information such as the voter's polling place and list of districts that the voter resides within.
 
-Accordingly, the UML data model built for the digital OVR submission use case includes two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration request transaction, as shown in the following figures and described in the succeeding sections:
+Accordingly, the UML data model built for the digital OVR submission use case in reality is two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration request transaction, as shown in the following figures and described in the succeeding sections:
 
 <div class="text-center" markdown="1">
 <img src="Figures/VoterRegistrationRequestV23.png" height="600"/>
@@ -253,24 +253,24 @@ Analogous to the above use case, but based on the FPCA form.This use case also i
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
 Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address data Standard [TBD ref], issued by the Federal Geographic Data Committee (FGDC) [need ref] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS.
 
-Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups and 11 address types, with the fourth class being useful for holding unstructured overseas addresses:
+Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups and 13 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
 
-1. Thoroughfare Classes
-2. Landmark Classes
-3. Postal Deliver Classes
-4. General Class
+1. Thoroughfare Classes - 5 address types
+2. Landmark Classes - 2 address types
+3. Postal Deliver Classes - 3 address types
+4. General Class - 3 address types
 
-The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the `Address` group to the 11 different address types associated with the 4 classes, as shown in figure 3.
+The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the `<Address>` group to the 13 different address types that constitute the 4 classes, as shown in figure 3.
 
 <div class="text-center" markdown="1">
-<img src="Figures/addrxsd.png"/>
+<img src="Figures/addrxsd.png" height="600"/>
 
 **Figure 3 - Interface to FGDC Address Types schema**
 </div>
 
 <br>
 
-The following sections contain brief overviews of each of the address classes and their types.
+There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of 1 of the 3 different types.  The following sections contain brief overviews of each of the address classes and their types.
 
 ### Thoroughfare Classes
 Thoroughfare addresses specify a location by reference to a thoroughfare. A thoroughfare is defined as a "road or part of a road or other access route along which a delivery point can be accessed"(UPU Publication S42-4 (sec. 5.2.9)). A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
@@ -352,7 +352,7 @@ The schema (and instance files) imports two external schemas:
 1.	The W3C digital signature schema, used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
 include a digital signature on XML instance files.
 2.	The Federal Geographic Data Committee (FGDC) address schema [10],
-which contains 11 types of addresses that are used to specify postal and
+which contains 13 types of addresses that are used to specify postal and
 registration addresses for voters, used in the `<VoterRegistration>` and
 other elements.
 
