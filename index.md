@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v1
+v2
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -289,17 +289,55 @@ Briefly, the FGDC standard classifies all US addresses into a simple, complete t
 3. Postal Deliver Classes - 3 address types
 4. General Class - 3 address types
 
-The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML/JSON schemas include the FGDC XML schema and map the use of `<Address>` to one of the 13 different address types, as shown in figure 6.
+The VoterRegistration class in the UML model has four distinct addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address, and correspondingly, the Address type is used as well in the XML/JSON schemas for the corresponding addresses. The VRI XML/JSON schemas include the FGDC XML schema and map the use of the `<Address>` type to one of the 13 different address types in the FGDC schema, as shown below in XML:
 
-<div class="text-center" markdown="1">
-<img src="Figures/addrxsd.png" height="600"/>
-
-**Figure 6 - Interface to FGDC Address Types schema**
-</div>
+    <!-- === Interface Address === -->
+    <xsd:group name="Address">
+      <xsd:choice>
+        <xsd:element name="CommunityAddress_type" type="addr:CommunityAddress_type"/>
+        <xsd:element name="FourNumberAddressRange_type" type="addr:FourNumberAddressRange_type"/>
+        <xsd:element name="GeneralAddressClass_type" type="addr:GeneralAddressClass_type"/>
+        <xsd:element name="IntersectionAddress_type" type="addr:IntersectionAddress_type"/>
+        <xsd:element name="LandmarkAddress_type" type="addr:LandmarkAddress_type"/>
+        <xsd:element name="NumberedThoroughfareAddress_type" type="addr:NumberedThoroughfareAddress_type"/>
+        <xsd:element name="TwoNumberAddressRange_type" type="addr:TwoNumberAddressRange_type"/>
+        <xsd:element name="USPSGeneralDeliveryOffice_type" type="addr:USPSGeneralDeliveryOffice_type"/>
+        <xsd:element name="USPSPostalDeliveryBox_type" type="addr:USPSPostalDeliveryBox_type"/>
+        <xsd:element name="USPSPostalDeliveryRoute_type" type="addr:USPSPostalDeliveryRoute_type"/>
+        <xsd:element name="UnnumberedThoroughfareAddress_type" type="addr:UnnumberedThoroughfareAddress_type"/>
+      </xsd:choice>
+    </xsd:group>
 
 <br>
 
-There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of the 3 different types.  The following sections contain brief overviews of each of the address classes and their types.
+There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of the 3 different types. The following XML example shows a use of the `<NumberedThoroughfareAddress_type>` for the `<MailingAddress>` element:
+
+    <MailingAddress>
+      <addr:NumberedThoroughfareAddress_type>
+        <addr:CompleteAddressNumber>    
+          <addr:AddressNumber>500<addr:/AddressNumber>
+        <addr:/CompleteAddressNumber>
+        <addr:CompleteStreetName>
+          <addr:StreetNamePreDirectional>W<addr:/StreetNamePreDirectional>
+          <addr:StreetName>TUSCARAWAS<addr:/StreetName>
+          <addr:StreetNamePostType>AVE<addr:/StreetNamePostType>
+          <addr:StreetNamePostDirectional/>
+        <addr:/CompleteStreetName>
+        <addr:CompleteSubaddress>
+          <addr:SubaddressElement>
+            <addr:SubaddressIdentifier/>
+          <addr:/SubaddressElement>
+        <addr:/CompleteSubaddress>
+        <addr:CompletePlaceName>
+          <addr:PlaceName PlaceNameType="MunicipalJurisdiction">BARBERTON<addr:/PlaceName>
+          <addr:PlaceName PlaceNameType="County"/>
+        <addr:/CompletePlaceName>
+        <addr:StateName>OH<addr:/StateName>
+        <addr:ZipCode>44203<addr:/ZipCode>
+      <addr:/NumberedThoroughfareAddress_type>
+    </MailingAddress>
+
+ The following sections contain brief overviews of each of the address classes and their types.
 
 ### Thoroughfare Classes
 Most business and residential addresses are Numbered Thoroughfare Addresses. They specify a location by reference to a thoroughfare, which is defined as a "road or part of a road or other access route along which a delivery point can be accessed"[9]. A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
@@ -374,26 +412,6 @@ values.
 
 <br>
 
-## Imports
-The schema (and instance files) imports two external schemas:
-
-1.	The W3C digital signature schema, used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
-include a digital signature on XML instance files.
-2.	The Federal Geographic Data Committee (FGDC) address schema [10],
-which contains 13 types of addresses that are used to specify postal and
-registration addresses for voters, used in the `<VoterRegistration>` and
-other elements.
-
-Schema Definition:
-
-     <!--  ========== Imports ==========  -->
-     <xsd:import namespace=http://www.fgdc.gov/schemas/address/addr schemaLocation=
-      "addr.xsd"/>
-     <xsd:import namespace=http://www.w3.org/2000/09/xmldsig# schemaLocation=
-      "http://www.w3.org/2000/09/xmldsig#"/>
-
-<br>
-
 ## Roots
 The schema contains two root elements:
 
@@ -406,6 +424,45 @@ Schema Definition:
      <!--  ========== Roots ==========  -->
      <xsd:element name="VoterRecordsRequest" type="VoterRecordsRequest"/>
      <xsd:element name="VoterRecordsResponse" type="VoterRecordsResponse"/>
+
+<br>
+
+## Imports
+The schema (and instance files) imports two external schemas:
+
+1.	The W3C digital signature schema, used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
+include a digital signature on XML instance files.
+2.	The FGDC schema[10], which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` and other elements using a namespace pf `addr`.
+
+Schema Definition:
+
+     <!--  ========== Imports ==========  -->
+     <xsd:import namespace=http://www.fgdc.gov/schemas/address/addr schemaLocation=
+      "addr.xsd"/>
+     <xsd:import namespace=http://www.w3.org/2000/09/xmldsig# schemaLocation=
+      "http://www.w3.org/2000/09/xmldsig#"/>
+
+<br>
+
+## Interfaces
+The schema includes an interface that maps the `Address` type to a choice of one of the address types from the FGDC schema[10].
+
+      <!-- === Interface Address === -->
+      <xsd:group name="Address">
+        <xsd:choice>
+          <xsd:element name="CommunityAddress_type" type="addr:CommunityAddress_type"/>
+          <xsd:element name="FourNumberAddressRange_type" type="addr:FourNumberAddressRange_type"/>
+          <xsd:element name="GeneralAddressClass_type" type="addr:GeneralAddressClass_type"/>
+          <xsd:element name="IntersectionAddress_type" type="addr:IntersectionAddress_type"/>
+          <xsd:element name="LandmarkAddress_type" type="addr:LandmarkAddress_type"/>
+          <xsd:element name="NumberedThoroughfareAddress_type" type="addr:NumberedThoroughfareAddress_type"/>
+          <xsd:element name="TwoNumberAddressRange_type" type="addr:TwoNumberAddressRange_type"/>
+          <xsd:element name="USPSGeneralDeliveryOffice_type" type="addr:USPSGeneralDeliveryOffice_type"/>
+          <xsd:element name="USPSPostalDeliveryBox_type" type="addr:USPSPostalDeliveryBox_type"/>
+          <xsd:element name="USPSPostalDeliveryRoute_type" type="addr:USPSPostalDeliveryRoute_type"/>
+          <xsd:element name="UnnumberedThoroughfareAddress_type" type="addr:UnnumberedThoroughfareAddress_type"/>
+        </xsd:choice>
+      </xsd:group>
 
 <br>
 
