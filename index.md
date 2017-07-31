@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v2
+v3
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -244,29 +244,38 @@ Accordingly, the UML data model built for the digital OVR submission use case in
 <br>
 
 ### Voter Records Request Transaction
-The voter records request UML model shows 3 types of transaction requests:
+This section contains a brief overview of voter records request transactions.
+The UML model shows 3 types of transaction requests that would be sent from an OVR submitter to a VR system:
 
-- Request a registration with the NVRA form
-- Request a registration via the FPCA form
-- Request a ballot along with the FPCA registration
+- Request a registration using the NVRA form.
+- Request a registration using the FPCA form.
+- Request a ballot along with the FPCA registration.
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequestV23.png" height="900"/>
+<img src="Figures/VoterRegistrationRequestV23.png" width="800"/>
 
 **Figure 4 - Voter Records Request UML class diagram**
 </div>
 
-The VoterRegistration class contains data elements for voter name, address, etc., with other associated classes to describe items such as
+An OVR submitter essentially specifies the correct form (nvra or fpca) and the type of request (registration, registration plus ballot-request). The registration request is valid for either form, whereas for the FPCA, it is possible to register and request a ballot at the same time. The VoterRegistration class contains the remaining data elements, all taken from information contained on the digital form.  
 
-Need to describe data model elements and show zoomed data model.
-
+The AdditionalInfo class is used for information
+not addressed in this schema by other elements and attributes, e.g., state-specific
+information that does not "fit" in any other element. The information will thus be
+highly specific to the generating application, and consuming applications must
+"know" the meaning of the information to make use of it.  
 
 <br>
 
-### Voter Records Request Transaction
+### Voter Records Response Transaction
+This section contains a brief overview of voter records response transactions. The UML is considerably simpler than the request model in that a response generally contains little data other than the result of the request, which are:
+
+- RegistrationSuccess: the registration request succeeded.
+- RegistrationRejection.
+- RegistrationAcknowledgement.
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponseV23.png" height="900"/>
+<img src="Figures/VoterRegistrationResponseV23.png" width="800"/>
 
 **Figure 5 - Voter Records Response UML class diagram**
 </div>
@@ -313,28 +322,28 @@ The VoterRegistration class in the UML model has four distinct addresses: Regist
 There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of the 3 different types. The following XML example shows a use of the `<NumberedThoroughfareAddress_type>` for the `<MailingAddress>` element:
 
     <MailingAddress>
-      <addr:NumberedThoroughfareAddress_type>
-        <addr:CompleteAddressNumber>    
-          <addr:AddressNumber>500<addr:/AddressNumber>
-        <addr:/CompleteAddressNumber>
+      <NumberedThoroughfareAddress_type>
+        <addr:CompleteAddressNumber>
+          <addr_type:AddressNumber>500</AddressNumber>
+        </addr:CompleteAddressNumber>
         <addr:CompleteStreetName>
-          <addr:StreetNamePreDirectional>W<addr:/StreetNamePreDirectional>
-          <addr:StreetName>TUSCARAWAS<addr:/StreetName>
-          <addr:StreetNamePostType>AVE<addr:/StreetNamePostType>
-          <addr:StreetNamePostDirectional/>
-        <addr:/CompleteStreetName>
+          <addr_type:StreetNamePreDirectional>W</StreetNamePreDirectional>
+          <addr_type:StreetName>TUSCARAWAS</StreetName>
+          <addr_type:StreetNamePostType>AVE</StreetNamePostType>
+          <addr_type:StreetNamePostDirectional/>
+        </addr:CompleteStreetName>
         <addr:CompleteSubaddress>
-          <addr:SubaddressElement>
-            <addr:SubaddressIdentifier/>
-          <addr:/SubaddressElement>
-        <addr:/CompleteSubaddress>
-        <addr:CompletePlaceName>
-          <addr:PlaceName PlaceNameType="MunicipalJurisdiction">BARBERTON<addr:/PlaceName>
-          <addr:PlaceName PlaceNameType="County"/>
-        <addr:/CompletePlaceName>
-        <addr:StateName>OH<addr:/StateName>
-        <addr:ZipCode>44203<addr:/ZipCode>
-      <addr:/NumberedThoroughfareAddress_type>
+          <addr_type:SubaddressElement>
+            <SubaddressIdentifier/>
+          </SubaddressElement>
+        </addr:CompleteSubaddress>
+        <addr_type:CompletePlaceName>
+          <PlaceName PlaceNameType="MunicipalJurisdiction">BARBERTON</PlaceName>
+          <PlaceName PlaceNameType="County"/>
+        </CompletePlaceName>
+        <addr_type:StateName>OH</StateName>
+        <addr_type:ZipCode>44203</ZipCode>
+      </NumberedThoroughfareAddress_type>
     </MailingAddress>
 
  The following sections contain brief overviews of each of the address classes and their types.
