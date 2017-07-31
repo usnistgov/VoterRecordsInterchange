@@ -254,7 +254,7 @@ The UML model shows 3 types of transaction requests that would be sent from an O
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequestV23.png" width="900"/>
+<img src="Figures/VoterRegistrationRequestV23.png" width="1000"/>
 
 **Figure 4 - Voter Records Request UML class diagram**
 </div>
@@ -281,7 +281,7 @@ This section contains a brief overview of voter records response transactions. T
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponseV23.png" width="900"/>
+<img src="Figures/VoterRegistrationResponseV23.png" width="1000"/>
 
 **Figure 5 - Voter Records Response UML class diagram**
 </div>
@@ -445,7 +445,7 @@ The schema (and instance files) imports two external schemas:
 
 1.	The W3C digital signature schema, used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
 include a digital signature on XML instance files.
-2.	The FGDC schema[10], which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` and other elements using a namespace pf `addr`.
+2.	The FGDC schema[10], which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
 
 Schema Definition:
 
