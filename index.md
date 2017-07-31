@@ -208,7 +208,7 @@ Note that this specification addresses U.S. governmental elections and is not in
 <br>
 
 # Overview of Digital OVR Transactions as Implemented by this Specification
-This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [8], which is used for voter addresses in this specification.  Lastly, it includes some examples of XML usage.
+This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [8], which is used for voter addresses in this specification.
 
 <br>
 
@@ -239,7 +239,7 @@ Currently, VR authorities are typically the back-end components of actual state 
 
 The submission of a digital registration form to a VR authority represents a "request" transaction.  The "response" transaction from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  For a successful registration, the response could also include additional information such as the voter's polling place and list of districts that the voter resides within.
 
-Accordingly, the UML data model built for the digital OVR submission use case in reality is two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration response transaction, as shown in the following figures and described in the succeeding sections:
+Accordingly, the UML data model built for the digital OVR submission use case in reality is two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration response transaction, as shown in the following sections and figures.
 
 <br>
 
@@ -247,44 +247,50 @@ Accordingly, the UML data model built for the digital OVR submission use case in
 This section contains a brief overview of voter records request transactions.
 The UML model shows 3 types of transaction requests that would be sent from an OVR submitter to a VR system:
 
-- Request a registration using the NVRA form.
-- Request a registration using the FPCA form.
-- Request a ballot along with the FPCA registration.
+- Request a registration for a voter using the digital NVRA form.
+- Request a registration for a voter using the digital FPCA form.
+- Request a registration for a voter using the digital FPCA form and also request a ballot.
+
+<br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequestV23.png" width="800"/>
+<img src="Figures/VoterRegistrationRequestV23.png" width="900"/>
 
 **Figure 4 - Voter Records Request UML class diagram**
 </div>
 
-An OVR submitter essentially specifies the correct form (nvra or fpca) and the type of request (registration, registration plus ballot-request). The registration request is valid for either form, whereas for the FPCA, it is possible to register and request a ballot at the same time. The VoterRegistration class contains the remaining data elements, all taken from information contained on the digital form.  
+An OVR submitter essentially specifies the correct form ("nvra" or "fpca") and the type of request ("registration", "registration" AND "ballot-request"). The registration request is valid for either form, whereas for the FPCA, it is possible to register and request a ballot at the same time. The VoterRegistration class contains the remaining data elements, all taken from information contained on the digital form.  
 
 The AdditionalInfo class is used for information
 not addressed in this schema by other elements and attributes, e.g., state-specific
 information that does not "fit" in any other element. The information will thus be
 highly specific to the generating application, and consuming applications must
-"know" the meaning of the information to make use of it.  
+"know" the meaning of the information to make use of it.
+
+Both the registration request and response models contain a class ExternalIdentifier, which is used to associate an identifier with an item.  In the case of the request model, it is used optionally to associate an identifier to the political party, and in the response model, to optionally associate identifiers with political geography such as precincts and districts.
 
 <br>
 
 ### Voter Records Response Transaction
-This section contains a brief overview of voter records response transactions. The UML is considerably simpler than the request model in that a response generally contains little data other than the result of the request, which are:
+This section contains a brief overview of voter records response transactions. The UML is simpler than the request model in that a response generally contains little data other than the results of the request, which are:
 
-- RegistrationSuccess: the registration request succeeded.
-- RegistrationRejection.
-- RegistrationAcknowledgement.
+- The registration request succeeded.
+- The registration request was rejected, including a reason for the rejection.
+- The registration request was acknowledged, but no further status is available.
+
+<br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponseV23.png" width="800"/>
+<img src="Figures/VoterRegistrationResponseV23.png" width="900"/>
 
 **Figure 5 - Voter Records Response UML class diagram**
 </div>
 
-*This use case also includes the use of the same data to request a change of address and/or name to an existing voter record -- just as a paper NVRA form can be used both registration and update.
+Often, a successful registration includes the voter's assigned polling place and precinct, the location of the local election authority, and a list of districts/contests that are on the voter's ballot.  In the UML model, the RegistrationSuccess class optionally includes these items.
 
-Use Case: Digital FPCA Submission
+When a registration request fails, the model specifies nine possible reasons plus "other", which can be used to specify an alternate reason. The "incomplete" value can be used as a catch-all for reasons other than those specified.
 
-Analogous to the above use case, but based on the FPCA form.This use case also includes the use of the same data to request a change of address and/or name and/or absentee voter status to an existing voter record. It can also include state-specific fields (see below).*
+The registration acknowledgement is simply that; the VR system acknowledging that the request was accepted but has not been acted upon yet.
 
 <br>
 
@@ -381,8 +387,6 @@ The general class provides a "catch-all" way to handle addresses that do not con
 
 A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples.
 <br>
-
-## XML Usage examples
 
 <br>
 
@@ -1881,6 +1885,9 @@ Schema definition:
     </xsd:complexType>
 
 <br>
+
+# XML/JSON Usage examples
+This section will contain examples of usage.
 
 # Appendices
 
