@@ -7,22 +7,29 @@
 
 **August 2017**
 
-    NIST Special Publication series 1500 is intended to capture external perspectives related to NIST standards, measurement, and
-    testing-related efforts. These external perspectives can come from industry, academia, government, and others. These reports are
-    intended to document external perspectives and do not necessarily represent official NIST positions.
+v1
 
-    Certain commercial entities, equipment, or materials may be identified in this document in order to describe an experimental
-    procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it
-    intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose.
+    NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
+    standards, measurement, and testing-related efforts. These external perspectives can come from
+    industry, academia, government, and others. These reports are intended to document external
+    perspectives and do not necessarily represent official NIST positions.
 
-    There may be references in this publication to other publications currently under development by NIST in accordance with its
-    assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by
-    federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current
-    requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal
-    agencies may wish to closely follow the development of these new publications by NIST.
+    Certain commercial entities, equipment, or materials may be identified in this document in order
+    to describe an experimental procedure or concept adequately. Such identification is not intended
+    to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities,
+    materials, or equipment are necessarily the best available for the purpose.
 
-    Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST.
-    All NIST publications are available at http://www.nist.gov/publication-portal.cfm.
+    There may be references in this publication to other publications currently under development by
+    NIST in accordance with its assigned statutory responsibilities. The information in this
+    publication, including concepts and methodologies, may be used by federal agencies even before the
+    completion of such companion publications. Thus, until each publication is completed, current
+    requirements, guidelines, and procedures, where they exist, remain operative. For planning and
+    transition purposes, federal agencies may wish to closely follow the development of these new
+    publications by NIST.
+
+    Organizations are encouraged to review all draft publications during public comment periods and
+    provide feedback to NIST. All NIST publications are available at
+    http://www.nist.gov/publication-portal.cfm.
 
     National Institute of Standards and Technology
     Attn: Software and Systems Division, Information Technology Laboratory
@@ -122,32 +129,36 @@ In addition to the above acknowledgments, the editor also gratefully acknowledge
 <br>
 
 # Executive Summary
-This is a draft specification of a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification contains an overview of the supported use cases as well as a documentation and usage of an XML schema that was generated from a UML model.
+This is a draft specification of a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification contains an overview of the supported use cases as well as a documentation and usage of XML (eXtensible Markup Language[1]) and JSON (JavaScript Object Notation[2]) schemas.
 
 The VRI specification is transaction oriented, supporting digital voter registration (VR) application requests transmitted to VR systems from sources including
 
 - From State online voter registration (OVR) systems.
 - From State OVR systems by third party OVR systems.
-- By Motor Vehicle or other NVRA agencies.  
+- By Motor Vehicle or other voter registration-related agencies.  
 
-It supports response transactions returning from the VR system to these systems and agencies.  The registration forms supported include digital versions of the NVRA form, the FPCA form, or state specific forms. XML is used for the data format.
+It supports response transactions returning from the VR system to these systems and agencies.  The registration forms supported include digital versions of the NVRA (National Voter Registration Act[3]) form, the FPCA (Federal PostCard Application[4]) form, or state specific forms. XML and JSON are used as data formats.
 
-Future versions of this specification may contain support for additional use cases for other types of transactions such as for voter record maintenance, and may contain additional data formats including JSON.
+Future versions of this specification may contain support for additional use cases for other types of transactions such as for voter record maintenance.
 
-The XML schema associated with this specification is generated from a UML (Unified Modeling Language) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML or other formats (e.g., JSON) can be generated or derived from the UML model.
+The XML schema associated with this specification is generated from a UML (Unified Modeling Language[5]) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML and JSON can be generated or derived from the UML model.
 
 <br>
 
 # Introduction
-This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) or similar portals made to VR systems, and responses to the requests returning from the VR system. The specification includes a data model in UML (Unified Modeling Language) that itemizes and defines the data involved in voter records data interchange related to registration, and that is used to derive an XML schema.
+This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) or similar portals made to voter registration (VR) systems, and responses to the requests returning from the VR system. The specification includes XML (eXtensible Markup Language[1]) and JSON (JavaScript Object Notation[2]) schemas.
 
 The primary features of this specification include:
 
-* Capability to specify voter registration requests and responses when using the NVRA or FPCA forms or other State forms.
+* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[3]) or FPCA (Federal PostCard Application[4]) forms or other State forms.
 
-* Detailed instructions for implementation and use of the XML schema.
+* A data model in UML (Unified Modeling Language[5]) that itemizes and defines the data involved in voter records data interchange related to registration, and that is used to derive the XML/JSON schemas.
+
+* Detailed instructions for implementation and use of the XML/JSON schemas.
 
 * The specification is easily extensible to additional use cases for other sorts of registration transactions such as for voter record maintenance.
+
+
 
 <br>
 
@@ -180,11 +191,11 @@ NIST and a community of U.S. election officials, analysts, and voting system tec
 
 4.	DMV Match: Subsets of such digital applications exchanged between state VR systems and DMV or similar systems, to perform driver's license data matching as part of OVR processing.
 
-5.	DMV Notification: Data exchanged by DMV or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
+5.	DMV Notification: Data exchanged by DMV (Department of Motor Vehicles) or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
-6.	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC system [need a ref], or as part of inter-state cross-check activities.
+6.	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[6]) system, or as part of inter-state cross-check activities.
 
-7.	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS [need a ref]reporting.
+7.	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[7])reporting.
 
 The focus of this specification is implementation of the first use case for digital OVR submission, because it is the common basis of current efforts to develop new OVR systems, as an increasing number of states pass legislation enabling or requiring it. This initial focus was intended to quickly establish a baseline abstract data model as the basis for extension in later versions on other use cases.
 
@@ -197,7 +208,7 @@ Note that this specification addresses U.S. governmental elections and is not in
 <br>
 
 # Overview of Digital OVR Transactions as Implemented by this Specification
-This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [TBD ref], which is used for voter addresses in this specification.  Lastly, it includes some examples of XML usage.
+This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [8], which is used for voter addresses in this specification.  Lastly, it includes some examples of XML usage.
 
 <br>
 
@@ -230,20 +241,6 @@ The submission of a digital registration form to a VR authority represents a "re
 
 Accordingly, the UML data model built for the digital OVR submission use case in reality is two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration response transaction, as shown in the following figures and described in the succeeding sections:
 
-<div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequestV23.png" height="600"/>
-
-**Figure 4 - Voter Records Request UML class diagram**
-</div>
-
-<br>
-
-<div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponseV23.png" height="600"/>
-
-**Figure 5 - Voter Records Response UML class diagram**
-</div>
-
 <br>
 
 ### Voter Records Request Transaction
@@ -252,6 +249,12 @@ The voter records request UML model shows 3 types of transaction requests:
 Request a registration with the NVRA form
 Request a registration via the FPCA form
 Request a ballot along with the FPCA registration
+
+<div class="text-center" markdown="1">
+<img src="Figures/VoterRegistrationRequestV23.png" height="600"/>
+
+**Figure 4 - Voter Records Request UML class diagram**
+</div>
 
 The VoterRegistration class contains data elements for voter name, address, etc., with other associated classes to describe items such as
 
@@ -262,6 +265,11 @@ Need to describe data model elements and show zoomed data model.
 
 ### Voter Records Request Transaction
 
+<div class="text-center" markdown="1">
+<img src="Figures/VoterRegistrationResponseV23.png" height="600"/>
+
+**Figure 5 - Voter Records Response UML class diagram**
+</div>
 
 *This use case also includes the use of the same data to request a change of address and/or name to an existing voter record -- just as a paper NVRA form can be used both registration and update.
 
@@ -272,16 +280,16 @@ Analogous to the above use case, but based on the FPCA form.This use case also i
 <br>
 
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
-Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address data Standard [TBD ref], issued by the Federal Geographic Data Committee (FGDC) [need ref] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS.
+Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address data Standard[9], issued by the Federal Geographic Data Committee (FGDC)[10] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service).
 
-Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups and 13 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
+Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups consisting of 13 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
 
 1. Thoroughfare Classes - 5 address types
 2. Landmark Classes - 2 address types
 3. Postal Deliver Classes - 3 address types
 4. General Class - 3 address types
 
-The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML schema includes the FGDC XML schema and maps the `<Address>` group to the 13 different address types that constitute the 4 classes, as shown in figure 6.
+The VoterRegistration class in the UML model has four distinct types of addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address. The VRI XML/JSON schemas include the FGDC XML schema and map the use of `<Address>` to one of the 13 different address types, as shown in figure 6.
 
 <div class="text-center" markdown="1">
 <img src="Figures/addrxsd.png" height="600"/>
@@ -294,38 +302,37 @@ The VoterRegistration class in the UML model has four distinct types of addresse
 There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of the 3 different types.  The following sections contain brief overviews of each of the address classes and their types.
 
 ### Thoroughfare Classes
-Thoroughfare addresses specify a location by reference to a thoroughfare. A thoroughfare is defined as a "road or part of a road or other access route along which a delivery point can be accessed"(UPU Publication S42-4 (sec. 5.2.9)). A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
+Most business and residential addresses are Numbered Thoroughfare Addresses. They specify a location by reference to a thoroughfare, which is defined as a "road or part of a road or other access route along which a delivery point can be accessed"[9]. A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
 
-- Numbered Thoroughfare Address ("123 Main Street")
-- Intersection Address ("Fifth Avenue and Main Street")
-- Two Number Address Range ("405-411 West Green Street")
-- Four Number Address Range ("900-962, 901-963 Milton Street")
-- Unnumbered Thoroughfare Address ("Forest Service Road 698")
+- Numbered Thoroughfare Address, e.g., *123 Main Street*.
+- Intersection Address, e.g., *Fifth Avenue and Main Street*.
+- Two Number Address Range, e.g., *405-411 West Green Street*.
+- Four Number Address Range, e.g., *900-962, 901-963 Milton Street*.
+- Unnumbered Thoroughfare Address, e.g., *Forest Service Road 698*.
 
-Most business and residential addresses are Numbered Thoroughfare Addresses. Unnumbered Thoroughfare Addresses are used for those areas where no address numbers have been assigned and the addresses often include only the thoroughfare name.
-
+Unnumbered Thoroughfare Addresses are used for those areas where no address numbers have been assigned and the addresses often include only the thoroughfare name.
 
 ### Landmark Classes
 Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context, e.g., a large statue or structure such as an apartment complex. The landmark address classes are:
 
-- Landmark Address ("Statue of Liberty")
-- Community Address ("123 Urbanizacion Los Olmos")
+- Landmark Address, e.g., *Statue of Liberty*.
+- Community Address, e.g., *123 Urbanizacion Los Olmos*.
 
 ### Postal Delivery Classes
-Postal delivery addresses specify points of postal delivery that have no definite relation to the location of the recipient, such as a post office box, rural route box, overseas military address, or general delivery office. The USPS specifies each class in detail in USPS Publication 28 [need ref]. The postal delivery classes are:
+Postal delivery addresses specify points of postal delivery that have no definite relation to the location of the recipient, such as a post office box, rural route box, overseas military address, or general delivery office. The USPS specifies each class in detail in USPS Publication 28[10]. The postal delivery classes are:
 
-- USPS Postal Delivery Box ("PO Box 16953")
-- USPS Postal Delivery Route ("RR 1, Box 100")
-- USPS General Delivery Office ("General Delivery")
+- USPS Postal Delivery Box, e.g., *PO Box 16953*.
+- USPS Postal Delivery Route, e.g., *RR 1, Box 100*.
+- USPS General Delivery Office, e.g., *General Delivery*.
 
 ### General Class
 The general class provides a "catch-all" way to handle addresses that do not conform to any of the thoroughfare, landmark, or postal classes, including non-U.S. addresses. There are three types:
 
-1. The complete address as a single unparsed string of text (Voter Address = PO Box 1511, Ames, IA 50010)
-2. The complete address with place, state and zip code parsed out to a single field (Voter Address = PO Box 1511; Place State ZIP = Ames, IA 50010)
-3. The complete address with place, state and zip code parsed out to separate fields (Voter Address = PO Box 1511; Complete Place Name = Ames; State Name = IA; Zip Code = 50010)
+1. The complete address as a single unparsed string of text, e.g., *Voter Address = PO Box 1511, Ames, IA 50010*.
+2. The complete address with place, state and zip code parsed out to a single field, e.g., *Voter Address = PO Box 1511; Place State ZIP = Ames, IA 50010*.
+3. The complete address with place, state and zip code parsed out to separate fields, e.g., *Voter Address = PO Box 1511; Complete Place Name = Ames; State Name = IA; Zip Code = 50010*.
 
-A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples [need ref].
+A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples.
 <br>
 
 ## XML Usage examples
@@ -1899,35 +1906,36 @@ U.S. citizens residing outside the United States.
 <br>
 
 ## References
-Bipartisan Policy Center, The American Voting Experience: Report and Recommendations of the Presidential Commission on Election Administration [https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/](https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/).
+[1] W3C, Extensible Markup Language (XML) 1.0 (Fifth Edition), W3C
+Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org/TR/xml/).
 
-Election Assistance Commission, Election Administration and Voting Survey (EAVS),
+[2] *JSON References*
+
+[3] Election Assistance Commission, National Voter Registration Form (NVRA), [https://www.eac.gov/voters/national-mail-voter-registration-form/](https://www.eac.gov/voters/national-mail-voter-registration-form/).
+
+[4] Federal Voting Assistance Program (FVAP), Federal Post Card Application (FPCA), [https://www.fvap.gov/eo/overview/materials/forms](https://www.fvap.gov/eo/overview/materials/forms).
+
+[5] Object Management Group (OMG), UML Specification version 1.1 (OMG
+document ad/97-08-11) September 22, 2011, [http://omg.org/](http://omg.org/).
+
+[6] Election Assistance Commission, Election Administration and Voting Survey (EAVS),
 [http://www.eac.gov](http://www.eac.gov).
 
-Election Assistance Commission, National Voter Registration Form (NVRA), [https://www.eac.gov/voters/national-mail-voter-registration-form/](https://www.eac.gov/voters/national-mail-voter-registration-form/).
+[7] Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
 
-Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
+[8] Bipartisan Policy Center, The American Voting Experience: Report and Recommendations of the Presidential Commission on Election Administration [https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/](https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/).
 
-Federal Geographic Data Committee (FGDC), United States Thoroughfare,
+[9] (UPU Publication S42-4 (sec. 5.2.9)) *need ref*
+
+[10] Federal Geographic Data Committee (FGDC), United States Thoroughfare,
 Landmark, and Postal Address Data Standard,
 [http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html](http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html).
 
-Federal Voting Assistance Program (FVAP), Federal Post Card Application (FPCA), [https://www.fvap.gov/eo/overview/materials/forms](https://www.fvap.gov/eo/overview/materials/forms).
-
-Object Management Group (OMG), UML Specification version 1.1 (OMG
-document ad/97-08-11) September 22, 2011, [http://omg.org/](http://omg.org/).
-
-Open Civic Data, OCD Identifiers,
+[11] Open Civic Data, OCD Identifiers,
 [http://opencivicdata.readthedocs.org/en/latest/ocdids.html](http://opencivicdata.readthedocs.org/en/latest/ocdids.html).
 
-W3C, Extensible Markup Language (XML) 1.0 (Fifth Edition), W3C
-Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org/TR/xml/).
-
-W3C, XML Signature Syntax and Processing (Second Edition), W3C
+[12] W3C, XML Signature Syntax and Processing (Second Edition), W3C
 Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w3.org/TR/xmldsig-core/).
-
-###### \[1\]
-UML reference
 
 <br>
 
