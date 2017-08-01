@@ -2263,7 +2263,7 @@ An example of the JSON statements for the voter registration request transaction
 ## Example: NVRA Voter Records Response in XML
 This last example shows a voter records response transaction in XML.
 
-*Need to fix a few things and use a NIST permanent URL for schemaLocation and validate**
+*Need to fix a few things and use a NIST permanent URL for schemaLocation and validate*
 
     <?xml version="1.0" encoding="UTF-8"?>
     <VoterRecordsResponse xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange_V23.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
