@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v3
+v4
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -38,7 +38,7 @@ v3
 
 ## Table of Contents
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - [**NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0**](#nist-sp-1500-103-voter-records-interchange-common-data-format-specification-draft-version-10)
 	- [Table of Contents](#table-of-contents)
@@ -50,18 +50,18 @@ v3
 	- [Motivation and Methodology](#motivation-and-methodology)
 - [Overview of Digital OVR Transactions as Implemented by this Specification](#overview-of-digital-ovr-transactions-as-implemented-by-this-specification)
 	- [Digital OVR Submission](#digital-ovr-submission)
-	  - [Voter Records Request Transaction](#voter-records-request-transaction)
-	  - [Voter Records Request Transaction](#voter-records-request-transaction)
+		- [Voter Records Request Transaction](#voter-records-request-transaction)
+		- [Voter Records Response Transaction](#voter-records-response-transaction)
 	- [The U.S. Thoroughfare, Landmark, and Postal Address Data Standard](#the-us-thoroughfare-landmark-and-postal-address-data-standard)
 		- [Thoroughfare Classes](#thoroughfare-classes)
 		- [Landmark Classes](#landmark-classes)
 		- [Postal Delivery Classes](#postal-delivery-classes)
 		- [General Class](#general-class)
-	- [XML Usage examples](#xml-usage-examples)
 - [Voter Records Interchange XML Schema](#voter-records-interchange-xml-schema)
 	- [Schema Stylistic Conventions](#schema-stylistic-conventions)
-	- [Imports](#imports)
 	- [Roots](#roots)
+	- [Imports](#imports)
+	- [Interfaces](#interfaces)
 	- [Enumerations](#enumerations)
 		- [*The **AssertionValue** Enumeration*](#the-assertionvalue-enumeration)
 		- [*The **BallotReceiptMethod** Enumeration*](#the-ballotreceiptmethod-enumeration)
@@ -95,6 +95,7 @@ v3
 		- [*The **Party** Element*](#the-party-element)
 		- [*The **RegistrationHelper** Element*](#the-registrationhelper-element)
 		- [*The **RegistrationProxy** Element*](#the-registrationproxy-element)
+		- [*The **ReportingUnit** Element*](#the-reportingunit-element)
 		- [*The **Signature (PreviousSignature)** Element*](#the-signature-previoussignature-element)
 		- [*The **VoterClassification** Element*](#the-voterclassification-element)
 		- [*The **VoterId** Element*](#the-voterid-element)
@@ -104,11 +105,11 @@ v3
 			- [*The **RegistrationRejection** xsi:type*](#the-registrationrejection-xsitype)
 			- [*The **RegistrationSuccess** xsi:type*](#the-registrationsuccess-xsitype)
 		- [*The **VoterRegistration** Element*](#the-voterregistration-element)
+- [XML/JSON Usage examples](#xmljson-usage-examples)
 - [Appendices](#appendices)
 	- [Acronyms](#acronyms)
 	- [Glossary](#glossary)
 	- [References](#references)
-					- [\[1\]](#1)
 	- [UML Class Diagrams](#uml-class-diagrams)
 	- [File Download Locations](#file-download-locations)
 	- [XML Schema](#xml-schema)
