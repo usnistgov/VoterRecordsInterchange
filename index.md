@@ -1918,9 +1918,9 @@ Schema definition:
 # XML/JSON Usage examples
 This section contains several examples showing voter records request and response transactions in XML and JSON, all using the NVRA form.  The examples are:
 
-- Voter Registration Request - XML
-- Voter Registration Request - JSON
-- Voter Registration Response - XML
+- Voter Registration Request - [XML](#example-nvra-voter-registration-request-in-xml)
+- Voter Registration Request - [JSON](#example-nvra-voter-registration-request-in-json)
+- Voter Registration Response - [XML](#example-nvra-voter-records-response-in-xml)
 
 In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[\[8\]](#references) is vital.
 
@@ -2420,9 +2420,9 @@ document ad/97-08-11) September 22, 2011, [http://omg.org/](http://omg.org/).
 Landmark, and Postal Address Data Standard,
 [http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html](http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html).
 
-[9] Federal Geographic Data Committee [https://www.fgdc.gov/](https://www.fgdc.gov/).
+[9] Federal Geographic Data Committee (FGDC), [https://www.fgdc.gov/](https://www.fgdc.gov/).
 
-[10] U.S. Postal Service (USPS). "Postal Addressing Standards." Publication 28, April 2010, [http://pe.usps.gov/cpim/ftp/pubs/Pub28/Pub28.pdf](http://pe.usps.gov/cpim/ftp/pubs/Pub28/Pub28.pdf).
+[10] U.S. Postal Service (USPS), "Postal Addressing Standards" Publication 28, April 2010, [http://pe.usps.gov/cpim/ftp/pubs/Pub28/Pub28.pdf](http://pe.usps.gov/cpim/ftp/pubs/Pub28/Pub28.pdf).
 
 [11] W3C, XML Signature Syntax and Processing (Second Edition), W3C
 Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w3.org/TR/xmldsig-core/).
