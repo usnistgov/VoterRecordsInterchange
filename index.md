@@ -1929,11 +1929,12 @@ This example shows a fictitious voter registration for Jackie Nichole Davidson i
 
 An example of the XML statements for the voter registration request transaction is as follows:
 
-*need to setup name spaces and use a NIST permanent URL for schemaLocation*
+*need to use a NIST permanent URL for schemaLocation and validate*
 
     <?xml version="1.0" encoding="utf-8"?>
     <!-- DISCLAIMER: All persons listed below are fictitious -->
-    <VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange_V23.xsd">
+    <VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange_V23.xsd"
+    xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
     	<GeneratedDate>2017-02-10</GeneratedDate>
     	<Issuer>Ohio Secretary of State</Issuer>
     	<TransactionId>2a642eb5-169e-4a3b-8899-adc7ea6d00d0</TransactionId>
@@ -2253,7 +2254,50 @@ An example of the JSON statements for the voter registration request transaction
     }
 
 ## Example: NVRA Voter Records Response in XML
-some text
+This last example shows a voter records response transaction in XML.
+
+*Need to fix a few things and use a NIST permanent URL for schemaLocation and validate**
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <VoterRecordsResponse xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange_V23.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
+    	<Action>registration-created</Action>
+    	<Districts>
+    		<Name>Akron</Name>
+    		<Type>municipality</Type>
+    	</Districts>
+    	<EffectiveDate>2017-07-31</EffectiveDate>
+    	<ElectionAdministration>
+    		<ContactMethod>
+    			<Type>phone</Type>
+    			<Value>3306435200</Value>
+    		</ContactMethod>
+    		<Location>
+    			<Address>
+    				<GeneralAddressClass_type>
+    					<addr:USPSGeneralDeliveryPoint>470 GRANT ST</addr:USPSGeneralDeliveryPoint>
+    					<addr_type:PlaceStateZip>AKRON, OH 44311</addr_type:PlaceStateZip>
+    				</GeneralAddressClass_type>
+    			</Address>
+    		</Location>
+    		<Name>Summit</Name>
+    	</ElectionAdministration>
+    	<PollingPlace>
+    		<Location>
+    			<Address>
+    				<GeneralAddressClass_type>
+    					<addr:USPSGeneralDeliveryPoint>630 MULL AVE</addr:USPSGeneralDeliveryPoint>
+    					<addr_type:PlaceStateZip>AKRON, OH 44313</addr_type:PlaceStateZip>
+    				</GeneralAddressClass_type>
+    			</Address>
+    		</Location>
+    		<Name>PERKINS BUILDING</Name>
+    		<Type>polling-place</Type>
+    	</PollingPlace>
+    	<Precinct>
+    		<Name>AKRON 4-F</Name>
+    		<Type>precinct</Type>
+    	</Precinct>
+    </VoterRecordsResponse>
 
 # Appendices
 
@@ -2911,3 +2955,4 @@ Other files or updates to the files may be added.  The repository can be found v
 <br>
 
 ## JSON schema
+Under development, will be forthcoming.
