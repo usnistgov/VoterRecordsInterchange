@@ -118,7 +118,7 @@ v3
 <br>
 
 ## Acknowledgements
-The editor wishes to thank his colleagues of the National Institute of Standards and Technology VVSG-Interoperability Public Working Group, who contributed to the specification's technical content.  The editor gratefully acknowledges and appreciates the following contributors for their keen and insightful assistance with developing this specification: (this should contain names of all in VRI subgroup)
+The editor wishes to thank his colleagues of the National Institute of Standards and Technology VVSG-Interoperability Public Working Group, who contributed to the specification's technical content.  The editor gratefully acknowledges and appreciates the following contributors for their keen and insightful assistance with developing this specification: *(this should contain names of all in VRI subgroup)*
 
 * TBD
 * TBD
@@ -129,7 +129,7 @@ In addition to the above acknowledgments, the editor also gratefully acknowledge
 <br>
 
 # Executive Summary
-This is a draft specification of a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification contains an overview of the supported use cases as well as a documentation and usage of XML (eXtensible Markup Language[1]) and JSON (JavaScript Object Notation[2]) schemas.
+This is a draft specification of a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group.  The specification contains an overview of the supported use cases as well as a documentation and usage of XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
 
 The VRI specification is transaction oriented, supporting digital voter registration (VR) application requests transmitted to VR systems from sources including
 
@@ -146,7 +146,7 @@ The XML schema associated with this specification is generated from a UML (Unifi
 <br>
 
 # Introduction
-This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) or similar portals made to voter registration (VR) systems, and responses to the requests returning from the VR system. The specification includes XML (eXtensible Markup Language[1]) and JSON (JavaScript Object Notation[2]) schemas.
+This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) or similar portals made to voter registration (VR) systems, and responses to the requests returning from the VR system. The specification includes XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
 
 The primary features of this specification include:
 
@@ -163,7 +163,7 @@ The primary features of this specification include:
 <br>
 
 ## Purpose
-The purpose of this specification is to provide a data interchange format in XML for voter records so as to facilitate the development of OVR systems within States. Advantages of using this specification include:
+The purpose of this specification is to provide a data interchange formats in XML and JSON for voter records so as to facilitate the development of OVR systems within States. Advantages of using this specification include:
 
 * A ready data interchange format for online voter registration systems, removing the need for individual OVR system development projects to define data models and formats.
 
@@ -295,7 +295,7 @@ The registration acknowledgement is simply that; the VR system acknowledging tha
 <br>
 
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
-Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address data Standard[9], issued by the Federal Geographic Data Committee (FGDC)[10] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service).
+Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[8], issued by the Federal Geographic Data Committee (FGDC)[9] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service).
 
 Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups consisting of 13 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
 
@@ -355,7 +355,7 @@ There are 13 different address types but only 11 are shown, as the General Class
  The following sections contain brief overviews of each of the address classes and their types.
 
 ### Thoroughfare Classes
-Most business and residential addresses are Numbered Thoroughfare Addresses. They specify a location by reference to a thoroughfare, which is defined as a "road or part of a road or other access route along which a delivery point can be accessed"[9]. A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
+Most business and residential addresses are Numbered Thoroughfare Addresses. They specify a location by reference to a thoroughfare, i.e., a road or part of a road or other access route along which a delivery point can be accessed.  A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
 
 - Numbered Thoroughfare Address, e.g., *123 Main Street*.
 - Intersection Address, e.g., *Fifth Avenue and Main Street*.
@@ -443,9 +443,9 @@ Schema Definition:
 ## Imports
 The schema (and instance files) imports two external schemas:
 
-1.	The W3C digital signature schema, used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
+1.	The W3C digital signature schema[11], used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
 include a digital signature on XML instance files.
-2.	The FGDC schema[10], which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
+2.	The FGDC schema[8], which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
 
 Schema Definition:
 
@@ -458,7 +458,7 @@ Schema Definition:
 <br>
 
 ## Interfaces
-The schema includes an interface that maps the `Address` type to a choice of one of the address types from the FGDC schema[10].
+The schema includes an interface that maps the `Address` type to a choice of one of the address types from the FGDC schema.
 
       <!-- === Interface Address === -->
       <xsd:group name="Address">
@@ -572,7 +572,7 @@ Value | Definition
 `fips` | For FIPS codes.
 `local-level` | For a code that is specific to a county or other similar locality.
 `national-level`  | For a code that is used at the national level other than `ocd-id` or `fips`.
-`ocd-id` | For Open Civic Data identifiers.
+`ocd-id` | For Open Civic Data identifiers[12].
 `state-level` | For a code that is specific to a state.
 `other` | Used when the type of code is not included in this enumeration.
 
@@ -1632,7 +1632,7 @@ The root element for request transactions.
 For defining items pertaining to the status and type of the voter records request and when it was
 generated.  `<VoterRecordsRequest>` includes the `<VoterRegistration>` element to specify
 various information about the voter in question. The optional `<Signature>` sub-element is
-used for an XML digital signature [9] on XML instance files. `<Signature>` must be the last
+used for an XML digital signature[11] on XML instance files. `<Signature>` must be the last
 sub-element of `<VoterRecordsRequest>`.
 
 Element | Multiplicity | Type | Element Description
@@ -1686,7 +1686,7 @@ differ from the type of registration action requested
 
 `<VoterRecordsResponse>` optionally includes the `<TransactionId>` sub-element associated
 with the voter records request.  The optional `<Signature>` sub-element is used for an XML
-digital signature [9] on XML instance files. `<Signature>` must be the last sub-element of
+digital signature[11] on XML instance files. `<Signature>` must be the last sub-element of
 `<VoterRecordsResponse>`.
 
 Element | Multiplicity | Type | Element Description
@@ -2011,7 +2011,8 @@ U.S. citizens residing outside the United States.
 [1] W3C, Extensible Markup Language (XML) 1.0 (Fifth Edition), W3C
 Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org/TR/xml/).
 
-[2] *JSON References*
+[2] JavaScript Object Notation, 
+[http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 [3] Election Assistance Commission, National Voter Registration Form (NVRA), [https://www.eac.gov/voters/national-mail-voter-registration-form/](https://www.eac.gov/voters/national-mail-voter-registration-form/).
 
@@ -2020,24 +2021,24 @@ Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org
 [5] Object Management Group (OMG), UML Specification version 1.1 (OMG
 document ad/97-08-11) September 22, 2011, [http://omg.org/](http://omg.org/).
 
-[6] Election Assistance Commission, Election Administration and Voting Survey (EAVS),
+[6] Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
+
+[7] Election Assistance Commission, Election Administration and Voting Survey (EAVS),
 [http://www.eac.gov](http://www.eac.gov).
 
-[7] Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
-
-[8] Bipartisan Policy Center, The American Voting Experience: Report and Recommendations of the Presidential Commission on Election Administration [https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/](https://bipartisanpolicy.org/the-presidential-commission-on-election-administration/).
-
-[9] (UPU Publication S42-4 (sec. 5.2.9)) *need ref*
-
-[10] Federal Geographic Data Committee (FGDC), United States Thoroughfare,
+[8] Federal Geographic Data Committee (FGDC), United States Thoroughfare,
 Landmark, and Postal Address Data Standard,
 [http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html](http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html).
 
-[11] Open Civic Data, OCD Identifiers,
-[http://opencivicdata.readthedocs.org/en/latest/ocdids.html](http://opencivicdata.readthedocs.org/en/latest/ocdids.html).
+[9] Federal Geographic Data Committee [https://www.fgdc.gov/](https://www.fgdc.gov/).
 
-[12] W3C, XML Signature Syntax and Processing (Second Edition), W3C
+[10] U.S. Postal Service (USPS). "Postal Addressing Standards." Publication 28, April 2010, [http://pe.usps.gov/cpim/ftp/pubs/Pub28/Pub28.pdf](http://pe.usps.gov/cpim/ftp/pubs/Pub28/Pub28.pdf).
+
+[11] W3C, XML Signature Syntax and Processing (Second Edition), W3C
 Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w3.org/TR/xmldsig-core/).
+
+[12] Open Civic Data, OCD Identifiers,
+[http://opencivicdata.readthedocs.org/en/latest/ocdids.html](http://opencivicdata.readthedocs.org/en/latest/ocdids.html).
 
 <br>
 
