@@ -1674,20 +1674,21 @@ Schema definition:
 The root element for response transactions.  
 
 For defining items pertaining to the status of a response to a voter records request.  
-`<VoterRecordsResponse>` is an abstract element with three `xsi:type`s that get used according to the type of response:
+`<VoterRecordsResponse>` is an abstract element with three types that get used according to the type of response:
 
 *	`<VoterRecordsResponse xsi:type="RegistrationAcknowledgement">`, used to indicate
-an acknowledgement only
+an acknowledgement.
 *	`<VoterRecordsResponse xsi:type="RegistrationRejection">`, used to indicate a
-failure and the type of failure
+failure and the type of failure.
 *	`<VoterRecordsResponse xsi:type="RegistrationSuccess">`, used to indication that a
-successful registration action occurred and the type of registration action, which may
-differ from the type of registration action requested
+successful registration action occurred as well as the type of registration action that occurred, which may
+differ from the type of registration action requested.
 
 `<VoterRecordsResponse>` optionally includes the `<TransactionId>` sub-element associated
 with the voter records request.  The optional `<Signature>` sub-element is used for an XML
-digital signature[\[11\]](#references) on XML instance files. `<Signature>` must be the last sub-element of
-`<VoterRecordsResponse>`.
+digital signature[\[11\]](#references) on XML instance files.
+
+`<Signature>` must be the last sub-element of `<VoterRecordsResponse>`.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
@@ -1758,9 +1759,9 @@ indicate the action that occurred, which may differ from what was requested.  Fo
 request for a new voter registration may succeed, but if the voter was already registered, the
 response may indicate a registration update as opposed to a registration create.
 
-The response also includes, optionally, information useful to the voter, including a description of
+The response also includes, optionally, other information useful to the voter, including a description of
 the voter's precinct and polling place, as well as the districts (i.e., contests) associated with the
-precinct.
+polling place.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
@@ -1813,7 +1814,7 @@ Element | Multiplicity | Type | Element Description
 `<LastDateOfUSResidency>` | 0 or 1 | `xsd:date` |
 `<MailingAddress>` | 0 or 1 | `Address` | Where the voter receives postal mail.
 `<Name>` | 1 | `Name` | Voter's name.
-`OverseasEmployer` |  |  |
+`<OverseasEmployer>` | 0 or 1 | `xsd:string` | Name of the voter's employer if the voter is employed in a non-U.S. location.
 `<Party>` | 0 or 1 | `Party` | Voter's political party.
 `<PreviousName>` | 0 or 1 | `Name` | A voter's previous name.
 `<PreviousRegistrationAddress>` | 0 or 1 | `Address` | Where the voter was previously registered.
