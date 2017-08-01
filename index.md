@@ -1916,11 +1916,15 @@ Schema definition:
 <br>
 
 # XML/JSON Usage examples
-This section contains a series of examples showing voter registration requests and responses in JSON and XML, using the NVRA form.  The examples are:
+This section contains several examples showing voter records request and response transactions in XML and JSON, all using the NVRA form.  The examples are:
 
 - Voter Registration Request - XML
 - Voter Registration Request - JSON
 - Voter Registration Response - XML
+
+In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[8] is vital.
+
+<br>
 
 ## Example: NVRA Voter Registration Request in XML
 This example shows a fictitious voter registration for Jackie Nichole Davidson in the State of Ohio using XML:
@@ -2034,6 +2038,7 @@ An example of the XML statements for the voter registration request transaction 
     				<addr_type:ZipCode>44720</ZipCode>
     			</NumberedThoroughfareAddress_type>
     		</RegistrationAddress>
+        <RegistrationForm>nvra</RegistrationForm>
     		<RegistrationMethod>voter-via-mail</RegistrationMethod>
     		<VoterClassification>
     			<Assertion>yes</Assertion>
@@ -2253,6 +2258,8 @@ An example of the JSON statements for the voter registration request transaction
     	}
     }
 
+<br>
+
 ## Example: NVRA Voter Records Response in XML
 This last example shows a voter records response transaction in XML.
 
@@ -2298,6 +2305,8 @@ This last example shows a voter records response transaction in XML.
     		<Type>precinct</Type>
     	</Precinct>
     </VoterRecordsResponse>
+
+<br>
 
 # Appendices
 
