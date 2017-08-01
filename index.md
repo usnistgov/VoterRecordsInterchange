@@ -1922,7 +1922,7 @@ This section contains several examples showing voter records request and respons
 - Voter Registration Request - JSON
 - Voter Registration Response - XML
 
-In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[8] is vital.
+In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[\[8\]](#references) is vital.
 
 <br>
 
