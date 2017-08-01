@@ -137,11 +137,11 @@ The VRI specification is transaction oriented, supporting digital voter registra
 - From State OVR systems by third party OVR systems.
 - By Motor Vehicle or other voter registration-related agencies.  
 
-It supports response transactions returning from the VR system to these systems and agencies.  The registration forms supported include digital versions of the NVRA (National Voter Registration Act[3]) form, the FPCA (Federal PostCard Application[4]) form, or state specific forms. XML and JSON are used as data formats.
+It supports response transactions returning from the VR system to these systems and agencies.  The registration forms supported include digital versions of the NVRA (National Voter Registration Act[\[3\]](#references)) form, the FPCA (Federal PostCard Application[\[4\]](#references)) form, or state specific forms. XML and JSON are used as data formats.
 
 Future versions of this specification may contain support for additional use cases for other types of transactions such as for voter record maintenance.
 
-The XML schema associated with this specification is generated from a UML (Unified Modeling Language[5]) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML and JSON can be generated or derived from the UML model.
+The XML schema associated with this specification is generated from a UML (Unified Modeling Language[\[5\]](#references)) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML and JSON can be generated or derived from the UML model.
 
 <br>
 
@@ -150,9 +150,9 @@ This document is a specification for a common data format (CDF) for voter record
 
 The primary features of this specification include:
 
-* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[3]) or FPCA (Federal PostCard Application[4]) forms or other State forms.
+* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[\[3\]](#references)) or FPCA (Federal PostCard Application[\[4\]](#references)) forms or other State forms.
 
-* A data model in UML (Unified Modeling Language[5]) that itemizes and defines the data involved in voter records data interchange related to registration, and that is used to derive the XML/JSON schemas.
+* A data model in UML (Unified Modeling Language[\[5\]](#references)) that itemizes and defines the data involved in voter records data interchange related to registration, and that is used to derive the XML/JSON schemas.
 
 * Detailed instructions for implementation and use of the XML/JSON schemas.
 
@@ -193,9 +193,9 @@ NIST and a community of U.S. election officials, analysts, and voting system tec
 
 5.	DMV Notification: Data exchanged by DMV (Department of Motor Vehicles) or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
-6.	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[6]) system, or as part of inter-state cross-check activities.
+6.	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[\[6\]](#references)) system, or as part of inter-state cross-check activities.
 
-7.	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[7])reporting.
+7.	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[\[7\]](#references))reporting.
 
 The focus of this specification is implementation of the first use case for digital OVR submission, because it is the common basis of current efforts to develop new OVR systems, as an increasing number of states pass legislation enabling or requiring it. This initial focus was intended to quickly establish a baseline abstract data model as the basis for extension in later versions on other use cases.
 
@@ -208,7 +208,7 @@ Note that this specification addresses U.S. governmental elections and is not in
 <br>
 
 # Overview of Digital OVR Transactions as Implemented by this Specification
-This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [8], which is used for voter addresses in this specification.
+This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [\[8\]](#references), which is used for voter addresses in this specification.
 
 <br>
 
@@ -295,7 +295,7 @@ The registration acknowledgement is simply that; the VR system acknowledging tha
 <br>
 
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
-Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[8], issued by the Federal Geographic Data Committee (FGDC)[9] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service).
+Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[\[8\]](#references), issued by the Federal Geographic Data Committee (FGDC)[\[9\]](#references) and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service).
 
 Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups consisting of 13 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
 
@@ -372,7 +372,7 @@ Landmark addresses specify a location by reference to a named landmark. A landma
 - Community Address, e.g., *123 Urbanizacion Los Olmos*.
 
 ### Postal Delivery Classes
-Postal delivery addresses specify points of postal delivery that have no definite relation to the location of the recipient, such as a post office box, rural route box, overseas military address, or general delivery office. The USPS specifies each class in detail in USPS Publication 28[10]. The postal delivery classes are:
+Postal delivery addresses specify points of postal delivery that have no definite relation to the location of the recipient, such as a post office box, rural route box, overseas military address, or general delivery office. The USPS specifies each class in detail in USPS Publication 28[\[10\]](#references). The postal delivery classes are:
 
 - USPS Postal Delivery Box, e.g., *PO Box 16953*.
 - USPS Postal Delivery Route, e.g., *RR 1, Box 100*.
@@ -443,9 +443,9 @@ Schema Definition:
 ## Imports
 The schema (and instance files) imports two external schemas:
 
-1.	The W3C digital signature schema[11], used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
+1.	The W3C digital signature schema[\[11\]](#references), used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
 include a digital signature on XML instance files.
-2.	The FGDC schema[8], which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
+2.	The FGDC schema[\[8\]](#references), which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
 
 Schema Definition:
 
@@ -572,7 +572,7 @@ Value | Definition
 `fips` | For FIPS codes.
 `local-level` | For a code that is specific to a county or other similar locality.
 `national-level`  | For a code that is used at the national level other than `ocd-id` or `fips`.
-`ocd-id` | For Open Civic Data identifiers[12].
+`ocd-id` | For Open Civic Data identifiers[\[12\]](#references).
 `state-level` | For a code that is specific to a state.
 `other` | Used when the type of code is not included in this enumeration.
 
@@ -1226,7 +1226,7 @@ Used in request AND response transactions.
 codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns,
 precincts, etc. Multiple occurrences of `<ExternalIdentifier>` can be used to associate
 multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-
-specific codes as well as OCD-IDs (Open Civic Data Identifiers [11]), as follows:
+specific codes as well as OCD-IDs (Open Civic Data Identifiers [\[11\]](#references)), as follows:
 
     <ExternalIdentifiers>
         <ExternalIdentifier>
@@ -1632,7 +1632,7 @@ The root element for request transactions.
 For defining items pertaining to the status and type of the voter records request and when it was
 generated.  `<VoterRecordsRequest>` includes the `<VoterRegistration>` element to specify
 various information about the voter in question. The optional `<Signature>` sub-element is
-used for an XML digital signature[11] on XML instance files. `<Signature>` must be the last
+used for an XML digital signature[\[11\]](#references) on XML instance files. `<Signature>` must be the last
 sub-element of `<VoterRecordsRequest>`.
 
 Element | Multiplicity | Type | Element Description
@@ -1686,7 +1686,7 @@ differ from the type of registration action requested
 
 `<VoterRecordsResponse>` optionally includes the `<TransactionId>` sub-element associated
 with the voter records request.  The optional `<Signature>` sub-element is used for an XML
-digital signature[11] on XML instance files. `<Signature>` must be the last sub-element of
+digital signature[\[11\]](#references) on XML instance files. `<Signature>` must be the last sub-element of
 `<VoterRecordsResponse>`.
 
 Element | Multiplicity | Type | Element Description
@@ -1936,7 +1936,7 @@ Acronym | Meaning
 **MIME** | Multipurpose Internet Mail Extensions
 **NIST** | National Institute of Standards and Technology
 **NVRA** | National Voter Registration Act
-**OCD-ID** | Open Civic Data Identifiers
+**OCD-ID** | Open Civic Data Identifier
 **OVR** | Online Voter Registration
 **SMS** | Short Message Service
 **UML** | Unified Modeling Language
@@ -2011,7 +2011,7 @@ U.S. citizens residing outside the United States.
 [1] W3C, Extensible Markup Language (XML) 1.0 (Fifth Edition), W3C
 Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org/TR/xml/).
 
-[2] JavaScript Object Notation, 
+[2] JavaScript Object Notation,
 [http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 
 [3] Election Assistance Commission, National Voter Registration Form (NVRA), [https://www.eac.gov/voters/national-mail-voter-registration-form/](https://www.eac.gov/voters/national-mail-voter-registration-form/).
