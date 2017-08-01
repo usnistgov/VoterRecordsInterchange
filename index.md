@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v4
+v5
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -38,7 +38,7 @@ v4
 
 ## Table of Contents
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [**NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0**](#nist-sp-1500-103-voter-records-interchange-common-data-format-specification-draft-version-10)
 	- [Table of Contents](#table-of-contents)
@@ -58,7 +58,7 @@ v4
 		- [Postal Delivery Classes](#postal-delivery-classes)
 		- [General Class](#general-class)
 - [Voter Records Interchange XML Schema](#voter-records-interchange-xml-schema)
-	- [Schema Stylistic Conventions](#schema-stylistic-conventions)
+	- [XML Schema Stylistic Conventions](#xml-schema-stylistic-conventions)
 	- [Roots](#roots)
 	- [Imports](#imports)
 	- [Interfaces](#interfaces)
@@ -106,6 +106,9 @@ v4
 			- [*The **RegistrationSuccess** xsi:type*](#the-registrationsuccess-xsitype)
 		- [*The **VoterRegistration** Element*](#the-voterregistration-element)
 - [XML/JSON Usage examples](#xmljson-usage-examples)
+	- [Example: NVRA Voter Registration Request in XML](#example-nvra-voter-registration-request-in-xml)
+	- [Example: NVRA Voter Registration Request in JSON](#example-nvra-voter-registration-request-in-json)
+	- [Example: NVRA Voter Records Response in XML](#example-nvra-voter-records-response-in-xml)
 - [Appendices](#appendices)
 	- [Acronyms](#acronyms)
 	- [Glossary](#glossary)
@@ -113,16 +116,15 @@ v4
 	- [UML Class Diagrams](#uml-class-diagrams)
 	- [File Download Locations](#file-download-locations)
 	- [XML Schema](#xml-schema)
+	- [JSON schema](#json-schema)
 
 <!-- /TOC -->
 
 <br>
 
 ## Acknowledgements
-The editor wishes to thank his colleagues of the National Institute of Standards and Technology VVSG-Interoperability Public Working Group, who contributed to the specification's technical content.  The editor gratefully acknowledges and appreciates the following contributors for their keen and insightful assistance with developing this specification: *(this should contain names of all in VRI subgroup)*
+The editor wishes to thank his colleagues of the National Institute of Standards and Technology Voter Records Interchange Public Working Group, who contributed to the specification's technical content.  The editor gratefully acknowledges and appreciates the following contributors for their keen and insightful assistance with developing this specification: *(this should contain names of all in VRI subgroup)*
 
-* TBD
-* TBD
 * TBD
 
 In addition to the above acknowledgments, the editor also gratefully acknowledges and appreciate other significant contributions from individuals and organizations involved in the NIST Voting Interoperability Public Working Group as well as in the public and private sectors, whose thoughtful and constructive comments improved the overall quality, thoroughness, and usefulness of this publication.
@@ -158,8 +160,6 @@ The primary features of this specification include:
 * Detailed instructions for implementation and use of the XML/JSON schemas.
 
 * The specification is easily extensible to additional use cases for other sorts of registration transactions such as for voter record maintenance.
-
-
 
 <br>
 
@@ -273,7 +273,7 @@ Both the registration request and response models contain a class ExternalIdenti
 <br>
 
 ### Voter Records Response Transaction
-This section contains a brief overview of voter records response transactions. The UML is simpler than the request model in that a response generally contains little data other than the results of the request, which are:
+This section contains a brief overview of voter records response transactions. The UML model is simpler than the request model in that a response generally contains little data other than the results of the request, which are:
 
 - The registration request succeeded.
 - The registration request was rejected, including a reason for the rejection.
@@ -387,7 +387,6 @@ The general class provides a "catch-all" way to handle addresses that do not con
 3. The complete address with place, state and zip code parsed out to separate fields, e.g., *Voter Address = PO Box 1511; Complete Place Name = Ames; State Name = IA; Zip Code = 50010*.
 
 A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples.
-<br>
 
 <br>
 
@@ -401,7 +400,7 @@ element as a sub-element, e.g., `<VoterRecordsReport>` includes `<VoterRegistrat
 
 <br>
 
-##	Schema Stylistic Conventions
+##	XML Schema Stylistic Conventions
 The XML schema was written observing the following stylistic conventions:
 
 *	Element, attribute, enumeration, and primitive names observe variations of
@@ -1917,7 +1916,344 @@ Schema definition:
 <br>
 
 # XML/JSON Usage examples
-This section will contain examples of usage.
+This section contains a series of examples showing voter registration requests and responses in JSON and XML, using the NVRA form.  The examples are:
+
+- Voter Registration Request - XML
+- Voter Registration Request - JSON
+- Voter Registration Response - XML
+
+## Example: NVRA Voter Registration Request in XML
+This example shows a fictitious voter registration for Jackie Nichole Davidson in the State of Ohio using XML:
+
+*need a pic of an NVRA form with her info filled accordingly*
+
+An example of the XML statements for the voter registration request transaction is as follows:
+
+*need to setup name spaces and use a NIST permanent URL for schemaLocation*
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <!-- DISCLAIMER: All persons listed below are fictitious -->
+    <VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange_V23.xsd">
+    	<GeneratedDate>2017-02-10</GeneratedDate>
+    	<Issuer>Ohio Secretary of State</Issuer>
+    	<TransactionId>2a642eb5-169e-4a3b-8899-adc7ea6d00d0</TransactionId>
+    	<Type>registration</Type>
+    	<VendorApplicationId>OLVR 2.0</VendorApplicationId>
+    	<VoterRegistration>
+    		<AdditionalInfo>
+    			<Name>Language</Name>
+    			<StringValue>en_US</StringValue>
+    		</AdditionalInfo>
+    		<ContactMethod>
+    			<Type>phone</Type>
+    			<Value>3301239875</Value>
+    		</ContactMethod>
+    		<ContactMethod>
+    			<Type>email</Type>
+    			<Value>FAKEEMAIL@AOL.COM</Value>
+    		</ContactMethod>
+    		<DateOfBirth>1971-11-09</DateOfBirth>
+    		<MailingAddress>
+    			<NumberedThoroughfareAddress_type>
+    				<addr:CompleteAddressNumber>
+    					<AddressNumber>2264</AddressNumber>
+    				</addr:CompleteAddressNumber>
+    				<addr:CompleteStreetName>
+    					<StreetNamePreDirectional>W</StreetNamePreDirectional>
+    					<StreetName>4TH</StreetName>
+    					<StreetNamePostType>ST</StreetNamePostType>
+    					<StreetNamePostDirectional>S</StreetNamePostDirectional>
+    				</addr:CompleteStreetName>
+    				<addr:CompleteSubaddress>
+    					<SubaddressElement>
+    						<SubaddressType>SIDE</SubaddressType>
+    						<SubaddressIdentifier>A</SubaddressIdentifier>
+    					</SubaddressElement>
+    				</addr:CompleteSubaddress>
+    				<CompletePlaceName>
+    					<PlaceName PlaceNameType="MunicipalJurisdiction">MANSFIELD</PlaceName>
+    					<PlaceName PlaceNameType="County"/>
+    				</CompletePlaceName>
+    				<StateName>OH</StateName>
+    				<ZipCode>44906</ZipCode>
+    			</NumberedThoroughfareAddress_type>
+    		</MailingAddress>
+    		<Name>
+    			<FirstName>JACKI</FirstName>
+    			<LastName>DAVIDSON</LastName>
+    			<MiddleName>NICHOLE</MiddleName>
+    		</Name>
+    		<PreviousRegistrationAddress>
+    			<NumberedThoroughfareAddress_type>
+    				<addr:CompleteAddressNumber>
+    					<addr_type:AddressNumber>740</AddressNumber>
+    				</addr:CompleteAddressNumber>
+    				<addr:CompleteStreetName>
+    					<addr_type:StreetNamePreDirectional/>
+    					<addr_type:StreetName>POLARIS</StreetName>
+    					<addr_type:StreetNamePostType>PKWY</StreetNamePostType>
+    					<addr_type:StreetNamePostDirectional/>
+    				</addr:CompleteStreetName>
+    				<addr:CompleteSubaddress>
+    					<addr_type:SubaddressElement>
+    						<SubaddressType>STE</SubaddressType>
+    						<SubaddressIdentifier>1</SubaddressIdentifier>
+    					</SubaddressElement>
+    				</addr:CompleteSubaddress>
+    				<addr_type:CompletePlaceName>
+    					<PlaceName PlaceNameType="MunicipalJurisdiction">LEWIS CENTER</PlaceName>
+    					<PlaceName PlaceNameType="County"/>
+    				</addr_type:CompletePlaceName>
+    				<addr_type:StateName>OH</StateName>
+    				<addr_type:ZipCode>43035</ZipCode>
+    			</NumberedThoroughfareAddress_type>
+    		</PreviousRegistrationAddress>
+    		<RegistrationAddress>
+    			<NumberedThoroughfareAddress_type>
+    				<addr:CompleteAddressNumber>
+    					<addr_type:AddressNumber>6850</AddressNumber>
+    				</addr:CompleteAddressNumber>
+    				<addr:CompleteStreetName>
+    					<addr_type:StreetNamePreDirectional>W</StreetNamePreDirectional>
+    					<addr_type:StreetName>FRANK</StreetName>
+    					<addr_type:StreetNamePostType>AVE</StreetNamePostType>
+    					<addr_type:StreetNamePostDirectional>NW</StreetNamePostDirectional>
+    				</addr:CompleteStreetName>
+    				<addr:CompleteSubaddress>
+    					<addr_type:SubaddressElement>
+    						<SubaddressType>STE</SubaddressType>
+    						<SubaddressIdentifier>1</SubaddressIdentifier>
+    					</SubaddressElement>
+    				</addr:CompleteSubaddress>
+    				<addr_type:CompletePlaceName>
+    					<PlaceName PlaceNameType="MunicipalJurisdiction">NORTH CANTON</PlaceName>
+    					<PlaceName PlaceNameType="County">STARK </PlaceName>
+    				</CompletePlaceName>
+    				<addr_type:StateName>OH</StateName>
+    				<addr_type:ZipCode>44720</ZipCode>
+    			</NumberedThoroughfareAddress_type>
+    		</RegistrationAddress>
+    		<RegistrationMethod>voter-via-mail</RegistrationMethod>
+    		<VoterClassification>
+    			<Assertion>yes</Assertion>
+    			<Type>eighteen-on-election-day</Type>
+    		</VoterClassification>
+    		<VoterClassification>
+    			<Assertion>yes</Assertion>
+    			<Type>united-states-citizen</Type>
+    		</VoterClassification>
+    		<VoterClassification>
+    			<Assertion>yes</Assertion>
+    			<OtherType>ohio-resident</OtherType>
+    			<Type>other</Type>
+    		</VoterClassification>
+    		<VoterClassification>
+    			<Assertion>yes</Assertion>
+    			<OtherType>bmv-authorization</OtherType>
+    			<Type>other</Type>
+    		</VoterClassification>
+    		<VoterId>
+    			<AttestNoSuchId>false</AttestNoSuchId>
+    			<StringValue>AB879456</StringValue>
+    			<Type>drivers-license</Type>
+    		</VoterId>
+    		<VoterId>
+    			<AttestNoSuchId>true</AttestNoSuchId>
+    			<Type>ssn4</Type>
+    		</VoterId>
+    	</VoterRegistration>
+    </VoterRecordsRequest>
+
+<br>
+
+## Example: NVRA Voter Registration Request in JSON
+This example shows a ficticious voter registration for Jane A. Doe in the State of Ohio using JSON:
+
+*need a pic of an NVRA form with her info filled accordingly*
+
+An example of the JSON statements for the voter registration request transaction is as follows:
+
+*need to add JSON schema declaration*
+
+    {
+    	"GeneratedDate": "2017-7-30",
+    	"Issuer": "Ohio Secretary of State",
+    	"TransactionId": "0bb1bfd7-4316-42be-99d5-9c9e3bb9ccc0",
+    	"Type": [
+    		"registration"
+    	],
+    	"VendorApplicationId": "OLVR 2.0",
+    	"VoterRegistration": {
+    		"DateOfBirth": "1993-11-12T00:00:00",
+    		"VoterId": [
+    			{
+    				"Type": "drivers-license",
+    				"StringValue": "AA999888",
+    				"AttestNoSuchId": false
+    			},
+    			{
+    				"Type": "ssn4",
+    				"StringValue": null,
+    				"AttestNoSuchId": true
+    			}
+    		],
+    		"Name": {
+    			"FirstName": "JANE",
+    			"MiddleName": [
+    				"A"
+    			],
+    			"LastName": "DOE",
+    			"Suffix": null
+    		},
+    		"VoterClassification": [
+    			{
+    				"Assertion": true,
+    				"Type": "Item18onelectionday",
+    				"OtherType": null
+    			},
+    			{
+    				"Assertion": true,
+    				"Type": "unitedstatescitizen",
+    				"OtherType": null
+    			},
+    			{
+    				"Assertion": true,
+    				"Type": "other",
+    				"OtherType": "swear-accuracy"
+    			},
+    			{
+    				"Assertion": true,
+    				"Type": "other",
+    				"OtherType": "filled-on-own-behalf"
+    			},
+    			{
+    				"Assertion": true,
+    				"Type": "other",
+    				"OtherType": "ohio-resident"
+    			},
+    			{
+    				"Assertion": true,
+    				"Type": "other",
+    				"OtherType": "bmv-authorization"
+    			},
+    			{
+    				"Assertion": true,
+    				"Type": "other",
+    				"OtherType": "meets-all-requirements"
+    			}
+    		],
+    		"AdditionalInfo": [
+    			{
+    				"Name": "Language",
+    				"StringValue": "en_US"
+    			},
+    			{
+    				"Name": "IsPollWorker",
+    				"StringValue": "false"
+    			}
+    		],
+    		"ContactMethod": [
+    			{
+    				"Type": "phone",
+    				"Value": "(330) 614-8004"
+    			},
+    			{
+    				"Type": "email",
+    				"Value": "JDOE@TESTEMAIL.COM"
+    			}
+    		],
+    		"RegistrationAddress": {
+    			"NumberedThoroughfareAddress_type": {
+    				"CompleteAddressNumber": {
+    					"AddressNumber": "3818"
+    				},
+    				"CompleteStreetName": {
+    					"StreetNamePreDirectional": {
+    						"Value": null
+    					},
+    					"StreetName": "BELMONT",
+    					"StreetNamePostType": {
+    						"Value": "AVE"
+    					},
+    					"StreetNamePostDirectional": {
+    						"Value": null
+    					}
+    				},
+    				"CompletePlaceName": [
+    					{
+    						"PlaceName": [
+    							{
+    								"PlaceNameTypeSpecified": true,
+    								"PlaceNameType": "MunicipalJurisdiction",
+    								"Value": "YOUNGSTOWN"
+    							},
+    							{
+    								"PlaceNameTypeSpecified": true,
+    								"PlaceNameType": "County",
+    								"Value": "78"
+    							}
+    						]
+    					}
+    				],
+    				"StateName": [
+    					"OH"
+    				],
+    				"ZipCode": [
+    					44505
+    				],
+    				"AddressId": 1368029993
+    			}
+    		},
+    		"RegistrationMethod": "voterviamail",
+    		"RegistrationFormSpecified": true,
+    		"RegistrationForm": "other",
+    		"OtherRegistrationForm": "4010",
+    		"MailingAddress": {
+    			"NumberedThoroughfareAddress_type": {
+    				"CompleteAddressNumber": {
+    					"AddressNumber": "2299"
+    				},
+    				"CompleteStreetName": {
+    					"StreetNamePreDirectional": {
+    						"Value": "E"
+    					},
+    					"StreetName": "STATE",
+    					"StreetNamePostType": {
+    						"Value": "ST"
+    					},
+    					"StreetNamePostDirectional": {
+    						"Value": null
+    					}
+    				},
+    				"CompletePlaceName": [
+    					{
+    						"PlaceName": [
+    							{
+    								"PlaceNameTypeSpecified": true,
+    								"PlaceNameType": "MunicipalJurisdiction",
+    								"Value": "SALEM"
+    							},
+    							{
+    								"PlaceNameTypeSpecified": true,
+    								"PlaceNameType": "County",
+    								"Value": null
+    							}
+    						]
+    					}
+    				],
+    				"StateName": [
+    					"OH"
+    				],
+    				"ZipCode": [
+    					44460
+    				]
+    			}
+    		}
+    	}
+    }
+
+## Example: NVRA Voter Records Response in XML
+some text
 
 # Appendices
 
@@ -2573,3 +2909,5 @@ Other files or updates to the files may be added.  The repository can be found v
     </xsd:schema>
 
 <br>
+
+## JSON schema
