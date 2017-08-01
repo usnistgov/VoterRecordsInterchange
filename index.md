@@ -904,7 +904,6 @@ Enumeration for the type of voter signature, used in the `<Type>` sub-element of
 
 Value | Definition
 --- | ---
-`digital` | For a digital signature such as from a smartcard, e.g., the DoD Common Access Card (CAC).
 `dynamic` | For use with biometrics or other artifacts captured as part of the act of the voter signing the registration form.
 `electronic` | For a facsimile of the signature applied to a marking surface such as paper, e.g., a PDF or JPG of the voter's signature.
 `other` | Used when the type of signature is not included in this enumeration.
@@ -913,7 +912,7 @@ Schema Definition:
 
     <xsd:simpleType name="SignatureType">
         <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="digital"/>
+
             <xsd:enumeration value="dynamic"/>
             <xsd:enumeration value="electronic"/>
             <xsd:enumeration value="other"/>
@@ -1508,6 +1507,36 @@ Schema definition:
 
 <br>
 
+### *The **ReportingUnit** Element*
+Used in response transactions.
+
+`<VoterRecordsResponse>` include this element when a registration request is successful so as to provide a list of geopolitical geography associated with the voter's registration, e.g., the voter's precinct, polling place, districts, etc.  The `<Type>` sub-element uses the `<ReportingUnitType>` enumeration to specify the type of geopolitical geography being defined. If the reporting unit type is not listed in enumeration `<ReportingUnitType>`, use `other` and include the reporting unit type (that is not listed in the enumeration) in `<OtherType>`.  
+
+The `<IsDistricted>` boolean is not strictly necessary, as it is possible to identify districts by their `<Type>` sub-element.  However, if the type of district is not listed in the `<ReportingUnitType>` enumeration and therefore `<OtherType>` is used, then `<IsDistricted>` is necessary.  The `<IsDistricted>` boolean can also be used to signify that a `<ReportingUnit>` defined as a jurisdiction, e.g., a county, is also used as a district for, e.g., county-wide contests.   
+
+Element | Multiplicity | Type | Element Description
+--- | :---: | --- | ---
+`<ExternalIdentifier>` | 0 or more | `<ExternalIdentifier>` | Used to associate an identifier with the reporting unit.
+`<IsDistricted>` | 0 or 1 | `xsd:boolean` | Boolean to indicate that the reporting unit is a district.
+`<Name>` | 0 or 1 | `xsd:string` | Name of the reporting unit.
+`<Type>` | 1 | `ReportingUnitType` | Enumerated type of reporting unit, e.g., `county`, `district`, `precinct`, etc.
+`<OtherType>` | 0 or 1 | `xsd:string` | For use when `<ReportingUnitType>` value is `other`.
+
+Schema definition:
+
+    <xsd:complexType name="ReportingUnit">
+      <xsd:sequence>
+        <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element name="IsDistricted" type="xsd:boolean" minOccurs="0"/>
+        <xsd:element name="Location" type="Location" minOccurs="0"/>
+        <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="Type" type="ReportingUnitType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+<br>
+
 ### *The **Signature (PreviousSignature)** Element*
 Used in request transactions.  
 
@@ -1625,10 +1654,10 @@ Schema definition:
             <xsd:element name="GeneratedDate" type="xsd:date"/>
             <xsd:element name="Issuer" type="xsd:string" minOccurs="0"/>
             <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
-            <xsd:element ref="ds:Signature" minOccurs="0"/>
             <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
             <xsd:element name="Type" type="RegistrationRequestType" maxOccurs="unbounded"/>
             <xsd:element name="VendorApplicationId" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="ds:Signature" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="VoterRecordsResponse" abstract="true">
