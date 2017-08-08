@@ -1955,17 +1955,15 @@ This example shows a fictitious digital NVRA registration request for "Jackie Ni
 <br>
 
 <div class="text-left" markdown="1">
-<img src="Figures/NVRA-import-xml.png" width="600"/>
+<img src="Figures/NVRA-request-xml.png" width="600"/>
 
 **Figure 6 - multiple FGDC address types mapped to a single Address type**
 </div>
 
-An example of the XML statements for the voter registration request transaction is as follows:
-
-*need to use a NIST permanent URL for schemaLocation and validate*
+The XML for the voter registration request transaction is as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!-- DISCLAIMER: All persons listed below are fictitious -->
+    <!-- DISCLAIMER: All persons and places listed below are fictitious -->
     <VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="NIST_V0_voter_records_interchange.xsd"
@@ -2106,7 +2104,7 @@ An example of the XML statements for the voter registration request transaction 
 <br>
 
 ## Example: NVRA Voter Registration Request in JSON
-This example shows a ficticious voter registration for Jane A. Doe in the State of Ohio using JSON:
+This example shows a fictitious voter registration for Jane A. Doe in the State of Ohio using JSON:
 
 *need a pic of an NVRA form with her info filled accordingly*
 
@@ -2294,12 +2292,26 @@ An example of the JSON statements for the voter registration request transaction
 <br>
 
 ## Example: NVRA Voter Records Response in XML
-This last example shows a voter records response transaction in XML.
+This final example shows a fictitious digital NVRA registration response, successful, in the State of Ohio using XML:
 
-*Need to fix a few things and use a NIST permanent URL for schemaLocation and validate*
+<br>
+
+<div class="text-left" markdown="1">
+<img src="Figures/NVRA-response-xml.png" width="600"/>
+
+**Figure 6 - multiple FGDC address types mapped to a single Address type**
+</div>
+
+The XML for the voter registration response transaction is as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <VoterRecordsResponse xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange_V23.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
+    <!-- DISCLAIMER: All persons and places listed below are fictitious -->
+    <VoterRecordsResponse xsi:type="RegistrationSuccess" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	xmlns="NIST_V0_voter_records_interchange.xsd"
+    	xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange.xsd"
+    	xmlns:addr="http://www.fgdc.gov/schemas/address/addr"
+    	xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
     	<Action>registration-created</Action>
     	<Districts>
     		<Name>Akron</Name>
