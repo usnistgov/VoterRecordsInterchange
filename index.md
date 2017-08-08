@@ -1964,139 +1964,143 @@ An example of the XML statements for the voter registration request transaction 
 
 *need to use a NIST permanent URL for schemaLocation and validate*
 
-    <?xml version="1.0" encoding="utf-8"?>
+    <?xml version="1.0" encoding="UTF-8"?>
     <!-- DISCLAIMER: All persons listed below are fictitious -->
-    <VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange_V23.xsd"
-    xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
-    	<GeneratedDate>2017-02-10</GeneratedDate>
-    	<Issuer>Ohio Secretary of State</Issuer>
-    	<TransactionId>2a642eb5-169e-4a3b-8899-adc7ea6d00d0</TransactionId>
-    	<Type>registration</Type>
-    	<VendorApplicationId>OLVR 2.0</VendorApplicationId>
-    	<VoterRegistration>
-    		<AdditionalInfo>
-    			<Name>Language</Name>
-    			<StringValue>en_US</StringValue>
-    		</AdditionalInfo>
-    		<ContactMethod>
-    			<Type>phone</Type>
-    			<Value>3301239875</Value>
-    		</ContactMethod>
-    		<ContactMethod>
-    			<Type>email</Type>
-    			<Value>FAKEEMAIL@AOL.COM</Value>
-    		</ContactMethod>
-    		<DateOfBirth>1971-11-09</DateOfBirth>
-    		<MailingAddress>
-    			<NumberedThoroughfareAddress_type>
-    				<addr:CompleteAddressNumber>
-    					<AddressNumber>2264</AddressNumber>
-    				</addr:CompleteAddressNumber>
-    				<addr:CompleteStreetName>
-    					<StreetNamePreDirectional>W</StreetNamePreDirectional>
-    					<StreetName>4TH</StreetName>
-    					<StreetNamePostType>ST</StreetNamePostType>
-    					<StreetNamePostDirectional>S</StreetNamePostDirectional>
-    				</addr:CompleteStreetName>
-    				<addr:CompleteSubaddress>
-    					<SubaddressElement>
-    						<SubaddressType>SIDE</SubaddressType>
-    						<SubaddressIdentifier>A</SubaddressIdentifier>
-    					</SubaddressElement>
-    				</addr:CompleteSubaddress>
-    				<CompletePlaceName>
-    					<PlaceName PlaceNameType="MunicipalJurisdiction">MANSFIELD</PlaceName>
-    					<PlaceName PlaceNameType="County"/>
-    				</CompletePlaceName>
-    				<StateName>OH</StateName>
-    				<ZipCode>44906</ZipCode>
-    			</NumberedThoroughfareAddress_type>
-    		</MailingAddress>
-    		<Name>
-    			<FirstName>JACKI</FirstName>
-    			<LastName>DAVIDSON</LastName>
-    			<MiddleName>NICHOLE</MiddleName>
-    		</Name>
-    		<PreviousRegistrationAddress>
-    			<NumberedThoroughfareAddress_type>
-    				<addr:CompleteAddressNumber>
-    					<addr_type:AddressNumber>740</AddressNumber>
-    				</addr:CompleteAddressNumber>
-    				<addr:CompleteStreetName>
-    					<addr_type:StreetNamePreDirectional/>
-    					<addr_type:StreetName>POLARIS</StreetName>
-    					<addr_type:StreetNamePostType>PKWY</StreetNamePostType>
-    					<addr_type:StreetNamePostDirectional/>
-    				</addr:CompleteStreetName>
-    				<addr:CompleteSubaddress>
-    					<addr_type:SubaddressElement>
-    						<SubaddressType>STE</SubaddressType>
-    						<SubaddressIdentifier>1</SubaddressIdentifier>
-    					</SubaddressElement>
-    				</addr:CompleteSubaddress>
-    				<addr_type:CompletePlaceName>
-    					<PlaceName PlaceNameType="MunicipalJurisdiction">LEWIS CENTER</PlaceName>
-    					<PlaceName PlaceNameType="County"/>
-    				</addr_type:CompletePlaceName>
-    				<addr_type:StateName>OH</StateName>
-    				<addr_type:ZipCode>43035</ZipCode>
-    			</NumberedThoroughfareAddress_type>
-    		</PreviousRegistrationAddress>
-    		<RegistrationAddress>
-    			<NumberedThoroughfareAddress_type>
-    				<addr:CompleteAddressNumber>
-    					<addr_type:AddressNumber>6850</AddressNumber>
-    				</addr:CompleteAddressNumber>
-    				<addr:CompleteStreetName>
-    					<addr_type:StreetNamePreDirectional>W</StreetNamePreDirectional>
-    					<addr_type:StreetName>FRANK</StreetName>
-    					<addr_type:StreetNamePostType>AVE</StreetNamePostType>
-    					<addr_type:StreetNamePostDirectional>NW</StreetNamePostDirectional>
-    				</addr:CompleteStreetName>
-    				<addr:CompleteSubaddress>
-    					<addr_type:SubaddressElement>
-    						<SubaddressType>STE</SubaddressType>
-    						<SubaddressIdentifier>1</SubaddressIdentifier>
-    					</SubaddressElement>
-    				</addr:CompleteSubaddress>
-    				<addr_type:CompletePlaceName>
-    					<PlaceName PlaceNameType="MunicipalJurisdiction">NORTH CANTON</PlaceName>
-    					<PlaceName PlaceNameType="County">STARK </PlaceName>
-    				</CompletePlaceName>
-    				<addr_type:StateName>OH</StateName>
-    				<addr_type:ZipCode>44720</ZipCode>
-    			</NumberedThoroughfareAddress_type>
-    		</RegistrationAddress>
-        <RegistrationForm>nvra</RegistrationForm>
-    		<RegistrationMethod>voter-via-mail</RegistrationMethod>
-    		<VoterClassification>
-    			<Assertion>yes</Assertion>
-    			<Type>eighteen-on-election-day</Type>
-    		</VoterClassification>
-    		<VoterClassification>
-    			<Assertion>yes</Assertion>
-    			<Type>united-states-citizen</Type>
-    		</VoterClassification>
-    		<VoterClassification>
-    			<Assertion>yes</Assertion>
-    			<OtherType>ohio-resident</OtherType>
-    			<Type>other</Type>
-    		</VoterClassification>
-    		<VoterClassification>
-    			<Assertion>yes</Assertion>
-    			<OtherType>bmv-authorization</OtherType>
-    			<Type>other</Type>
-    		</VoterClassification>
-    		<VoterId>
-    			<AttestNoSuchId>false</AttestNoSuchId>
-    			<StringValue>AB879456</StringValue>
-    			<Type>drivers-license</Type>
-    		</VoterId>
-    		<VoterId>
-    			<AttestNoSuchId>true</AttestNoSuchId>
-    			<Type>ssn4</Type>
-    		</VoterId>
-    	</VoterRegistration>
+    <VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="NIST_V0_voter_records_interchange.xsd"
+        xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange.xsd"
+        xmlns:addr="http://www.fgdc.gov/schemas/address/addr"
+        xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
+        <GeneratedDate>2017-02-10</GeneratedDate>
+        <Issuer>Ohio Secretary of State</Issuer>
+        <TransactionId>2a642eb5-169e-4a3b-8899-adc7ea6d00d0</TransactionId>
+        <Type>registration</Type>
+        <VendorApplicationId>OLVR 2.0</VendorApplicationId>
+        <VoterRegistration>
+            <AdditionalInfo>
+                <Name>Language</Name>
+                <StringValue>en_US</StringValue>
+            </AdditionalInfo>
+            <ContactMethod>
+                <Type>phone</Type>
+                <Value>3301239875</Value>
+            </ContactMethod>
+            <ContactMethod>
+                <Type>email</Type>
+                <Value>FAKEEMAIL@AOL.COM</Value>
+            </ContactMethod>
+            <DateOfBirth>1971-11-09</DateOfBirth>
+            <MailingAddress>
+                <NumberedThoroughfareAddress_type>
+                    <addr:CompleteAddressNumber>
+                        <addr_type:AddressNumber>2264</addr_type:AddressNumber>
+                    </addr:CompleteAddressNumber>
+                    <addr:CompleteStreetName>
+                        <addr_type:StreetNamePreDirectional>W</addr_type:StreetNamePreDirectional>
+                        <addr_type:StreetName>4TH</addr_type:StreetName>
+                        <addr_type:StreetNamePostType>ST</addr_type:StreetNamePostType>
+                        <addr_type:StreetNamePostDirectional>S</addr_type:StreetNamePostDirectional>
+                    </addr:CompleteStreetName>
+                    <addr:CompleteSubaddress>
+                        <addr_type:SubaddressElement>
+                            <addr_type:SubaddressType>SIDE</addr_type:SubaddressType>
+                            <addr_type:SubaddressIdentifier>A</addr_type:SubaddressIdentifier>
+                        </addr_type:SubaddressElement>
+                    </addr:CompleteSubaddress>
+                    <addr_type:CompletePlaceName>
+                        <addr_type:PlaceName PlaceNameType="MunicipalJurisdiction">MANSFIELD</addr_type:PlaceName>
+                        <addr_type:PlaceName PlaceNameType="County"/>
+                    </addr_type:CompletePlaceName>
+                    <addr_type:StateName>OH</addr_type:StateName>
+                    <addr_type:ZipCode>44906</addr_type:ZipCode>
+                </NumberedThoroughfareAddress_type>
+            </MailingAddress>
+            <Name>
+                <FirstName>JACKI</FirstName>
+                <LastName>DAVIDSON</LastName>
+                <MiddleName>NICHOLE</MiddleName>
+            </Name>
+            <PreviousRegistrationAddress>
+                <NumberedThoroughfareAddress_type>
+                    <addr:CompleteAddressNumber>
+                        <addr_type:AddressNumber>740</addr_type:AddressNumber>
+                    </addr:CompleteAddressNumber>
+                    <addr:CompleteStreetName>
+                        <addr_type:StreetNamePreDirectional/>
+                        <addr_type:StreetName>POLARIS</addr_type:StreetName>
+                        <addr_type:StreetNamePostType>PKWY</addr_type:StreetNamePostType>
+                        <addr_type:StreetNamePostDirectional/>
+                    </addr:CompleteStreetName>
+                    <addr:CompleteSubaddress>
+                        <addr_type:SubaddressElement>
+                            <addr_type:SubaddressType>STE</addr_type:SubaddressType>
+                            <addr_type:SubaddressIdentifier>1</addr_type:SubaddressIdentifier>
+                        </addr_type:SubaddressElement>
+                    </addr:CompleteSubaddress>
+                    <addr_type:CompletePlaceName>
+                        <addr_type:PlaceName PlaceNameType="MunicipalJurisdiction">LEWIS CENTER</addr_type:PlaceName>
+                        <addr_type:PlaceName PlaceNameType="County">MONTGOMERY</addr_type:PlaceName>
+                    </addr_type:CompletePlaceName>
+                    <addr_type:StateName>OH</addr_type:StateName>
+                    <addr_type:ZipCode>43035</addr_type:ZipCode>
+                </NumberedThoroughfareAddress_type>
+            </PreviousRegistrationAddress>
+            <RegistrationAddress>
+                <NumberedThoroughfareAddress_type>
+                    <addr:CompleteAddressNumber>
+                        <addr_type:AddressNumber>6850</addr_type:AddressNumber>
+                    </addr:CompleteAddressNumber>
+                    <addr:CompleteStreetName>
+                        <addr_type:StreetNamePreDirectional>W</addr_type:StreetNamePreDirectional>
+                        <addr_type:StreetName>FRANK</addr_type:StreetName>
+                        <addr_type:StreetNamePostType>AVE</addr_type:StreetNamePostType>
+                        <addr_type:StreetNamePostDirectional>NW</addr_type:StreetNamePostDirectional>
+                    </addr:CompleteStreetName>
+                    <addr:CompleteSubaddress>
+                        <addr_type:SubaddressElement>
+                            <addr_type:SubaddressType>STE</addr_type:SubaddressType>
+                            <addr_type:SubaddressIdentifier>1</addr_type:SubaddressIdentifier>
+                        </addr_type:SubaddressElement>
+                    </addr:CompleteSubaddress>
+                    <addr_type:CompletePlaceName>
+                        <addr_type:PlaceName PlaceNameType="MunicipalJurisdiction">NORTH CANTON</addr_type:PlaceName>
+                        <addr_type:PlaceName PlaceNameType="County">STARK </addr_type:PlaceName>
+                    </addr_type:CompletePlaceName>
+                    <addr_type:StateName>OH</addr_type:StateName>
+                    <addr_type:ZipCode>44720</addr_type:ZipCode>
+                </NumberedThoroughfareAddress_type>
+            </RegistrationAddress>
+            <RegistrationForm>nvra</RegistrationForm>
+            <RegistrationMethod>voter-via-mail</RegistrationMethod>
+            <VoterClassification>
+                <Assertion>yes</Assertion>
+                <Type>eighteen-on-election-day</Type>
+            </VoterClassification>
+            <VoterClassification>
+                <Assertion>yes</Assertion>
+                <Type>united-states-citizen</Type>
+            </VoterClassification>
+            <VoterClassification>
+                <Assertion>yes</Assertion>
+                <OtherType>ohio-resident</OtherType>
+                <Type>other</Type>
+            </VoterClassification>
+            <VoterClassification>
+                <Assertion>yes</Assertion>
+                <OtherType>bmv-authorization</OtherType>
+                <Type>other</Type>
+            </VoterClassification>
+            <VoterId>
+                <AttestNoSuchId>false</AttestNoSuchId>
+                <StringValue>AB879456</StringValue>
+                <Type>drivers-license</Type>
+            </VoterId>
+            <VoterId>
+                <AttestNoSuchId>true</AttestNoSuchId>
+                <Type>ssn4</Type>
+            </VoterId>
+        </VoterRegistration>
     </VoterRecordsRequest>
 
 <br>
