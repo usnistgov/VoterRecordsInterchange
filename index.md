@@ -1944,9 +1944,16 @@ In the voter records request transaction examples, note that a significant major
 <br>
 
 ## Example: NVRA Voter Registration Request in XML
-This example shows a fictitious voter registration for Jackie Nichole Davidson in the State of Ohio using XML:
+This example shows a fictitious digital NVRA registration request for "Jackie Nichole Davidson" in the State of Ohio using XML:
 
-*need a pic of an NVRA form with her info filled accordingly*
+<br>
+
+<div class="text-center" markdown="1">
+<img src="Figures/NVRA-import-xml.png" width="600"/>
+
+**Figure 6 - multiple FGDC address types mapped to a single Address type**
+</div>
+
 
 An example of the XML statements for the voter registration request transaction is as follows:
 
