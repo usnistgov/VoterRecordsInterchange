@@ -224,15 +224,17 @@ The digital NVRA voter registration form, as well as the digital FPCA form, are 
 **Figure 1 - National Voter Registration Act form**
 </div>
 
-The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military to register and, if desired, request a ballot at the same time.
-
 <br>
+
+The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military to register and, if desired, request a ballot at the same time.
 
 <div class="text-left" markdown="1">
 <img src="Figures/FPCA.png" height="900"/>
 
 **Figure 2 - Federal PostCard Application form**
 </div>
+
+<br>
 
 The use case for a digital OVR submission includes:
 
