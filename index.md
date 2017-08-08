@@ -1954,7 +1954,7 @@ This example shows a fictitious digital NVRA registration request for "Jackie Ni
 
 <br>
 
-<div class="text-left" markdown="1">
+<div class="text-center" markdown="1">
 <img src="Figures/NVRA-request-xml-example.png" width="600"/>
 
 **Figure 7 - Example NVRA form for an address update request**
@@ -2296,7 +2296,7 @@ This final example shows a fictitious digital NVRA registration response, succes
 
 <br>
 
-<div class="text-left" markdown="1">
+<div class="text-center" markdown="1">
 <img src="Figures/NVRA-response-xml-example.png" width="600"/>
 
 **Figure 8 - Populated NVRA voter registration response form**
