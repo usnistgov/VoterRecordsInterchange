@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v5
+v6
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -1939,7 +1939,7 @@ This section contains several examples showing voter records request and respons
 - Voter Registration Request - [JSON](#example-nvra-voter-registration-request-in-json)
 - Voter Registration Response - [XML](#example-nvra-voter-records-response-in-xml)
 
-In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[\[6\]](#references) is vital.
+In the voter records request transaction examples, note that a significant majority of the statements deal with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress` using the FGDC standard.  Thus, an understanding of the FGDC standard[\[6\]](#references) is vital.
 
 <br>
 
@@ -1948,12 +1948,11 @@ This example shows a fictitious digital NVRA registration request for "Jackie Ni
 
 <br>
 
-<div class="text-center" markdown="1">
+<div class="text-left" markdown="1">
 <img src="Figures/NVRA-import-xml.png" width="600"/>
 
 **Figure 6 - multiple FGDC address types mapped to a single Address type**
 </div>
-
 
 An example of the XML statements for the voter registration request transaction is as follows:
 
