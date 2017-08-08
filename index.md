@@ -144,7 +144,7 @@ It supports response transactions returning from the VR system to these systems 
 
 Future versions of this specification may contain support for additional use cases for other types of transactions such as for voter record maintenance.
 
-The XML schema associated with this specification is generated from a UML (Unified Modeling Language[\[5\]](#references)) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML and JSON can be generated or derived from the UML model.
+The XML/JSON schemas associated with this specification are generated from a UML (Unified Modeling Language[\[5\]](#references)) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML and JSON can be generated or derived from the UML model.
 
 <br>
 
@@ -182,34 +182,36 @@ The intended audience of this specification includes election officials, VR syst
 ## Motivation and Methodology
 This document was motivated primarily to reduce the inherent diversity for U.S. election officials in exchanging data related to voter registration. The current varying systems involved and data produced often do not interoperate, adding more complexity to the process. Additionally, there are sometimes significant variations among different jurisdictions within a state as well among the states themselves in the way they automate the voter registration and related parts of voter record management.
 
-NIST and a community of U.S. election officials, analysts, and voting system technologists analyzed varying VR scenarios and their associated data interchanges, to analyze existing practices and to create a standard data interchange format for emerging OVR systems. From this preliminary analysis, a number of use cases were developed:
+NIST and a community of U.S. election officials, analysts, and voting system technologists analyzed varying VR scenarios and use cases and their associated data interchanges, to analyze existing practices and to create a standard data interchange format for emerging OVR systems. This specification implements the following two use cases:
 
 1.	Digital OVR Submission: Digital VR applications forms transmitted within state OVR systems or to state OVR systems by third party OVR systems, following the formats of the NVRA and FPCA voter registration application forms, including state-specific additions to these forms.
 
 2.	Digital VR Update Submission: Similar application forms including: voter registration update (change of name, change of address), change of voter status, and absentee ballot request.
 
-3.	OVR Transfer: Subsets of such digital applications used for 3rd-party OVR registrars to transfer users and user data to state OVR systems.
+A UML data model was subsequently generated to represent the data associated with digital OVR submission and to show how the data elements are related and organized. Finally, XML and JSON schemas were generated from the UML data model.
 
-4.	DMV Match: Subsets of such digital applications exchanged between state VR systems and DMV or similar systems, to perform driver's license data matching as part of OVR processing.
+The advantages of using a UML data model as an intermediate step to generating the XML/JSON schemas include that the model is independent of the concrete data formats (or other potential formats that could be derived), and relationships between data elements are easier to correctly define and visualize when they are independent of any specific data format. If changes are needed to the specific XML/JSON formats, one can make changes to the UML model and then generate a new version of the formats using commercial products.
 
-5.	DMV Notification: Data exchanged by DMV (Department of Motor Vehicles) or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
+Rather than implement new and complicated functionality in this specification for representing addresses such as current or previous registration addresses or postal addresses, it was decided to use the existing U.S. Thoroughfare, Landmark, and Postal Address Data Standard [\[7\]](#references), which contains four major classes of addresses that are broken out into 11 different types of addresses.  These can be used to represent addresses where voters live and where they receive postal mail (if different), including  overseas addresses.
 
-6.	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[\[6\]](#references)) system, or as part of inter-state cross-check activities.
+While this specification is focused on digital OVR submission, subsequent versions of this specification may implement additional use cases, including:
 
-7.	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[\[7\]](#references))reporting.
+-	OVR Transfer: Subsets of such digital applications used for 3rd-party OVR registrars to transfer users and user data to state OVR systems.
 
-The focus of this specification is implementation of the first use case for digital OVR submission, because it is the common basis of current efforts to develop new OVR systems, as an increasing number of states pass legislation enabling or requiring it. This initial focus was intended to quickly establish a baseline abstract data model as the basis for extension in later versions on other use cases.
+-	DMV Match: Subsets of such digital applications exchanged between state VR systems and DMV or similar systems, to perform driver's license data matching as part of OVR processing.
 
-A UML data model was subsequently generated to represent the data associated with digital OVR submission and to show how the data elements are related and organized. Finally, an XML schema was generated from the UML data model. The XML schema defines the rules of the XML format.
+-	DMV Notification: Data exchanged by DMV (Department of Motor Vehicles) or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
-The advantages of using a UML data model as an intermediate step to generating an XML schema include that the model is independent of the concrete XML format (or other potential formats that could be derived); relationships between data elements are easier to correctly define and visualize when they are independent of any specific data format. If changes are needed to the XML format, one can make changes to the UML model and then generate a new version of the format using commercial products.
+-	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[\[6\]](#references)) system, or as part of inter-state cross-check activities.
+
+-	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[\[8\]](#references))reporting.
 
 Note that this specification addresses U.S. governmental elections and is not intended for use “as is” in other types of elections or in other countries. However, the specification was written with the intention that it be adaptable to other election environments.
 
 <br>
 
 # Overview of Digital OVR Transactions as Implemented by this Specification
-This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [\[8\]](#references), which is used for voter addresses in this specification.
+This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [\[7\]](#references), which is used for voter addresses in this specification.
 
 <br>
 
@@ -255,7 +257,7 @@ The UML model shows 3 types of transaction requests that would be sent from an O
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequestV23.png" width="1000"/>
+<img src="Figures/VoterRegistrationRequest-V24.png" width="1000"/>
 
 **Figure 4 - Voter Records Request UML class diagram**
 </div>
@@ -282,7 +284,7 @@ This section contains a brief overview of voter records response transactions. T
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponseV23.png" width="1000"/>
+<img src="Figures/VoterRegistrationResponse-V24.png" width="1000"/>
 
 **Figure 5 - Voter Records Response UML class diagram**
 </div>
@@ -296,16 +298,26 @@ The registration acknowledgement is simply that; the VR system acknowledging tha
 <br>
 
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
-Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[\[8\]](#references), issued by the Federal Geographic Data Committee (FGDC)[\[9\]](#references) and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service).
+Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[\[7\]](#references), issued by the Federal Geographic Data Committee (FGDC)[\[9\]](#references) and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service). Use of the FGDC standard greatly simplifies this specification and leaves maintenance of the standard to the more appropriate management body.
 
-Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups consisting of 13 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
+Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups consisting of 11 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
 
 1. Thoroughfare Classes - 5 address types
 2. Landmark Classes - 2 address types
 3. Postal Deliver Classes - 3 address types
 4. General Class - 3 address types
 
-The VoterRegistration class in the UML model has four distinct addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address, and correspondingly, the Address type is used as well in the XML/JSON schemas for the corresponding addresses. The VRI XML/JSON schemas include the FGDC XML schema and map the use of the `<Address>` type to one of the 13 different address types in the FGDC schema, as shown below in XML:
+The VoterRegistration class in the UML model has four distinct addresses: RegistrationAddress, PreviousRegistrationAddress, MailingAddress, and MailForwardingAddress, all of type Address.  Address is itself mapped to 11 address types taken from the FGDC standard, as shown in the figure:
+
+<br>
+
+<div class="text-center" markdown="1">
+<img src="Figures/addr-xsd.png" width="1000"/>
+
+**Figure 6 - multiple FGDC address types mapped to a single Address type**
+</div>
+
+Accordingly, the VRI XML/JSON schemas generated from the UML model include the FGDC XML schema and map the use of the `<Address>` type to one of the 11 different address types in the FGDC schema, as shown below using XML:
 
     <!-- === Interface Address === -->
     <xsd:group name="Address">
@@ -326,7 +338,7 @@ The VoterRegistration class in the UML model has four distinct addresses: Regist
 
 <br>
 
-There are 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of the 3 different types. The following XML example shows a use of the `<NumberedThoroughfareAddress_type>` for the `<MailingAddress>` element:
+There are actually 13 different address types but only 11 are shown, as the General Class is implemented in XML as a choice of the 3 different types. The following XML example shows a use of the `<NumberedThoroughfareAddress_type>` for the `<MailingAddress>` element:
 
     <MailingAddress>
       <NumberedThoroughfareAddress_type>
@@ -445,7 +457,7 @@ The schema (and instance files) imports two external schemas:
 
 1.	The W3C digital signature schema[\[11\]](#references), used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
 include a digital signature on XML instance files.
-2.	The FGDC schema[\[8\]](#references), which contains 13 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
+2.	The FGDC schema[\[7\]](#references), which contains 11 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
 
 Schema Definition:
 
@@ -1923,7 +1935,7 @@ This section contains several examples showing voter records request and respons
 - Voter Registration Request - [JSON](#example-nvra-voter-registration-request-in-json)
 - Voter Registration Response - [XML](#example-nvra-voter-records-response-in-xml)
 
-In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[\[8\]](#references) is vital.
+In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[\[7\]](#references) is vital.
 
 <br>
 
@@ -2414,12 +2426,12 @@ document ad/97-08-11) September 22, 2011, [http://omg.org/](http://omg.org/).
 
 [6] Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
 
-[7] Election Assistance Commission, Election Administration and Voting Survey (EAVS),
-[http://www.eac.gov](http://www.eac.gov).
-
-[8] Federal Geographic Data Committee (FGDC), United States Thoroughfare,
-Landmark, and Postal Address Data Standard,
+[7] Federal Geographic Data Committee (FGDC), United States Thoroughfare,
+Landmark, and Postal Address Data Standard, FGDC-STD-016-2011, Feb. 2011,
 [http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html](http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html).
+
+[8] Election Assistance Commission, Election Administration and Voting Survey (EAVS),
+[http://www.eac.gov](http://www.eac.gov).
 
 [9] Federal Geographic Data Committee (FGDC), [https://www.fgdc.gov/](https://www.fgdc.gov/).
 
@@ -2437,11 +2449,11 @@ Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w
 This appendix contains detailed images of the UML class diagrams that when viewed electronically can be expanded to show attributes and other details.  The images can also be
 downloaded using the instructions in Appendix - File Download Locations.
 
-[Voter Records Request UML Class Diagram](Figures/VoterRegistrationRequestV23.png "Voter Records Request UML class diagram")
+[Voter Records Request UML Class Diagram](Figures/VoterRegistrationRequest-V24.png "Voter Records Request UML class diagram")
 
-[Voter Records Response UML Class Diagram](Figures/VoterRegistrationResponseV23.png "Voter Records Response UML class diagram")
+[Voter Records Response UML Class Diagram](Figures/VoterRegistrationResponse-V24.png "Voter Records Response UML class diagram")
 
-[Interface to FGDC Address Types schema](Figures/addrxsd.png "Interface to FGDC address types schema")
+[Interface to FGDC Address Types schema](Figures/addr-xsd.png "Interface to FGDC address types schema")
 
 <br>
 
@@ -2452,8 +2464,8 @@ These files are:
 
 *	This specification,
 *	XML schema,
-*	Example XML files - TBD,
-*	Validation tools - TBD, and
+*	Example XML files,
+*	Validation tools, and
 *	UML model.
 
 Other files or updates to the files may be added.  The repository can be found via the following URL:
