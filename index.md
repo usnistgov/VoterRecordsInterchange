@@ -1949,7 +1949,7 @@ In the voter records request transaction examples, note that a significant major
 
 <br>
 
-## Example: NVRA Voter Registration Request in XML
+## Example 1: NVRA Voter Registration Request in XML
 This example shows a fictitious digital NVRA registration request for "Jackie Nichole Davidson" in the State of Ohio using XML.  This request is for an address update, and an example of the filled-out NVRA form is as follows:
 
 <br>
@@ -2103,7 +2103,7 @@ The XML for the voter registration request transaction that contains the informa
 
 <br>
 
-## Example: NVRA Voter Registration Request in JSON
+## Example 2: NVRA Voter Registration Request in JSON
 This example shows a fictitious voter registration for Jane A. Doe in the State of Ohio using JSON:
 
 *need a pic of an NVRA form with her info filled accordingly*
@@ -2291,7 +2291,7 @@ An example of the JSON statements for the voter registration request transaction
 
 <br>
 
-## Example: NVRA Voter Records Response in XML
+## Example 3: NVRA Voter Records Response in XML
 This final example shows a fictitious digital NVRA registration response, successful, in the State of Ohio using XML.  An example of the populated response form is as follows:
 
 <br>
