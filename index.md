@@ -192,7 +192,7 @@ A UML data model was subsequently generated to represent the data associated wit
 
 The advantages of using a UML data model as an intermediate step to generating the XML/JSON schemas include that the model is independent of the concrete data formats (or other potential formats that could be derived), and relationships between data elements are easier to correctly define and visualize when they are independent of any specific data format. If changes are needed to the specific XML/JSON formats, one can make changes to the UML model and then generate a new version of the formats using commercial products.
 
-Rather than implement new and complicated functionality in this specification for representing addresses such as current or previous registration addresses or postal addresses, it was decided to use the existing U.S. Thoroughfare, Landmark, and Postal Address Data Standard [\[7\]](#references), which contains four major classes of addresses that are broken out into 11 different types of addresses.  These can be used to represent addresses where voters live and where they receive postal mail (if different), including  overseas addresses.
+Rather than implement new and complicated functionality in this specification for representing addresses such as current or previous registration addresses or postal addresses, it was decided to use the existing U.S. Thoroughfare, Landmark, and Postal Address Data Standard [\[6\]](#references), which contains four major classes of addresses that are broken out into 11 different types of addresses.  These can be used to represent addresses where voters live and where they receive postal mail (if different), including  overseas addresses.
 
 While this specification is focused on digital OVR submission, subsequent versions of this specification may implement additional use cases, including:
 
@@ -202,7 +202,7 @@ While this specification is focused on digital OVR submission, subsequent versio
 
 -	DMV Notification: Data exchanged by DMV (Department of Motor Vehicles) or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
--	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[\[6\]](#references)) system, or as part of inter-state cross-check activities.
+-	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[\[7\]](#references)) system, or as part of inter-state cross-check activities.
 
 -	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[\[8\]](#references))reporting.
 
@@ -211,7 +211,7 @@ Note that this specification addresses U.S. governmental elections and is not in
 <br>
 
 # Overview of Digital OVR Transactions as Implemented by this Specification
-This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [\[7\]](#references), which is used for voter addresses in this specification.
+This section presents an overview of the digital OVR voter registration transactions supported by this specification and examples of how these transactions are implemented.  It also contains an overview of the U.S. Thoroughfare, Landmark, and Postal Address data standard [\[6\]](#references), which is used for voter addresses in this specification.
 
 <br>
 
@@ -298,7 +298,7 @@ The registration acknowledgement is simply that; the VR system acknowledging tha
 <br>
 
 ## The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
-Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[\[7\]](#references), issued by the Federal Geographic Data Committee (FGDC)[\[9\]](#references) and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service). Use of the FGDC standard greatly simplifies this specification and leaves maintenance of the standard to the more appropriate management body.
+Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[\[6\]](#references), issued by the Federal Geographic Data Committee (FGDC)[\[9\]](#references) and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service). Use of the FGDC standard greatly simplifies this specification and leaves maintenance of the standard to the more appropriate management body.
 
 Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups consisting of 11 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
 
@@ -312,7 +312,7 @@ The VoterRegistration class in the UML model has four distinct addresses: Regist
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/addr-xsd.png" width="1000"/>
+<img src="Figures/addr-xsd.png" width="800"/>
 
 **Figure 6 - multiple FGDC address types mapped to a single Address type**
 </div>
@@ -457,7 +457,7 @@ The schema (and instance files) imports two external schemas:
 
 1.	The W3C digital signature schema[\[11\]](#references), used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
 include a digital signature on XML instance files.
-2.	The FGDC schema[\[7\]](#references), which contains 11 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
+2.	The FGDC schema[\[6\]](#references), which contains 11 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
 
 Schema Definition:
 
@@ -638,11 +638,11 @@ Value | Definition
 `identity-lookup-failed` | A lookup on the voter's identity failed.
 `incomplete` | The registration request is incomplete, without specifying the specific error(s).
 `incomplete-address` | An address is incomplete.
+`incomplete-birth-date` | The registration request does not contain a birthdate.
 `incomplete-name` | The voter's name is incomplete.
+`incomplete-signature` | The registration request does not contain a signature.
 `ineligible` | The voter is ineligible to be registered.
 `invalid-form` | The registration form specified is invalid.
-`no-birth-date` | The registration request does not contain a birthdate.
-`no-signature` | The registration request does not contain a signature.
 `other` | Used when the type of error is not included in this enumeration.
 
 Schema Definition:
@@ -652,11 +652,13 @@ Schema Definition:
             <xsd:enumeration value="identity-lookup-failed"/>
             <xsd:enumeration value="incomplete"/>
             <xsd:enumeration value="incomplete-address"/>
+            <xsd:enumeration value="incomplete-birth-date"/>
             <xsd:enumeration value="incomplete-name"/>
+            <xsd:enumeration value="incomplete-signature"/>
             <xsd:enumeration value="ineligible"/>
             <xsd:enumeration value="invalid-form"/>
-            <xsd:enumeration value="no-birth-date"/>
-            <xsd:enumeration value="no-signature"/>
+
+
             <xsd:enumeration value="other"/>
         </xsd:restriction>
 
@@ -924,7 +926,6 @@ Schema Definition:
 
     <xsd:simpleType name="SignatureType">
         <xsd:restriction base="xsd:string">
-
             <xsd:enumeration value="dynamic"/>
             <xsd:enumeration value="electronic"/>
             <xsd:enumeration value="other"/>
@@ -1029,6 +1030,7 @@ Value | Definition
 `ssn4` | Used for the last four digits of a Social Security number.
 `state-id` | Used for a state ID that is not a state voter registration ID.
 `state-voter-registration-id` | Used for a state's voter registration ID.
+`unspecified-document` | Used for an unspecified document, not known whether the document contains name, address, or photo ID.
 `unspecified-document-with-name-and-address` | Used for a document that contains the voter's name and address, such as a utility bill.
 `unspecified-document-with-photo-identification` | Used for a document that contains a photograph of the voter.
 `unknown` |
@@ -1040,6 +1042,7 @@ Schema Definition:
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="drivers-license"/>
             <xsd:enumeration value="local-voter-registration-id"/>
+            <xsd:enumeration value="unspecified-document"/>
             <xsd:enumeration value="unspecified-document-with-name-and-address"/>
             <xsd:enumeration value="unspecified-document-with-photo-identification"/>
             <xsd:enumeration value="ssn"/>
@@ -1772,8 +1775,8 @@ request for a new voter registration may succeed, but if the voter was already r
 response may indicate a registration update as opposed to a registration create.
 
 The response also includes, optionally, other information useful to the voter, including a description of
-the voter's precinct and polling place, as well as the districts (i.e., contests) associated with the
-polling place.
+the voter's polling place, districts (i.e., contests) associated with the
+polling place, or other geopolitical geographies such as the voter's precinct.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
@@ -1781,8 +1784,8 @@ Element | Multiplicity | Type | Element Description
 `<OtherAction>` | 0 or 1 | `xsd:string` | Used when `<SuccessAction>` value is other.
 `<Districts>` | 0 or more | `ReportingUnit` | The districts associated with the voter's precinct.
 `<EffectiveDate>` | 0 or 1 | `xsd:date` | The effective date of the action.
+`<Locality>` | 0 or more | `ReportingUnit` | Other geographies such as the voter's precinct.
 `<PollingPlace>` | 0 or 1 | `ReportingUnit` | The voter's polling place.
-`<Precinct>` | 0 or 1 | `ReportingUnit` | The voter's precinct.
 
 Schema definition:
 
@@ -1797,8 +1800,9 @@ Schema definition:
                     <xsd:element name="Districts" type="ReportingUnit" minOccurs="0"
                      maxOccurs="unbounded"/>
                     <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0"/>
+                    <xsd:element name="Locality" type="ReportingUnit" minOccurs="0"
+                    maxOccurs="unbounded"/>
                     <xsd:element name="PollingPlace" type="ReportingUnit" minOccurs="0"/>
-                    <xsd:element name="Precinct" type="ReportingUnit" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -1935,7 +1939,7 @@ This section contains several examples showing voter records request and respons
 - Voter Registration Request - [JSON](#example-nvra-voter-registration-request-in-json)
 - Voter Registration Response - [XML](#example-nvra-voter-records-response-in-xml)
 
-In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[\[7\]](#references) is vital.
+In the voter records request transaction examples, note that a significant majority of the statements are to do with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress`.  Thus, an understanding of the FGDC standard[\[6\]](#references) is vital.
 
 <br>
 
@@ -2424,11 +2428,11 @@ Recommendation, November 26, 2008, [http://www.w3.org/TR/xml/](http://www.w3.org
 [5] Object Management Group (OMG), UML Specification version 1.1 (OMG
 document ad/97-08-11) September 22, 2011, [http://omg.org/](http://omg.org/).
 
-[6] Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
-
-[7] Federal Geographic Data Committee (FGDC), United States Thoroughfare,
+[6] Federal Geographic Data Committee (FGDC), United States Thoroughfare,
 Landmark, and Postal Address Data Standard, FGDC-STD-016-2011, Feb. 2011,
 [http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html](http://www.fgdc.gov/standards/projects/FGDC-standards-projects/address-data/index_html).
+
+[7] Electronic Registration Information Center (ERIC), [http://www.ericstates.org/](http://www.ericstates.org/).
 
 [8] Election Assistance Commission, Election Administration and Voting Survey (EAVS),
 [http://www.eac.gov](http://www.eac.gov).
