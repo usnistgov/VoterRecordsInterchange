@@ -1950,17 +1950,17 @@ In the voter records request transaction examples, note that a significant major
 <br>
 
 ## Example: NVRA Voter Registration Request in XML
-This example shows a fictitious digital NVRA registration request for "Jackie Nichole Davidson" in the State of Ohio using XML:
+This example shows a fictitious digital NVRA registration request for "Jackie Nichole Davidson" in the State of Ohio using XML.  This request is for an address update, and an example of the filled-out NVRA form is as follows:
 
 <br>
 
 <div class="text-left" markdown="1">
-<img src="Figures/NVRA-request-xml.png" width="600"/>
+<img src="Figures/NVRA-request-xml-example.png" width="600"/>
 
-**Figure 6 - multiple FGDC address types mapped to a single Address type**
+**Figure 7 - Example NVRA form for an address update request**
 </div>
 
-The XML for the voter registration request transaction is as follows:
+The XML for the voter registration request transaction that contains the information exported from the form is as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!-- DISCLAIMER: All persons and places listed below are fictitious -->
@@ -2292,17 +2292,17 @@ An example of the JSON statements for the voter registration request transaction
 <br>
 
 ## Example: NVRA Voter Records Response in XML
-This final example shows a fictitious digital NVRA registration response, successful, in the State of Ohio using XML:
+This final example shows a fictitious digital NVRA registration response, successful, in the State of Ohio using XML.  An example of the populated response form is as follows:
 
 <br>
 
 <div class="text-left" markdown="1">
-<img src="Figures/NVRA-response-xml.png" width="600"/>
+<img src="Figures/NVRA-response-xml-example.png" width="600"/>
 
-**Figure 6 - multiple FGDC address types mapped to a single Address type**
+**Figure 8 - Populated NVRA voter registration response form**
 </div>
 
-The XML for the voter registration response transaction is as follows:
+The XML for the voter registration response transaction that contains the information used to populate the form is as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!-- DISCLAIMER: All persons and places listed below are fictitious -->
