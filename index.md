@@ -106,9 +106,9 @@ v6
 			- [*The **RegistrationSuccess** xsi:type*](#the-registrationsuccess-xsitype)
 		- [*The **VoterRegistration** Element*](#the-voterregistration-element)
 - [XML/JSON Usage examples](#xmljson-usage-examples)
-	- [Example: NVRA Voter Registration Request in XML](#example-nvra-voter-registration-request-in-xml)
-	- [Example: NVRA Voter Registration Request in JSON](#example-nvra-voter-registration-request-in-json)
-	- [Example: NVRA Voter Records Response in XML](#example-nvra-voter-records-response-in-xml)
+			- [Example 1: NVRA Voter Registration Request in XML](#example-1-nvra-voter-registration-request-in-xml)
+			- [Example 2: NVRA Voter Registration Request in JSON](#example-2-nvra-voter-registration-request-in-json)
+			- [Example 3: NVRA Voter Records Response in XML](#example-3-nvra-voter-records-response-in-xml)
 - [Appendices](#appendices)
 	- [Acronyms](#acronyms)
 	- [Glossary](#glossary)
@@ -1941,15 +1941,15 @@ Schema definition:
 # XML/JSON Usage examples
 This section contains several examples showing voter records request and response transactions in XML and JSON, all using the NVRA form.  The examples are:
 
-- Voter Registration Request - [XML](#example-nvra-voter-registration-request-in-xml)
-- Voter Registration Request - [JSON](#example-nvra-voter-registration-request-in-json)
-- Voter Registration Response - [XML](#example-nvra-voter-records-response-in-xml)
+- Voter Registration Request - [XML](#example-1-nvra-voter-registration-request-in-xml)
+- Voter Registration Request - [JSON](#example-2-nvra-voter-registration-request-in-json)
+- Voter Registration Response - [XML](#example-3-nvra-voter-records-response-in-xml)
 
 In the voter records request transaction examples, note that a significant majority of the statements deal with specifying addresses for `MailingAddress`, `PreviousRegistrationAddress`, and `RegistrationAddress` using the FGDC standard.  Thus, an understanding of the FGDC standard[\[6\]](#references) is vital.
 
 <br>
 
-## Example 1: NVRA Voter Registration Request in XML
+#### Example 1: NVRA Voter Registration Request in XML
 This example shows a fictitious digital NVRA registration request for "Jackie Nichole Davidson" in the State of Ohio using XML.  This request is for an address update, and an example of the filled-out NVRA form is as follows:
 
 <br>
@@ -1959,6 +1959,8 @@ This example shows a fictitious digital NVRA registration request for "Jackie Ni
 
 **Figure 7 - Example NVRA form for an address update request**
 </div>
+
+<br>
 
 The XML for the voter registration request transaction that contains the information exported from the form is as follows:
 
@@ -2103,14 +2105,14 @@ The XML for the voter registration request transaction that contains the informa
 
 <br>
 
-## Example 2: NVRA Voter Registration Request in JSON
+#### Example 2: NVRA Voter Registration Request in JSON
 This example shows a fictitious voter registration for Jane A. Doe in the State of Ohio using JSON:
 
 *need a pic of an NVRA form with her info filled accordingly*
 
 An example of the JSON statements for the voter registration request transaction is as follows:
 
-*need to add JSON schema declaration*
+<br>
 
     {
     	"GeneratedDate": "2017-7-30",
@@ -2291,7 +2293,7 @@ An example of the JSON statements for the voter registration request transaction
 
 <br>
 
-## Example 3: NVRA Voter Records Response in XML
+#### Example 3: NVRA Voter Records Response in XML
 This final example shows a fictitious digital NVRA registration response, successful, in the State of Ohio using XML.  An example of the populated response form is as follows:
 
 <br>
@@ -2301,6 +2303,8 @@ This final example shows a fictitious digital NVRA registration response, succes
 
 **Figure 8 - Populated NVRA voter registration response form**
 </div>
+
+<br>
 
 The XML for the voter registration response transaction that contains the information used to populate the form is as follows:
 
