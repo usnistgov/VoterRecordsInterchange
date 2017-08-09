@@ -218,7 +218,7 @@ This section presents an overview of the digital OVR voter registration transact
 ## Digital OVR Submission
 The digital NVRA voter registration form, as well as the digital FPCA form, are the basis for digital OVR submission.  
 
-<div class="text-left" markdown="1">
+<div class="text-center" markdown="1">
 <img src="Figures/NVRA.png" height="900"/>
 
 **Figure 1 - National Voter Registration Act form**
@@ -228,7 +228,7 @@ The digital NVRA voter registration form, as well as the digital FPCA form, are 
 
 The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military to register and, if desired, request a ballot at the same time.
 
-<div class="text-left" markdown="1">
+<div class="text-center" markdown="1">
 <img src="Figures/FPCA.png" height="900"/>
 
 **Figure 2 - Federal PostCard Application form**
@@ -1955,7 +1955,7 @@ This example shows a fictitious digital NVRA registration request for "Jackie Ni
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/NVRA-request-xml-example.png" width="600"/>
+<img src="Figures/NVRA-request-xml-example.png" width="700"/>
 
 **Figure 7 - Example NVRA form for an address update request**
 </div>
@@ -2299,7 +2299,7 @@ This final example shows a fictitious digital NVRA registration response, succes
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/NVRA-response-xml-example.png" width="600"/>
+<img src="Figures/NVRA-response-xml-example.png" width="700"/>
 
 **Figure 8 - Populated NVRA voter registration response form**
 </div>
