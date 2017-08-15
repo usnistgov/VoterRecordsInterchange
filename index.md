@@ -140,7 +140,7 @@ The VRI specification is transaction oriented, supporting digital voter registra
 - From State OVR systems by third party OVR systems.
 - By Motor Vehicle or other voter registration-related agencies.  
 
-It supports response transactions returning from the VR system to these systems and agencies.  The registration forms supported include digital versions of the NVRA (National Voter Registration Act[\[3\]](#references)) form, the FPCA (Federal PostCard Application[\[4\]](#references)) form, or state specific forms. XML and JSON are used as data formats.
+It supports response transactions returning from the VR system to these systems and agencies.  The registration forms supported include digital versions of the NVRA (National Voter Registration Act[\[3\]](#references)) form, the FPCA (Federal Post Card Application[\[4\]](#references)) form, or state specific forms. XML and JSON are used as data formats.
 
 Future versions of this specification may contain support for additional use cases for other types of transactions such as for voter record maintenance.
 
@@ -153,7 +153,7 @@ This document is a specification for a common data format (CDF) for voter record
 
 The primary features of this specification include:
 
-* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[\[3\]](#references)) or FPCA (Federal PostCard Application[\[4\]](#references)) forms or other State forms.
+* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[\[3\]](#references)) or FPCA (Federal Post Card Application[\[4\]](#references)) forms or other State forms.
 
 * A data model in UML (Unified Modeling Language[\[5\]](#references)) that itemizes and defines the data involved in voter records data interchange related to registration, and that is used to derive the XML/JSON schemas.
 
@@ -226,7 +226,7 @@ The digital NVRA voter registration form, as well as the digital FPCA form, are 
 
 <br>
 
-The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military to register and, if desired, request a ballot at the same time.
+The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military, their families, and citizens residing outside the U.S. to register and, if desired, request a ballot at the same time.
 
 <div class="text-center" markdown="1">
 <img src="Figures/FPCA.png" height="900"/>
@@ -240,7 +240,7 @@ The use case for a digital OVR submission includes:
 
 - a client IT system “submitter”,
 - a service IT system “VR authority”, and
-- the submission a digital NVRA “form” via transmission from submitter to VR authority.
+- the submission a digital NVRA, FPCA, or state-specific “form” via transmission from submitter to VR authority.
 
 [need a pic representing this - Figure 3]
 
@@ -355,16 +355,9 @@ There are actually 13 different address types but only 11 are shown, as the Gene
           <addr_type:StreetNamePreDirectional>W</StreetNamePreDirectional>
           <addr_type:StreetName>TUSCARAWAS</StreetName>
           <addr_type:StreetNamePostType>AVE</StreetNamePostType>
-          <addr_type:StreetNamePostDirectional/>
         </addr:CompleteStreetName>
-        <addr:CompleteSubaddress>
-          <addr_type:SubaddressElement>
-            <SubaddressIdentifier/>
-          </SubaddressElement>
-        </addr:CompleteSubaddress>
         <addr_type:CompletePlaceName>
           <PlaceName PlaceNameType="MunicipalJurisdiction">BARBERTON</PlaceName>
-          <PlaceName PlaceNameType="County"/>
         </CompletePlaceName>
         <addr_type:StateName>OH</StateName>
         <addr_type:ZipCode>44203</ZipCode>
