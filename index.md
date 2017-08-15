@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v8
+v9
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -256,18 +256,10 @@ The use case for a digital OVR submission includes:
 - a service IT system “VR authority”, and
 - the submission a digital NVRA, FPCA, or state-specific “form” via transmission from submitter to VR authority.
 
-<br>
-
-The digital NVRA voter registration form, as well as the digital FPCA form, are the basis for digital OVR submission.  The use case for a digital OVR submission includes:
-
-- a client IT system “submitter”,
-- a service IT system “VR authority”, and
-- the submission a digital NVRA “form” via transmission from submitter to VR authority.
-
 Currently, VR authorities are typically the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA or other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
 
 <div class="text-center" markdown="1">
-Image TBD
+*Image TBD*
 
 **Figure 3 - OVR submission transactions**
 </div>
@@ -335,8 +327,6 @@ Perhaps the most complex part of a voter registration request or other related d
 
 Briefly, the FGDC standard classifies all US addresses into a simple, complete taxonomy of address classes organized into four groups consisting of 11 address types, with the fourth class being useful for unstructured and non-U.S. addresses:
 
-Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address data Standard [TBD ref], issued by the Federal Geographic Data Committee (FGDC) [need ref] and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS.
-
 1. Thoroughfare Classes - 5 address types
 2. Landmark Classes - 2 address types
 3. Postal Deliver Classes - 3 address types
@@ -393,6 +383,8 @@ There are actually 13 different address types but only 11 are shown, as the Gene
       </NumberedThoroughfareAddress_type>
     </MailingAddress>
 
+<br>
+
  The following sections contain brief overviews of each of the address classes and their types.
 
 ### Thoroughfare Classes
@@ -426,7 +418,7 @@ The general class provides a "catch-all" way to handle addresses that do not con
 2. The complete address with place, state and zip code parsed out to a single field, e.g., *Voter Address = PO Box 1511; Place State ZIP = Ames, IA 50010*.
 3. The complete address with place, state and zip code parsed out to separate fields, e.g., *Voter Address = PO Box 1511; Complete Place Name = Ames; State Name = IA; Zip Code = 50010*.
 
-A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples.
+A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples[\[6\]](#references).
 
 <br>
 
@@ -438,7 +430,7 @@ element as a sub-element, e.g., `<VoterRecordsReport>` includes `<VoterRegistrat
 
 <br>
 
-##	Schema Stylistic Conventions
+##	Schema Documentation
 
 The XML schema was written observing the following stylistic conventions:
 
@@ -464,7 +456,7 @@ values.
 
 <br>
 
-## Roots
+### Roots
 The schema contains two root elements:
 
 1.	`<VoterRecordsRequest>`, used as a root for registration request transactions.
@@ -479,22 +471,12 @@ Schema Definition:
 
 <br>
 
-## Imports
+### Imports
 The schema (and instance files) imports two external schemas:
 
 1.	The W3C digital signature schema[\[11\]](#references), used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
 include a digital signature on XML instance files.
 2.	The FGDC schema[\[6\]](#references), which contains 11 types of addresses that are used to specify postal and registration addresses for voters, used in the `<VoterRegistration>` element.
-
-## Imports
-The schema (and instance files) imports two external schemas:
-
-1.	The W3C digital signature schema, used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
-include a digital signature on XML instance files.
-2.	The Federal Geographic Data Committee (FGDC) address schema [10],
-which contains 13 types of addresses that are used to specify postal and
-registration addresses for voters, used in the `<VoterRegistration>` and
-other elements.
 
 Schema Definition:
 
@@ -506,8 +488,7 @@ Schema Definition:
 
 <br>
 
-
-## Interfaces
+### Interfaces
 The schema includes an interface that maps the `Address` type to a choice of one of the address types from the FGDC schema.
 
       <!-- === Interface Address === -->
@@ -527,29 +508,15 @@ The schema includes an interface that maps the `Address` type to a choice of one
         </xsd:choice>
       </xsd:group>
 
-## Roots
-The schema contains two root elements:
-
-1.	`<VoterRecordsRequest>`, used as a root for registration request transactions.
-2.	`<VoterRecordsResponse>`, used as a root for registration response
-transactions.
-
-Schema Definition:
-
-     <!--  === Roots ===  -->
-     <xsd:element name="VoterRecordsRequest" type="VoterRecordsRequest"/>
-     <xsd:element name="VoterRecordsResponse" type="VoterRecordsResponse"/>
-
-
 <br>
 
-## Enumerations
+### Enumerations
 The following sections deal with the enumerations (i.e., simple types) in the
 schema, which are generated from the enumerations in the UML models.
 
 <br>
 
-### *The **AssertionValue** Enumeration*
+#### *The **AssertionValue** Enumeration*
 Used in request transactions.  
 
 Enumeration for assertions from a voter or a third party such as a department of motor
@@ -574,7 +541,7 @@ Schema Definition:
 
 <br>
  
-### *The **BallotReceiptMethod** Enumeration*
+#### *The **BallotReceiptMethod** Enumeration*
 Used in request transactions.  
 
 Enumeration for methods for delivering a ballot to the voter, used in the
@@ -602,7 +569,7 @@ Schema Definition:
 
 <br>
  
-### *The **ContactMethodType** Enumeration*
+#### *The **ContactMethodType** Enumeration*
 Used in request AND response transactions.  
 
 Enumeration for methods for contacting a voter, used in the `<Type>` sub-element of `<ContactMethod>`.
@@ -625,7 +592,7 @@ Schema Definition:
 
 <br>
  
-### *The **IdentifierType** Enumeration*
+#### *The **IdentifierType** Enumeration*
 Used in request transactions.  
 
 Enumeration for election data-related codes in the `<ExternalIdentifiers>`
@@ -659,7 +626,7 @@ Schema Definition:
 
 <br>
  
-### *The **PhoneCapability** Enumeration*
+#### *The **PhoneCapability** Enumeration*
 Used in request AND response transactions.  
 
 Enumeration for telephone capabilities, used in the `<Capability>` sub-element of `<PhoneContactMethod>`.  Multiple values may apply, e.g., `sms` and `voice`.
@@ -684,7 +651,7 @@ Schema Definition:
 
 <br>
  
-###	*The **RegistrationError** Enumeration*
+####	*The **RegistrationError** Enumeration*
 Used in response transactions.
 
 Enumeration for registration-related errors, used in the `<Error>` sub-element of `<RegistrationRejection>`. Multiple values may be included.
@@ -694,19 +661,11 @@ Value | Definition
 `identity-lookup-failed` | A lookup on the voter's identity failed.
 `incomplete` | The registration request is incomplete, without specifying the specific error(s).
 `incomplete-address` | An address is incomplete.
-
 `incomplete-birth-date` | The registration request does not contain a birthdate.
 `incomplete-name` | The voter's name is incomplete.
 `incomplete-signature` | The registration request does not contain a signature.
 `ineligible` | The voter is ineligible to be registered.
 `invalid-form` | The registration form specified is invalid.
-
-`incomplete-name` | The voter's name is incomplete.
-`ineligible` | The voter is ineligible to be registered.
-`invalid-form` | The registration form specified is invalid.
-`no-birth-date` | The registration request does not contain a birthdate.
-`no-signature` | The registration request does not contain a signature.
-
 `other` | Used when the type of error is not included in this enumeration.
 
 Schema Definition:
@@ -726,7 +685,7 @@ Schema Definition:
 
 <br>
 
-### *The **RegistrationForm** Enumeration*
+#### *The **RegistrationForm** Enumeration*
 Used in request transactions.  
 
 Enumeration for types of registration forms, used in the `<RegistrationForm>` sub-element of `<VoterRecordsRequest>`.
@@ -749,7 +708,7 @@ Schema Definition:
 
 <br>
 		 
-### *The **RegistrationHelperType** Enumeration*
+#### *The **RegistrationHelperType** Enumeration*
 Used in request transactions.  
 
 Enumeration for types of registration helpers, used in the `<Type>` sub-element of `<RegistrationHelper>`.
@@ -770,7 +729,7 @@ Schema Definition:
 
 <br>
 
-### *The **RegistrationMethod** Enumeration*
+#### *The **RegistrationMethod** Enumeration*
 Used in request transactions.  
 
 Enumeration for the method used by the voter to register, used in the
@@ -814,7 +773,7 @@ Schema Definition:
 
 <br>
 
-### *The **RegistrationProxy** Enumeration*
+#### *The **RegistrationProxy** Enumeration*
 Used in request transactions.  
 
 Enumeration for the proxy used for the voter's registration request, used in the
@@ -846,7 +805,7 @@ Schema Definition:
 
 <br>
 
-### *The **RegistrationRequestType** Enumeration*
+#### *The **RegistrationRequestType** Enumeration*
 Used in request transactions.  
 
 Enumeration for the type of voter records request, used in the `<Type>` sub-element
@@ -870,7 +829,7 @@ Schema Definition:
 
 <br>
 
-### *The **ReportingUnitType** Enumeration*
+#### *The **ReportingUnitType** Enumeration*
 Used in request AND response transactions.  
 
 Enumeration for the type of geopolitical unit, used in the `<Type>` sub-element in
@@ -944,7 +903,7 @@ Schema Definition:
 
 <br>
 
-### *The **SignatureSource** Enumeration*
+#### *The **SignatureSource** Enumeration*
 Used in request transactions.  
 
 Enumeration for source of the voter's signature, used in the `<Source>` sub-
@@ -972,7 +931,7 @@ Schema Definition:
 
 <br>
 
-### *The **SignatureType** Enumeration*
+#### *The **SignatureType** Enumeration*
 Used in request transactions.  
 
 Enumeration for the type of voter signature, used in the `<Type>` sub-element of
@@ -988,10 +947,6 @@ Schema Definition:
 
     <xsd:simpleType name="SignatureType">
         <xsd:restriction base="xsd:string">
-
-
-            <xsd:enumeration value="digital"/>
-
             <xsd:enumeration value="dynamic"/>
             <xsd:enumeration value="electronic"/>
             <xsd:enumeration value="other"/>
@@ -1000,7 +955,7 @@ Schema Definition:
 
 <br>
 
-### *The **SuccessAction** Enumeration*
+#### *The **SuccessAction** Enumeration*
 Used in response transactions.
 
 Enumeration for a response to a voter records request, indicating that the response
@@ -1033,7 +988,7 @@ Schema Definition:
 
 <br>
 
-### *The **VoterClassificationType** Enumeration*
+#### *The **VoterClassificationType** Enumeration*
 Used in request transactions.  
 
 Enumeration for voter status classifications, used in the `<Type>` sub-element of
@@ -1082,7 +1037,7 @@ Schema Definition:
 
 <br>
 
-### *The **VoterIdType** Enumeration*  
+#### *The **VoterIdType** Enumeration*  
 Used in request transactions.  
 
 Enumeration for the type of voter ID, used in the `<Type>` sub-element of
@@ -1122,7 +1077,7 @@ Schema Definition:
 
 <br>
 
-## Interfaces
+### Interfaces
 The UML model includes an interface to the FGDC address schema, which permits
 any one of the 11 address subtypes to be used in any of the address elements that
 are of type `<Address>`.
@@ -1158,13 +1113,13 @@ Schema Definition:
 
 <br>
 
-## Classes (Elements)
+### Classes (Elements)
 The following sections deal with the elements (i.e., complex types) in the schema,
 which are generated from the UML model classes.
 
 <br>
 
-### *The **AdditionalInfo** Element*
+#### *The **AdditionalInfo** Element*
 Used in request transactions.  
 
 `<VoterRegistration>` optionally includes this element for specifying information
@@ -1195,7 +1150,7 @@ Schema definition:
 
 <br>
 
-### *The **ContactMethod** Element/Extension Base*
+#### *The **ContactMethod** Element/Extension Base*
 Used in request and response transactions.
 
 `<ElectionAdministration>` optionally includes this element to specify how to
@@ -1241,7 +1196,7 @@ Schema definition:
 
 <br>
 
-#### *The **PhoneContactMethod** xsi:type*
+##### *The **PhoneContactMethod** xsi:type*
 Used in request and response transactions.  
 
 `<RegistrationAssistant>`, and `<RegistrationProxy>` use this element to specify a telephone number as well as the capabilities of the telephone, e.g., `sms`, `fax`, etc.
@@ -1274,7 +1229,7 @@ Schema definition:
 
 <br>
 
-### *The **ElectionAdministration** Element*
+#### *The **ElectionAdministration** Element*
 Used in response transactions.
 
 `<ElectionAdministration>` optionally includes the `<ContactInformation>` element to specify contact information for the election authority.
@@ -1300,7 +1255,7 @@ Schema Definition:
 
 <br>
 
-### *The **ExternalIdentifier** Element*
+#### *The **ExternalIdentifier** Element*
 Used in request AND response transactions.  
 
 `<Party>` and `<ReportingUnit>` optionally include this element for associating a jurisdiction's
@@ -1350,7 +1305,7 @@ Schema definition:
 
 <br>
 
-### *The **File** Element/Extension Base*
+#### *The **File** Element/Extension Base*
 Used in request transactions.  
 
 `<VoterId>` optionally includes this element to specify a filename for voter identification
@@ -1379,7 +1334,7 @@ Schema definition:
 
 <br>
 
-#### *The **Image** xsi:type*
+##### *The **Image** xsi:type*
 Used in request transactions.  
 
 `<Signature>` optionally includes this element to indicate that a file contains an image of a voter's signature.  `<Image>` uses `<File>` as an extension base, thus attributes and elements of `<File>` can be included in `<Image>`.
@@ -1394,7 +1349,7 @@ Schema definition:
 
 <br>
 
-### *The **LatLng** Element*
+#### *The **LatLng** Element*
 Used in response transactions.  
 
 `<Location>` optionally includes this element to specify the latitude and longitude of a voter's voting location.
@@ -1417,7 +1372,7 @@ Schema definition:
 
 <br>
 
-### *The **Location** Element*
+#### *The **Location** Element*
 Used in response transactions.  
 
 `<ReportingUnit>` optionally includes this element to specify the address and directions to a location such as for a voting location. The `<LatLng>` element can be included to specify the latitude and longitude of the voting location.
@@ -1446,7 +1401,7 @@ Schema definition:
 
 <br>
 
-### *The **Name (PreviousName)** Element*
+#### *The **Name (PreviousName)** Element*
 Used in request transactions.  
 
 `<VoterRegistration>` includes this element for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using `<PreviousName>` instead of `<Name>`.
@@ -1488,7 +1443,7 @@ Schema definition:
 
 <br>
 
-### *The **Party** Element*
+#### *The **Party** Element*
 Used in request transactions.  
 
 `<VoterRegistration>` includes this element to specify a voter's political party.
@@ -1512,7 +1467,7 @@ Schema Definition:
 
 <br>
 
-### *The **RegistrationHelper** Element*
+#### *The **RegistrationHelper** Element*
 Used in request transactions.  
 
 `<VoterRegistration>` optionally includes this element to specify information about a registration assistant involved in a voter's registration request.
@@ -1548,7 +1503,7 @@ Schema definition:
 
 <br>
 
-### *The **RegistrationProxy** Element*
+#### *The **RegistrationProxy** Element*
 Used in request transactions.  
 
 `<VoterRegistration>` optionally includes this element to specify information about the proxy for a voter records request.
@@ -1593,7 +1548,7 @@ Schema definition:
 <br>
 
 
-### *The **ReportingUnit** Element*
+#### *The **ReportingUnit** Element*
 Used in response transactions.
 
 `<VoterRecordsResponse>` include this element when a registration request is successful so as to provide a list of geopolitical geography associated with the voter's registration, e.g., the voter's precinct, polling place, districts, etc.  The `<Type>` sub-element uses the `<ReportingUnitType>` enumeration to specify the type of geopolitical geography being defined. If the reporting unit type is not listed in enumeration `<ReportingUnitType>`, use `other` and include the reporting unit type (that is not listed in the enumeration) in `<OtherType>`.  
@@ -1623,9 +1578,7 @@ Schema definition:
 
 <br>
 
-
-
-### *The **Signature (PreviousSignature)** Element*
+#### *The **Signature (PreviousSignature)** Element*
 Used in request transactions.  
 
 `<VoterRegistration>` includes this element for specifying information about a voter's signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, `<VoterRegistration>` uses `<PreviousSignature>`
@@ -1657,7 +1610,7 @@ Schema definition:
 
 <br>
 
-### *The **VoterClassification** Element*
+#### *The **VoterClassification** Element*
 Used in request transactions.  
 
 `<VoterRegistration>` includes this element to describe a voter's classification per criteria on the voter's registration form, e.g., `united-states-citizen` or `eighteen-on-election-day`.
@@ -1683,7 +1636,7 @@ Schema definition:
 
 <br>
 
-### *The **VoterId** Element*
+#### *The **VoterId** Element*
 Used in request transactions.  
 
 Used to include information about a voter's identification that may be required in a registration request. `<VoterRegistration>` includes `<VoterId>`.
@@ -1714,7 +1667,7 @@ Schema definition:
 
 <br>
 
-### *The **VoterRecordsRequest** Element*
+#### *The **VoterRecordsRequest** Element*
 The root element for request transactions.  
 
 For defining items pertaining to the status and type of the voter records request and when it was
@@ -1759,7 +1712,7 @@ Schema definition:
 
 <br>
 
-### *The **VoterRecordsResponse** Element/Extension Base*
+#### *The **VoterRecordsResponse** Element/Extension Base*
 The root element for response transactions.  
 
 For defining items pertaining to the status of a response to a voter records request.  
@@ -1777,24 +1730,7 @@ differ from the type of registration action requested.
 `<VoterRecordsResponse>` optionally includes the `<TransactionId>` sub-element associated
 with the voter records request.  The optional `<Signature>` sub-element is used for an XML
 digital signature[\[11\]](#references) on XML instance files.
-
 `<Signature>` must be the last sub-element of `<VoterRecordsResponse>`.
-
-`<VoterRecordsResponse>` is an abstract element with three `xsi:type`s that get used according to the type of response:
-
-*	`<VoterRecordsResponse xsi:type="RegistrationAcknowledgement">`, used to indicate
-an acknowledgement only
-*	`<VoterRecordsResponse xsi:type="RegistrationRejection">`, used to indicate a
-failure and the type of failure
-*	`<VoterRecordsResponse xsi:type="RegistrationSuccess">`, used to indication that a
-successful registration action occurred and the type of registration action, which may
-differ from the type of registration action requested
-
-`<VoterRecordsResponse>` optionally includes the `<TransactionId>` sub-element associated
-with the voter records request.  The optional `<Signature>` sub-element is used for an XML
-digital signature [9] on XML instance files. `<Signature>` must be the last sub-element of
-`<VoterRecordsResponse>`.
-
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
@@ -1812,7 +1748,7 @@ Schema definition:
 
 <br>
 
-#### *The **RegistrationAcknowledgement** xsi:type*
+##### *The **RegistrationAcknowledgement** xsi:type*
 Used in response transactions.  
 
 For indicating that the request was received but action on the request is pending.
@@ -1827,7 +1763,7 @@ Schema Definition:
 
 <br>
 
-#### *The **RegistrationRejection** xsi:type*
+##### *The **RegistrationRejection** xsi:type*
 Used in response transactions.
 
 For indicating that the request failed.  The `<Error>` sub-element is used to indicate the type of error that occurred. The `<AdditionalDetails>` sub-element can be used to provide more information as to the rejection.
@@ -1857,7 +1793,7 @@ Schema definition:
 
 <br>
 
-#### *The **RegistrationSuccess** xsi:type*
+##### *The **RegistrationSuccess** xsi:type*
 Used in response transactions.
 
 For indicating a successful response to a request.  The `<Action>` sub-element is used to
@@ -1902,7 +1838,7 @@ Schema definition:
 
 <br>
 
-### *The **VoterRegistration** Element*
+#### *The **VoterRegistration** Element*
 Used in request transactions.  
 
 `<VoterRecordsRequest>` includes this element to specify information about the voter.
@@ -2023,7 +1959,6 @@ Schema definition:
     </xsd:complexType>
 
 <br>
-
 
 # XML/JSON Usage examples
 This section contains several examples showing voter records request and response transactions in XML and JSON, all using the NVRA form.  The examples are:
