@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v7
+v8
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
