@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v10
+v11
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -249,12 +249,6 @@ The use case for a digital OVR submission includes:
 
 Currently, VR authorities are typically the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA or other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
 
-<div class="text-center" markdown="1">
-*Image TBD*
-
-**Figure 3 - OVR submission transactions**
-</div>
-
 The submission of a digital registration form to a VR authority represents a "request" transaction.  The "response" transaction from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  For a successful registration, the response could also include additional information such as the voter's polling place and list of districts that the voter resides within.
 
 Accordingly, the UML data model built for the digital OVR submission use case in reality is two models: one to describe the data involved in a registration request transaction and the other to describe the data in the registration response transaction, as shown in the following sections and figures.
@@ -272,7 +266,7 @@ The UML model shows 3 types of transaction requests that would be sent from an O
 <div class="text-center" markdown="1">
 <img src="Figures/VoterRegistrationRequest-V24.png" height="600"/>
 
-**Figure 4 - Voter Records Request UML class diagram**
+**Figure 3 - Voter Records Request UML class diagram**
 </div>
 
 <br>
@@ -301,7 +295,7 @@ This section contains a brief overview of voter records response transactions. T
 <div class="text-center" markdown="1">
 <img src="Figures/VoterRegistrationResponse-V24.png" width="1000"/>
 
-**Figure 5 - Voter Records Response UML class diagram**
+**Figure 4 - Voter Records Response UML class diagram**
 </div>
 
 Often, a successful registration includes the voter's assigned polling place and precinct, the location of the local election authority, and a list of districts/contests that are on the voter's ballot.  In the UML model, the RegistrationSuccess class optionally includes these items.
@@ -330,7 +324,7 @@ The VoterRegistration class in the UML model has four distinct addresses: Regist
 <div class="text-center" markdown="1">
 <img src="Figures/addr-xsd.png" width="800"/>
 
-**Figure 6 - multiple FGDC address types mapped to a single Address type**
+**Figure 5 - multiple FGDC address types mapped to a single Address type**
 </div>
 
 Accordingly, the VRI XML/JSON schemas generated from the UML model include the FGDC XML schema and map the use of the `<Address>` type to one of the 11 different address types in the FGDC schema, as shown below using XML:
@@ -2117,7 +2111,13 @@ The XML for the voter registration request transaction that contains the informa
 ### Example 2: NVRA Voter Registration Request in JSON
 This example shows a fictitious voter registration for Jane A. Doe in the State of Ohio using JSON:
 
-*need a pic of an NVRA form with her info filled accordingly*
+<br>
+
+<div class="text-center" markdown="1">
+<img src="Figures/NVRA-request-json-example.png" width="700"/>
+
+**Figure 7 - Example NVRA form for an address update request**
+</div>
 
 An example of the JSON statements for the voter registration request transaction is as follows:
 
