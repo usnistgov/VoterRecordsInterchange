@@ -7,7 +7,7 @@
 
 **August 2017**
 
-v11
+v12
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -49,13 +49,14 @@ v11
 	- [1.2 Audience](#12-audience)
 	- [1.3 Motivation and Methodology](#13-motivation-and-methodology)
 - [2. Overview of Digital OVR Transactions as Implemented by this Specification](#2-overview-of-digital-ovr-transactions-as-implemented-by-this-specification)
-	- [2.1 Digital OVR Request Transaction](#21-digital-ovr-request-transaction)
+	- [2.1 Voter Records Request Transaction](#21-voter-records-request-transaction)
 	- [2.2 Voter Records Response Transaction](#22-voter-records-response-transaction)
-	- [2.3 The U.S. Thoroughfare, Landmark, and Postal Address Data Standard](#23-the-us-thoroughfare-landmark-and-postal-address-data-standard)
-		- [2.3.1 Thoroughfare Classes](#231-thoroughfare-classes)
-		- [2.3.2 Landmark Classes](#232-landmark-classes)
-		- [2.3.3 Postal Delivery Classes](#233-postal-delivery-classes)
-		- [2.3.4 General Class](#234-general-class)
+	- [2.3 State-specific Request and Responses](#23-state-specific-request-and-responses)
+	- [2.4 The U.S. Thoroughfare, Landmark, and Postal Address Data Standard](#24-the-us-thoroughfare-landmark-and-postal-address-data-standard)
+		- [2.4.1 Thoroughfare Classes](#241-thoroughfare-classes)
+		- [2.4.2 Landmark Classes](#242-landmark-classes)
+		- [2.4.3 Postal Delivery Classes](#243-postal-delivery-classes)
+		- [2.4.4 General Class](#244-general-class)
 - [3. Voter Records Interchange XML Schema](#3-voter-records-interchange-xml-schema)
 	- [3.1 Schema Documentation](#31-schema-documentation)
 		- [3.1.1 Roots](#311-roots)
@@ -220,9 +221,9 @@ This section presents an overview of the digital OVR voter registration request 
 
 <br>
 
-## 2.1 Digital OVR Request Transaction
+## 2.1 Voter Records Request Transaction
 
-The digital NVRA and FPCA forms form the basis for digital OVR submission.  The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military, their families, and citizens residing outside the U.S. to register and, if desired, request a ballot at the same time.
+The digital NVRA and FPCA forms form the basis for digital OVR registration.  The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military, their families, and citizens residing outside the U.S. to register and, if desired, request a ballot at the same time.
 
 <div class="text-center" markdown="1">
 <img src="Figures/NVRA.png" height="900"/>
@@ -240,7 +241,7 @@ The digital NVRA and FPCA forms form the basis for digital OVR submission.  The 
 
 <br>
 
-The submission of a digital registration form to a VR authority represents a request transaction.  The response transaction from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  The request transaction consists of a registration request, e.g., initial registration, followed by various information about the voter and the submitter of the request.  The use case for the digital OVR request transaction includes:
+The submission of a digital registration form to a VR authority represents a voter records request transaction.  The response transaction from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  The request transaction consists of a registration request, e.g., initial registration, followed by various information about the voter and the submitter of the request.  The use case for the digital OVR request transaction includes:
 
 - a client IT “OVR submitter”,
 - a service IT system “VR authority”, and
@@ -264,18 +265,12 @@ The UML model shows 3 types of transaction requests that would be sent from an O
 
 An OVR submitter essentially specifies the correct form ("nvra" or "fpca") and the type of request ("registration", "registration" AND "ballot-request"). The registration request is valid for either form, whereas for the FPCA, it is possible to register and request a ballot at the same time. The VoterRegistration class contains the remaining data elements, all taken from information contained on the digital form.  
 
-The AdditionalInfo class is used for information
-not addressed in this schema by other elements and attributes, e.g., state-specific
-information that does not "fit" in any other element. The information will thus be
-highly specific to the generating application, and consuming applications must
-"know" the meaning of the information to make use of it.
-
 Both the registration request and response models contain a class ExternalIdentifier, which is used to associate an identifier with an item.  In the case of the request model, it is used optionally to associate an identifier to the political party, and in the response model, to optionally associate identifiers with political geography such as precincts and districts.
 
 <br>
 
 ## 2.2 Voter Records Response Transaction
-This section contains a brief overview of voter records response transactions. The UML model is simpler than the request model in that a response generally contains little data other than the results of the request, which are:
+The voter records response transactions simply returns a response to the voter records request transaction. The UML model is simpler than the request model in that a response generally contains little data other than the results of the request, which are:
 
 - The registration request succeeded.
 - The registration request was rejected, including a reason for the rejection.
@@ -289,7 +284,8 @@ This section contains a brief overview of voter records response transactions. T
 **Figure 4 - Voter Records Response UML class diagram**
 </div>
 
-Often, a successful registration includes the voter's assigned polling place and precinct, the location of the local election authority, and a list of districts/contests that are on the voter's ballot.  In the UML model, the RegistrationSuccess class optionally includes these items.
+Often, a successful registration includes the voter's assigned polling place and precinct, the location of the local election authority, and a list of districts/contests that are on the voter's ballot.  In the UML model, the RegistrationSuccess class optionally includes these items.  The  successful registration also returns the type of registration that occurred,
+which may differ from what was requested.  For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
 
 When a registration request fails, the model specifies nine possible reasons plus "other", which can be used to specify an alternate reason. The "incomplete" value can be used as a catch-all for reasons other than those specified.
 
@@ -297,7 +293,30 @@ The registration acknowledgement is simply that; the VR system acknowledging tha
 
 <br>
 
-## 2.3 The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
+## 2.3 State-specific Request and Responses
+
+The UML model and associated XML and JSON schemas contain several features to enable state-specific request and response transactions.  Using these features, it is possible to use this specification when local modifications are needed.
+
+The AdditionalInfo class is used for information
+not addressed in this schema by other attributes, e.g., state-specific
+data that does not "fit" in any other attribute. The type of data will thus be
+highly specific to the generating application, and consuming applications must
+"know" the meaning of the data to make use of it.  Each AdditionalInfo class would contain the name of the data, and then its value, depending on whether the data represents the value directly as a string or represents a file name.  
+
+For example, if a state requires its registration form to include the voter's language, it would need to use the AdditionalInfo class to contain a value representing the voter's language.  An XML example is as follows, using English as the voter's language:
+
+    <AdditionalInfo>
+       <Name>Language</Name>
+       <StringValue>en-US</StringValue>
+    </AdditionalInfo>
+
+The XML and JSON usage examples in Section 4 contain a number of examples showing usage of the AdditionalInfo class.
+
+Additionally, each enumeration generally contains an "other" value that can be used when none of the enumeration values are sufficient.  If "other" is used as the enumeration value, there is an attribute named OtherType that can be used to hold the other data.  For example, a state may wish to implement a specific "address-update" transaction, and would thus need to use "other" for the Type attribute in the VoterRecordsRequest class.  The OtherType attribute would then contain the type of registration request, i.e., "address-update".
+
+<br>
+
+## 2.4 The U.S. Thoroughfare, Landmark, and Postal Address Data Standard
 
 Perhaps the most complex part of a voter registration request or other related data exchange of voter record data is the voter's address. There are multiple types of addresses for VR purposes, e.g., current registration address, previous registration address, postal mailing address, overseas address, and multiple types of addresses for location and mailing purposes, e.g., structured street address, unstructured street address, rural addresses, PO box addresses, military and diplomatic addresses, and mailing addresses outside the U.S.  Rather than revisit the complexities of address structure, this specification makes use of an existing XML-based standard for structuring addresses: the U.S. Thoroughfare, Landmark, and Postal Address Data Standard[\[6\]](#references), issued by the Federal Geographic Data Committee (FGDC)[\[9\]](#references) and covering the complexity of addresses managed by or encountered by organizations and agencies such as the U.S. Census and USPS (U.S. Postal Service). Use of the FGDC standard greatly simplifies this specification and leaves maintenance of the standard to the more appropriate management body.
 
@@ -363,7 +382,7 @@ There are actually 13 different address types but only 11 are shown, as the Gene
 
  The following sections contain brief overviews of each of the address classes and their types.
 
-### 2.3.1 Thoroughfare Classes
+### 2.4.1 Thoroughfare Classes
 Most business and residential addresses are Numbered Thoroughfare Addresses. They specify a location by reference to a thoroughfare, i.e., a road or part of a road or other access route along which a delivery point can be accessed.  A thoroughfare is typically but not always a road - it may be, for example, a walkway, a railroad, or a river. The thoroughfare address classes are:
 
 - Numbered Thoroughfare Address, e.g., *123 Main Street*.
@@ -374,20 +393,20 @@ Most business and residential addresses are Numbered Thoroughfare Addresses. The
 
 Most business and residential addresses are Numbered Thoroughfare Addresses. Unnumbered Thoroughfare Addresses are used for those areas where no address numbers have been assigned and the addresses often include only the thoroughfare name.
 
-### 2.3.2 Landmark Classes
+### 2.4.2 Landmark Classes
 Landmark addresses specify a location by reference to a named landmark. A landmark is a relatively permanent feature of the manmade landscape that has recognizable identity within a particular cultural context, e.g., a large statue or structure such as an apartment complex. The landmark address classes are:
 
 - Landmark Address, e.g., *Statue of Liberty*.
 - Community Address, e.g., *123 Urbanizacion Los Olmos*.
 
-### 2.3.3 Postal Delivery Classes
+### 2.4.3 Postal Delivery Classes
 Postal delivery addresses specify points of postal delivery that have no definite relation to the location of the recipient, such as a post office box, rural route box, overseas military address, or general delivery office. The USPS specifies each class in detail in USPS Publication 28[\[10\]](#references). The postal delivery classes are:
 
 - USPS Postal Delivery Box, e.g., *PO Box 16953*.
 - USPS Postal Delivery Route, e.g., *RR 1, Box 100*.
 - USPS General Delivery Office, e.g., *General Delivery*.
 
-### 2.3.4 General Class
+### 2.4.4 General Class
 The general class provides a "catch-all" way to handle addresses that do not conform to any of the thoroughfare, landmark, or postal classes, including non-U.S. addresses. There are three types:
 
 1. The complete address as a single unparsed string of text, e.g., *Voter Address = PO Box 1511, Ames, IA 50010*.
