@@ -135,46 +135,42 @@ In addition to the above acknowledgments, the editor also gratefully acknowledge
 
 # Executive Summary
 
-This is a draft specification of a common data format (CDF) for voter registration record interchanges/transactions, abbreviated as VRI - Voter Records Interchange.  It has been developed by NIST and members of the Voting Interoperability Public Working Group to assist state election offices and vendors in supporting online voter registration (OVR) transactions with voter registration (VR) authorities.  The specification contains an overview of the supported use cases as well as a documentation and usage of XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
+This is a draft specification of a Common Data Format (CDF) for Voter Record Interchanges (VRI).  It has been developed by NIST and members of the Voting Interoperability Public Working Group to assist election officials and developers in supporting online voter registration (OVR) transactions with voter registration (VR) authorities.  The specification contains an overview of the supported use cases, which define interactions between roles and systems such as between voter registration records and online voter registration systems (OVR).  The CDF VRI specification also documents the use of XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
 
-The VRI specification is transaction oriented, supporting digital voter registration (VR) application requests transmitted to VR systems from OVR sources including:
+The VRI specification is transaction oriented, supporting digital VR application requests transmitted to VR systems from OVR sources including:
 
-- From State OVR systems to VR authorities.
-- From State OVR systems by third party OVR systems.
-- By Motor Vehicle or other voter registration-related agencies.  
+- State OVR systems to VR authorities.
+- Third-party jurisdiction-independent OVR systems.
+- State motor vehicle departments or other voter registration-related agencies.  
 
-The registration forms supported include digital versions of:
+It supports responses transmitted from VR authorities to these OVR systems and state agencies. The registration forms supported include digital versions of the NVRA (National Voter Registration Act[\[3\]](#references)) form, the FPCA (Federal Post Card Application[\[4\]](#references)) form, or state specific forms. XML and JSON are used as data formats.
 
-- The NVRA (National Voter Registration Act[\[3\]](#references)) form.
-- The FPCA (Federal Post Card Application[\[4\]](#references)) form.
-- State specific forms.
+Future versions of this specification may contain support for additional use cases for other types of transactions, such as for voter record maintenance.
 
-Future versions of this specification may contain support for additional use cases for other types of transactions such as for voter record maintenance.
-
-The XML/JSON schemas associated with this specification are generated from a UML (Unified Modeling Language[\[5\]](#references)) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that the model can be more easily understood and subsequently modified, if required, and that formats such as XML and JSON can be generated or derived from the UML model.
+The XML/JSON schemas associated with this specification are generated from a UML (Unified Modeling Language[\[5\]](#references)) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that data formats such as XML and JSON can be generated or derived from the UML model.
 
 <br>
 
 # 1. Introduction
 
-This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) or similar portals made to voter registration (VR) systems, and responses to the requests returning from the VR system. The specification includes XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
+This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) made to voter registration (VR) systems, and responses to the requests returning from the VR system. The specification includes XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
 
-The primary features of this specification include:
+Primary features of this specification include:
 
-* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[\[3\]](#references)) or FPCA (Federal Post Card Application[\[4\]](#references)) forms or other State forms.
-* A data model in UML (Unified Modeling Language[\[5\]](#references)) that itemizes and defines the data involved in voter records data interchange related to registration and that is used to derive the XML/JSON schemas.
-* Detailed instructions for implementation and use of the XML/JSON schemas.
-* The specification is easily extensible to additional use cases for other sorts of registration transactions such as for voter record maintenance.
+* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[\[3\]](#references)) or FPCA (Federal Post Card Application[\[4\]](#references)) forms or other U.S. state-specific forms.
+* A data model in UML (Unified Modeling Language[\[5\]](#references)) that itemizes and defines the data involved in voter records data interchange related to registration and that is used to derive the XML and JSON schemas.
+* Detailed instructions for implementation and use of the XML and JSON schemas.
+*	A flexible specification to cover additional use cases for other types of registration transactions, such as for voter record maintenance.
 
 <br>
 
 ## 1.1 Purpose
 
-The purpose of this specification is to provide a data interchange formats in XML and JSON for voter registration requests and responses so as to assist election officials in implementing and supporting the development of OVR systems within States. Advantages of using this specification include:
+The purpose of this specification is to provide data interchange formats in XML and JSON for voter registration requests and responses so as to assist election officials and developers in implementing and supporting the development of OVR systems within States. Advantages of using this specification include:
 
-* A ready data interchange format for online voter registration systems, removing the need for individual OVR system development projects to define data models and formats.
-* Use in OVR systems currently being built, with early use and feedback on the CDF to inform continuing development of the CDF for additional use cases.
-* Enabling software reference implementations of externalization and internalization of data in a CDF, promoting software re-use, and reduced efforts in development of systems that exchange voter record data.
+* A ready data interchange format for online voter registration systems to remove the need for individual OVR system development projects to define data models and formats.
+* Applications for OVR systems currently being developed with early adoption and feedback for the CDF VRI to refine development of the CDF for additional use cases.
+* A UML model that is easily extensible to additional use cases.
 
 <br>
 
@@ -184,30 +180,29 @@ The intended audience of this specification includes election officials, VR syst
 <br>
 
 ## 1.3 Motivation and Methodology
-This document was motivated primarily to help U.S. election officials in exchanging data related to voter registration. The current varying systems involved and data produced often do not interoperate, adding more complexity to the process. Additionally, there are sometimes significant variations among different jurisdictions within a state as well among the states themselves in the way they automate voter registration and related parts of voter record management.
-
+This document was motivated primarily to assist election officials and developers in implementing and supporting OVR systems by reducing or eliminating non-standard exchange formats for voter registration data. The current varying systems involved and data produced often do not interoperate, adding more complexity to the process. Additionally, there are sometimes significant variations among different jurisdictions within a state as well among the states themselves in the way they automate voter registration and related parts of voter record management.
 
 NIST and a community of U.S. election officials, analysts, and voting system technologists analyzed varying VR scenarios and use cases and their associated data interchanges, to analyze existing practices and to create a standard data interchange format for emerging OVR systems. This specification implements the following two use cases:
 
-1.	Digital OVR Submission: Digital VR applications forms transmitted within state OVR systems or to state OVR systems by third party OVR systems, following the formats of the NVRA and FPCA voter registration application forms, including state-specific additions to these forms.
+1.	OVR Submission: Digital VR applications forms transmitted within state OVR systems or to state OVR systems by third party OVR systems, following the formats of the NVRA and FPCA voter registration application forms, including state-specific additions to these forms.
 
-2.	Digital VR Update Submission: Similar application forms including: voter registration update (change of name, change of address), change of voter status, and absentee ballot request.
+2.	VR Update Submission: Similar application forms including: voter registration update (change of name, change of address), change of voter status, and absentee ballot request.
 
-A UML data model was subsequently generated to represent the data associated with digital OVR submission and to show how the data elements are related and organized. Finally, XML and JSON schemas were generated from the UML data model.
+A UML data model was subsequently generated to represent the data associated with OVR requests and responses and to show how the data elements are related and organized. Finally, XML and JSON schemas were generated from the UML data model.
 
-The advantages of using a UML data model as an intermediate step to generating the XML/JSON schemas include that the model is independent of the concrete data formats (or other potential formats that could be derived), and relationships between data elements are easier to correctly define and visualize when they are independent of any specific data format. If changes are needed to the specific XML/JSON formats, one can make changes to the UML model and then generate a new version of the formats using commercial products.
+The advantages of using a UML data model as an intermediate step to generating the XML and JSON schemas include that the model is independent of the concrete data formats (or other potential formats that could be derived), and relationships between data elements are easier to correctly define and visualize when they are independent of any specific data format. If changes are needed to the specific XML and JSON formats, one can make changes to the UML model and then generate or derive new versions of the formats.
 
-Much of the data involved in voter registration requests consists of voter addresses, used for current registration addresses, postal addresses, previous registration addresses, etc.  Rather than implement new and complicated functionality in this specification for representing addresses, it was decided to use the existing U.S. Thoroughfare, Landmark, and Postal Address Data Standard [\[6\]](#references), which contains four major classes of addresses that are broken out into 11 different types of addresses.  These can be used to represent addresses where voters live and where they receive postal mail (if different), including  overseas addresses.
+Much of the data involved in voter registration requests consists of voter addresses: current registration addresses, postal addresses, previous registration addresses, etc.  Rather than implement new and complicated functionality in this specification for representing addresses, it was decided to use the existing U.S. Thoroughfare, Landmark, and Postal Address Data Standard [\[6\]](#references), which contains four major classes of addresses that are broken out into 11 different types of addresses.  These can be used to represent addresses where voters live and where they receive postal mail (if different), including overseas addresses.
 
 While this specification is focused on digital OVR submission, subsequent versions of this specification may implement additional use cases, including:
 
--	OVR Transfer: Subsets of such digital applications used for 3rd-party OVR registrars to transfer users and user data to state OVR systems.
+-	OVR Transfer: Subsets of such applications used for 3rd-party OVR registrars to transfer users and user data to state OVR systems.
 
--	DMV Match: Subsets of such digital applications exchanged between state VR systems and DMV or similar systems, to perform driver's license data matching as part of OVR processing.
+-	DMV Match: Subsets of such digital applications exchanged between state VR systems and DMV or similar systems, to perform driver's license data matching (if required) as part of OVR processing.
 
 -	DMV Notification: Data exchanged by DMV (Department of Motor Vehicles) or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
--	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g. the ERIC (Electronic Registration Information Center[\[7\]](#references)) system, or as part of inter-state cross-check activities.
+-	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g., the ERIC (Electronic Registration Information Center[\[7\]](#references)) system, or as part of inter-state cross-check activities.
 
 -	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[\[8\]](#references))reporting.
 
@@ -241,7 +236,7 @@ The digital NVRA and FPCA forms form the basis for digital OVR registration.  Th
 
 <br>
 
-The submission of a digital registration form to a VR authority represents a voter records request transaction.  The response transaction from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  The request transaction consists of a registration request, e.g., initial registration, followed by various information about the voter and the submitter of the request.  The use case for the digital OVR request transaction includes:
+The submission of a digital registration form to a VR authority represents a voter records request transaction.  The response transaction back from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  The request transaction consists of a registration request, e.g., initial registration, followed by various information about the voter and the submitter of the request.  The use case for the digital OVR request transaction includes:
 
 - a client IT “OVR submitter”,
 - a service IT system “VR authority”, and
@@ -249,11 +244,12 @@ The submission of a digital registration form to a VR authority represents a vot
 
 Currently, VR authorities are typically the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA or other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
 
-The UML model shows 3 types of transaction requests that would be sent from an OVR submitter to a VR system:
+The UML model shows 4 types of transaction requests that would be sent from an OVR submitter to a VR system:
 
 - Request a registration for a voter using the digital NVRA form.
 - Request a registration for a voter using the digital FPCA form.
 - Request a registration for a voter using the digital FPCA form and also request a ballot.
+- Request a state-specific action for a voter using possibly a state-specific digital form (covered in Section 2.3).
 
 <div class="text-center" markdown="1">
 <img src="Figures/VoterRegistrationRequest-V24.png" height="600"/>
@@ -287,7 +283,7 @@ The voter records response transactions simply returns a response to the voter r
 Often, a successful registration includes the voter's assigned polling place and precinct, the location of the local election authority, and a list of districts/contests that are on the voter's ballot.  In the UML model, the RegistrationSuccess class optionally includes these items.  The  successful registration also returns the type of registration that occurred,
 which may differ from what was requested.  For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
 
-When a registration request fails, the model specifies nine possible reasons plus "other", which can be used to specify an alternate reason. The "incomplete" value can be used as a catch-all for reasons other than those specified.
+When a registration request fails, the model specifies a number of possible reasons plus "other", which can be used to specify an alternate reason. The "incomplete" value can be used as a catch-all for reasons other than those specified.
 
 The registration acknowledgement is simply that; the VR system acknowledging that the request was accepted but has not been acted upon yet.
 
@@ -337,7 +333,7 @@ The VoterRegistration class in the UML model has four distinct addresses: Regist
 **Figure 5 - multiple FGDC address types mapped to a single Address type**
 </div>
 
-Accordingly, the VRI XML/JSON schemas generated from the UML model include the FGDC XML schema and map the use of the `<Address>` type to one of the 11 different address types in the FGDC schema, as shown below using XML:
+Accordingly, the XML and JSON schemas generated from the UML model include the FGDC XML schema and map the use of the `<Address>` type to one of the 11 different address types in the FGDC schema, as shown below using XML:
 
     <!-- === Interface Address === -->
     <xsd:group name="Address">
