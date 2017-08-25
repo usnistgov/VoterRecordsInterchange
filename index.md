@@ -254,7 +254,7 @@ The UML model shows 4 types of transaction requests that would be sent from an O
 - Request a state-specific action for a voter using possibly a state-specific digital form (covered in Section 2.3).
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequest-V24.png" height="1100"/>
+<img src="Figures/VoterRegistrationRequest-V24.png" height="1000"/>
 
 **Figure 3 - Voter Records Request UML class diagram**
 </div>
@@ -277,7 +277,7 @@ The voter records response transactions simply returns a response to the voter r
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponse-V24.png" height="1100"/>
+<img src="Figures/VoterRegistrationResponse-V24.png" height="1000"/>
 
 **Figure 4 - Voter Records Response UML class diagram**
 </div>
