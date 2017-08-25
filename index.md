@@ -280,12 +280,31 @@ The voter records response simply returns a response to the voter records reques
 **Figure 4 - Voter Records Response UML class diagram**
 </div>
 
-Often, a successful registration includes the voter's assigned polling place and precinct, the location of the local election authority, and a list of districts/contests that are on the voter's ballot.  In the UML model, the RegistrationSuccess class optionally includes these items.  The  successful registration also returns the type of registration that occurred,
-which may differ from what was requested.  For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
+The first two result types represent the typical current practice in
+online voter registration, where a registration authority operates an
+online service that receives VR requests and saves them for later
+processing by local elections offices' staff. In this typical practice,
+the acceptance of an online VR request is simply an acknowledgement that
+the request was received without error. The Voter Records Response
+therefore has both an acknowledgement, and a rejection that represents a
+response to the sender that notifies of the rejection and the reasons
+for the rejection.
 
-When a registration request fails, the model specifies a number of possible reasons plus "other", which can be used to specify an alternate reason. The "incomplete" value can be used as a catch-all for reasons other than those specified.
-
-The registration acknowledgement is simply that; the VR system acknowledging that the request was accepted but has not been acted upon yet.
+In addition, the Voter Records Response includes a RegistrationSuccess,
+for cases where the receiving service is able to process a request to
+success, and notify the sender synchronously. The contents of a
+RegistrationSuccess are modeled on the information that becomes
+available to a newly registered voter as a result of successful
+registration. In the UML model, the RegistrationSuccess class optionally
+includes these items: voter’s assigned polling place and precinct, the
+location of the local election authority, and a list of districts that
+the voter resides in, and if available a list of ballot items in an
+upcoming election that the voter is eligible to vote in. The successful
+registration also returns the type of registration that occurred, which
+may differ from what was requested. For example, a request for a new
+voter registration may succeed, but if the voter was already registered,
+the response may indicate a registration update as opposed to a
+registration create.
 
 <br>
 
