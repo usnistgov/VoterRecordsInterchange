@@ -254,7 +254,7 @@ The UML model shows 4 types of transaction requests that would be sent from an O
 - Request a state-specific action for a voter using possibly a state-specific digital form (covered in Section 2.3).
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationRequest-V24.png" height="1200"/>
+<img src="Figures/VoterRegistrationRequest-V24.png" height="1100"/>
 
 **Figure 3 - Voter Records Request UML class diagram**
 </div>
@@ -277,7 +277,7 @@ The voter records response transactions simply returns a response to the voter r
 <br>
 
 <div class="text-center" markdown="1">
-<img src="Figures/VoterRegistrationResponse-V24.png" height="1200"/>
+<img src="Figures/VoterRegistrationResponse-V24.png" height="1100"/>
 
 **Figure 4 - Voter Records Response UML class diagram**
 </div>
@@ -313,8 +313,10 @@ The XML and JSON usage examples in Section 4 contain a number of examples showin
 Additionally, each enumeration generally contains an "other" value that can be used when none of the enumeration values are sufficient.  If "other" is used as the enumeration value, there is an attribute named OtherType that can be used to hold the other data.  For example, a state may wish to implement a specific "address-update" transaction, and would thus need to use "other" for the Type attribute in the VoterRecordsRequest class.  The OtherType attribute would then contain the type of registration request, i.e., "address-update", e.g. in XML,
 
     <VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange.xsd"
-        xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
+        xmlns="NIST_V0_voter_records_interchange.xsd"
+        xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd NIST_V0_voter_records_interchange.xsd"
+        xmlns:addr="http://www.fgdc.gov/schemas/address/addr"
+        xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
         <GeneratedDate>2017-02-10</GeneratedDate>
         <Issuer>Ohio Secretary of State</Issuer>
         <TransactionId>2a642eb5-169e-4a3b-8899-adc7ea6d00d0</TransactionId>
