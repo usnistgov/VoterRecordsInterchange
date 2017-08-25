@@ -7,7 +7,9 @@
 
 **August 2017**
 
-v12
+
+*NOTE: this version of the VRI spec is the most recent and to be used for reviews; an older version in PDF is available on the VRI GitHub repository.  Once the VRI spec is finalized, both versions of the spec will be synced.*
+
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
     standards, measurement, and testing-related efforts. These external perspectives can come from
@@ -218,7 +220,7 @@ This section presents an overview of the digital OVR voter registration request 
 
 ## 2.1 Voter Records Request Transaction
 
-The digital NVRA and FPCA forms form the basis for digital OVR registration.  The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military, their families, and citizens residing outside the U.S. to register and, if desired, request a ballot at the same time.
+The digital NVRA and FPCA forms form the basis for digital OVR registration.  The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military, their families, and citizens residing outside the U.S. to register and, if desired, request a ballot at the same time. (Note: the U.S. Department of Defense's Federal Voting Assistance Program (FVAP) is currently revising its August 2013 Standard Form 76, or the Federal Post Card Application, for release later in 2017.  XML and JSON schemas will be updated to reflect changes made to the FPCA form.)
 
 <div class="text-center" markdown="1">
 <img src="Figures/NVRA.png" height="900"/>
