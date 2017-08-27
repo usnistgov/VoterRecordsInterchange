@@ -2535,19 +2535,16 @@ These files are:
 <br>
 
 # E. XML Schema
-        <?xml version="1.0" encoding="UTF-8"?>
-        <xsd:schema elementFormDefault="qualified" targetNamespace="NIST_V1_voter_records_interchange.xsd" version="1.0"
-         xmlns="NIST_V1_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr"
-				 xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <!-- === Imports === -->
-          <xsd:import namespace="http://www.fgdc.gov/schemas/address/addr" schemaLocation="addr.xsd"/>
-          <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/2000/09/xmldsig#"/>
-          <!-- === Roots === -->
-          <xsd:element name="VoterRecordsRequest" type="VoterRecordsRequest"/>
-          <xsd:element name="VoterRecordsResponse" type="VoterRecordsResponse"/>
-          <!-- === Primitives === -->
-          <!-- === Enumerations === -->
-          <xsd:simpleType name="AssertionValue">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="NIST_V0_voter_records_interchange.xsd" version="0.0" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <!-- ========== Imports ========== -->
+      <xsd:import namespace="http://www.fgdc.gov/schemas/address/addr" schemaLocation="https://www.fgdc.gov/schemas/address/addr.xsd"/>
+      <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/2000/09/xmldsig#"/>
+      <!-- ========== Roots ========== -->
+      <xsd:element name="VoterRecordsRequest" type="VoterRecordsRequest"/>
+      <xsd:element name="VoterRecordsResponse" type="VoterRecordsResponse"/>
+      <!-- ========== Enumerations ========== -->
+      <xsd:simpleType name="AssertionValue">
         <xsd:restriction base="xsd:string">
           <xsd:enumeration value="no"/>
           <xsd:enumeration value="yes"/>
@@ -2593,11 +2590,11 @@ These files are:
           <xsd:enumeration value="identity-lookup-failed"/>
           <xsd:enumeration value="incomplete"/>
           <xsd:enumeration value="incomplete-address"/>
+          <xsd:enumeration value="incomplete-birth-date"/>
           <xsd:enumeration value="incomplete-name"/>
+          <xsd:enumeration value="incomplete-signature"/>
           <xsd:enumeration value="ineligible"/>
           <xsd:enumeration value="invalid-form"/>
-          <xsd:enumeration value="no-birth-date"/>
-          <xsd:enumeration value="no-signature"/>
           <xsd:enumeration value="other"/>
         </xsd:restriction>
       </xsd:simpleType>
@@ -2643,9 +2640,19 @@ These files are:
         </xsd:restriction>
       </xsd:simpleType>
       <xsd:simpleType name="RegistrationRequestType">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The specific type of message being sent. Each type indicates a desired result by the system receiving the message. The meanings of each type will need to be explicitly stated.
+
+            This attribute is optional, and if not specified (or other), the required Action attribute will determine the message semantics generically.
+
+            For example: 'address update' indicates that only the voter's address should be updated on an existing voter registration.
+            'address update' requests would specify the 'update' RegistrationAction.
+          </xsd:documentation>
+        </xsd:annotation>
         <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="registration"/>
           <xsd:enumeration value="ballot-request"/>
+          <xsd:enumeration value="registration"/>
           <xsd:enumeration value="other"/>
         </xsd:restriction>
       </xsd:simpleType>
@@ -2692,7 +2699,6 @@ These files are:
       </xsd:simpleType>
       <xsd:simpleType name="SignatureType">
         <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="digital"/>
           <xsd:enumeration value="dynamic"/>
           <xsd:enumeration value="electronic"/>
           <xsd:enumeration value="other"/>
@@ -2711,12 +2717,12 @@ These files are:
       </xsd:simpleType>
       <xsd:simpleType name="VoterClassificationType">
         <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="active-duty"/>
           <xsd:enumeration value="activated-national-guard"/>
+          <xsd:enumeration value="active-duty"/>
           <xsd:enumeration value="active-duty-spouse-or-dependent"/>
           <xsd:enumeration value="citizen-abroad-intent-to-return"/>
-          <xsd:enumeration value="citizen-abroad-never-resided"/>
           <xsd:enumeration value="citizen-abroad-return-uncertain"/>
+          <xsd:enumeration value="citizen-abroad-never-resided"/>
           <xsd:enumeration value="deceased"/>
           <xsd:enumeration value="declared-incompetent"/>
           <xsd:enumeration value="eighteen-on-election-day"/>
@@ -2736,13 +2742,14 @@ These files are:
           <xsd:enumeration value="ssn4"/>
           <xsd:enumeration value="state-id"/>
           <xsd:enumeration value="state-voter-registration-id"/>
+          <xsd:enumeration value="unspecified-document"/>
           <xsd:enumeration value="unspecified-document-with-name-and-address"/>
           <xsd:enumeration value="unspecified-document-with-photo-identification"/>
           <xsd:enumeration value="unknown"/>
           <xsd:enumeration value="other"/>
         </xsd:restriction>
       </xsd:simpleType>
-      <!-- === Interfaces Defined === -->
+      <!-- ========== Interfaces Defined ========== -->
       <!-- === Interface Address === -->
       <xsd:group name="Address">
         <xsd:choice>
@@ -2759,36 +2766,41 @@ These files are:
           <xsd:element name="UnnumberedThoroughfareAddress_type" type="addr:UnnumberedThoroughfareAddress_type"/>
         </xsd:choice>
       </xsd:group>
-      <!-- === Interfaces Extended === -->
-      <!-- === Classes === -->
+      <!-- ========== Classes ========== -->
       <xsd:complexType name="AdditionalInfo">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="FileValue" type="File"/>
+          <xsd:element name="FileValue" type="File" minOccurs="0"/>
+          <xsd:element name="Name" type="xsd:string"/>
+          <xsd:element name="StringValue" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Name" type="xsd:string" use="required"/>
-        <xsd:attribute name="StringValue" type="xsd:string"/>
       </xsd:complexType>
       <xsd:complexType name="ContactMethod">
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="Type" type="ContactMethodType" use="required"/>
-        <xsd:attribute name="Value" type="xsd:string" use="required"/>
+        <xsd:sequence>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Type" type="ContactMethodType"/>
+          <xsd:element name="Value" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The value of the ContactMethod. This will be the text value of the phone number, email address, or other mechanism. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="ElectionAdministration">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="Location" type="Location"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactMethod" type="ContactMethod"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Uri" type="xsd:anyURI"/>
+          <xsd:element name="ContactMethod" type="ContactMethod" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="Location" type="Location" minOccurs="0"/>
+          <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Uri" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Name" type="xsd:string"/>
       </xsd:complexType>
       <xsd:complexType name="ExternalIdentifier">
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="Type" type="IdentifierType" use="required"/>
-        <xsd:attribute name="Value" type="xsd:string" use="required"/>
+        <xsd:sequence>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Type" type="IdentifierType"/>
+          <xsd:element name="Value" type="xsd:string"/>
+        </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="File">
         <xsd:simpleContent>
@@ -2805,49 +2817,47 @@ These files are:
         </xsd:complexContent>
       </xsd:complexType>
       <xsd:complexType name="LatLng">
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Latitude" type="xsd:float" use="required"/>
-        <xsd:attribute name="Longitude" type="xsd:float" use="required"/>
-        <xsd:attribute name="Source" type="xsd:string"/>
+        <xsd:sequence>
+          <xsd:element name="Latitude" type="xsd:float"/>
+          <xsd:element name="Longitude" type="xsd:float"/>
+          <xsd:element name="Source" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="Location">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="LatLng" type="LatLng"/>
-          <xsd:element minOccurs="0" name="Address">
+          <xsd:element name="Address" minOccurs="0">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:group maxOccurs="1" minOccurs="0" ref="Address"/>
+                <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <xsd:element name="Directions" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="LatLng" type="LatLng" minOccurs="0"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Directions" type="xsd:string"/>
       </xsd:complexType>
       <xsd:complexType name="Name">
         <xsd:sequence>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="MiddleName" type="xsd:string"/>
+          <xsd:element name="FirstName" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="FullName" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="LastName" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="MiddleName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="Prefix" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Suffix" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="FirstName" type="xsd:string"/>
-        <xsd:attribute name="FullName" type="xsd:string"/>
-        <xsd:attribute name="LastName" type="xsd:string"/>
-        <xsd:attribute name="Prefix" type="xsd:string"/>
-        <xsd:attribute name="Suffix" type="xsd:string"/>
       </xsd:complexType>
       <xsd:complexType name="Party">
         <xsd:sequence>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExternalIdentifier" type="ExternalIdentifier"/>
+          <xsd:element name="Abbreviation" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="Name" type="xsd:string"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Abbreviation" type="xsd:string"/>
-        <xsd:attribute name="Name" type="xsd:string" use="required"/>
       </xsd:complexType>
       <xsd:complexType name="PhoneContactMethod">
         <xsd:complexContent>
           <xsd:extension base="ContactMethod">
             <xsd:sequence>
-              <xsd:element maxOccurs="unbounded" minOccurs="0" name="Capability" type="PhoneCapability"/>
+              <xsd:element name="Capability" type="PhoneCapability" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -2860,45 +2870,49 @@ These files are:
       </xsd:complexType>
       <xsd:complexType name="RegistrationHelper">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="Name" type="Name"/>
-          <xsd:element minOccurs="0" name="Signature" type="Signature"/>
-          <xsd:element minOccurs="0" name="Address">
+          <xsd:element name="Address" minOccurs="0">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:group maxOccurs="1" minOccurs="0" ref="Address"/>
+                <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element minOccurs="0" name="Phone" type="PhoneContactMethod"/>
+          <xsd:element name="Name" type="Name" minOccurs="0"/>
+          <xsd:element name="Phone" type="PhoneContactMethod" minOccurs="0"/>
+          <xsd:element name="Signature" type="Signature" minOccurs="0"/>
+          <xsd:element name="Type" type="RegistrationHelperType"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Type" type="RegistrationHelperType" use="required"/>
       </xsd:complexType>
       <xsd:complexType name="RegistrationProxy">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="Address">
+          <xsd:element name="Address" minOccurs="0">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:group maxOccurs="1" minOccurs="0" ref="Address"/>
+                <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element minOccurs="0" name="Phone" type="xsd:IDREF"/>
+          <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="OriginTransactionId" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Phone" type="PhoneContactMethod" minOccurs="0"/>
+          <xsd:element name="TimeStamp" type="xsd:date" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The date this source received the request.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Type" type="RegistrationProxyType"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Name" type="xsd:string"/>
-        <xsd:attribute name="OriginTransactionId" type="xsd:string"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="TimeStamp" type="xsd:date"/>
-        <xsd:attribute name="Type" type="RegistrationProxyType" use="required"/>
       </xsd:complexType>
       <xsd:complexType name="RegistrationRejection">
         <xsd:complexContent>
           <xsd:extension base="VoterRecordsResponse">
             <xsd:sequence>
-              <xsd:element maxOccurs="unbounded" minOccurs="0" name="AdditionalDetails" type="xsd:string"/>
-              <xsd:element maxOccurs="unbounded" minOccurs="0" name="Error" type="RegistrationError"/>
-              <xsd:element maxOccurs="unbounded" minOccurs="0" name="OtherError" type="xsd:string"/>
+              <xsd:element name="AdditionalDetails" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element name="Error" type="RegistrationError" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element name="OtherError" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
           </xsd:extension>
         </xsd:complexContent>
@@ -2907,130 +2921,163 @@ These files are:
         <xsd:complexContent>
           <xsd:extension base="VoterRecordsResponse">
             <xsd:sequence>
-              <xsd:element minOccurs="0" name="ElectionAdministration" type="ElectionAdministration"/>
-              <xsd:element maxOccurs="unbounded" minOccurs="0" name="Action" type="SuccessAction"/>
-              <xsd:element maxOccurs="unbounded" minOccurs="0" name="Districts" type="ReportingUnit"/>
-              <xsd:element minOccurs="0" name="PollingPlace" type="xsd:IDREF"/>
-              <xsd:element minOccurs="0" name="Precinct" type="xsd:IDREF"/>
+              <xsd:element name="Action" type="SuccessAction" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0"/>
+              <xsd:element name="ElectionAdministration" type="ElectionAdministration" minOccurs="0"/>
+              <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:element name="PollingPlace" type="ReportingUnit" minOccurs="0"/>
             </xsd:sequence>
-            <xsd:attribute name="EffectiveDate" type="xsd:date"/>
           </xsd:extension>
         </xsd:complexContent>
       </xsd:complexType>
       <xsd:complexType name="ReportingUnit">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="Location" type="xsd:IDREF"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExternalIdentifier" type="xsd:IDREF"/>
+          <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="IsDistricted" type="xsd:boolean" minOccurs="0"/>
+          <xsd:element name="Location" type="Location" minOccurs="0"/>
+          <xsd:element name="Name" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Name of the reporting unit.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Type" type="ReportingUnitType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Type of reporting unit, e.g., state, jurisdiction, district, etc.
+
+                This field is a key into the NIST maintained registry of GpUnit types.
+                The key specifies the geo-political category of the locality, the type of locality, and optionally a sub-type.
+
+                If an 'Other' type or subtype is specified, then it will be defined via the OtherType value.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="IsDistricted" type="xsd:boolean"/>
-        <xsd:attribute name="Name" type="xsd:string"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="Type" type="ReportingUnitType" use="required"/>
       </xsd:complexType>
       <xsd:complexType name="Signature">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="FileValue" type="Image"/>
+          <xsd:element name="Date" type="xsd:date" minOccurs="0"/>
+          <xsd:element name="FileValue" type="Image" minOccurs="0"/>
+          <xsd:element name="OtherSource" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Source" type="SignatureSource" minOccurs="0"/>
+          <xsd:element name="Type" type="SignatureType" minOccurs="0"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Date" type="xsd:date"/>
-        <xsd:attribute name="OtherSource" type="xsd:string"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="Source" type="SignatureSource"/>
-        <xsd:attribute name="Type" type="SignatureType"/>
       </xsd:complexType>
       <xsd:complexType name="VoterClassification">
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="Assertion" type="AssertionValue" use="required"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="Type" type="VoterClassificationType" use="required"/>
+        <xsd:sequence>
+          <xsd:element name="Assertion" type="AssertionValue"/>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Type" type="VoterClassificationType"/>
+        </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="VoterId">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="FileValue" type="xsd:IDREF"/>
+          <xsd:element name="AttestNoSuchId" type="xsd:boolean" minOccurs="0"/>
+          <xsd:element name="DateOfIssuance" type="xsd:date" minOccurs="0"/>
+          <xsd:element name="FileValue" type="File" minOccurs="0"/>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="StringValue" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Type" type="VoterIdType"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="AttestNoSuchId" type="xsd:boolean"/>
-        <xsd:attribute name="DateOfIssuance" type="xsd:date"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="StringValue" type="xsd:string"/>
-        <xsd:attribute name="Type" type="VoterIdType" use="required"/>
       </xsd:complexType>
       <xsd:complexType name="VoterRecordsRequest">
         <xsd:sequence>
+          <xsd:element name="GeneratedDate" type="xsd:date">
+          </xsd:element>
+          <xsd:element name="Issuer" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Type" type="RegistrationRequestType" maxOccurs="unbounded">
+          </xsd:element>
+          <xsd:element name="VendorApplicationId" type="xsd:string" minOccurs="0"/>
           <xsd:element name="VoterRegistration" type="VoterRegistration"/>
-          <xsd:element minOccurs="0" ref="xsd:IDREF"/>
-          <xsd:element maxOccurs="unbounded" name="Type" type="RegistrationRequestType"/>
+          <xsd:element minOccurs="0" ref="ds:Signature"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="GeneratedDate" type="xsd:date" use="required"/>
-        <xsd:attribute name="Issuer" type="xsd:string"/>
-        <xsd:attribute name="OtherType" type="xsd:string"/>
-        <xsd:attribute name="TransactionId" type="xsd:string"/>
-        <xsd:attribute name="VendorApplicationId" type="xsd:string"/>
       </xsd:complexType>
-      <xsd:complexType abstract="true" name="VoterRecordsResponse">
+      <xsd:complexType name="VoterRecordsResponse" abstract="true">
         <xsd:sequence>
-          <xsd:element minOccurs="0" ref="xsd:IDREF"/>
+          <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
+          <xsd:element minOccurs="0" ref="ds:Signature"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="TransactionId" type="xsd:string"/>
       </xsd:complexType>
       <xsd:complexType name="VoterRegistration">
         <xsd:sequence>
-          <xsd:element minOccurs="0" name="Party" type="Party"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="AdditionalInfo" type="AdditionalInfo"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="VoterId" type="VoterId"/>
-          <xsd:element name="Name" type="xsd:IDREF"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="VoterClassification" type="VoterClassification"/>
-          <xsd:element minOccurs="0" name="Signature" type="xsd:IDREF"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ContactMethod" type="xsd:IDREF"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="RegistrationHelper" type="RegistrationHelper"/>
-          <xsd:element minOccurs="0" name="RegistrationProxy" type="RegistrationProxy"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" name="BallotReceiptPreference" type="BallotReceiptMethod"/>
-          <xsd:element minOccurs="0" name="MailForwardingAddress">
+          <xsd:element name="AdditionalInfo" type="AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="BallotReceiptPreference" type="BallotReceiptMethod" minOccurs="0" maxOccurs="unbounded">
+          </xsd:element>
+          <xsd:element name="ContactMethod" type="ContactMethod" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Contact methods, listed in order of contact preference.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="DateOfBirth" type="xsd:date" minOccurs="0"/>
+          <xsd:element name="Ethnicity" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Gender" type="xsd:string" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Older systems may not understand values other than 'Male' or 'Female' (the only choices available on FPCA)
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="LastDateOfUSResidency" type="xsd:date" minOccurs="0"/>
+          <xsd:element name="MailForwardingAddress" minOccurs="0">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:group maxOccurs="1" minOccurs="0" ref="Address"/>
+                <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element minOccurs="0" name="MailingAddress">
+          <xsd:element name="MailingAddress" minOccurs="0">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:group maxOccurs="1" minOccurs="0" ref="Address"/>
+                <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element minOccurs="0" name="PreviousName" type="xsd:IDREF"/>
-          <xsd:element minOccurs="0" name="PreviousRegistrationAddress">
+          <xsd:element name="Name" type="Name"/>
+          <xsd:element name="OtherRegistrationForm" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="OtherRegistrationMethod" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="OverseasEmployer" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="Party" type="Party" minOccurs="0"/>
+          <xsd:element name="PreviousName" type="Name" minOccurs="0"/>
+          <xsd:element name="PreviousRegistrationAddress" minOccurs="0">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:group maxOccurs="1" minOccurs="0" ref="Address"/>
+                <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element minOccurs="0" name="PreviousSignature" type="xsd:IDREF"/>
+          <xsd:element name="PreviousSignature" type="Signature" minOccurs="0"/>
           <xsd:element name="RegistrationAddress">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:group maxOccurs="1" minOccurs="1" ref="Address"/>
+                <xsd:group minOccurs="1" maxOccurs="1" ref="Address"/>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <xsd:element name="RegistrationAddressIsMailingAddress" type="xsd:boolean" minOccurs="0"/>
+          <xsd:element name="RegistrationForm" type="RegistrationForm" minOccurs="0"/>
+          <xsd:element name="RegistrationHelper" type="RegistrationHelper" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="RegistrationMethod" type="RegistrationMethod"/>
+          <xsd:element name="RegistrationProxy" type="RegistrationProxy" minOccurs="0"/>
+          <xsd:element name="SelectedLanguage" type="xsd:language" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The language specified by the voter, if any.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Signature" type="Signature" minOccurs="0"/>
+          <xsd:element name="VoterClassification" type="VoterClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="VoterId" type="VoterId" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
-        <xsd:attribute name="object_id" type="xsd:ID" use="required"/>
-        <xsd:attribute name="DateOfBirth" type="xsd:date"/>
-        <xsd:attribute name="Ethnicity" type="xsd:string"/>
-        <xsd:attribute name="Gender" type="xsd:string"/>
-        <xsd:attribute name="LastDateOfUSResidency" type="xsd:date"/>
-        <xsd:attribute name="OtherRegistrationForm" type="xsd:string"/>
-        <xsd:attribute name="OtherRegistrationMethod" type="xsd:string"/>
-        <xsd:attribute name="OverseasEmployer" type="xsd:string"/>
-        <xsd:attribute name="RegistrationAddressIsMailingAddress" type="xsd:boolean"/>
-        <xsd:attribute name="RegistrationForm" type="RegistrationForm"/>
-        <xsd:attribute name="RegistrationMethod" type="RegistrationMethod" use="required"/>
-        <xsd:attribute name="SelectedLanguage" type="xsd:language"/>
       </xsd:complexType>
     </xsd:schema>
 
