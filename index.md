@@ -769,7 +769,7 @@ Value | Definition
 
 Schema Definition:
 
-    <xsd:simpleType name="RequestSourceType">
+    <xsd:simpleType name="RegistrationMethod">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="armed-forces-recruitment-office"/>
             <xsd:enumeration value="motor-vehicle-office"/>
@@ -922,7 +922,7 @@ Schema Definition:
 #### 3.1.4.13 *The **SignatureSource** Enumeration*
 Used in requests.  
 
-Enumeration for source of the voter's signature, used in the `<Source>` sub-
+Enumeration for source of the voter's signature, used in the `<SignatureSource>` sub-
 element of `<Signature>`.
 
 Value | Definition
@@ -935,7 +935,7 @@ Value | Definition
 
 Schema Definition:
 
-    <xsd:simpleType name="Source">
+    <xsd:simpleType name="SignatureSource">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="dmv"/>
             <xsd:enumeration value="local"/>
@@ -1148,7 +1148,7 @@ least one of them must be included.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
-`<FileValue>` | 0 or 1 | `xsd:string` | Used if the value is in a file; contains the filename.
+`<FileValue>` | 0 or 1 | `File` | Used if the value is in a file; contains the filename, MIME type.
 `<Name>` | 1 | `xsd:string` | Name of the value.
 `<StringValue>` | 0 or 1 | `xsd:string` | Used if the value is a string; contains the string.
 
@@ -1178,10 +1178,10 @@ order the occurrences of `<ContactMethod>` by priority.
 The `<PhoneContactMethod>` element uses `<ContactMethod>` as an extension base, thus `<ContactMethod>` can be used with `xsi:type="PhoneContactMethod"` when the contact method is for a telephone and it is necessary to describe the capabilities of the telephone.  For example, to indicate that a telephone number can receive voice and text messages, the following could be used:
 
     <ContactMethod xsi:type="PhoneContactMethod">
-        <Capability>sms</Capability>
-        <Capability>voice</Capability>
         <Type>phone</Type>
         <Value>304-123-4567</Value>
+        <Capability>sms</Capability>
+        <Capability>voice</Capability>
     </ContactMethod>
 
 The `<Capability>` sub-element is provided by the `<PhoneContactMethod>` element.
@@ -1213,7 +1213,7 @@ Schema definition:
 ##### 3.1.6.2.1 *The **PhoneContactMethod** xsi:type*
 Used in requests AND responses.   
 
-`<RegistrationAssistant>`, and `<RegistrationProxy>` use this element to specify a telephone number as well as the capabilities of the telephone, e.g., `sms`, `fax`, etc.
+`<RegistrationHelper>`, and `<RegistrationProxy>` use this element to specify a telephone number as well as the capabilities of the telephone, e.g., `sms`, `fax`, etc.
 
 `<PhoneContactMethod>` is an `xsi:type of <ContactMethod>`, i.e., it uses `<ContactMethod>` as an extension base.  Thus, the elements that include `<ContactMethod>` could use `xsi:type="PhoneContactMethod"`  as applicable.  An example, using sub-elements defined in `<ContactMethod>`, is as follows:
 
@@ -1248,8 +1248,6 @@ Used in responses.
 
 `<ElectionAdministration>` optionally includes the `<ContactInformation>` element to specify contact information for the election authority.
 
-`<ReportingUnit>` optionally includes this element to specify various information about an election authority.
-
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
 `<ContactMethod>` | 0 or more | `ContactMethod` | For including various contact information.
@@ -1266,6 +1264,7 @@ Schema Definition:
             <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
             <xsd:element name="Uri" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
+    </xsd:complexType>
 
 <br>
 
@@ -1279,10 +1278,7 @@ multiple codes, e.g., if there is a desire to associate multiple codes with an o
 
 specific codes as well as OCD-IDs (Open Civic Data Identifiers [\[11\]](#references)), as follows:
 
-specific codes as well as OCD-IDs (Open Civic Data Identifiers [11]), as follows:
 
-
-    <ExternalIdentifiers>
         <ExternalIdentifier>
             <Type>state-level</Type>
             <Value>54</Value>
@@ -1291,7 +1287,6 @@ specific codes as well as OCD-IDs (Open Civic Data Identifiers [11]), as follows
             <Type>ocd-id</Type>
             <Value>ocd-division/country:us/state:wv</Value>
         </ExternalIdentifier>
-    </ExternalIdentifiers>
 
 If the type of identifier is not listed in enumeration `<IdentifierType>`, use `other` and include the type (that is not listed in the enumeration) in `OtherType`, e.g.,
 
@@ -1370,8 +1365,8 @@ Used in responses.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
-`<Latitude>` | 1 | `xsd:float` | Latitude of the contact location.
-`<Longitude>` | 1 | `xsd:float` | Longitude of the contact location.
+`<Latitude>` | 1 | `xsd:float` | Latitude of the voting location.
+`<Longitude>` | 1 | `xsd:float` | Longitude of the voting location.
 `<Source>` | 0 or 1 | `xsd:string` | System used to perform the lookup from location name to lat/lng, e.g., the name of a geocoding service.
 
 Schema definition:
@@ -1389,13 +1384,13 @@ Schema definition:
 #### 3.1.6.7 *The **Location** Element*
 Used in responses.  
 
-`<ReportingUnit>` optionally includes this element to specify the address and directions to a location such as for a voting location. The `<LatLng>` element can be included to specify the latitude and longitude of the voting location.
+`<ReportingUnit>` and `<ElectionAdministration>` optionally include this element to specify the address and directions to a voting location or election administration office location respectively. The `<LatLng>` element can be included to specify the latitude and longitude of the location.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
-`<Address>` | 0 or 1 | `Address` | Address of the voting location.
-`<Directions>` | 0 or 1 | `xsd:string` | Directions to the voting location.
-`<LatLng>` | 0 or 1 | `xsd:string` | Latitude/longitude of the voting location.
+`<Address>` | 0 or 1 | `Address` | Address of the location.
+`<Directions>` | 0 or 1 | `xsd:string` | Directions to the location.
+`<LatLng>` | 0 or 1 | `LatLng` | Latitude/longitude of the location.
 
 Schema definition:
 
@@ -1419,7 +1414,7 @@ Schema definition:
 Used in requests.  
 
 `<VoterRegistration>` includes this element for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using `<PreviousName>` instead of `<Name>`.
-`<MiddleName>` also includes this element for specifying the name of a registration helper.
+`<RegistrationHelper>` also includes this element for specifying the name of a registration helper.
 
 Multiple occurrences of the `<MiddleName>` sub-element can be used as needed, e.g., for names
 with additional middle names or nicknames such as "John Andrew Winston (Jack) Smith", as
@@ -1436,7 +1431,7 @@ follows:
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
 `<FirstName>` | 0 or 1 | `xsd:string` | Person's first (given) name.
-`<FullName>` | 0 or 1 | `InternationalizedText` | Person's full name.
+`<FullName>` | 0 or 1 | `xsd:string` | Person's full name.
 `<LastName>` | 0 or 1 | `xsd:string` | Person's last (family) name.
 `<MiddleName>` | 0 or more | `xsd:string` | Person's middle name.
 `<Prefix>` | 0 or 1 | `xsd:string` | A prefix associated with the person, e.g., Mr.
@@ -1486,7 +1481,7 @@ Used in requests.
 
 `<VoterRegistration>` optionally includes this element to specify information about a registration assistant involved in a voter's registration request.
 
-`<RegistrationAssistant>` includes the `<Name>` element to specify the registration assistant's name and optionally includes the `<Signature>` element if a registration assistant's signature is
+`<RegistrationHelper>` includes the `<Name>` element to specify the registration assistant's name and optionally includes the `<Signature>` element if a registration assistant's signature is
 required.
 
 Element | Multiplicity | Type | Element Description
@@ -1533,7 +1528,7 @@ Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
 `<Address>` | 0 or 1 | `Address` | An address associated with the proxy.
 `<Name>` | 0 or 1 | `xsd:string` | A name associated with the proxy.
-`<OriginTransactionId>` | 0 or 1 | `xsd:string` | An identifier associated with the transaction between the proxy and, e.g., the registration portal.
+`<OriginTransactionId>` | 0 or 1 | `xsd:string` | An identifier of the originating external transaction from the proxy.
 `<Phone>` | 0 or 1 | `PhoneContactMethod` | A phone number associated with the proxy.
 `<TimeStamp>` | 0 or 1 | `xsd:date` | The date of the request from the proxy.
 `<Type>` | 1 | `RegistrationProxyType` | The type of the requesting proxy, e.g., `motor-vehicle-office`, `armed-forces-recruitment-office`.
@@ -1595,7 +1590,7 @@ Schema definition:
 #### 3.1.6.13 *The **Signature (PreviousSignature)** Element*
 Used in requests.  
 
-`<VoterRegistration>` includes this element for specifying information about a voter's signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, `<VoterRegistration>` uses `<PreviousSignature>`
+`<VoterRegistration>` includes this element for specifying information about a voter's signature on a registration request, whereas `<RegistrationHelper>` includes it to specify information about a registration helper's signature. If there is a need to include a previous signature that uses a different name, e.g., a maiden name, `<VoterRegistration>` uses `<PreviousSignature>`
 instead of `<Signature>`.
 
 `<Source>` is used to specify the source of the voter's signature, for example, on file at a department of motor vehicles. `<FileValue>` is used to include an image of the voter's signature.
@@ -1606,7 +1601,7 @@ Element | Multiplicity | Type | Element Description
 `<FileValue>` | 0 or 1 | `Image` | The signature image in base 64 binary.
 `<Source>` | 0 or 1 | `SignatureSource` | A source for the signature, e.g., `dmv`.
 `<OtherSource>` | 0 or 1 | `xsd:string` | Used when `<Source>` value is `other`.
-`<Type>` | 0 or 1 | `SignatureType` | A signature type, e.g., `dynamic`.
+`<Type>` | 0 or 1 | `SignatureType` | A signature type, e.g., `electronic`.
 `<OtherType>` | 0 or 1 | `xsd:string` | Used when `<SignatureType>` value is `other`.
 
 Schema definition:
@@ -1823,7 +1818,7 @@ Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
 `<Action>` | 0 or 1 | `SuccessAction` | Used to indicate the action that occurred.
 `<OtherAction>` | 0 or 1 | `xsd:string` | Used when `<SuccessAction>` value is other.
-`<Districts>` | 0 or more | `ReportingUnit` | The districts associated with the voter's precinct.
+`<District>` | 0 or more | `ReportingUnit` | One or more districts associated with the voter's precinct.
 `<EffectiveDate>` | 0 or 1 | `xsd:date` | The effective date of the action.
 
 `<Locality>` | 0 or more | `ReportingUnit` | Other geographies such as the voter's precinct.
@@ -1839,7 +1834,7 @@ Schema definition:
                      maxOccurs="unbounded"/>
                     <xsd:element name="OtherAction" type="xsd:string" minOccurs="0"
                      maxOccurs="1"/>
-                    <xsd:element name="Districts" type="ReportingUnit" minOccurs="0"
+                    <xsd:element name="District" type="ReportingUnit" minOccurs="0"
                      maxOccurs="unbounded"/>
                     <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0"/>
                     <xsd:element name="Locality" type="ReportingUnit" minOccurs="0"
@@ -1985,8 +1980,8 @@ In the voter records request examples, note that a significant majority of the s
 
 <br>
 
-## 4.1 Example 1: NVRA Voter Registration Request in XML
-This example shows a fictitious digital NVRA registration request for "Jackie Nichole Davidson" in the State of Ohio using XML.  This request is for an address update, and an example of the filled-out NVRA form is as follows:
+## 4.1 Example 1: NVRA-style Voter Registration Request in XML
+This example shows a fictitious digital NVRA-style registration request for "Jackie Nichole Davidson" in the State of Ohio using XML.  This request is for an address update, and an example of the filled-out NVRA form is as follows:
 
 <br>
 
@@ -2391,10 +2386,10 @@ The XML for the voter registration response that contains the information used t
     		<Name>PERKINS BUILDING</Name>
     		<Type>polling-place</Type>
     	</PollingPlace>
-    	<Precinct>
+    	<Locality>
     		<Name>AKRON 4-F</Name>
     		<Type>precinct</Type>
-    	</Precinct>
+    	</Locality>
     </VoterRecordsResponse>
 
 <br>
@@ -2448,7 +2443,7 @@ those for state senators and delegates.
 Location at which voters cast ballots in-person on vote-capture
 devices (e.g., DRE) under the supervision of poll workers usually on
 election day.  Syn: polling station or poll.  Note: A polling place is
-typically in 1-to-1 correspondence with a precinct except for
+often in 1-to-1 correspondence with a precinct except for
 combined precincts and vote centers.
 
 **Precinct**:
@@ -2524,44 +2519,22 @@ Recommendation, June 10, 2008, [http://www.w3.org/TR/xmldsig-core/](http://www.w
 
 <br>
 
-# D. UML Class Diagrams
-This appendix contains detailed images of the UML class diagrams that when viewed electronically can be expanded to show attributes and other details.  The images can also be
-downloaded using the instructions in Appendix - File Download Locations.
+# D. File Download Locations
+The files associated with this specification are available for download from a NIST website:
 
-
-[Voter Records Request UML Class Diagram](Figures/VoterRegistrationRequest-V24.png "Voter Records Request UML class diagram")
-
-[Voter Records Response UML Class Diagram](Figures/VoterRegistrationResponse-V24.png "Voter Records Response UML class diagram")
-
-[Interface to FGDC Address Types schema](Figures/addr-xsd.png "Interface to FGDC address types schema")
-
-[Voter Records Request UML Class Diagram](Figures/VoterRegistrationRequestV23.png "Voter Records Request UML class diagram")
-
-[Voter Records Response UML Class Diagram](Figures/VoterRegistrationResponseV23.png "Voter Records Response UML class diagram")
-
-[Interface to FGDC Address Types schema](Figures/addrxsd.png "Interface to FGDC address types schema")
-
-
-<br>
-
-# E. File Download Locations
-The files associated with this specification are available for download from a NIST repository.  
+[http://vote.nist.gov](http://vote.nist.gov)
 
 These files are:
 
 *	This specification,
-*	XML schema,
-*	Example XML files,
-*	Validation tools, and
-*	UML model.
-
-Other files or updates to the files may be added.  The repository can be found via the following URL:
-
-[http://vote.nist.gov](http://vote.nist.gov)
+* UML model,
+*	XML and JSON schemas,
+*	Example files, and
+*	Validation tools.
 
 <br>
 
-# F. XML Schema
+# E. XML Schema
         <?xml version="1.0" encoding="UTF-8"?>
         <xsd:schema elementFormDefault="qualified" targetNamespace="NIST_V1_voter_records_interchange.xsd" version="1.0"
          xmlns="NIST_V1_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr"
@@ -3063,6 +3036,5 @@ Other files or updates to the files may be added.  The repository can be found v
 
 <br>
 
-
-# G. JSON schema
+# F. JSON schema
 Under development, will be forthcoming.
