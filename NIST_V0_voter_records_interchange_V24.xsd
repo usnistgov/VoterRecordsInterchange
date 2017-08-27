@@ -114,8 +114,8 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="registration"/>
       <xsd:enumeration value="ballot-request"/>
+      <xsd:enumeration value="registration"/>
       <xsd:enumeration value="other"/>
     </xsd:restriction>
   </xsd:simpleType>
@@ -180,21 +180,21 @@
   </xsd:simpleType>
   <xsd:simpleType name="VoterClassificationType">
     <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="eighteen-on-election-day"/>
+      <xsd:enumeration value="activated-national-guard"/>
+      <xsd:enumeration value="active-duty"/>
+      <xsd:enumeration value="active-duty-spouse-or-dependent"/>
+      <xsd:enumeration value="citizen-abroad-intent-to-return"/>
+      <xsd:enumeration value="citizen-abroad-return-uncertain"/>
+      <xsd:enumeration value="citizen-abroad-never-resided"/>
       <xsd:enumeration value="deceased"/>
       <xsd:enumeration value="declared-incompetent"/>
+      <xsd:enumeration value="eighteen-on-election-day"/>
       <xsd:enumeration value="felon"/>
       <xsd:enumeration value="permanently-denied"/>
       <xsd:enumeration value="protected-voter"/>
       <xsd:enumeration value="restored-felon"/>
       <xsd:enumeration value="united-states-citizen"/>
       <xsd:enumeration value="other"/>
-      <xsd:enumeration value="active-duty"/>
-      <xsd:enumeration value="active-duty-spouse-or-dependent"/>
-      <xsd:enumeration value="activated-national-guard"/>
-      <xsd:enumeration value="citizen-abroad-intent-to-return"/>
-      <xsd:enumeration value="citizen-abroad-return-uncertain"/>
-      <xsd:enumeration value="citizen-abroad-never-resided"/>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="VoterIdType">
@@ -385,7 +385,7 @@
       <xsd:extension base="VoterRecordsResponse">
         <xsd:sequence>
           <xsd:element name="Action" type="SuccessAction" minOccurs="0" maxOccurs="unbounded"/>
-          <xsd:element name="Districts" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded"/>
           <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0"/>
           <xsd:element name="ElectionAdministration" type="ElectionAdministration" minOccurs="0"/>
           <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded"/>
@@ -451,49 +451,27 @@
   <xsd:complexType name="VoterRecordsRequest">
     <xsd:sequence>
       <xsd:element name="GeneratedDate" type="xsd:date">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The date of this message's creation
-          </xsd:documentation>
-        </xsd:annotation>
       </xsd:element>
       <xsd:element name="Issuer" type="xsd:string" minOccurs="0"/>
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
-      <xsd:element minOccurs="0" ref="ds:Signature"/>
       <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
       <xsd:element name="Type" type="RegistrationRequestType" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The specific type of request that is being made. Each type indicates a desired result by the system receiving the message. The meanings of each type will need to be explicitly stated.
-            
-            This attribute is optional, and if not specified (or other), the required Action attribute will determine the message semantics generically.
-            
-            For example: 'address update' indicates that only the voter's address should be updated on an existing voter registration. 
-            'address update' requests would specify the 'update' RegistrationAction.
-          </xsd:documentation>
-        </xsd:annotation>
       </xsd:element>
       <xsd:element name="VendorApplicationId" type="xsd:string" minOccurs="0"/>
       <xsd:element name="VoterRegistration" type="VoterRegistration"/>
+      <xsd:element minOccurs="0" ref="ds:Signature"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="VoterRecordsResponse" abstract="true">
     <xsd:sequence>
-      <xsd:element minOccurs="0" ref="ds:Signature"/>
       <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
+      <xsd:element minOccurs="0" ref="ds:Signature"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="VoterRegistration">
     <xsd:sequence>
       <xsd:element name="AdditionalInfo" type="AdditionalInfo" minOccurs="0" maxOccurs="unbounded"/>
       <xsd:element name="BallotReceiptPreference" type="BallotReceiptMethod" minOccurs="0" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter's preference on how to receive their ballot in order from their most preferred method to least.
-            
-            This property is only used if the VoterRecordsRequest Type specifies: ballot-request.
-          </xsd:documentation>
-        </xsd:annotation>
       </xsd:element>
       <xsd:element name="ContactMethod" type="ContactMethod" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
