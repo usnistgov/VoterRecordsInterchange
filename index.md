@@ -108,17 +108,16 @@
 				- [3.1.6.17.3 *The **RegistrationSuccess** xsi:type*](#316173-the-registrationsuccess-xsitype)
 			- [3.1.6.18 *The **VoterRegistration** Element*](#31618-the-voterregistration-element)
 - [4. XML/JSON Usage examples](#4-xmljson-usage-examples)
-	- [4.1 Example 1: NVRA Voter Registration Request in XML](#41-example-1-nvra-voter-registration-request-in-xml)
+	- [4.1 Example 1: NVRA-style Voter Registration Request in XML](#41-example-1-nvra-style-voter-registration-request-in-xml)
 	- [4.2 Example 2: NVRA Voter Registration Request in JSON](#42-example-2-nvra-voter-registration-request-in-json)
 	- [4.3 Example 3: NVRA Voter Records Response in XML](#43-example-3-nvra-voter-records-response-in-xml)
 - [Appendices](#appendices)
 - [A. Acronyms](#a-acronyms)
 - [B. Glossary](#b-glossary)
 - [C. References](#c-references)
-- [D. UML Class Diagrams](#d-uml-class-diagrams)
-- [E. File Download Locations](#e-file-download-locations)
-- [F. XML Schema](#f-xml-schema)
-- [G. JSON schema](#g-json-schema)
+- [D. File Download Locations](#d-file-download-locations)
+- [E. XML Schema](#e-xml-schema)
+- [F. JSON schema](#f-json-schema)
 
 <!-- /TOC -->
 
