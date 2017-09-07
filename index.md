@@ -77,7 +77,7 @@
 		- [3.5.10 *The **RegistrationProxy** Enumeration*](#3510-the-registrationproxy-enumeration)
 		- [3.5.11 *The **RegistrationRequestType** Enumeration*](#3511-the-registrationrequesttype-enumeration)
 		- [3.5.12 *The **ReportingUnitType** Enumeration*](#3512-the-reportingunittype-enumeration)
-			- [3.5.13 *The **SignatureSource** Enumeration*](#3513-the-signaturesource-enumeration)
+		- [3.5.13 *The **SignatureSource** Enumeration*](#3513-the-signaturesource-enumeration)
 		- [3.5.14 *The **SignatureType** Enumeration*](#3514-the-signaturetype-enumeration)
 		- [3.5.15 *The **SuccessAction** Enumeration*](#3515-the-successaction-enumeration)
 		- [3.5.16 *The **VoterClassificationType** Enumeration*](#3516-the-voterclassificationtype-enumeration)
@@ -89,7 +89,7 @@
 			- [3.7.2.1 *The **PhoneContactMethod** xsi:type*](#3721-the-phonecontactmethod-xsitype)
 		- [3.7.3 *The **ElectionAdministration** Element*](#373-the-electionadministration-element)
 		- [3.7.4 *The **ExternalIdentifier** Element*](#374-the-externalidentifier-element)
-			- [3.7.5 *The **File** Element/Extension Base*](#375-the-file-elementextension-base)
+		- [3.7.5 *The **File** Element/Extension Base*](#375-the-file-elementextension-base)
 			- [3.7.5.1 *The **Image** xsi:type*](#3751-the-image-xsitype)
 		- [3.7.6 *The **LatLng** Element*](#376-the-latlng-element)
 		- [3.7.7 *The **Location** Element*](#377-the-location-element)
@@ -900,7 +900,7 @@ Schema Definition:
 
 <br>
 
-#### 3.5.13 *The **SignatureSource** Enumeration*
+### 3.5.13 *The **SignatureSource** Enumeration*
 Used in requests.  
 
 Enumeration for source of the voter's signature, used in the `<SignatureSource>` sub-
@@ -1293,7 +1293,7 @@ Schema definition:
 
 <br>
 
-#### 3.7.5 *The **File** Element/Extension Base*
+### 3.7.5 *The **File** Element/Extension Base*
 Used in requests.  
 
 `<VoterId>` optionally includes this element to specify a filename for voter identification
