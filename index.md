@@ -60,53 +60,53 @@
 		- [2.4.3 Postal Delivery Classes](#243-postal-delivery-classes)
 		- [2.4.4 General Class](#244-general-class)
 - [3. Voter Records Interchange XML Schema](#3-voter-records-interchange-xml-schema)
-	- [3.1 Schema Documentation](#31-schema-documentation)
-		- [3.1.1 Roots](#311-roots)
-		- [3.1.2 Imports](#312-imports)
-		- [3.1.3 Interfaces](#313-interfaces)
-		- [3.1.4 Enumerations](#314-enumerations)
-			- [3.1.4.1 *The **AssertionValue** Enumeration*](#3141-the-assertionvalue-enumeration)
-			- [3.1.4.2 *The **BallotReceiptMethod** Enumeration*](#3142-the-ballotreceiptmethod-enumeration)
-			- [3.1.4.3 *The **ContactMethodType** Enumeration*](#3143-the-contactmethodtype-enumeration)
-			- [3.1.4.4 *The **IdentifierType** Enumeration*](#3144-the-identifiertype-enumeration)
-			- [3.1.4.5 *The **PhoneCapability** Enumeration*](#3145-the-phonecapability-enumeration)
-			- [3.1.4.6 *The **RegistrationError** Enumeration*](#3146-the-registrationerror-enumeration)
-			- [3.1.4.7 *The **RegistrationForm** Enumeration*](#3147-the-registrationform-enumeration)
-			- [3.1.4.8 *The **RegistrationHelperType** Enumeration*](#3148-the-registrationhelpertype-enumeration)
-			- [3.1.4.9 *The **RegistrationMethod** Enumeration*](#3149-the-registrationmethod-enumeration)
-			- [3.1.4.10 *The **RegistrationProxy** Enumeration*](#31410-the-registrationproxy-enumeration)
-			- [3.1.4.11 *The **RegistrationRequestType** Enumeration*](#31411-the-registrationrequesttype-enumeration)
-			- [3.1.4.12 *The **ReportingUnitType** Enumeration*](#31412-the-reportingunittype-enumeration)
-			- [3.1.4.13 *The **SignatureSource** Enumeration*](#31413-the-signaturesource-enumeration)
-			- [3.1.4.14 *The **SignatureType** Enumeration*](#31414-the-signaturetype-enumeration)
-			- [3.1.4.15 *The **SuccessAction** Enumeration*](#31415-the-successaction-enumeration)
-			- [3.1.4.16 *The **VoterClassificationType** Enumeration*](#31416-the-voterclassificationtype-enumeration)
-			- [3.1.4.17 *The **VoterIdType** Enumeration*](#31417-the-voteridtype-enumeration)
-		- [3.1.5 Interfaces](#315-interfaces)
-		- [3.1.6 Classes (Elements)](#316-classes-elements)
-			- [3.1.6.1 *The **AdditionalInfo** Element*](#3161-the-additionalinfo-element)
-			- [3.1.6.2 *The **ContactMethod** Element/Extension Base*](#3162-the-contactmethod-elementextension-base)
-				- [3.1.6.2.1 *The **PhoneContactMethod** xsi:type*](#31621-the-phonecontactmethod-xsitype)
-			- [3.1.6.3 *The **ElectionAdministration** Element*](#3163-the-electionadministration-element)
-			- [3.1.6.4 *The **ExternalIdentifier** Element*](#3164-the-externalidentifier-element)
-			- [3.1.6.5 *The **File** Element/Extension Base*](#3165-the-file-elementextension-base)
-				- [3.1.6.5.1 *The **Image** xsi:type*](#31651-the-image-xsitype)
-			- [3.1.6.6 *The **LatLng** Element*](#3166-the-latlng-element)
-			- [3.1.6.7 *The **Location** Element*](#3167-the-location-element)
-			- [3.1.6.8 *The **Name (PreviousName)** Element*](#3168-the-name-previousname-element)
-			- [3.1.6.9 *The **Party** Element*](#3169-the-party-element)
-			- [3.1.6.10 *The **RegistrationHelper** Element*](#31610-the-registrationhelper-element)
-			- [3.1.6.11 *The **RegistrationProxy** Element*](#31611-the-registrationproxy-element)
-			- [3.1.6.12 *The **ReportingUnit** Element*](#31612-the-reportingunit-element)
-			- [3.1.6.13 *The **Signature (PreviousSignature)** Element*](#31613-the-signature-previoussignature-element)
-			- [3.1.6.14 *The **VoterClassification** Element*](#31614-the-voterclassification-element)
-			- [3.1.6.15 *The **VoterId** Element*](#31615-the-voterid-element)
-			- [3.1.6.16 *The **VoterRecordsRequest** Element*](#31616-the-voterrecordsrequest-element)
-			- [3.1.6.17 *The **VoterRecordsResponse** Element/Extension Base*](#31617-the-voterrecordsresponse-elementextension-base)
-				- [3.1.6.17.1 *The **RegistrationAcknowledgement** xsi:type*](#316171-the-registrationacknowledgement-xsitype)
-				- [3.1.6.17.2 *The **RegistrationRejection** xsi:type*](#316172-the-registrationrejection-xsitype)
-				- [3.1.6.17.3 *The **RegistrationSuccess** xsi:type*](#316173-the-registrationsuccess-xsitype)
-			- [3.1.6.18 *The **VoterRegistration** Element*](#31618-the-voterregistration-element)
+	- [3.1 Schema Stylistic Conventions](#31-schema-stylistic-conventions)
+	- [3.2 Roots](#32-roots)
+	- [3.3 Imports](#33-imports)
+	- [3.4 Interfaces](#34-interfaces)
+	- [3.5 Enumerations](#35-enumerations)
+		- [3.5.1 *The **AssertionValue** Enumeration*](#351-the-assertionvalue-enumeration)
+		- [3.5.2 *The **BallotReceiptMethod** Enumeration*](#352-the-ballotreceiptmethod-enumeration)
+		- [3.5.3 *The **ContactMethodType** Enumeration*](#353-the-contactmethodtype-enumeration)
+		- [3.5.4 *The **IdentifierType** Enumeration*](#354-the-identifiertype-enumeration)
+		- [3.5.5 *The **PhoneCapability** Enumeration*](#355-the-phonecapability-enumeration)
+		- [3.5.6 *The **RegistrationError** Enumeration*](#356-the-registrationerror-enumeration)
+		- [3.5.7 *The **RegistrationForm** Enumeration*](#357-the-registrationform-enumeration)
+		- [3.5.8 *The **RegistrationHelperType** Enumeration*](#358-the-registrationhelpertype-enumeration)
+		- [3.5.9 *The **RegistrationMethod** Enumeration*](#359-the-registrationmethod-enumeration)
+		- [3.5.10 *The **RegistrationProxy** Enumeration*](#3510-the-registrationproxy-enumeration)
+		- [3.5.11 *The **RegistrationRequestType** Enumeration*](#3511-the-registrationrequesttype-enumeration)
+		- [3.5.12 *The **ReportingUnitType** Enumeration*](#3512-the-reportingunittype-enumeration)
+			- [3.5.13 *The **SignatureSource** Enumeration*](#3513-the-signaturesource-enumeration)
+		- [3.5.14 *The **SignatureType** Enumeration*](#3514-the-signaturetype-enumeration)
+		- [3.5.15 *The **SuccessAction** Enumeration*](#3515-the-successaction-enumeration)
+		- [3.5.16 *The **VoterClassificationType** Enumeration*](#3516-the-voterclassificationtype-enumeration)
+		- [3.5.17 *The **VoterIdType** Enumeration*](#3517-the-voteridtype-enumeration)
+	- [3.6 Interfaces](#36-interfaces)
+	- [3.7 Classes (Elements)](#37-classes-elements)
+		- [3.7.1 *The **AdditionalInfo** Element*](#371-the-additionalinfo-element)
+		- [3.7.2 *The **ContactMethod** Element/Extension Base*](#372-the-contactmethod-elementextension-base)
+			- [3.7.2.1 *The **PhoneContactMethod** xsi:type*](#3721-the-phonecontactmethod-xsitype)
+		- [3.7.3 *The **ElectionAdministration** Element*](#373-the-electionadministration-element)
+		- [3.7.4 *The **ExternalIdentifier** Element*](#374-the-externalidentifier-element)
+			- [3.7.5 *The **File** Element/Extension Base*](#375-the-file-elementextension-base)
+			- [3.7.5.1 *The **Image** xsi:type*](#3751-the-image-xsitype)
+		- [3.7.6 *The **LatLng** Element*](#376-the-latlng-element)
+		- [3.7.7 *The **Location** Element*](#377-the-location-element)
+		- [3.7.8 *The **Name (and PreviousName)** Element*](#378-the-name-and-previousname-element)
+		- [3.7.9 *The **Party** Element*](#379-the-party-element)
+		- [3.7.10 *The **RegistrationHelper** Element*](#3710-the-registrationhelper-element)
+		- [3.7.11 *The **RegistrationProxy** Element*](#3711-the-registrationproxy-element)
+		- [3.7.12 *The **ReportingUnit** Element*](#3712-the-reportingunit-element)
+		- [3.7.13 *The **Signature (and PreviousSignature)** Element*](#3713-the-signature-and-previoussignature-element)
+		- [3.7.14 *The **VoterClassification** Element*](#3714-the-voterclassification-element)
+		- [3.7.15 *The **VoterId** Element*](#3715-the-voterid-element)
+		- [3.7.16 *The **VoterRecordsRequest** Element*](#3716-the-voterrecordsrequest-element)
+		- [3.7.17 *The **VoterRecordsResponse** Element/Extension Base*](#3717-the-voterrecordsresponse-elementextension-base)
+			- [3.7.17.1 *The **RegistrationAcknowledgement** xsi:type*](#37171-the-registrationacknowledgement-xsitype)
+			- [3.7.17.2 *The **RegistrationRejection** xsi:type*](#37172-the-registrationrejection-xsitype)
+			- [3.7.17.3 *The **RegistrationSuccess** xsi:type*](#37173-the-registrationsuccess-xsitype)
+		- [3.7.18 *The **VoterRegistration** Element*](#3718-the-voterregistration-element)
 - [4. XML/JSON Usage examples](#4-xmljson-usage-examples)
 	- [4.1 Example 1: NVRA-style Voter Registration Request in XML](#41-example-1-nvra-style-voter-registration-request-in-xml)
 	- [4.2 Example 2: NVRA Voter Registration Request in JSON](#42-example-2-nvra-voter-registration-request-in-json)
@@ -1598,7 +1598,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.14 *The **VoterClassification** Element*
+### 3.7.14 *The **VoterClassification** Element*
 Used in requests.  
 
 `<VoterRegistration>` includes this element to describe a voter's classification per criteria on the voter's registration form, e.g., `united-states-citizen` or `eighteen-on-election-day`.
@@ -1624,7 +1624,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.15 *The **VoterId** Element*
+### 3.7.15 *The **VoterId** Element*
 Used in requests.  
 
 Used to include information about a voter's identification that may be required in a registration request. `<VoterRegistration>` includes `<VoterId>`.
@@ -1655,7 +1655,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.16 *The **VoterRecordsRequest** Element*
+### 3.7.16 *The **VoterRecordsRequest** Element*
 The root element for requests.  
 
 For defining items pertaining to the status and type of the voter records request and when it was
@@ -1700,7 +1700,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.17 *The **VoterRecordsResponse** Element/Extension Base*
+### 3.7.17 *The **VoterRecordsResponse** Element/Extension Base*
 The root element for responses.  
 
 For defining items pertaining to the status of a response to a voter records request.  
@@ -1736,7 +1736,7 @@ Schema definition:
 
 <br>
 
-##### 3.1.6.17.1 *The **RegistrationAcknowledgement** xsi:type*
+#### 3.7.17.1 *The **RegistrationAcknowledgement** xsi:type*
 Used in responses.  
 
 For indicating that the request was received but action on the request is pending.
@@ -1751,7 +1751,7 @@ Schema Definition:
 
 <br>
 
-##### 3.1.6.17.2 *The **RegistrationRejection** xsi:type*
+#### 3.7.17.2 *The **RegistrationRejection** xsi:type*
 Used in responses.
 
 For indicating that the request failed.  The `<Error>` sub-element is used to indicate the type of error that occurred. The `<AdditionalDetails>` sub-element can be used to provide more information as to the rejection.
@@ -1781,7 +1781,7 @@ Schema definition:
 
 <br>
 
-##### 3.1.6.17.3 *The **RegistrationSuccess** xsi:type*
+#### 3.7.17.3 *The **RegistrationSuccess** xsi:type*
 Used in responses.
 
 For indicating a successful response to a request.  The `<Action>` sub-element is used to
@@ -1826,7 +1826,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.18 *The **VoterRegistration** Element*
+### 3.7.18 *The **VoterRegistration** Element*
 Used in requests.  
 
 `<VoterRecordsRequest>` includes this element to specify information about the voter.
