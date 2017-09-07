@@ -134,7 +134,7 @@ In addition to the above acknowledgments, the editor also gratefully acknowledge
 
 # Executive Summary
 
-This is a draft specification of a Common Data Format (CDF) for Voter Record Interchange (VRI).  It has been developed by NIST and members of the Voting Interoperability Public Working Group to assist election officials and developers in supporting online voter registration (OVR) transactions with voter registration (VR) authorities.  The specification contains an overview of the supported use cases, which define interactions between actors and systems such as between voter registration applicants and online voter registration systems (OVR).  The CDF VRI specification also documents the use of XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
+This is a draft specification of a Common Data Format (CDF) for Voter Record Interchange (VRI).  It has been developed by NIST and members of the Voting Interoperability Public Working Group to assist election officials and developers in supporting online voter registration (OVR) transactions with voter registration (VR) authorities.  The specification contains an overview of the supported use cases, which define interactions between actors and systems such as between voter registration applicants and online voter registration systems (OVR).  The CDF VRI specification also documents the use of XML (eXtensible Markup Language[\[1\]])(#references) and JSON (JavaScript Object Notation)[\[2\]](#references) schemas.
 
 The VRI specification is transaction oriented, supporting digital VR application requests transmitted to VR systems from OVR sources including:
 
@@ -142,22 +142,22 @@ The VRI specification is transaction oriented, supporting digital VR application
 - Third-party jurisdiction-independent OVR systems.
 - State motor vehicle departments or other voter registration-related agencies.  
 
-It supports responses transmitted from VR systems to these OVR systems and state agencies. The registration forms supported include digital versions of the NVRA (National Voter Registration Act[\[3\]](#references)) form, the FPCA (Federal Post Card Application[\[4\]](#references)) form, or state specific forms. XML and JSON are used as data formats.
+It supports responses transmitted from VR systems to these OVR systems and state agencies. The registration forms supported include digital versions of the NVRA (National Voter Registration Act[\[3\]])(#references) form, the FPCA (Federal Post Card Application)[\[4\]](#references) form, or state specific forms. XML and JSON are used as data formats.
 
 Future versions of this specification may contain support for additional use cases for other types of transactions, such as for voter record maintenance.
 
-The XML/JSON schemas associated with this specification are generated from a UML (Unified Modeling Language[\[5\]](#references)) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that data formats such as XML and JSON can be generated or derived from the UML model.
+The XML/JSON schemas associated with this specification are generated from a UML (Unified Modeling Language[\[5\]])(#references) model that defines the types, structure, and interrelationships of the data used in voter registration transactions. The advantages to using a UML model include that data formats such as XML and JSON can be generated or derived from the UML model.
 
 <br>
 
 # 1. Introduction
 
-This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) made to voter registration (VR) systems, and responses to the requests returning from the VR system. The specification includes XML (eXtensible Markup Language[\[1\]](#references)) and JSON (JavaScript Object Notation[\[2\]](#references)) schemas.
+This document is a specification for a common data format (CDF) for voter records data interchange related to voter registration, i.e., registration requests from online voter registration (OVR) made to voter registration (VR) systems, and responses to the requests returning from the VR system. The specification includes XML (eXtensible Markup Language)[\[1\]](#references) and JSON (JavaScript Object Notation)[\[2\]](#references) schemas.
 
 Primary features of this specification include:
 
-* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act[\[3\]](#references)) or FPCA (Federal Post Card Application[\[4\]](#references)) forms or other U.S. state-specific forms.
-* A data model in UML (Unified Modeling Language[\[5\]](#references)) that itemizes and defines the data involved in voter records  interchange related to registration and that is used to derive the XML and JSON schemas.
+* Capability to specify voter registration requests and responses when using the NVRA (National Voter Registration Act)[\[3\]](#references))\ or FPCA (Federal Post Card Application)[\[4\]](#references) forms or other U.S. state-specific forms.
+* A data model in UML (Unified Modeling Language)[\[5\]](#references) that itemizes and defines the data involved in voter records  interchange related to registration and that is used to derive the XML and JSON schemas.
 * Detailed instructions for implementation and use of the XML and JSON schemas.
 *	A flexible specification to cover additional use cases for other types of registration transactions, such as for voter record maintenance.
 
@@ -201,9 +201,9 @@ While this specification is focused on digital OVR submission, subsequent versio
 
 -	DMV Notification: Data exchanged by DMV (Department of Motor Vehicles) or similar systems and VR systems, as part of NVRA compliance to digitally notify VR systems of DMV records of DMV customers that requested voter registration. May also include: similar data push from DMV of existing DMV records recently updated with change-of-address, as part of semi-automated steps toward permanent voter registration, or other forms of data exchange to VR systems that might facilitate elements of automatic and/or permanent voter registration.
 
--	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g., the ERIC (Electronic Registration Information Center[\[7\]](#references)) system, or as part of inter-state cross-check activities.
+-	Cross-State Records Match: Data interchange between state VR systems for and systems for records matching, e.g., the ERIC (Electronic Registration Information Center)[\[7\]](#references) system, or as part of inter-state cross-check activities.
 
--	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey[\[8\]](#references))reporting.
+-	EAVS Submission: Subsets of voter records externalized from voter records systems for purposes of data aggregation and reporting, including but not limited to EAVS (Election Administration Voting Survey)[\[8\]](#references)reporting.
 
 Note that this specification addresses U.S. governmental elections and is not intended for use “as is” in other types of elections or in other countries. However, the specification was written with the intention that it be adaptable to other election environments.
 
@@ -217,7 +217,9 @@ This section presents an overview of the digital OVR voter registration request 
 
 ## 2.1 Voter Records Request
 
-The digital NVRA and FPCA forms form the basis for digital OVR registration.  The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military, their families, and citizens residing outside the U.S. to register and, if desired, request a ballot at the same time. (Note: the U.S. Department of Defense's Federal Voting Assistance Program (FVAP) is currently revising its August 2013 Standard Form 76, or the Federal Post Card Application, for release later in 2017.  XML and JSON schemas will be updated to reflect changes made to the FPCA form.)
+The digital NVRA and FPCA forms form the basis for digital OVR registration.  The NVRA form is used for U.S. non-military citizen registrations whereas the FPCA form is used by U.S. military, their families, and citizens residing outside the U.S. to register and, if desired, request a ballot at the same time.
+
+(Note: the U.S. Department of Defense's Federal Voting Assistance Program (FVAP) is currently revising its August 2013 Standard Form 76, or the Federal Post Card Application, for release later in 2017.  XML and JSON schemas will be updated to reflect changes made to the FPCA form.)
 
 <div class="text-center" markdown="1">
 <img src="Figures/NVRA.png" height="900"/>
@@ -235,20 +237,21 @@ The digital NVRA and FPCA forms form the basis for digital OVR registration.  Th
 
 <br>
 
-The submission of a digital registration form to a VR authority represents a voter records request.  The response transmitted back from the VR authority to the submitter would include a status such as "registration successful" or would indicate an error for any number of reasons including incomplete information or voter signature not recognizable.  The request consists of a registration request, e.g., initial registration, followed by various information about the voter and the submitter of the request.  The use case for the digital OVR request  includes:
+The submission of a digital registration form to a VR authority represents a voter records request.  The response transmitted back from the VR authority to the submitter would include a status such as "registration-created" or would indicate an error for any number of reasons including “incomplete-address” or “incomplete-signature”.  The request consists of a registration request, e.g., initial registration, followed by various information about the voter and the submitter of the request.  The use case for the digital OVR request includes:
 
-- a client IT “OVR submitter”,
-- a service IT system “VR authority”, and
-- the submission a digital NVRA, FPCA, or state-specific “form” via transmission from OVR submitter to VR authority.
+- A client IT “OVR submitter”,
+- A service IT system “VR authority”, and
+- The submission a digital NVRA, FPCA, or state-specific “form” via transmission from OVR submitter to VR authority.
 
 Currently, VR authorities are typically the back-end components of actual state OVR systems, while submitters include clients of state OVR systems such as the DMV/MVA or other clients that are operated by 3rd party VR organizations and that integrate with OVR systems by sending all or part of an NVRA/FPCA dataset collected by the client from a human registrant.
 
+An OVR transaction, as used in this specification, generally consists of a voter records request followed by a voter records response, although this may vary across U.S. states and territories.  The request can consist of multiple requests if multiple actions are being requested for the same voter.  As well, the response could consist of multiple responses.
+
 The UML model shows 4 types of requests that would be sent from an OVR submitter to a VR system:
 
-- Request a registration for a voter using the digital NVRA form.
-- Request a registration for a voter using the digital FPCA form.
-- Request a registration for a voter using the digital FPCA form and also request a ballot.
-- Request a state-specific action for a voter using possibly a state-specific digital form (covered in Section 2.3).
+1.	Request a registration for a voter using the digital NVRA or FPCA form.
+2.	In the case of a registration request using the FPCA form, also request a ballot for an election (FPCA registrations can include a ballot request).
+3.	Request a state-specific action for a voter using possibly a state-specific digital form (covered in Section 2.3).
 
 <div class="text-center" markdown="1">
 <img src="Figures/VoterRegistrationRequest-V24.png" height="1000"/>
@@ -258,7 +261,7 @@ The UML model shows 4 types of requests that would be sent from an OVR submitter
 
 <br>
 
-An OVR submitter essentially specifies the correct form ("nvra" or "fpca") and the type of request ("registration", "registration" AND "ballot-request"). The registration request is valid for either form, whereas for the FPCA, it is possible to register and request a ballot at the same time. The VoterRegistration class contains the remaining data elements, all taken from information contained on the digital form.  
+An OVR submitter essentially specifies the type of registration form (“nvra” or “fpca”) and the registration action(s) being requested for the transaction.  In the case of “fpca” when a ballot is also requested, there could be two actions, “registration” and “ballot-request”. The VoterRegistration class contains the remaining data elements, all taken from information contained on the digital form.  
 
 Both the registration request and response models contain a class ExternalIdentifier, which is used to associate an identifier with an item.  In the case of the request model, it is used optionally to associate an identifier to the political party, and in the response model, to optionally associate identifiers with political geography such as precincts and districts.
 
@@ -267,9 +270,9 @@ Both the registration request and response models contain a class ExternalIdenti
 ## 2.2 Voter Records Response
 The voter records response simply returns a response to the voter records request. The UML model is simpler than the request model in that a response generally contains little data other than the results of the request, which are:
 
-- The registration request succeeded.
-- The registration request was rejected, including a reason for the rejection.
-- The registration request was acknowledged, but no further status is available.
+1.	The registration request was acknowledged, but no further status is available.
+2.	The registration request was rejected, including a reason(s) for the rejection.
+3.	The registration request succeeded, including the action(s) taken.
 
 <br>
 
@@ -279,31 +282,11 @@ The voter records response simply returns a response to the voter records reques
 **Figure 4 - Voter Records Response UML class diagram**
 </div>
 
-The first two result types represent the typical current practice in
-online voter registration, where a registration authority operates an
-online service that receives VR requests and saves them for later
-processing by local elections offices' staff. In this typical practice,
-the acceptance of an online VR request is simply an acknowledgement that
-the request was received without error. The Voter Records Response
-therefore has both an acknowledgement, and a rejection that represents a
-response to the sender that notifies of the rejection and the reasons
-for the rejection.
+The UML model shows the VoterRecordsResponse class, which has three corresponding types of responses.  The first, RegistrationAcknowledgement, represents the typical current practice in online voter registration, where a registration authority operates an online service that receives VR requests and saves them for later processing by local elections offices' staff. In this typical practice, the acceptance of an online VR request is simply an acknowledgement that the request was received without error.
 
-In addition, the Voter Records Response includes a RegistrationSuccess,
-for cases where the receiving service is able to process a request to
-success, and notify the sender synchronously. The contents of a
-RegistrationSuccess are modeled on the information that becomes
-available to a newly registered voter as a result of successful
-registration. In the UML model, the RegistrationSuccess class optionally
-includes these items: voter’s assigned polling place and precinct, the
-location of the local election authority, and a list of districts that
-the voter resides in, and if available a list of ballot items in an
-upcoming election that the voter is eligible to vote in. The successful
-registration also returns the type of registration that occurred, which
-may differ from what was requested. For example, a request for a new
-voter registration may succeed, but if the voter was already registered,
-the response may indicate a registration update as opposed to a
-registration create.
+The second type of response, RegistrationRejection, contains the reason(s) for the rejection as well as any additional details.
+
+The third type of response, RegistrationSuccess, is used for cases where the receiving service is able to process a request to success and notify the sender synchronously. The contents of a RegistrationSuccess are modeled on the information that becomes available to a newly registered voter as a result of successful registration. In the UML model, the RegistrationSuccess class optionally includes these items: voter’s assigned polling place and precinct, the location of the local election authority, and a list of districts that the voter resides in, and if available a list of ballot items in an upcoming election that the voter is eligible to vote in. The successful registration also returns the registration action(s) that occurred, which may differ from what was requested. For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
 
 <br>
 
@@ -434,9 +417,9 @@ Postal delivery addresses specify points of postal delivery that have no definit
 ### 2.4.4 General Class
 The general class provides a "catch-all" way to handle addresses that do not conform to any of the thoroughfare, landmark, or postal classes, including non-U.S. addresses. There are three types:
 
-1. The complete address as a single unparsed string of text, e.g., *Voter Address = PO Box 1511, Ames, IA 50010*.
-2. The complete address with place, state and zip code parsed out to a single field, e.g., *Voter Address = PO Box 1511; Place State ZIP = Ames, IA 50010*.
-3. The complete address with place, state and zip code parsed out to separate fields, e.g., *Voter Address = PO Box 1511; Complete Place Name = Ames; State Name = IA; Zip Code = 50010*.
+1. The complete address as a single unparsed string of text, e.g., *PO Box 1511, Ames, IA 50010*.
+2. The complete address with place, state and zip code parsed out to a single field, e.g., *PO Box 1511; Place State ZIP = Ames, IA 50010*.
+3. The complete address with place, state and zip code parsed out to separate fields, e.g., *PO Box 1511; Complete Place Name = Ames; State Name = IA; Zip Code = 50010*.
 
 A complete overview of the FGDC standard and how to use it is beyond the scope of this specification, thus readers and developers are referred to the standard documentation, which contains complete descriptions and examples[\[6\]](#references).
 
@@ -450,7 +433,7 @@ element as a sub-element, e.g., `<VoterRecordsRequest>` includes `<VoterRegistra
 
 <br>
 
-##	3.1 Schema Documentation
+##	3.1 Schema Stylistic Conventions
 
 The XML schema was written observing the following stylistic conventions:
 
@@ -476,7 +459,7 @@ values.
 
 <br>
 
-### 3.1.1 Roots
+## 3.2 Roots
 The schema contains two root elements:
 
 1.	`<VoterRecordsRequest>`, used as a root for registration request transactions.
@@ -491,7 +474,7 @@ Schema Definition:
 
 <br>
 
-### 3.1.2 Imports
+## 3.3 Imports
 The schema (and instance files) imports two external schemas:
 
 1.	The W3C digital signature schema[\[11\]](#references), used in the optional `<Signature>` sub-element of `<VoterRecordsRequest>` and `<VoterRecordsResponse>` to
@@ -508,7 +491,7 @@ Schema Definition:
 
 <br>
 
-### 3.1.3 Interfaces
+## 3.4 Interfaces
 The schema includes an interface that maps the `Address` type to a choice of one of the address types from the FGDC schema.
 
       <!-- === Interface Address === -->
@@ -530,11 +513,11 @@ The schema includes an interface that maps the `Address` type to a choice of one
 
 <br>
 
-### 3.1.4 Enumerations
+## 3.5 Enumerations
 The following sections deal with the enumerations (i.e., simple types) in the
 schema, which are generated from the enumerations in the UML models.
 
-#### 3.1.4.1 *The **AssertionValue** Enumeration*
+### 3.5.1 *The **AssertionValue** Enumeration*
 Used in requests.  
 
 Enumeration for assertions from a voter or a third party such as a department of motor
@@ -559,7 +542,7 @@ Schema Definition:
 
 <br>
  
-#### 3.1.4.2 *The **BallotReceiptMethod** Enumeration*
+### 3.5.2 *The **BallotReceiptMethod** Enumeration*
 Used in requests.  
 
 Enumeration for methods for delivering a ballot to the voter, used in the
@@ -587,7 +570,7 @@ Schema Definition:
 
 <br>
  
-#### 3.1.4.3 *The **ContactMethodType** Enumeration*
+### 3.5.3 *The **ContactMethodType** Enumeration*
 Used in requests AND responses.   
 
 Enumeration for methods for contacting a voter or an election administration office, used in the `<Type>` sub-element of `<ContactMethod>`.
@@ -610,7 +593,7 @@ Schema Definition:
 
 <br>
  
-#### 3.1.4.4 *The **IdentifierType** Enumeration*
+### 3.5.4 *The **IdentifierType** Enumeration*
 Used in requests.  
 
 Enumeration for election data-related codes in the `<ExternalIdentifiers>`
@@ -621,7 +604,6 @@ Value | Definition
 `fips` | For FIPS codes.
 `local-level` | For a code that is specific to a county or other similar locality.
 `national-level`  | For a code that is used at the national level other than `ocd-id` or `fips`.
-
 `ocd-id` | For Open Civic Data identifiers[\[12\]](#references).
 `state-level` | For a code that is specific to a state.
 `other` | Used when the type of code is not included in this enumeration.
@@ -641,7 +623,7 @@ Schema Definition:
 
 <br>
  
-#### 3.1.4.5 *The **PhoneCapability** Enumeration*
+### 3.5.5 *The **PhoneCapability** Enumeration*
 Used in requests AND responses.   
 
 Enumeration for telephone capabilities, used in the `<Capability>` sub-element of `<PhoneContactMethod>`.  The sub-element may be used multiple times as applicable, e.g., to include both `sms` and `voice`.
@@ -666,7 +648,7 @@ Schema Definition:
 
 <br>
  
-#### 3.1.4.6 *The **RegistrationError** Enumeration*
+### 3.5.6 *The **RegistrationError** Enumeration*
 Used in responses.
 
 Enumeration for registration-related errors, used in the `<Error>` sub-element of `<RegistrationRejection>`. The sub-element may be used multiple times as applicable.
@@ -700,7 +682,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.7 *The **RegistrationForm** Enumeration*
+### 3.5.7 *The **RegistrationForm** Enumeration*
 Used in requests.  
 
 Enumeration for types of registration forms, used in the `<RegistrationForm>` sub-element of `<VoterRegistration>`.
@@ -723,7 +705,7 @@ Schema Definition:
 
 <br>
 		 
-#### 3.1.4.8 *The **RegistrationHelperType** Enumeration*
+### 3.5.8 *The **RegistrationHelperType** Enumeration*
 Used in requests.  
 
 Enumeration for types of registration helpers, used in the `<Type>` sub-element of `<RegistrationHelper>`.
@@ -744,7 +726,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.9 *The **RegistrationMethod** Enumeration*
+### 3.5.9 *The **RegistrationMethod** Enumeration*
 Used in requests.  
 
 Enumeration for the method used by the voter to register, used in the
@@ -788,7 +770,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.10 *The **RegistrationProxy** Enumeration*
+### 3.5.10 *The **RegistrationProxy** Enumeration*
 Used in requests.  
 
 Enumeration for the proxy used for the voter's registration request, used in the
@@ -802,7 +784,7 @@ Value | Definition
 `public-assistance-office` | The voter is assisted by a public assistance office.
 `registration-drive-from-advocacy-group-or-political-party` | The voter is registering via a registration drive.
 `state-funded-agency-serving-persons-with-disabilities` | The voter is assisted by a state-designated agency serving persons with disabilities.
-`other` | Used when the type of source is not included in this** Enumeration*.
+`other` | Used when the type of source is not included in this enumeration.
 
 Schema Definition:
 
@@ -820,7 +802,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.11 *The **RegistrationRequestType** Enumeration*
+### 3.5.11 *The **RegistrationRequestType** Enumeration*
 Used in requests.  
 
 Enumeration for the type of voter records request, used in the `<Type>` sub-element
@@ -844,7 +826,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.12 *The **ReportingUnitType** Enumeration*
+### 3.5.12 *The **ReportingUnitType** Enumeration*
 Used in responses.  
 
 Enumeration for the type of geopolitical unit, used in the `<Type>` sub-element in
@@ -918,7 +900,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.13 *The **SignatureSource** Enumeration*
+#### 3.5.13 *The **SignatureSource** Enumeration*
 Used in requests.  
 
 Enumeration for source of the voter's signature, used in the `<SignatureSource>` sub-
@@ -946,7 +928,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.14 *The **SignatureType** Enumeration*
+### 3.5.14 *The **SignatureType** Enumeration*
 Used in requests.  
 
 Enumeration for the type of voter signature, used in the `<Type>` sub-element of
@@ -970,7 +952,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.15 *The **SuccessAction** Enumeration*
+### 3.5.15 *The **SuccessAction** Enumeration*
 Used in responses.
 
 Enumeration for a response to a voter records request, indicating that the response
@@ -1003,11 +985,11 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.16 *The **VoterClassificationType** Enumeration*
+### 3.5.16 *The **VoterClassificationType** Enumeration*
 Used in requests.  
 
 Enumeration for voter status classifications, used in the `<Type>` sub-element of
-`<VoterClassification>`. Whether the voter status, e.g., `18-on-election-day`, is
+`<VoterClassification>`. Whether the voter status, e.g., `eighteen-on-election-day`, is
 true, false, or unknown depends on the value of the `<Assertion>` sub-element.
 
 Value | Definition
@@ -1015,7 +997,7 @@ Value | Definition
 `activated-national-guard` | The voter is an activated National Guard member on State orders (FPCA).
 `active-duty` | The voter is a member of the Uniformed Services or Merchant Marine on active duty (FPCA)
 `active-duty-spouse-or-dependent` | The voter is an eligible spouse or dependent (FPCA).
-`citizen-abroad-intent-to-return` | The voter is a US citizen residing outside the US and has intention to return.
+`citizen-abroad-intent-to-return` | The voter is a US citizen residing outside the US and has intention to return (FPCA).
 `citizen-abroad-never-resided` | The voter is a US citizen and has never resided in the US (FPCA).
 `citizen-abroad-return-uncertain` | The voter is a US citizen residing outside the US and their return is uncertain (FPCA).
 `deceased` | The voter is deceased (NVRA).
@@ -1052,7 +1034,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.4.17 *The **VoterIdType** Enumeration*  
+### 3.5.17 *The **VoterIdType** Enumeration*  
 Used in requests.  
 
 Enumeration for the type of voter ID, used in the `<Type>` sub-element of
@@ -1092,7 +1074,7 @@ Schema Definition:
 
 <br>
 
-### 3.1.5 Interfaces
+## 3.6 Interfaces
 The UML model includes an interface to the FGDC address schema, which permits
 any one of the 11 address subtypes to be used in any of the address elements that
 are of type `<Address>`.
@@ -1128,19 +1110,18 @@ Schema Definition:
 
 <br>
 
-### 3.1.6 Classes (Elements)
+## 3.7 Classes (Elements)
 The following sections deal with the elements (i.e., complex types) in the schema,
 which are generated from the UML model classes.
 
-#### 3.1.6.1 *The **AdditionalInfo** Element*
+### 3.7.1 *The **AdditionalInfo** Element*
 Used in requests.  
 
 `<VoterRegistration>` optionally includes this element for specifying information
 not addressed in this schema by other elements and attributes, e.g., state-specific
 information that does not "fit" in any other element. The information will thus be
 highly specific to the generating application, and consuming applications must
-"know" the meaning of the information to make use of it.  For this reason, use of
-this element is discouraged as much as is possible.  
+"know" the meaning of the information to make use of it.  This element is useful for state-specific data and transactions.  
 
 The `<StringValue>` and `<FileValue>` sub-elements are both optional, however at
 least one of them must be included.
@@ -1163,7 +1144,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.2 *The **ContactMethod** Element/Extension Base*
+### 3.7.2 *The **ContactMethod** Element/Extension Base*
 Used in requests AND responses.
 
 `<ElectionAdministration>` optionally includes this element to specify how to
@@ -1178,7 +1159,7 @@ The `<PhoneContactMethod>` element uses `<ContactMethod>` as an extension base, 
 
     <ContactMethod xsi:type="PhoneContactMethod">
         <Type>phone</Type>
-        <Value>304-123-4567</Value>
+        <Value>3041234567</Value>
         <Capability>sms</Capability>
         <Capability>voice</Capability>
     </ContactMethod>
@@ -1195,7 +1176,7 @@ Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
 `<Type>` | 1 | `ContactMethodType` | The contact method type, e.g., `email` or `phone`.
 `<OtherType>` | 0 or 1 | `xsd:string` | Used when `<ContactMethodType>` value is `other`.
-`<Value>` | 1 | `xsd:string` | Contains an email address or phone number, etc.
+`<Value>` | 1 | `xsd:string` | Contains an email address or phone number, etc. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
 
 Schema definition:
 
@@ -1209,7 +1190,7 @@ Schema definition:
 
 <br>
 
-##### 3.1.6.2.1 *The **PhoneContactMethod** xsi:type*
+#### 3.7.2.1 *The **PhoneContactMethod** xsi:type*
 Used in requests AND responses.   
 
 `<RegistrationHelper>`, and `<RegistrationProxy>` use this element to specify a telephone number as well as the capabilities of the telephone, e.g., `sms`, `fax`, etc.
@@ -1217,10 +1198,10 @@ Used in requests AND responses.
 `<PhoneContactMethod>` is an `xsi:type of <ContactMethod>`, i.e., it uses `<ContactMethod>` as an extension base.  Thus, the elements that include `<ContactMethod>` could use `xsi:type="PhoneContactMethod"`  as applicable.  An example, using sub-elements defined in `<ContactMethod>`, is as follows:
 
     <ContactMethod xsi:type="PhoneContactMethod">
+        <Type>phone</Type>
+        <Value>3041234567</Value>
         <Capability>sms</Capability>
         <Capability>voice</Capability>
-        <Type>phone</Type>
-        <Value>304-123-4567</Value>
     </PhoneContactMethod>
 
 Element | Multiplicity | Type | Element Description
@@ -1242,7 +1223,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.3 *The **ElectionAdministration** Element*
+### 3.7.3 *The **ElectionAdministration** Element*
 Used in responses.
 
 `<ElectionAdministration>` optionally includes the `<ContactInformation>` element to specify contact information for the election authority.
@@ -1267,14 +1248,13 @@ Schema Definition:
 
 <br>
 
-#### 3.1.6.4 *The **ExternalIdentifier** Element*
+### 3.7.4 *The **ExternalIdentifier** Element*
 Used in requests AND responses.   
 
 `<Party>` and `<ReportingUnit>` optionally include this element for associating a jurisdiction's
 codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns,
 precincts, etc. Multiple occurrences of `<ExternalIdentifier>` can be used to associate
 multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-
-
 specific codes as well as OCD-IDs (Open Civic Data Identifiers [\[11\]](#references)), as follows:
 
 
@@ -1305,15 +1285,15 @@ Schema definition:
 
     <xsd:complexType name="ExternalIdentifier">
         <xsd:sequence>
-            <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
             <xsd:element name="Type" type="IdentifierType"/>
+            <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
             <xsd:element name="Value" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
 
 <br>
 
-#### 3.1.6.5 *The **File** Element/Extension Base*
+#### 3.7.5 *The **File** Element/Extension Base*
 Used in requests.  
 
 `<VoterId>` optionally includes this element to specify a filename for voter identification
@@ -1342,7 +1322,7 @@ Schema definition:
 
 <br>
 
-##### 3.1.6.5.1 *The **Image** xsi:type*
+#### 3.7.5.1 *The **Image** xsi:type*
 Used in requests.  
 
 `<Signature>` optionally includes this element to indicate that a file contains an image of a voter's signature.  `<Image>` uses `<File>` as an extension base, thus attributes and elements of `<File>` can be included in `<Image>`.
@@ -1357,7 +1337,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.6 *The **LatLng** Element*
+### 3.7.6 *The **LatLng** Element*
 Used in responses.  
 
 `<Location>` optionally includes this element to specify the latitude and longitude of a voter's voting location.
@@ -1380,10 +1360,10 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.7 *The **Location** Element*
+### 3.7.7 *The **Location** Element*
 Used in responses.  
 
-`<ReportingUnit>` and `<ElectionAdministration>` optionally include this element to specify the address and directions to a voting location or election administration office location respectively. The `<LatLng>` element can be included to specify the latitude and longitude of the location.
+`<ReportingUnit>` and `<ElectionAdministration>` optionally include this element to specify the address and directions to a voting location or election administration office location, respectively. The `<LatLng>` element can be included to specify the latitude and longitude of the location.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
@@ -1409,7 +1389,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.8 *The **Name (PreviousName)** Element*
+### 3.7.8 *The **Name (and PreviousName)** Element*
 Used in requests.  
 
 `<VoterRegistration>` includes this element for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using `<PreviousName>` instead of `<Name>`.
@@ -1451,7 +1431,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.9 *The **Party** Element*
+### 3.7.9 *The **Party** Element*
 Used in requests.  
 
 `<VoterRegistration>` includes this element to specify a voter's political party.
@@ -1459,7 +1439,7 @@ Used in requests.
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
 `<Abbreviation>` | 0 or 1 | `xsd:string` | Short name for the party, e.g., "DEM".
-`<ExternalIdentifiers>` | 0 or 1 | `ExternalIdentifiers` | For associating an ID with the party.
+`<ExternalIdentifier>` | 0 or 1 | `ExternalIdentifier` | For associating an ID with the party.
 `<Name>` | 1 | `xsd:string` | Official full name of the party, e.g., "Republican".
 
 Schema Definition:
@@ -1475,7 +1455,7 @@ Schema Definition:
 
 <br>
 
-#### 3.1.6.10 *The **RegistrationHelper** Element*
+### 3.7.10 *The **RegistrationHelper** Element*
 Used in requests.  
 
 `<VoterRegistration>` optionally includes this element to specify information about a registration assistant involved in a voter's registration request.
@@ -1511,7 +1491,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.11 *The **RegistrationProxy** Element*
+### 3.7.11 *The **RegistrationProxy** Element*
 Used in requests.  
 
 `<VoterRegistration>` optionally includes this element to specify information about the proxy for a voter records request.
@@ -1556,10 +1536,10 @@ Schema definition:
 <br>
 
 
-#### 3.1.6.12 *The **ReportingUnit** Element*
+### 3.7.12 *The **ReportingUnit** Element*
 Used in responses.
 
-`<VoterRecordsResponse>` include this element when a registration request is successful so as to provide a list of geopolitical geography associated with the voter's registration, e.g., the voter's precinct, polling place, districts, etc.  The `<Type>` sub-element uses the `<ReportingUnitType>` enumeration to specify the type of geopolitical geography being defined. If the reporting unit type is not listed in enumeration `<ReportingUnitType>`, use `other` and include the reporting unit type (that is not listed in the enumeration) in `<OtherType>`.  
+`<VoterRecordsResponse>` includes this element when a registration request is successful so as to provide a list of geopolitical geography associated with the voter's registration, e.g., the voter's precinct, polling place, districts, etc.  The `<Type>` sub-element uses the `<ReportingUnitType>` enumeration to specify the type of geopolitical geography being defined. If the reporting unit type is not listed in enumeration `<ReportingUnitType>`, use `other` and include the reporting unit type (that is not listed in the enumeration) in `<OtherType>`.  
 
 The `<IsDistricted>` boolean is not strictly necessary, as it is possible to identify districts by their `<Type>` sub-element.  However, if the type of district is not listed in the `<ReportingUnitType>` enumeration and therefore `<OtherType>` is used, then `<IsDistricted>` is necessary.  The `<IsDistricted>` boolean can also be used to signify that a `<ReportingUnit>` defined as a jurisdiction, e.g., a county, is also used as a district for, e.g., county-wide contests.   
 
@@ -1586,7 +1566,7 @@ Schema definition:
 
 <br>
 
-#### 3.1.6.13 *The **Signature (PreviousSignature)** Element*
+### 3.7.13 *The **Signature (and PreviousSignature)** Element*
 Used in requests.  
 
 `<VoterRegistration>` includes this element for specifying information about a voter's signature on a registration request, whereas `<RegistrationHelper>` includes it to specify information about a registration helper's signature. If there is a need to include a previous signature that uses a different name, e.g., a maiden name, `<VoterRegistration>` uses `<PreviousSignature>`
@@ -1623,8 +1603,8 @@ Used in requests.
 
 `<VoterRegistration>` includes this element to describe a voter's classification per criteria on the voter's registration form, e.g., `united-states-citizen` or `eighteen-on-election-day`.
 
-`<VoterClassification>` includes assertions of the voter in response to the voter registration form criteria. For example, an assertion of `true` may be used with a criterion of united-states-citizen. Assertions can be negative, such as providing an assertion of `false` for a criterion of
-felon, or an assertion of `unknown` to indicate that the voter does not know whether they meet or do not meet the specific criteria on the form.
+`<VoterClassification>` includes assertions of the voter in response to the voter registration form criteria. For example, an assertion of `true` may be used with a criterion of `united-states-citizen`. Assertions can be negative, such as providing an assertion of `false` for a criterion of
+`felon`, or an assertion of `unknown` to indicate that the voter does not know whether they meet or do not meet the specific criteria on the form.
 
 Element | Multiplicity | Type | Element Description
 --- | :---: | --- | ---
