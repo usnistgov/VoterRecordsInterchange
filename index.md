@@ -1661,7 +1661,6 @@ The root element for requests.
 For defining items pertaining to the status and type of the voter records request and when it was
 generated.  `<VoterRecordsRequest>` includes the `<VoterRegistration>` element to specify
 various information about the voter in question. The optional `<Signature>` sub-element is
-
 used for an XML digital signature[\[11\]](#references) on XML instance files. `<Signature>` must be the last
 sub-element of `<VoterRecordsRequest>`.
 
@@ -1690,13 +1689,6 @@ Schema definition:
             <xsd:element ref="ds:Signature" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="VoterRecordsResponse" abstract="true">
-        <xsd:sequence>
-            <xsd:element name="ElectionAdministration" type="ElectionAdministration" minOccurs="0"/>
-            <xsd:element ref="ds:Signature" minOccurs="0"/>
-            <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
-        </xsd:sequence>
-    </xsd:complexType>
 
 <br>
 
@@ -1704,7 +1696,6 @@ Schema definition:
 The root element for responses.  
 
 For defining items pertaining to the status of a response to a voter records request.  
-
 `<VoterRecordsResponse>` is an abstract element with three types that get used according to the type of response:
 
 *	`<VoterRecordsResponse xsi:type="RegistrationAcknowledgement">`, used to indicate
