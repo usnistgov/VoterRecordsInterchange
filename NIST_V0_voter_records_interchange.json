@@ -198,6 +198,61 @@
       },
       "type": "object"
     },
+    "VRI.Address": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.CommunityAddress_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.FourNumberAddressRange_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.GeneralAddressClass_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.IntersectionAddress_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.LandmarkAddress_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.NumberedThoroughfareAddress_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.TwoNumberAddressRange_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.USPSGeneralDeliveryOffice_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.USPSPostalDeliveryBox_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.USPSPostalDeliveryRoute_type"
+        },
+        {
+          "$ref": "#/definitions/FGDCAddressStandard.UnnumberedThoroughfareAddress_type"
+        }
+      ]
+    },
+    "VRI.AssertionValue": {
+      "enum": [
+        "no",
+        "unknown",
+        "yes"
+      ],
+      "type": "string"
+    },
+    "VRI.BallotReceiptMethod": {
+      "enum": [
+        "email",
+        "email-or-online",
+        "fax",
+        "mail",
+        "online"
+      ],
+      "type": "string"
+    },
     "VRI.ContactMethod": {
       "required": [
         "@type",
@@ -223,6 +278,14 @@
         }
       },
       "type": "object"
+    },
+    "VRI.ContactMethodType": {
+      "enum": [
+        "email",
+        "other",
+        "phone"
+      ],
+      "type": "string"
     },
     "VRI.ElectionAdministration": {
       "required": [
@@ -318,6 +381,17 @@
         }
       },
       "type": "object"
+    },
+    "VRI.IdentifierType": {
+      "enum": [
+        "fips",
+        "local-level",
+        "national-level",
+        "ocd-id",
+        "other",
+        "state-level"
+      ],
+      "type": "string"
     },
     "VRI.Image": {
       "required": [
@@ -461,6 +535,15 @@
       },
       "type": "object"
     },
+    "VRI.PhoneCapability": {
+      "enum": [
+        "fax",
+        "mms",
+        "sms",
+        "voice"
+      ],
+      "type": "string"
+    },
     "VRI.PhoneContactMethod": {
       "required": [
         "@type",
@@ -515,6 +598,28 @@
       },
       "type": "object"
     },
+    "VRI.RegistrationError": {
+      "enum": [
+        "identity-lookup-failed",
+        "incomplete",
+        "incomplete-address",
+        "incomplete-birth-date",
+        "incomplete-name",
+        "incomplete-signature",
+        "ineligible",
+        "invalid-form",
+        "other"
+      ],
+      "type": "string"
+    },
+    "VRI.RegistrationForm": {
+      "enum": [
+        "fpca",
+        "nvra",
+        "other"
+      ],
+      "type": "string"
+    },
     "VRI.RegistrationHelper": {
       "required": [
         "@type",
@@ -545,6 +650,31 @@
         }
       },
       "type": "object"
+    },
+    "VRI.RegistrationHelperType": {
+      "enum": [
+        "assistant",
+        "witness"
+      ],
+      "type": "string"
+    },
+    "VRI.RegistrationMethod": {
+      "enum": [
+        "armed-forces-recruitment-office",
+        "motor-vehicle-office",
+        "other",
+        "other-agency-designated-by-state",
+        "public-assistance-office",
+        "registration-drive-from-advocacy-group-or-political-party",
+        "state-funded-agency-serving-persons-with-disabilities",
+        "unknown",
+        "voter-via-election-registrars-office",
+        "voter-via-email",
+        "voter-via-fax",
+        "voter-via-internet",
+        "voter-via-mail"
+      ],
+      "type": "string"
     },
     "VRI.RegistrationProxy": {
       "required": [
@@ -583,6 +713,18 @@
         }
       },
       "type": "object"
+    },
+    "VRI.RegistrationProxyType": {
+      "enum": [
+        "armed-forces-recruitment-office",
+        "motor-vehicle-office",
+        "other",
+        "other-agency-designated-by-state",
+        "public-assistance-office",
+        "registration-drive-from-advocacy-group-or-political-party",
+        "state-funded-agency-serving-persons-with-disabilities"
+      ],
+      "type": "string"
     },
     "VRI.RegistrationRejection": {
       "required": [
@@ -625,6 +767,14 @@
         }
       },
       "type": "object"
+    },
+    "VRI.RegistrationRequestType": {
+      "enum": [
+        "ballot-request",
+        "other",
+        "registration"
+      ],
+      "type": "string"
     },
     "VRI.RegistrationSuccess": {
       "required": [
@@ -716,6 +866,39 @@
       },
       "type": "object"
     },
+    "VRI.ReportingUnitType": {
+      "enum": [
+        "ballot-batch",
+        "ballot-style-area",
+        "borough",
+        "city",
+        "city-council",
+        "combined-precinct",
+        "congressional",
+        "county",
+        "county-council",
+        "drop-box",
+        "judicial",
+        "municipality",
+        "other",
+        "polling-place",
+        "precinct",
+        "school",
+        "special",
+        "split-precinct",
+        "state",
+        "state-house",
+        "state-senate",
+        "town",
+        "township",
+        "utility",
+        "village",
+        "vote-center",
+        "ward",
+        "water"
+      ],
+      "type": "string"
+    },
     "VRI.Signature": {
       "required": [
         "@type"
@@ -750,6 +933,36 @@
       },
       "type": "object"
     },
+    "VRI.SignatureSource": {
+      "enum": [
+        "dmv",
+        "local",
+        "other",
+        "state",
+        "voter"
+      ],
+      "type": "string"
+    },
+    "VRI.SignatureType": {
+      "enum": [
+        "dynamic",
+        "electronic",
+        "other"
+      ],
+      "type": "string"
+    },
+    "VRI.SuccessAction": {
+      "enum": [
+        "address-updated",
+        "name-updated",
+        "other",
+        "registration-cancelled",
+        "registration-created",
+        "registration-updated",
+        "status-updated"
+      ],
+      "type": "string"
+    },
     "VRI.VoterClassification": {
       "required": [
         "@type",
@@ -775,6 +988,26 @@
         }
       },
       "type": "object"
+    },
+    "VRI.VoterClassificationType": {
+      "enum": [
+        "activated-national-guard",
+        "active-duty",
+        "active-duty-spouse-or-dependent",
+        "citizen-abroad-intent-to-return",
+        "citizen-abroad-never-resided",
+        "citizen-abroad-return-uncertain",
+        "deceased",
+        "declared-incompetent",
+        "eighteen-on-election-day",
+        "felon",
+        "other",
+        "permanently-denied",
+        "protected-voter",
+        "restored-felon",
+        "united-states-citizen"
+      ],
+      "type": "string"
     },
     "VRI.VoterId": {
       "required": [
@@ -817,6 +1050,22 @@
         }
       },
       "type": "object"
+    },
+    "VRI.VoterIdType": {
+      "enum": [
+        "drivers-license",
+        "local-voter-registration-id",
+        "other",
+        "ssn",
+        "ssn4",
+        "state-id",
+        "state-voter-registration-id",
+        "unknown",
+        "unspecified-document",
+        "unspecified-document-with-name-and-address",
+        "unspecified-document-with-photo-identification"
+      ],
+      "type": "string"
     },
     "VRI.VoterRecordsRequest": {
       "required": [
@@ -997,233 +1246,6 @@
       },
       "type": "object"
     },
-    "VRI.AssertionValue": {
-      "enum": [
-        "no",
-        "unknown",
-        "yes"
-      ],
-      "type": "string"
-    },
-    "VRI.BallotReceiptMethod": {
-      "enum": [
-        "email",
-        "email-or-online",
-        "fax",
-        "mail",
-        "online"
-      ],
-      "type": "string"
-    },
-    "VRI.ContactMethodType": {
-      "enum": [
-        "email",
-        "other",
-        "phone"
-      ],
-      "type": "string"
-    },
-    "VRI.IdentifierType": {
-      "enum": [
-        "fips",
-        "local-level",
-        "national-level",
-        "ocd-id",
-        "other",
-        "state-level"
-      ],
-      "type": "string"
-    },
-    "VRI.PhoneCapability": {
-      "enum": [
-        "fax",
-        "mms",
-        "sms",
-        "voice"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationError": {
-      "enum": [
-        "identity-lookup-failed",
-        "incomplete",
-        "incomplete-address",
-        "incomplete-birth-date",
-        "incomplete-name",
-        "incomplete-signature",
-        "ineligible",
-        "invalid-form",
-        "other"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationForm": {
-      "enum": [
-        "fpca",
-        "nvra",
-        "other"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationHelperType": {
-      "enum": [
-        "assistant",
-        "witness"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationMethod": {
-      "enum": [
-        "armed-forces-recruitment-office",
-        "motor-vehicle-office",
-        "other",
-        "other-agency-designated-by-state",
-        "public-assistance-office",
-        "registration-drive-from-advocacy-group-or-political-party",
-        "state-funded-agency-serving-persons-with-disabilities",
-        "unknown",
-        "voter-via-election-registrars-office",
-        "voter-via-email",
-        "voter-via-fax",
-        "voter-via-internet",
-        "voter-via-mail"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationProxyType": {
-      "enum": [
-        "armed-forces-recruitment-office",
-        "motor-vehicle-office",
-        "other",
-        "other-agency-designated-by-state",
-        "public-assistance-office",
-        "registration-drive-from-advocacy-group-or-political-party",
-        "state-funded-agency-serving-persons-with-disabilities"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationRequestType": {
-      "enum": [
-        "ballot-request",
-        "other",
-        "registration"
-      ],
-      "type": "string"
-    },
-    "VRI.ReportingUnitType": {
-      "enum": [
-        "ballot-batch",
-        "ballot-style-area",
-        "borough",
-        "city",
-        "city-council",
-        "combined-precinct",
-        "congressional",
-        "county",
-        "county-council",
-        "drop-box",
-        "judicial",
-        "municipality",
-        "other",
-        "polling-place",
-        "precinct",
-        "school",
-        "special",
-        "split-precinct",
-        "state",
-        "state-house",
-        "state-senate",
-        "town",
-        "township",
-        "utility",
-        "village",
-        "vote-center",
-        "ward",
-        "water"
-      ],
-      "type": "string"
-    },
-    "VRI.SignatureSource": {
-      "enum": [
-        "dmv",
-        "local",
-        "other",
-        "state",
-        "voter"
-      ],
-      "type": "string"
-    },
-    "VRI.SignatureType": {
-      "enum": [
-        "dynamic",
-        "electronic",
-        "other"
-      ],
-      "type": "string"
-    },
-    "VRI.SuccessAction": {
-      "enum": [
-        "address-updated",
-        "name-updated",
-        "other",
-        "registration-cancelled",
-        "registration-created",
-        "registration-updated",
-        "status-updated"
-      ],
-      "type": "string"
-    },
-    "VRI.VoterClassificationType": {
-      "enum": [
-        "activated-national-guard",
-        "active-duty",
-        "active-duty-spouse-or-dependent",
-        "citizen-abroad-intent-to-return",
-        "citizen-abroad-never-resided",
-        "citizen-abroad-return-uncertain",
-        "deceased",
-        "declared-incompetent",
-        "eighteen-on-election-day",
-        "felon",
-        "other",
-        "permanently-denied",
-        "protected-voter",
-        "restored-felon",
-        "united-states-citizen"
-      ],
-      "type": "string"
-    },
-    "VRI.VoterIdType": {
-      "enum": [
-        "drivers-license",
-        "local-voter-registration-id",
-        "other",
-        "ssn",
-        "ssn4",
-        "state-id",
-        "state-voter-registration-id",
-        "unknown",
-        "unspecified-document",
-        "unspecified-document-with-name-and-address",
-        "unspecified-document-with-photo-identification"
-      ],
-      "type": "string"
-    },
-    "VRI.Address": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VRI.Address"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "Xmldsig.Signature": {
       "required": [
         "@type"
@@ -1245,7 +1267,13 @@
       "$ref": "#/definitions/VRI.VoterRecordsRequest"
     },
     {
-      "$ref": "#/definitions/VRI.VoterRecordsResponse"
+      "$ref": "#/definitions/VRI.RegistrationAcknowledgement"
+    },
+    {
+      "$ref": "#/definitions/VRI.RegistrationRejection"
+    },
+    {
+      "$ref": "#/definitions/VRI.RegistrationSuccess"
     }
   ]
 }
