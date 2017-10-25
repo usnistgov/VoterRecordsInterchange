@@ -299,7 +299,7 @@
           ],
           "type": "string"
         },
-        "ContactMethods": {
+        "ContactMethod": {
           "items": {
             "oneOf": [
               {
@@ -522,7 +522,7 @@
         "Abbreviation": {
           "type": "string"
         },
-        "ExternalIdentifiers": {
+        "ExternalIdentifier": {
           "items": {
             "$ref": "#/definitions/VRI.ExternalIdentifier"
           },
@@ -841,7 +841,7 @@
           ],
           "type": "string"
         },
-        "ExternalIdentifiers": {
+        "ExternalIdentifier": {
           "items": {
             "$ref": "#/definitions/VRI.ExternalIdentifier"
           },
@@ -1117,9 +1117,9 @@
     "VRI.VoterRegistration": {
       "required": [
         "@type",
+        "Name",
         "RegistrationAddress",
-        "RegistrationMethod",
-        "Name"
+        "RegistrationMethod"
       ],
       "additionalProperties": false,
       "properties": {
@@ -1129,7 +1129,7 @@
           ],
           "type": "string"
         },
-        "AdditionalInfos": {
+        "AdditionalInfo": {
           "items": {
             "$ref": "#/definitions/VRI.AdditionalInfo"
           },
@@ -1143,7 +1143,7 @@
           "minItems": 0,
           "type": "array"
         },
-        "ContactMethods": {
+        "ContactMethod": {
           "items": {
             "oneOf": [
               {
@@ -1210,7 +1210,7 @@
         "RegistrationForm": {
           "$ref": "#/definitions/VRI.RegistrationForm"
         },
-        "RegistrationHelpers": {
+        "RegistrationHelper": {
           "items": {
             "$ref": "#/definitions/VRI.RegistrationHelper"
           },
@@ -1229,14 +1229,14 @@
         "Signature": {
           "$ref": "#/definitions/VRI.Signature"
         },
-        "VoterClassifications": {
+        "VoterClassification": {
           "items": {
             "$ref": "#/definitions/VRI.VoterClassification"
           },
           "minItems": 0,
           "type": "array"
         },
-        "VoterIds": {
+        "VoterId": {
           "items": {
             "$ref": "#/definitions/VRI.VoterId"
           },
