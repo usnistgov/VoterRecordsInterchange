@@ -474,13 +474,11 @@
       </xsd:element>
       <xsd:element name="VendorApplicationId" type="xsd:string" minOccurs="0"/>
       <xsd:element name="VoterRegistration" type="VoterRegistration"/>
-      <xsd:element minOccurs="0" ref="ds:Signature"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="VoterRecordsResponse" abstract="true">
     <xsd:sequence>
       <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
-      <xsd:element minOccurs="0" ref="ds:Signature"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="VoterRegistration">
