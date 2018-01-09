@@ -1,171 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
-    "FGDCAddressStandard.CommunityAddress_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.CommunityAddress_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.FourNumberAddressRange_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.FourNumberAddressRange_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.GeneralAddressClass_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.GeneralAddressClass_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.IntersectionAddress_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.IntersectionAddress_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.LandmarkAddress_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.LandmarkAddress_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.NumberedThoroughfareAddress_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.NumberedThoroughfareAddress_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.TwoNumberAddressRange_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.TwoNumberAddressRange_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.USPSGeneralDeliveryOffice_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.USPSGeneralDeliveryOffice_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.USPSPostalDeliveryBox_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.USPSPostalDeliveryBox_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.USPSPostalDeliveryRoute_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.USPSPostalDeliveryRoute_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "FGDCAddressStandard.UnnumberedThoroughfareAddress_type": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "FGDCAddressStandard.UnnumberedThoroughfareAddress_type"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "VRI.AdditionalInfo": {
       "required": [
         "@type",
@@ -201,37 +36,37 @@
     "VRI.Address": {
       "oneOf": [
         {
-          "$ref": "#/definitions/FGDCAddressStandard.CommunityAddress_type"
+          "$ref": "addr.json#/definitions/addr.CommunityAddress_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.FourNumberAddressRange_type"
+          "$ref": "addr.json#/definitions/addr.FourNumberAddressRange_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.GeneralAddressClass_type"
+          "$ref": "addr.json#/definitions/addr.GeneralAddressClass_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.IntersectionAddress_type"
+          "$ref": "addr.json#/definitions/addr.IntersectionAddress_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.LandmarkAddress_type"
+          "$ref": "addr.json#/definitions/addr.LandmarkAddress_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.NumberedThoroughfareAddress_type"
+          "$ref": "addr.json#/definitions/addr.NumberedThoroughfareAddress_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.TwoNumberAddressRange_type"
+          "$ref": "addr.json#/definitions/addr.TwoNumberAddressRange_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.USPSGeneralDeliveryOffice_type"
+          "$ref": "addr.json#/definitions/addr.USPSGeneralDeliveryOffice_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.USPSPostalDeliveryBox_type"
+          "$ref": "addr.json#/definitions/addr.USPSPostalDeliveryBox_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.USPSPostalDeliveryRoute_type"
+          "$ref": "addr.json#/definitions/addr.USPSPostalDeliveryRoute_type"
         },
         {
-          "$ref": "#/definitions/FGDCAddressStandard.UnnumberedThoroughfareAddress_type"
+          "$ref": "addr.json#/definitions/addr.UnnumberedThoroughfareAddress_type"
         }
       ]
     },
@@ -589,9 +424,6 @@
           ],
           "type": "string"
         },
-        "Signature": {
-          "$ref": "#/definitions/Xmldsig.Signature"
-        },
         "TransactionId": {
           "type": "string"
         }
@@ -759,9 +591,6 @@
           "minItems": 0,
           "type": "array"
         },
-        "Signature": {
-          "$ref": "#/definitions/Xmldsig.Signature"
-        },
         "TransactionId": {
           "type": "string"
         }
@@ -818,9 +647,6 @@
         },
         "PollingPlace": {
           "$ref": "#/definitions/VRI.ReportingUnit"
-        },
-        "Signature": {
-          "$ref": "#/definitions/Xmldsig.Signature"
         },
         "TransactionId": {
           "type": "string"
@@ -1091,9 +917,6 @@
         },
         "OtherType": {
           "type": "string"
-        },
-        "Signature": {
-          "$ref": "#/definitions/Xmldsig.Signature"
         },
         "TransactionId": {
           "type": "string"
