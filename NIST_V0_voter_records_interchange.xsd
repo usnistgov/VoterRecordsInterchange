@@ -1601,6 +1601,13 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="Form" type="RegistrationForm" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            If the request is for a voter registration, the registration form used by the voter.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
       <xsd:element name="Gender" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -1619,6 +1626,13 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Voter’s name.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OtherForm" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when &lt;RegistrationForm&gt; value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -2507,13 +2521,6 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherRegistrationForm" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Used when &lt;RegistrationForm&gt; value is other.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
       <xsd:element name="OtherRegistrationMethod" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -2533,13 +2540,6 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Information about a previous voter signature on the registration form.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="RegistrationForm" type="RegistrationForm" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            If the request is for a voter registration, the registration form used by the voter.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
