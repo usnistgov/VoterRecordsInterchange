@@ -1250,6 +1250,15 @@
   <xsd:complexType name="Absentee">
   </xsd:complexType>
   <xsd:complexType name="AbsenteeBallotRequest">
+    <xsd:sequence>
+      <xsd:element name="BallotReceiptPreference" type="BallotReceiptMethod" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter's preference on how to receive their ballot in order from their most preferred method to least, used if an absentee ballot request. If ommitted, the default method for the form type will be used.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="AdditionalInfo">
     <xsd:annotation>
@@ -1378,7 +1387,7 @@
   </xsd:complexType>
   <xsd:complexType name="Election">
     <xsd:sequence>
-      <xsd:element name="EndDate" type="xsd:date"/>
+      <xsd:element name="EndDate" type="xsd:date" minOccurs="0"/>
       <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded"/>
       <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
@@ -1545,13 +1554,6 @@
     <xsd:complexContent>
       <xsd:extension base="CalendarBasedAbsenteeBallotRequest">
         <xsd:sequence>
-          <xsd:element name="BallotReceiptPreference" type="BallotReceiptMethod" minOccurs="0" maxOccurs="unbounded">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The voter's preference on how to receive their ballot in order from their most preferred method to least, used if an absentee ballot request.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
           <xsd:element name="LastDateOfUSResidency" type="xsd:date" minOccurs="0">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
@@ -1637,14 +1639,7 @@
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Party" type="Party" minOccurs="0"/>
-      <xsd:element name="RegistrationAddress">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:group minOccurs="1" maxOccurs="1" ref="Address"/>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="RegistrationAddressIsMailingAddress" type="xsd:boolean" minOccurs="0">
+      <xsd:element name="RegisdenceAddressIsMailingAddress" type="xsd:boolean" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             If set to true, &lt;MailingAddress&gt; need not be included.
@@ -1664,6 +1659,13 @@
             Included if the registration request is via a proxy, e.g., the DMV.
           </xsd:documentation>
         </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ResidenceAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group minOccurs="1" maxOccurs="1" ref="Address"/>
+          </xsd:sequence>
+        </xsd:complexType>
       </xsd:element>
       <xsd:element name="SelectedLanguage" type="xsd:language" minOccurs="0">
         <xsd:annotation>
