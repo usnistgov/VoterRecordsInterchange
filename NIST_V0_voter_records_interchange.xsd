@@ -1307,7 +1307,8 @@
     <xsd:complexContent>
       <xsd:extension base="AbsenteeBallotRequest">
         <xsd:sequence>
-          <xsd:element name="Duration" type="xsd:string"/>
+          <xsd:element name="EndDate" type="xsd:date"/>
+          <xsd:element name="StartDate" type="xsd:date"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -1384,6 +1385,8 @@
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Date">
   </xsd:complexType>
   <xsd:complexType name="Election">
     <xsd:sequence>
