@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
 <VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd ../NIST_V0_voter_records_interchange.xsd">
 	<GeneralRequest>
 		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">			
