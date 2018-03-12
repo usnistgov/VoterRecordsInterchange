@@ -52,7 +52,7 @@ Blacksburg</addr_type:PlaceName>
 		<n2:Party>
 			<n2:Name>Democractic</n2:Name>
 		</n2:Party>
-		<n2:RegistrationAddress>
+		<n2:ResidenceAddress>
 			<n2:NumberedThoroughfareAddress_type>
 				<addr:CompleteAddressNumber>
 					<addr_type:AddressNumber>123</addr_type:AddressNumber>
@@ -71,7 +71,7 @@ Blacksburg</addr_type:PlaceName>
 				<addr_type:StateName>Virginia</addr_type:StateName>
 				<addr_type:ZipCode>22601</addr_type:ZipCode>
 			</n2:NumberedThoroughfareAddress_type>
-		</n2:RegistrationAddress>
+		</n2:ResidenceAddress>
 		<n2:SelectedLanguage>en-us</n2:SelectedLanguage>
 		<n2:VoterClassification>
 			<n2:Assertion>other</n2:Assertion>

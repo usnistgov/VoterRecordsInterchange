@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd ../NIST_V0_voter_records_interchange.xsd">
+	<GeneralRequest>
+		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">			
+			<BallotReceiptPreference>fax</BallotReceiptPreference>
+			<BallotReceiptPreference>mail</BallotReceiptPreference>
+			<Election>
+				<StartDate>2018-06-12</StartDate>
+			</Election>
+		</AbsenteeBallotRequest>
+		<ContactMethod xsi:type="PhoneContactMethod">
+			<Type>phone</Type>
+			<Value>2029876666</Value>
+			<Capability>fax</Capability>			
+		</ContactMethod>		
+		<Name>
+			<FirstName>Lillian</FirstName>
+			<LastName>Gibson</LastName>			
+		</Name>
+		<OtherForm>SBE-701</OtherForm>
+		<Party>
+			<Name>Democratic</Name>
+		</Party>
+		<ResidenceAddress>
+			<NumberedThoroughfareAddress_type>
+				<addr:CompleteAddressNumber>
+					<addr_type:AddressNumber>4648</addr_type:AddressNumber>
+				</addr:CompleteAddressNumber>
+				<addr:CompleteStreetName>					
+					<addr_type:StreetName>Cleburne</addr_type:StreetName>
+					<addr_type:StreetNamePostModifier>Blvd</addr_type:StreetNamePostModifier>
+				</addr:CompleteStreetName>
+				<addr_type:CompletePlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="USPSCommunity">Dublin</addr_type:PlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="County">Pulaski</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>Virginia</addr_type:StateName>
+				<addr_type:ZipCode>24084</addr_type:ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>yes</Assertion>			
+			<Type>citizen-abroad-intent-to-return</Type>
+		</VoterClassification>
+		<VoterId>
+			<StringValue>4567</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+	</GeneralRequest>
+	<GeneratedDate>2018-03-12</GeneratedDate>
+	<Type>ballot-request</Type>
+</VoterRecordsRequest>

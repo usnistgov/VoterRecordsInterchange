@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
+<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+	<GeneralRequest>
+		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">
+			<Election>
+				<StartDate>2012-11-06</StartDate>
+			</Election>
+		</AbsenteeBallotRequest>
+		<Form>other</Form>
+		<Name>
+			<FirstName>Rick</FirstName>
+			<LastName>Jeeves</LastName>
+		</Name>
+		<OtherForm>SBE-701</OtherForm>
+		<ResidenceAddress>
+			<NumberedThoroughfareAddress_type>
+				<addr:CompleteAddressNumber>
+					<addr_type:AddressNumber>200</addr_type:AddressNumber>
+				</addr:CompleteAddressNumber>
+				<addr:CompleteStreetName>
+					<addr_type:StreetName>Virginia</addr_type:StreetName>
+					<addr_type:StreetNamePostModifier>Ave</addr_type:StreetNamePostModifier>
+				</addr:CompleteStreetName>
+				<addr_type:CompletePlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="USPSCommunity">Clarksville</addr_type:PlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="2" PlaceNameType="County">Mecklenburg</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>Virginia</addr_type:StateName>
+				<addr_type:ZipCode>23927</addr_type:ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<OtherType>first-responder</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+	</GeneralRequest>
+	<GeneratedDate>2018-03-10</GeneratedDate>
+	<Type>ballot-request</Type>
+</VoterRecordsRequest>

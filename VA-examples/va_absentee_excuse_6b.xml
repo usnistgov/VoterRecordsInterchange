@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd ../NIST_V0_voter_records_interchange.xsd">
+	<GeneralRequest>
+		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">
+			<BallotReceiptPreference>email</BallotReceiptPreference>
+			<BallotReceiptPreference>mail</BallotReceiptPreference>
+			<Election>
+				<StartDate>2018-06-12</StartDate>
+			</Election>
+		</AbsenteeBallotRequest>
+		<ContactMethod>
+			<Type>email</Type>
+			<Value>linger.on@fakeemail.com</Value>
+		</ContactMethod>
+		<MailingAddress>
+			<USPSPostalDeliveryRoute_type>
+				<addr:USPSAddress>
+					<addr_type:USPSRoute>
+						<addr_type:USPSBoxGroupType>CMR</addr_type:USPSBoxGroupType>
+						<addr_type:USPSBoxGroupId>567</addr_type:USPSBoxGroupId>
+					</addr_type:USPSRoute>
+					<addr_type:USPSBox>
+						<addr_type:USPSBoxType>BOX</addr_type:USPSBoxType>
+						<addr_type:USPSBoxId>5051</addr_type:USPSBoxId>
+					</addr_type:USPSBox>
+				</addr:USPSAddress>
+				<addr_type:CompletePlaceName>
+					<addr_type:PlaceName>APO</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>AE</addr_type:StateName>
+				<addr_type:ZipCode>09096</addr_type:ZipCode>				
+			</USPSPostalDeliveryRoute_type>
+		</MailingAddress>
+		<Name>
+			<FirstName>Harrison</FirstName>
+			<LastName>Kendall</LastName>
+			<MiddleName>Anderson</MiddleName>
+		</Name>
+		<OtherForm>SBE-701</OtherForm>
+		<Party>
+			<Name>Democratic</Name>
+		</Party>
+		<ResidenceAddress>
+			<NumberedThoroughfareAddress_type>
+				<addr:CompleteAddressNumber>
+					<addr_type:AddressNumber>139</addr_type:AddressNumber>
+				</addr:CompleteAddressNumber>
+				<addr:CompleteStreetName>					
+					<addr_type:StreetName>Factory Outlet</addr_type:StreetName>
+					<addr_type:StreetNamePostModifier>St</addr_type:StreetNamePostModifier>
+				</addr:CompleteStreetName>
+				<addr_type:CompletePlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="USPSCommunity">Max Meadows</addr_type:PlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="County">Wythe</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>Virginia</addr_type:StateName>
+				<addr_type:ZipCode>24360</addr_type:ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>other</Assertion>
+			<OtherAssertion>Marines</OtherAssertion>
+			<Type>active-duty-spouse-or-dependent</Type>
+		</VoterClassification>
+		<VoterId>
+			<StringValue>0987</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+	</GeneralRequest>
+	<GeneratedDate>2018-03-12</GeneratedDate>
+	<Type>ballot-request</Type>
+</VoterRecordsRequest>

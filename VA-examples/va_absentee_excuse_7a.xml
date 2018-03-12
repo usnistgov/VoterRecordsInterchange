@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd ../NIST_V0_voter_records_interchange.xsd">
+	<GeneralRequest>
+	<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">
+		<Election>
+			<StartDate>2018-07-24</StartDate>
+		</Election>
+	</AbsenteeBallotRequest>
+	<ContactMethod>
+		<Type>email</Type>
+		<Value>Lora.Lubowitz0@yahoo.com</Value>
+	</ContactMethod>
+	<MailingAddress>
+		<NumberedThoroughfareAddress_type>
+			<addr:CompleteAddressNumber>
+				<addr_type:AddressNumber>5913</addr_type:AddressNumber>
+			</addr:CompleteAddressNumber>
+			<addr:CompleteStreetName>
+				<addr_type:StreetName>Penn</addr_type:StreetName>
+				<addr_type:StreetNamePostModifier>Ave</addr_type:StreetNamePostModifier>
+			</addr:CompleteStreetName>
+			<addr_type:CompletePlaceName>
+				<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="USPSCommunity">Pittsburgh</addr_type:PlaceName>
+				<addr_type:PlaceName ElementSequenceNumber="2" PlaceNameType="County">Allegheny</addr_type:PlaceName>
+			</addr_type:CompletePlaceName>
+			<addr_type:StateName>Pennsylvania</addr_type:StateName>
+			<addr_type:ZipCode>15206</addr_type:ZipCode>			
+		</NumberedThoroughfareAddress_type>
+	</MailingAddress>
+		<Name>
+			<FirstName>Lora</FirstName>
+			<LastName>Lubowitz</LastName>
+		</Name>		
+		<OtherForm>SBE-701</OtherForm>	
+		<Party>
+			<Name>Democratic</Name>
+		</Party>	
+		<ResidenceAddress>
+			<NumberedThoroughfareAddress_type>
+				<addr:CompleteAddressNumber>
+					<addr_type:AddressNumber>813</addr_type:AddressNumber>
+				</addr:CompleteAddressNumber>
+				<addr:CompleteStreetName>
+				<addr_type:StreetNamePreDirectional>W</addr_type:StreetNamePreDirectional>
+					<addr_type:StreetName>Lancaster</addr_type:StreetName>
+					<addr_type:StreetNamePostModifier>Rd</addr_type:StreetNamePostModifier>
+				</addr:CompleteStreetName>
+				<addr_type:CompletePlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="USPSCommunity">Richmond</addr_type:PlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="2" PlaceNameType="County">Richmond City</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>Virginia</addr_type:StateName>
+				<addr_type:ZipCode>23222</addr_type:ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>other</Assertion>
+			<OtherAssertion>Pennsylvania</OtherAssertion>
+			<OtherType>moved-outside-state</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+	</GeneralRequest>
+	<GeneratedDate>2018-03-12</GeneratedDate>
+	<Type>ballot-request</Type>
+</VoterRecordsRequest>
