@@ -7,6 +7,12 @@
 # Table of Contents
 - Table of Contents
   - Enumerations
+  - Classes
+# Enumerations
+# Classes
+# Table of Contents
+- Table of Contents
+  - Enumerations
     - *The **[AssertionValue](#_18_0_2_6340208_1455829091671_996796_4447)** Enumeration*
     - *The **[BallotReceiptMethod](#_18_0_2_6340208_1470255961792_690679_4334)** Enumeration*
     - *The **[ContactMethodType](#_18_0_2_6340208_1464893409742_774328_4470)** Enumeration*
@@ -295,10 +301,11 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**MustChooseOne**
-:
+**AiMustChooseOne**
 
-```ocl
+FileValue or StringValue must be defined (but not both):
+
+```OCL2.0
 not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
 ```
 
@@ -319,6 +326,17 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `EndDate`|1|`date`|
 `StartDate`|1|`date`|
+
+#### Business Rules
+
+**StartDateBeforeEndDate**
+
+The start date must occur before or at the end date:
+
+```English
+StartDate <= EndDate
+```
+
 ### <a name="_18_0_2_6340208_1464893400979_739933_4444"></a>*The **ContactMethod** Class*
 ![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1464893400986_87872_4445.png)
 
@@ -337,6 +355,17 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|Used when ContactMethodType value is other.
 `Type`|1|`ContactMethodType`|The contact method type, e.g., email or phone.
 `Value`|1|`string`|The value of the ContactMethod. This will be the text value of the phone number, email address, or other mechanism. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
+
+#### Business Rules
+
+**CmOtherTypeMustBeDefined**
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = ContactMethodType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_5_3_43701b0_1520881655943_539044_5366"></a>*The **Date** Class*
 ![Image of Date]()
 
@@ -355,6 +384,17 @@ Attribute | Multiplicity | Type | Attribute Description
 `ExternalIdentifier`|0..*|`ExternalIdentifier`|
 `Name`|0..1|`string`|
 `StartDate`|1|`date`|
+
+#### Business Rules
+
+**StartDateBeforeEndDate**
+
+The start date must occur before or at the end date:
+
+```English
+StartDate <= EndDate
+```
+
 ### <a name="_18_0_2_6340208_1458237760549_706380_5243"></a>*The **ElectionAdministration** Class*
 ![Image of ElectionAdministration](VRI_UML_Documentation_files/_18_0_2_6340208_1458237760552_785040_5253.png)
 
@@ -387,6 +427,17 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|Used when Type value is other.
 `Type`|1|`IdentifierType`|An identifier type, e.g., FIPS.
 `Value`|1|`string`|The identifier used by the jurisdiction.
+
+#### Business Rules
+
+**EiOtherTypeMustBeDefined**
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = IdentifierType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_0_2_6340208_1452879654116_509055_5255"></a>*The **File** Class*
 ![Image of File](VRI_UML_Documentation_files/_18_0_2_6340208_1452879654120_445800_5256.png)
 
@@ -494,16 +545,6 @@ PhoneContactMethod is subtype [ContactMethod](#_18_0_2_6340208_1464893400979_739
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Capability`|0..*|`PhoneCapability`|Specifies the phone’s capabilities, e.g., fax, sms.
-
-#### Business Rules
-
-**specifyOther**
-:
-
-```ocl
-self.Type = ContactMethodType::other implies self.OtherType->size() > 0
-```
-
 ### <a name="_18_0_2_6340208_1456261767184_144968_4436"></a>*The **RegistrationAcknowledgement** Class*
 ![Image of RegistrationAcknowledgement](VRI_UML_Documentation_files/_18_0_2_6340208_1456261767195_161515_4437.png)
 
@@ -585,6 +626,17 @@ Attribute | Multiplicity | Type | Attribute Description
 `Phone`|0..1|`PhoneContactMethod`|A phone number associated with the proxy.
 `TimeStamp`|0..1|`date`|The date of the request from the proxy.
 `Type`|1|`RequestProxyType`|The type of the requesting proxy, e.g., motor-vehicle-office, voter-via-email.
+
+#### Business Rules
+
+**RpOtherTypeMustBeDefined**
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = RequestProxyType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_0_2_6340208_1452788035217_489009_4409"></a>*The **Signature** Class*
 ![Image of Signature](VRI_UML_Documentation_files/_18_0_2_6340208_1452788035221_169450_4410.png)
 
@@ -602,6 +654,17 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|Used when SignatureType value is other.
 `Source`|0..1|`SignatureSource`|A source for the signature, e.g., dmv.
 `Type`|0..1|`SignatureType`|A signature type, e.g., dynamic.
+
+#### Business Rules
+
+**SOtherSourceMustBeDefined**
+
+yo ma:
+
+```OCL2.0
+self.Type = SignatureType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
 ![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
 
@@ -628,9 +691,10 @@ Attribute | Multiplicity | Type | Attribute Description
 #### Business Rules
 
 **VAmustHaveSsn**
+
 :
 
-```ocl
+```OCL2.0
 self.VoterId->exists(c | c.Type = VoterIdType::ssn or c.Type = VoterIdType::ssn4)
 
 ```
@@ -651,17 +715,19 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**OtherTypeMustBeDefined**
-OtherType must be defined when VoterClsasificationType = other:
+**VcOtherTypeMustBeDefined**
 
-```ocl
-self.Type = OtherType::other implies not self.OtherType.oclIsUndefined()
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
 ```
 
 **OtherTypeMustBeDefinedTransitive**
+
 When OtherType is defined, Type must be other:
 
-```ocl
+```OCL2.0
 not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
 ```
 
@@ -686,17 +752,27 @@ Attribute | Multiplicity | Type | Attribute Description
 #### Business Rules
 
 **ssnMustBeStringValue**
+
 :
 
-```ocl
+```OCL2.0
 self.StringValue->size() > 0
 ```
 
-**OtherTypeMustBeDefined**
-OtherType must be defined when VoterClsasificationType = other:
+**ViOtherTypeMustBeDefined**
 
-```ocl
-self.Type = OtherType::other implies not self.OtherType.oclIsUndefined()
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
+```
+
+**ViMustChooseOne**
+
+FileValue or StringValue must be defined (but not both):
+
+```OCL2.0
+not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
 ```
 
 ### <a name="_18_5_3_43701b0_1521144693004_190730_6034"></a>*The **VoterRecord** Class*
@@ -737,9 +813,10 @@ Attribute | Multiplicity | Type | Attribute Description
 #### Business Rules
 
 **VoterRegistrationRequired**
+
 Ballot Request must have BallotRequest obj:
 
-```ocl
+```OCL2.0
 self.Type->exists(c | c = VoterRequestType::_'ballot-request') implies self.OtherType->size() = 1
 ```
 
