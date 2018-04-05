@@ -20,7 +20,6 @@
     - *The **[VoterRequestType](#_18_0_2_6340208_1446583913045_906582_6615)** Enumeration*
   - Classes
     - *The **[Absentee](#_18_5_3_43701b0_1520354873581_878995_5687)** Class*
-    - *The **[AbsenteeSuccess](#_18_5_3_43701b0_1521144729018_704729_6076)** Class*
     - *The **[AdditionalInfo](#_18_0_2_6340208_1446587509996_176108_6861)** Class*
     - *The **[BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731)** Class*
     - *The **[CalendarBasedBallotRequest](#_18_5_3_43701b0_1520358515166_885840_6088)** Class*
@@ -52,7 +51,6 @@
     - *The **[VoterRecord](#_18_5_3_43701b0_1521144693004_190730_6034)** Class*
     - *The **[VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961)** Class*
     - *The **[VoterRecordsResponse](#_18_0_2_6340208_1455906719413_171772_4514)** Class*
-    - *The **[VoterRegistrationRequest](#_18_5_3_43701b0_1522688412272_128451_5936)** Class*
 # Enumerations
 ### <a name="_18_0_2_6340208_1455829091671_996796_4447"></a>*The **AssertionValue** Enumeration*
 ![Image of AssertionValue](VRI_UML_Documentation_files/_18_0_2_6340208_1455829091682_555041_4448.png)
@@ -62,7 +60,7 @@ Name | Value
 `no`|For a voter’s or third party’s assertion of “no” or “false”.
 `yes`|For a voter’s or third party’s assertion of “yes” or “true”.
 `unknown`|For a voter’s or third party’s assertion of “unknown”.
-`other`|
+`other`|For a voter’s or third party’s assertion of “other”.
   ### <a name="_18_0_2_6340208_1470255961792_690679_4334"></a>*The **BallotReceiptMethod** Enumeration*
 ![Image of BallotReceiptMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1470255961795_83043_4335.png)
     
@@ -271,13 +269,6 @@ Name | Value
   # Classes
 ### <a name="_18_5_3_43701b0_1520354873581_878995_5687"></a>*The **Absentee** Class*
 ![Image of Absentee]()
-
-
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-### <a name="_18_5_3_43701b0_1521144729018_704729_6076"></a>*The **AbsenteeSuccess** Class*
-![Image of AbsenteeSuccess](VRI_UML_Documentation_files/_18_5_3_43701b0_1521144729037_822157_6077.png)
 
 
 
@@ -586,7 +577,7 @@ Attribute | Multiplicity | Type | Attribute Description
 `Source`|0..1|`SignatureSource`|A source for the signature, e.g., dmv.
 `Type`|0..1|`SignatureType`|A signature type, e.g., dynamic.
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520953921629_235073_5691.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1522779528451_974674_7331.png)
 
 A specific request for a particular voter.
 
@@ -644,6 +635,8 @@ Attribute | Multiplicity | Type | Attribute Description
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
+`{ReportingUnit}`||`ReportingUnit`|
+`{ReportingUnit}`||`ReportingUnit`|
 ### <a name="_18_0_2_6340208_1446583854986_237644_5961"></a>*The **VoterRecordsRequest** Class*
 ![Image of VoterRecordsRequest](VRI_UML_Documentation_files/_18_0_2_6340208_1446583855033_382783_6135.png)
 
@@ -653,18 +646,19 @@ For defining items pertaining to the status and type of the voter records reques
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`{Voter}`|1|`Voter`|Specifies information about the voter who is the subject of the request.
 `{RequestProxy}`|0..1|`RequestProxy`|Included if the registration request is via a proxy, e.g., the DMV.
 `{RequestHelper}`|0..*|`RequestHelper`|Included if the registration involves a registration assistant organization.
 `{AdditionalInfo}`|0..*|`AdditionalInfo`|For including other information not specified by this schema.
-`{VoterRegistrationRequest}`|0..1|`VoterRegistrationRequest`|
 `BallotRequest`|0..1|`BallotRequest`|
 `Form`|0..1|`RequestForm`|If the request is for a voter registration, the registration form used by the voter.
 `GeneratedDate`|1|`date`|The date that the voter records request was generated.
 `Issuer`|0..1|`string`|The name of the issuer of the voter records request transaction, e.g., State of West Virginia Voter Registration Portal.
 `OtherForm`|0..1|`string`|Used when   value is other.
+`OtherRegistrationRequestMethod`|0..1|`string`|Used when   value is other.
 `OtherType`|0..1|`string`|Used when [RequestType](#_18_0_2_6340208_1446586298843_421997_6821) value is other.
+`RegistrationRequestMethod`|1|`RequestMethod`|The method used by the voter to register.
 `SelectedLanguage`|0..1|`language`|The language specified by the voter, if any.
+`Subject`|1|`Voter`|Specifies information about the voter who is the subject of the request.
 `TransactionId`|0..1|`string`|An identifier of the voter records request transaction.
 `Type`|1..*|`VoterRequestType`|The type of request, e.g., registration.
 `VendorApplicationId`|0..1|`string`|An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
@@ -676,12 +670,3 @@ Attribute | Multiplicity | Type | Attribute Description
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `TransactionId`|0..1|`string`|
-### <a name="_18_5_3_43701b0_1522688412272_128451_5936"></a>*The **VoterRegistrationRequest** Class*
-![Image of VoterRegistrationRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1522688412297_866539_5937.png)
-
-Used in requests. VoterRecordsRequest includes this element to specify information about the voter.
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-`OtherRegistrationRequestMethod`|0..1|`string`|Used when   value is other.
-`RegistrationRequestMethod`|1|`RequestMethod`|The method used by the voter to register.
