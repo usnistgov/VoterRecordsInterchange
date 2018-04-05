@@ -1,6 +1,12 @@
 # Table of Contents
 - Table of Contents
   - Enumerations
+  - Classes
+# Enumerations
+# Classes
+# Table of Contents
+- Table of Contents
+  - Enumerations
     - *The **[AssertionValue](#_18_0_2_6340208_1455829091671_996796_4447)** Enumeration*
     - *The **[BallotReceiptMethod](#_18_0_2_6340208_1470255961792_690679_4334)** Enumeration*
     - *The **[ContactMethodType](#_18_0_2_6340208_1464893409742_774328_4470)** Enumeration*
@@ -72,7 +78,7 @@ Name | Value
 `mail`|For postal mail.
 `online`|For downloadable from a website, e.g., the voter is sent a hypertext link to a ballot.
   ### <a name="_18_0_2_6340208_1464893409742_774328_4470"></a>*The **ContactMethodType** Enumeration*
-![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1467137029940_934610_4555.png)
+![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1464893409752_571424_4471.png)
     
 Name | Value
 ---- | -----
@@ -91,7 +97,7 @@ Name | Value
 `state-level`|For a code that is specific to a state.
 `other`|Used when the type of code is not included in this enumeration.
   ### <a name="_18_0_2_6340208_1465494051199_895769_4463"></a>*The **PhoneCapability** Enumeration*
-![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1467137299147_510499_4665.png)
+![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1465494055245_880506_4464.png)
     
 Name | Value
 ---- | -----
@@ -286,6 +292,16 @@ Attribute | Multiplicity | Type | Attribute Description
 `FileValue`|0..1|`File`|Used if the value is in a file; contains the filename and MIME type
 `Name`|1|`string`|Name of the value.
 `StringValue`|0..1|`string`|Used if the value is a string; contains the string.
+
+#### Business Rules
+
+**MustChooseOne**
+:
+
+```ocl
+not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
+```
+
 ### <a name="_18_5_2_43701b0_1510599050811_549888_5731"></a>*The **BallotRequest** Class*
 ![Image of BallotRequest](VRI_UML_Documentation_files/_18_5_2_43701b0_1510599050830_791767_5732.png)
 
@@ -304,7 +320,7 @@ Attribute | Multiplicity | Type | Attribute Description
 `EndDate`|1|`date`|
 `StartDate`|1|`date`|
 ### <a name="_18_0_2_6340208_1464893400979_739933_4444"></a>*The **ContactMethod** Class*
-![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137004544_113383_4528.png)
+![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1464893400986_87872_4445.png)
 
 Used in request and response messages.
  
@@ -360,7 +376,7 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `{Election}`|1|`Election`|
 ### <a name="_18_0_2_6340208_1446584770723_729230_6705"></a>*The **ExternalIdentifier** Class*
-![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1458237601050_674272_5135.png)
+![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1446584770729_88052_6718.png)
 
 Used in request and response messages.
  
@@ -467,7 +483,7 @@ Attribute | Multiplicity | Type | Attribute Description
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 ### <a name="_18_0_2_6340208_1465493970792_917703_4430"></a>*The **PhoneContactMethod** Class*
-![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137273798_668126_4636.png)
+![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1465493970801_186622_4431.png)
 
 Used in request and response messages.
  
@@ -478,6 +494,16 @@ PhoneContactMethod is subtype [ContactMethod](#_18_0_2_6340208_1464893400979_739
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Capability`|0..*|`PhoneCapability`|Specifies the phone’s capabilities, e.g., fax, sms.
+
+#### Business Rules
+
+**specifyOther**
+:
+
+```ocl
+self.Type = ContactMethodType::other implies self.OtherType->size() > 0
+```
+
 ### <a name="_18_0_2_6340208_1456261767184_144968_4436"></a>*The **RegistrationAcknowledgement** Class*
 ![Image of RegistrationAcknowledgement](VRI_UML_Documentation_files/_18_0_2_6340208_1456261767195_161515_4437.png)
 
@@ -577,7 +603,7 @@ Attribute | Multiplicity | Type | Attribute Description
 `Source`|0..1|`SignatureSource`|A source for the signature, e.g., dmv.
 `Type`|0..1|`SignatureType`|A signature type, e.g., dynamic.
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1522779528451_974674_7331.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
 
 A specific request for a particular voter.
 
@@ -598,6 +624,17 @@ Attribute | Multiplicity | Type | Attribute Description
 `ResidenceAddress`|1|`Address`|Where the voter is registered or requests to be registered, mapped to the FGDC specification Address classes.
 `ResidenceAddressIsMailingAddress`|0..1|`boolean`|If set to true,   need not be included.
 `VoterId`|0..*|`VoterId`|
+
+#### Business Rules
+
+**VAmustHaveSsn**
+:
+
+```ocl
+self.VoterId->exists(c | c.Type = VoterIdType::ssn or c.Type = VoterIdType::ssn4)
+
+```
+
 ### <a name="_18_0_2_6340208_1452701375494_353834_4295"></a>*The **VoterClassification** Class*
 ![Image of VoterClassification](VRI_UML_Documentation_files/_18_0_2_6340208_1452701375514_47142_4296.png)
 
@@ -611,6 +648,23 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherAssertion`|0..1|`string`|An locally defined assertion value.
 `OtherType`|0..1|`string`|Used when VoterClassificationType value is other.
 `Type`|1|`VoterClassificationType`|A classification type, e.g., felon.
+
+#### Business Rules
+
+**OtherTypeMustBeDefined**
+OtherType must be defined when VoterClsasificationType = other:
+
+```ocl
+self.Type = OtherType::other implies not self.OtherType.oclIsUndefined()
+```
+
+**OtherTypeMustBeDefinedTransitive**
+When OtherType is defined, Type must be other:
+
+```ocl
+not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
+```
+
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
 ![Image of VoterId](VRI_UML_Documentation_files/_18_0_2_6340208_1448398287463_421964_4483.png)
 
@@ -628,6 +682,23 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|
 `StringValue`|0..1|`string`|Used to include the ID as a string.
 `Type`|1|`VoterIdType`|The type of voter ID
+
+#### Business Rules
+
+**ssnMustBeStringValue**
+:
+
+```ocl
+self.StringValue->size() > 0
+```
+
+**OtherTypeMustBeDefined**
+OtherType must be defined when VoterClsasificationType = other:
+
+```ocl
+self.Type = OtherType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_5_3_43701b0_1521144693004_190730_6034"></a>*The **VoterRecord** Class*
 ![Image of VoterRecord](VRI_UML_Documentation_files/_18_5_3_43701b0_1521144693023_685785_6035.png)
 
@@ -662,6 +733,16 @@ Attribute | Multiplicity | Type | Attribute Description
 `TransactionId`|0..1|`string`|An identifier of the voter records request transaction.
 `Type`|1..*|`VoterRequestType`|The type of request, e.g., registration.
 `VendorApplicationId`|0..1|`string`|An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
+
+#### Business Rules
+
+**VoterRegistrationRequired**
+Ballot Request must have BallotRequest obj:
+
+```ocl
+self.Type->exists(c | c = VoterRequestType::_'ballot-request') implies self.OtherType->size() = 1
+```
+
 ### <a name="_18_0_2_6340208_1455906719413_171772_4514"></a>*The **VoterRecordsResponse** Class*
 ![Image of VoterRecordsResponse](VRI_UML_Documentation_files/_18_0_2_6340208_1455906719422_329791_4515.png)
 
