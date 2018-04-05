@@ -301,8 +301,6 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**AiMustChooseOne**
-
 FileValue or StringValue must be defined (but not both):
 
 ```OCL2.0
@@ -328,8 +326,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `StartDate`|1|`date`|
 
 #### Business Rules
-
-**StartDateBeforeEndDate**
 
 The start date must occur before or at the end date:
 
@@ -358,8 +354,6 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**CmOtherTypeMustBeDefined**
-
 OtherType must be defined when Type = other:
 
 ```OCL2.0
@@ -386,8 +380,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `StartDate`|1|`date`|
 
 #### Business Rules
-
-**StartDateBeforeEndDate**
 
 The start date must occur before or at the end date:
 
@@ -429,8 +421,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `Value`|1|`string`|The identifier used by the jurisdiction.
 
 #### Business Rules
-
-**EiOtherTypeMustBeDefined**
 
 OtherType must be defined when Type = other:
 
@@ -629,8 +619,6 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**RpOtherTypeMustBeDefined**
-
 OtherType must be defined when Type = other:
 
 ```OCL2.0
@@ -657,9 +645,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**SOtherSourceMustBeDefined**
-
-yo ma:
+OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = SignatureType::other implies not self.OtherType.oclIsUndefined()
@@ -690,8 +676,6 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**VAmustHaveSsn**
-
 :
 
 ```OCL2.0
@@ -715,15 +699,11 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**VcOtherTypeMustBeDefined**
-
 OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
 ```
-
-**OtherTypeMustBeDefinedTransitive**
 
 When OtherType is defined, Type must be other:
 
@@ -751,23 +731,17 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-**ssnMustBeStringValue**
-
 :
 
 ```OCL2.0
 self.StringValue->size() > 0
 ```
 
-**ViOtherTypeMustBeDefined**
-
 OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
 ```
-
-**ViMustChooseOne**
 
 FileValue or StringValue must be defined (but not both):
 
@@ -811,8 +785,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `VendorApplicationId`|0..1|`string`|An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
 
 #### Business Rules
-
-**VoterRegistrationRequired**
 
 Ballot Request must have BallotRequest obj:
 
