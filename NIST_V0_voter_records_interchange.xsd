@@ -38,7 +38,13 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="other"/>
+      <xsd:enumeration value="other">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For a voter’s or third party’s assertion of “other”.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="BallotReceiptMethod">
@@ -331,295 +337,6 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="RegistrationForm">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        &lt;p&gt;
-        Used in request messages.
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        &amp;#160;
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        Enumeration for types of registration forms, used in the &lt;a href="mdel://_18_0_2_6340208_1452790770728_957008_4772"&gt;RegistrationForm&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1446583854986_237644_5961"&gt;VoterRecordsRequest&lt;/a&gt;.
-        
-            &lt;/p&gt;
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="fpca">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            For the Federal Post Card Application form.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="nvra">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            For the National Voter Registration Act form.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="other">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Used when the type of form is not included in this enumeration.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:simpleType name="RegistrationHelperType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        &lt;p&gt;
-        Used in request messages.
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        &amp;#160;
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        Enumeration for types of registration helpers, used in the &lt;a href="mdel://_18_0_2_6340208_1470256926542_116930_4431"&gt;Type&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1470256600538_323550_4366"&gt;RegistrationHelper&lt;/a&gt;.
-        
-            &lt;/p&gt;
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="assistant">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            For a registration assistant.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="witness">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            For a registration witness.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:simpleType name="RegistrationMethod">
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="armed-forces-recruitment-office">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by an armed forces recruitment office.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="motor-vehicle-office">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via an MVA/DMV.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="other-agency-designated-by-state">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by an unspecified state-designated agency.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="public-assistance-office">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by a public assistance office.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="registration-drive-from-advocacy-group-or-political-party">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via a registration drive.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="state-funded-agency-serving-persons-with-disabilities">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by a state-designated agency serving persons with disabilities.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="voter-via-election-registrars-office">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via an election or registrar’s office.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="voter-via-email">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via email.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="voter-via-fax">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via fax.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="voter-via-internet">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via the Internet, e.g., a website.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="voter-via-mail">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via postal mail.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="unknown">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The method used is unknown.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="other">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Used when the type of method is not included in this enumeration.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:simpleType name="RegistrationProxyType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        &lt;p&gt;
-        Used in request messages.
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        &amp;#160;
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        Enumeration for the registration proxy, e.g., the MVA/DMV , involved in the voter&amp;rsquo;s registration request, used in the       
-        &lt;br&gt;&lt;a href="mdel://_18_0_2_6340208_1449004222447_98580_4390"&gt;Type&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1448401688329_700093_4402"&gt;RegistrationProxy&lt;/a&gt;.
-        
-            &lt;/p&gt;
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="armed-forces-recruitment-office">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by an armed forces recruitment office.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="motor-vehicle-office">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via an MVA/DMV.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="other-agency-designated-by-state">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by an unspecified state-designated agency.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="public-assistance-office">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by a public assistance office.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="registration-drive-from-advocacy-group-or-political-party">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter via a registration drive.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="state-funded-agency-serving-persons-with-disabilities">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter assisted by a state-designated agency serving persons with disabilities.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="other">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Used when the type of source is not included in this enumeration.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:simpleType name="RegistrationRequestType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        &lt;p&gt;
-        Used in request messages.
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        &amp;#160;
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        Enumeration for the type of voter records request, used in the &lt;a href="mdel://_18_0_2_6340208_1446586298843_421997_6821"&gt;Type&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1446583854986_237644_5961"&gt;VoterRecordsRequest&lt;/a&gt;.
-        
-            &lt;/p&gt;
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="ballot-request">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            For requesting a ballot, possibly in conjunction with an FPCA registration request.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="registration">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            For a voter registration request.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="other">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Used when the type of request is not included in this enumeration.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-    </xsd:restriction>
-  </xsd:simpleType>
   <xsd:simpleType name="ReportingUnitType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -833,6 +550,216 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used for other types of reporting units not included in this enumeration.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RequestForm">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        &lt;p&gt;
+        Used in request messages.
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        &amp;#160;
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        Enumeration for types of registration forms, used in the &lt;a href="mdel://_18_0_2_6340208_1452790770728_957008_4772"&gt;RegistrationForm&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1446583854986_237644_5961"&gt;VoterRecordsRequest&lt;/a&gt;.
+        
+            &lt;/p&gt;
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="fpca">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For the Federal Post Card Application form.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="nvra">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For the National Voter Registration Act form.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="other">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when the type of form is not included in this enumeration.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RequestMethod">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="armed-forces-recruitment-office">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by an armed forces recruitment office.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="motor-vehicle-office">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via an MVA/DMV.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="other-agency-designated-by-state">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by an unspecified state-designated agency.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="public-assistance-office">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by a public assistance office.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="registration-drive-from-advocacy-group-or-political-party">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via a registration drive.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="state-funded-agency-serving-persons-with-disabilities">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by a state-designated agency serving persons with disabilities.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="voter-via-election-registrars-office">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via an election or registrar’s office.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="voter-via-email">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via email.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="voter-via-fax">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via fax.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="voter-via-internet">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via the Internet, e.g., a website.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="voter-via-mail">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via postal mail.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="unknown">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The method used is unknown.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="other">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when the type of method is not included in this enumeration.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RequestProxyType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        &lt;p&gt;
+        Used in request messages.
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        &amp;#160;
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        Enumeration for the registration proxy, e.g., the MVA/DMV , involved in the voter&amp;rsquo;s registration request, used in the       
+        &lt;br&gt;&lt;a href="mdel://_18_0_2_6340208_1449004222447_98580_4390"&gt;Type&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1448401688329_700093_4402"&gt;RegistrationProxy&lt;/a&gt;.
+        
+            &lt;/p&gt;
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="armed-forces-recruitment-office">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by an armed forces recruitment office.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="motor-vehicle-office">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via an MVA/DMV.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="other-agency-designated-by-state">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by an unspecified state-designated agency.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="public-assistance-office">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by a public assistance office.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="registration-drive-from-advocacy-group-or-political-party">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter via a registration drive.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="state-funded-agency-serving-persons-with-disabilities">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter assisted by a state-designated agency serving persons with disabilities.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="other">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when the type of source is not included in this enumeration.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
@@ -1136,6 +1063,42 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:simpleType name="VoterHelperType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        &lt;p&gt;
+        Used in request messages.
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        &amp;#160;
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        Enumeration for types of registration helpers, used in the &lt;a href="mdel://_18_0_2_6340208_1470256926542_116930_4431"&gt;Type&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1470256600538_323550_4366"&gt;RegistrationHelper&lt;/a&gt;.
+        
+            &lt;/p&gt;
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="assistant">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For a registration assistant.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="witness">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For a registration witness.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
   <xsd:simpleType name="VoterIdType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -1229,6 +1192,50 @@
       </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
+  <xsd:simpleType name="VoterRequestType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        &lt;p&gt;
+        Used in request messages.
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        &amp;#160;
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        Enumeration for the type of voter records request, used in the &lt;a href="mdel://_18_0_2_6340208_1446586298843_421997_6821"&gt;Type&lt;/a&gt; attribute of &lt;a href="mdel://_18_0_2_6340208_1446583854986_237644_5961"&gt;VoterRecordsRequest&lt;/a&gt;.
+        
+            &lt;/p&gt;
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ballot-request">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For requesting a ballot, possibly in conjunction with an FPCA registration request.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="lookup"/>
+      <xsd:enumeration value="registration">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For a voter registration request.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="other">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when the type of request is not included in this enumeration.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
   <!-- ========== Interfaces Defined ========== -->
   <!-- === Interface Address === -->
   <xsd:group name="Address">
@@ -1248,17 +1255,6 @@
   </xsd:group>
   <!-- ========== Classes ========== -->
   <xsd:complexType name="Absentee">
-  </xsd:complexType>
-  <xsd:complexType name="AbsenteeBallotRequest">
-    <xsd:sequence>
-      <xsd:element name="BallotReceiptPreference" type="BallotReceiptMethod" minOccurs="0" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter's preference on how to receive their ballot in order from their most preferred method to least, used if an absentee ballot request. If ommitted, the default method for the form type will be used.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-    </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="AdditionalInfo">
     <xsd:annotation>
@@ -1303,9 +1299,28 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="CalendarBasedAbsenteeBallotRequest">
+  <xsd:complexType name="BallotRequest">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        An abstract class for a request for a ballot. Classes for specific types of BallotRequest inherit the attributes and define their own.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="BallotReceiptPreference" type="BallotReceiptMethod" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            &lt;p&gt;
+            The voter's preference on how to receive their ballot in order from their most preferred method to least, used if it is a pre-election day ballot request. If omitted, the default method for the &lt;a href="mdel://_18_0_2_6340208_1452790770728_957008_4772"&gt;form&lt;/a&gt; will be used.
+            
+                &lt;/p&gt;
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CalendarBasedBallotRequest">
     <xsd:complexContent>
-      <xsd:extension base="AbsenteeBallotRequest">
+      <xsd:extension base="BallotRequest">
         <xsd:sequence>
           <xsd:element name="EndDate" type="xsd:date"/>
           <xsd:element name="StartDate" type="xsd:date"/>
@@ -1366,7 +1381,7 @@
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Used when &lt;ContactMethodType&gt; value is other.
+            Used when ContactMethodType value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -1393,7 +1408,6 @@
       <xsd:element name="EndDate" type="xsd:date" minOccurs="0"/>
       <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded"/>
       <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="OtherType" type="xsd:string" minOccurs="0"/>
       <xsd:element name="StartDate" type="xsd:date"/>
     </xsd:sequence>
   </xsd:complexType>
@@ -1443,9 +1457,9 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="ElectionBasedAbsenteeBallotRequest">
+  <xsd:complexType name="ElectionBasedBallotRequest">
     <xsd:complexContent>
-      <xsd:extension base="AbsenteeBallotRequest">
+      <xsd:extension base="BallotRequest">
         <xsd:sequence>
           <xsd:element name="Election" type="Election"/>
         </xsd:sequence>
@@ -1475,7 +1489,7 @@
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Used when &lt;IdentifierType&gt; value is other.
+            Used when Type value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -1553,17 +1567,10 @@
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>
-  <xsd:complexType name="FpcaAbsenteeBallotRequest">
+  <xsd:complexType name="FpcaBallotRequest">
     <xsd:complexContent>
-      <xsd:extension base="CalendarBasedAbsenteeBallotRequest">
+      <xsd:extension base="CalendarBasedBallotRequest">
         <xsd:sequence>
-          <xsd:element name="LastDateOfUSResidency" type="xsd:date" minOccurs="0">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                For overseas voters, the last date of U.S. residency in YYYY-MM-DD format.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
           <xsd:element name="MailForwardingAddress" minOccurs="0">
             <xsd:complexType>
               <xsd:sequence>
@@ -1571,129 +1578,9 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="OverseasEmployer" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
-  </xsd:complexType>
-  <xsd:complexType name="GeneralRequest">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        An abstract class representing the base of other requests such as FpcaRequest, RegistrationRequest and AbsenteeRequest.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:element name="AbsenteeBallotRequest" type="AbsenteeBallotRequest" minOccurs="0"/>
-      <xsd:element name="AdditionalInfo" type="AdditionalInfo" minOccurs="0" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            For including other information not specified by this schema.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="ContactMethod" type="ContactMethod" minOccurs="0" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            How to contact the voter, listed in order of preference.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="DateOfBirth" type="xsd:date" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter’s data of birth in YYYY-MM-DD
-            format.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Form" type="RegistrationForm" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            If the request is for a voter registration, the registration form used by the voter.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Gender" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Older systems may not understand values other than 'Male' or 'Female' (the only choices available on FPCA).
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="MailingAddress" minOccurs="0">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="Name" type="Name">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Voter’s name.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="OtherForm" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Used when &lt;RegistrationForm&gt; value is other.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Party" type="Party" minOccurs="0"/>
-      <xsd:element name="RegisdenceAddressIsMailingAddress" type="xsd:boolean" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            If set to true, &lt;MailingAddress&gt; need not be included.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="RequestHelper" type="RequestHelper" minOccurs="0" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Included if the registration involves a registration assistant organization.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="RequestProxy" type="RequestProxy" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Included if the registration request is via a proxy, e.g., the DMV.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="ResidenceAddress">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:group minOccurs="1" maxOccurs="1" ref="Address"/>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="SelectedLanguage" type="xsd:language" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The language specified by the voter, if any.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="Signature" type="Signature" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Information about the voter signature on the registration form.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="VoterClassification" type="VoterClassification" minOccurs="0" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            How the voter is classified per assertions the voter has made on a registration form.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="VoterId" type="VoterId" minOccurs="0" maxOccurs="unbounded"/>
-      <xsd:element name="VoterRegistration" type="VoterRegistration" minOccurs="0"/>
-    </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="Image">
     <xsd:annotation>
@@ -1926,9 +1813,9 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="PermanentAbsenteeBallotRequest">
+  <xsd:complexType name="PermanentBallotRequest">
     <xsd:complexContent>
-      <xsd:extension base="AbsenteeBallotRequest">
+      <xsd:extension base="BallotRequest">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -2000,26 +1887,90 @@
     </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType name="RegistrationRejection">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Used in responses.
+        
+        For indicating that the request failed. The &lt;Error&gt; sub-element is used to indicate the type of error that occurred. The &lt;AdditionalDetails&gt; sub-element can be used to provide more information as to the rejection.
+      </xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="VoterRecordsResponse">
         <xsd:sequence>
-          <xsd:element name="AdditionalDetails" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
-          <xsd:element name="Error" type="RegistrationError" minOccurs="0" maxOccurs="unbounded"/>
-          <xsd:element name="OtherError" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element name="AdditionalDetails" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Used to provide additional details as applicable.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="Error" type="RegistrationError" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Used to indicate the type of error.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="OtherError" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Used when &lt;RegistrationError&gt; value is other.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType name="RegistrationSuccess">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Used in responses.
+        
+        For indicating a successful response to a request. The &lt;Action&gt; sub-element is used to indicate the action that occurred, which may differ from what was requested. For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
+        
+        The response also includes, optionally, other information useful to the voter, including a description of the voter’s polling place, districts (i.e., contests) associated with the polling place, or other geopolitical geographies such as the voter’s precinct.
+      </xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="VoterRecordsResponse">
         <xsd:sequence>
-          <xsd:element name="Action" type="SuccessAction" minOccurs="0" maxOccurs="unbounded"/>
-          <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded"/>
-          <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0"/>
+          <xsd:element name="Action" type="SuccessAction" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Used to indicate the action that occurred.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                One or more districts associated with the voter’s precinct.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The effective date of the action.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
           <xsd:element name="ElectionAdministration" type="ElectionAdministration" minOccurs="0"/>
-          <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded"/>
-          <xsd:element name="PollingPlace" type="ReportingUnit" minOccurs="0"/>
+          <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Other geographies such as the voter’s precinct.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="PollingPlace" type="ReportingUnit" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The voter’s polling place.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -2048,7 +1999,7 @@
             &lt;/p&gt;
         
             &lt;p&gt;
-        The IsDistricted boolean is not strictly necessary, as it is possible to identify districts by their Type attribute. However, if the type of district is not listed in the &lt;a href="mdel://_18_0_2_6340208_1458229388461_823405_4464"&gt;ReportingUnitType&lt;/a&gt; enumeration and therefore OtherType&amp;gt;is used, then IsDistricted is necessary. The IsDistricted boolean can also be used to signify that a ReportingUnit defined as a jurisdiction, e.g., a county, is also used as a district for, e.g., county-wide contests.
+        The IsDistricted boolean is not strictly necessary, as it is possible to identify districts by their Type attribute. However, if the type of district is not listed in the &lt;a href="mdel://_18_0_2_6340208_1458229388461_823405_4464"&gt;ReportingUnitType&lt;/a&gt; enumeration and therefore OtherType is used, then IsDistricted is necessary. The IsDistricted boolean can also be used to signify that a ReportingUnit defined as a jurisdiction, e.g., a county, is also used as a district for, e.g., county-wide contests.
         
             &lt;/p&gt;
       </xsd:documentation>
@@ -2073,7 +2024,7 @@
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Used when &lt;ReportingUnitType&gt; value is other.
+            Used when ReportingUnitType value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -2134,7 +2085,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Type" type="RegistrationHelperType">
+      <xsd:element name="Type" type="VoterHelperType">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             To specify the type of helper, e.g., assistant.
@@ -2197,7 +2148,7 @@
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Used when &lt;RegistrationProxyType&gt; value is other.
+            Used when RegistrationProxyType value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -2215,7 +2166,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Type" type="RegistrationProxyType">
+      <xsd:element name="Type" type="RequestProxyType">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The type of the requesting proxy, e.g., motor-vehicle-office, voter-via-email.
@@ -2271,14 +2222,14 @@
       <xsd:element name="OtherSource" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Used when &lt;Source&gt; value is other.
+            Used when Source value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Used when &lt;SignatureType&gt; value is other.
+            Used when SignatureType value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -2298,6 +2249,103 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
+  <xsd:complexType name="Voter">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A specific request for a particular voter.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ContactMethod" type="ContactMethod" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            How to contact the voter, listed in order of preference.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="DateOfBirth" type="xsd:date" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter’s data of birth in YYYY-MM-DD
+            format.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Ethnicity" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter’s ethnicity.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Gender" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Older systems may not understand values other than 'Male' or 'Female' (the only choices available on FPCA).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MailingAddress" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Name" type="Name">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Voter’s name.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Party" type="Party" minOccurs="0"/>
+      <xsd:element name="PreviousName" type="Name" minOccurs="0"/>
+      <xsd:element name="PreviousResidenceAddress" minOccurs="0">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PreviousSignature" type="Signature" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Information about a previous voter signature on the registration form.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ResidenceAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:group minOccurs="1" maxOccurs="1" ref="Address"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ResidenceAddressIsMailingAddress" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            If set to true, &lt;MailingAddress&gt; need not be included.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Signature" type="Signature" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Information about the voter signature on the registration form.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VoterClassification" type="VoterClassification" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            How the voter is classified per assertions the voter has made on a registration form.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VoterId" type="VoterId" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
   <xsd:complexType name="VoterClassification">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -2312,7 +2360,7 @@
             &lt;/p&gt;
         
             &lt;p&gt;
-        VoterClassification includes assertions of the voter in response to the voter registration form criteria. For example, an assertion of true may be used with a criterion of united-states-citizen. Assertions can be negative, such as providing an assertion of false for a criterion of felon, or an assertion of unknown to indicate that the voter does not know whether they meet or do not meet the specific criteria on the form.
+        VoterClassification includes assertions of the voter in response to the voter registration form criteria. For example, an assertion of true may be used with a criterion of united-states-citizen. Assertions can be negative, such as providing an assertion of false for a criterion of felon, an assertion of unknown to indicate that the voter does not know whether they meet or do not meet the specific criteria on the form or an assertion of other, in which the assertion is specified by the value of OtherAssertion.
         
             &lt;/p&gt;
       </xsd:documentation>
@@ -2321,22 +2369,28 @@
       <xsd:element name="Assertion" type="AssertionValue">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A positive or negative or unknown assertion
+            A positive, negative, other or unknown assertion
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherAssertion" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="OtherAssertion" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An locally defined assertion value.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Used when &lt;VoterClassificationType&gt; value is other.
+            Used when VoterClassificationType value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Type" type="VoterClassificationType">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A classification type, e.g., disabled.
+            A classification type, e.g., felon.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -2410,6 +2464,16 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
+  <xsd:complexType name="VoterRecord">
+    <xsd:complexContent>
+      <xsd:extension base="Voter">
+        <xsd:sequence>
+          <xsd:element name="ReportingUnit" type="ReportingUnit"/>
+          <xsd:element name="ReportingUnit" type="ReportingUnit"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
   <xsd:complexType name="VoterRecordsRequest">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -2430,10 +2494,18 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="GeneralRequest" type="GeneralRequest">
+      <xsd:element name="AdditionalInfo" type="AdditionalInfo" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Specifies information about the voter who is the subject of the request.
+            For including other information not specified by this schema.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="BallotRequest" type="BallotRequest" minOccurs="0"/>
+      <xsd:element name="Form" type="RequestForm" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            If the request is for a voter registration, the registration form used by the voter.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -2451,6 +2523,20 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="OtherForm" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when &lt;RegistrationForm&gt; value is other.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OtherRegistrationRequestMethod" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when &lt;RegistrationMethod&gt; value is other.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -2461,6 +2547,41 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="RegistrationRequestMethod" type="RequestMethod">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The method used by the voter to register.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RequestHelper" type="RequestHelper" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Included if the registration involves a registration assistant organization.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RequestProxy" type="RequestProxy" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Included if the registration request is via a proxy, e.g., the DMV.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SelectedLanguage" type="xsd:language" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The language specified by the voter, if any.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Subject" type="Voter">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Specifies information about the voter who is the subject of the request.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
       <xsd:element name="TransactionId" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -2468,7 +2589,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Type" type="RegistrationRequestType" maxOccurs="unbounded">
+      <xsd:element name="Type" type="VoterRequestType" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The type of request, e.g., registration.
@@ -2487,81 +2608,6 @@
   <xsd:complexType name="VoterRecordsResponse" abstract="true">
     <xsd:sequence>
       <xsd:element name="TransactionId" type="xsd:string" minOccurs="0"/>
-    </xsd:sequence>
-  </xsd:complexType>
-  <xsd:complexType name="VoterRegistration">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        &lt;p&gt;
-        Used in request messages.
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        &amp;#160;
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        &lt;a href="mdel://_18_0_2_6340208_1446583854986_237644_5961"&gt;VoterRecordsRequest&lt;/a&gt; includes this class to specify information about the voter.
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        &amp;#160;
-        
-            &lt;/p&gt;
-        
-            &lt;p&gt;
-        All sub-elements are optional excepting &amp;lt;Name&amp;gt; and &amp;lt;RegistrationAddress&amp;gt; and &amp;lt;RegistrationMethod&amp;gt;. If the &amp;lt;RegistrationAddressIsMailingAddress&amp;gt; boolean is true, &amp;lt;MailingAddress&amp;gt; need not be included.
-        
-            &lt;/p&gt;
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:element name="Ethnicity" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The voter’s ethnicity.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="OtherRegistrationMethod" type="xsd:string" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Used when &lt;RegistrationMethod&gt; value is other.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="PreviousName" type="Name" minOccurs="0"/>
-      <xsd:element name="PreviousRegistrationAddress" minOccurs="0">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:group minOccurs="0" maxOccurs="1" ref="Address"/>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="PreviousSignature" type="Signature" minOccurs="0">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Information about a previous voter signature on the registration form.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="RegistrationMethod" type="RegistrationMethod">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The method used by the voter to register.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
-      <xsd:element name="VoterId" type="VoterId" minOccurs="0" maxOccurs="unbounded">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Information to provide voter identity.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
 </xsd:schema>
