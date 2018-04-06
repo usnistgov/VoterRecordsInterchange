@@ -31,12 +31,10 @@
     - *The **[VoterIdType](#_18_0_2_6340208_1448398278987_184146_4431)** Enumeration*
     - *The **[VoterRequestType](#_18_0_2_6340208_1446583913045_906582_6615)** Enumeration*
   - Classes
-    - *The **[Absentee](#_18_5_3_43701b0_1520354873581_878995_5687)** Class*
     - *The **[AdditionalInfo](#_18_0_2_6340208_1446587509996_176108_6861)** Class*
     - *The **[BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731)** Class*
     - *The **[CalendarBasedBallotRequest](#_18_5_3_43701b0_1520358515166_885840_6088)** Class*
     - *The **[ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444)** Class*
-    - *The **[Date](#_18_5_3_43701b0_1520881655943_539044_5366)** Class*
     - *The **[Election](#_18_5_2_43701b0_1510603645561_775691_5960)** Class*
     - *The **[ElectionAdministration](#_18_0_2_6340208_1458237760549_706380_5243)** Class*
     - *The **[ElectionBasedBallotRequest](#_18_5_3_43701b0_1520358467277_635751_6047)** Class*
@@ -279,17 +277,10 @@ Name | Value
 `registration`|For a voter registration request.
 `other`|Used when the type of request is not included in this enumeration.
   # Classes
-### <a name="_18_5_3_43701b0_1520354873581_878995_5687"></a>*The **Absentee** Class*
-![Image of Absentee]()
-
-
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
 ### <a name="_18_0_2_6340208_1446587509996_176108_6861"></a>*The **AdditionalInfo** Class*
 ![Image of AdditionalInfo](VRI_UML_Documentation_files/_18_0_2_6340208_1446587510003_656308_6862.png)
 
-Class for specifying information not addressed in this schema by other elements and attributes, e.g., state-specific information that does not “fit” in any other element. The information will thus be highly specific to the generating application, and consuming applications must “know” the meaning of the information to make use of it. For this reason, use of this element is discouraged as much as is possible.
+Class for specifying information not addressed in this model by other elements and attributes, e.g., state-specific information that does not “fit” in any other element. The information will thus be highly specific to the generating application, and consuming applications must “know” the meaning of the information to make use of it. For this reason, use of this class is discouraged as much as is possible.
  
 The [StringValue](#_18_0_2_6340208_1446587603679_902003_6890) and [FileValue](#_18_0_2_6340208_1464186843386_982801_4458) attributes are both optional, however at least one of them must be included.
 
@@ -318,12 +309,12 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_5_3_43701b0_1520358515166_885840_6088"></a>*The **CalendarBasedBallotRequest** Class*
 ![Image of CalendarBasedBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358515169_841616_6089.png)
 
-
+A kind of ballot request in which election opportunities that the voter is qualified during a given time frame will be requested.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`EndDate`|1|`date`|
-`StartDate`|1|`date`|
+`EndDate`|1|`date`|The date at which the request is no longer effective.
+`StartDate`|1|`date`|The date the request comes into effect.
 
 #### Business Rules
 
@@ -360,17 +351,10 @@ OtherType must be defined when Type = other:
 self.Type = ContactMethodType::other implies not self.OtherType.oclIsUndefined()
 ```
 
-### <a name="_18_5_3_43701b0_1520881655943_539044_5366"></a>*The **Date** Class*
-![Image of Date]()
-
-
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
 ### <a name="_18_5_2_43701b0_1510603645561_775691_5960"></a>*The **Election** Class*
 ![Image of Election](VRI_UML_Documentation_files/_18_5_2_43701b0_1510603645585_3700_5994.png)
 
-
+Describes an election event. Only the date of the election is required. Other attributes may be used to describe the election for which a ballot is requested.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -402,7 +386,7 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_5_3_43701b0_1520358467277_635751_6047"></a>*The **ElectionBasedBallotRequest** Class*
 ![Image of ElectionBasedBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358467299_274020_6048.png)
 
-
+A common kind of ballot request in which a ballot for a single election event is requested.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -412,7 +396,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 Used in request and response messages.
  
-[Party](#_18_0_2_6340208_1446583854985_482559_5956) and [ReportingUnit](#_18_0_2_6340208_1458229422042_966646_4539) optionally include this class for associating a jurisdiction’s codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns, precincts, etc. Multiple occurrences of [ExternalIdentifier](#_18_0_2_6340208_1446584770723_729230_6705) can be used to associate multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-specific codes as well as OCD-IDs (Open Civic Data Identifiers).
+[Election](#_18_5_2_43701b0_1510603645561_775691_5960), [Party](#_18_0_2_6340208_1446583854985_482559_5956) and [ReportingUnit](#_18_0_2_6340208_1458229422042_966646_4539) optionally include this class for associating a jurisdiction’s codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns, precincts, etc. Multiple occurrences of [ExternalIdentifier](#_18_0_2_6340208_1446584770723_729230_6705) can be used to associate multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-specific codes as well as OCD-IDs (Open Civic Data Identifiers).
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -447,7 +431,7 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_5_3_43701b0_1520354672759_423588_5569"></a>*The **FpcaBallotRequest** Class*
 ![Image of FpcaBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354672781_362534_5570.png)
 
-
+A kind of calendar based ballot request afforded to those whose voter classifications qualify them under the FPCA.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -490,7 +474,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 Used in request messages.
  
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using [PreviousName](#_18_0_2_6340208_1446583855001_628958_6011) instead of Name. [RegistrationHelper](#_18_0_2_6340208_1470256600538_323550_4366) also includes this class for specifying the name of a registration helper.
+[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using [PreviousName](#_18_0_2_6340208_1446583855001_628958_6011) instead of Name. [ReguestHelper](#_18_0_2_6340208_1470256600538_323550_4366) also includes this class for specifying the name of a registration helper.
  
 Multiple occurrences of the [MiddleName](#_18_0_2_6340208_1453305616868_302875_4310) attribute can be used as needed, e.g., for names with additional middle names or nicknames such as “John Andrew Winston (Jack) Smith”.
  
@@ -673,16 +657,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `ResidenceAddress`|1|`Address`|Where the voter is registered or requests to be registered, mapped to the FGDC specification Address classes.
 `ResidenceAddressIsMailingAddress`|0..1|`boolean`|If set to true,   need not be included.
 `VoterId`|0..*|`VoterId`|
-
-#### Business Rules
-
-:
-
-```OCL2.0
-self.VoterId->exists(c | c.Type = VoterIdType::ssn or c.Type = VoterIdType::ssn4)
-
-```
-
 ### <a name="_18_0_2_6340208_1452701375494_353834_4295"></a>*The **VoterClassification** Class*
 ![Image of VoterClassification](VRI_UML_Documentation_files/_18_0_2_6340208_1452701375514_47142_4296.png)
 
@@ -730,12 +704,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `Type`|1|`VoterIdType`|The type of voter ID
 
 #### Business Rules
-
-:
-
-```OCL2.0
-self.StringValue->size() > 0
-```
 
 OtherType must be defined when Type = other:
 
