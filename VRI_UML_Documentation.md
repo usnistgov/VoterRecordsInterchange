@@ -278,6 +278,15 @@ Attribute | Multiplicity | Type | Attribute Description
 `FileValue`|0..1|`File`|Used if the value is in a file; contains the filename and MIME type
 `Name`|1|`string`|Name of the value.
 `StringValue`|0..1|`string`|Used if the value is a string; contains the string.
+
+#### Business Rules
+
+FileValue or StringValue must be defined (but not both):
+
+```OCL2.0
+not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
+```
+
 ### <a name="_18_5_2_43701b0_1510599050811_549888_5731"></a>*The **BallotRequest** Class*
 ![Image of BallotRequest](VRI_UML_Documentation_files/_18_5_2_43701b0_1510599050830_791767_5732.png)
 
@@ -304,6 +313,15 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|Used when ContactMethodType value is other.
 `Type`|1|`ContactMethodType`|The contact method type, e.g., email or phone.
 `Value`|1|`string`|The value of the ContactMethod. This will be the text value of the phone number, email address, or other mechanism. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
+
+#### Business Rules
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = ContactMethodType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_5_2_43701b0_1510603645561_775691_5960"></a>*The **Election** Class*
 ![Image of Election](VRI_UML_Documentation_files/_18_5_2_43701b0_1510603645585_3700_5994.png)
 
@@ -315,6 +333,15 @@ Attribute | Multiplicity | Type | Attribute Description
 `ExternalIdentifier`|0..*|`ExternalIdentifier`|For associating an ID with the election.
 `Name`|0..1|`string`|
 `StartDate`|1|`date`|The first day of the election.
+
+#### Business Rules
+
+The start date must occur before or at the end date:
+
+```English
+StartDate <= EndDate
+```
+
 ### <a name="_18_0_2_6340208_1458237760549_706380_5243"></a>*The **ElectionAdministration** Class*
 ![Image of ElectionAdministration](VRI_UML_Documentation_files/_18_0_2_6340208_1458237760552_785040_5253.png)
 
@@ -347,6 +374,15 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|Used when Type value is other.
 `Type`|1|`IdentifierType`|An identifier type, e.g., FIPS.
 `Value`|1|`string`|The identifier used by the jurisdiction.
+
+#### Business Rules
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = IdentifierType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_0_2_6340208_1452879654116_509055_5255"></a>*The **File** Class*
 ![Image of File](VRI_UML_Documentation_files/_18_0_2_6340208_1452879654120_445800_5256.png)
 
@@ -512,6 +548,15 @@ Attribute | Multiplicity | Type | Attribute Description
 `Phone`|0..1|`PhoneContactMethod`|A phone number associated with the proxy.
 `TimeStamp`|0..1|`date`|The date of the request from the proxy.
 `Type`|1|`RequestProxyType`|The type of the requesting proxy, e.g., motor-vehicle-office, voter-via-email.
+
+#### Business Rules
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = RequestProxyType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_0_2_6340208_1458226815148_390496_4430"></a>*The **RequestRejection** Class*
 ![Image of RequestRejection](VRI_UML_Documentation_files/_18_0_2_6340208_1458226815154_812582_4431.png)
 
@@ -552,6 +597,15 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|Used when SignatureType value is other.
 `Source`|0..1|`SignatureSource`|A source for the signature, e.g., dmv.
 `Type`|0..1|`SignatureType`|A signature type, e.g., dynamic.
+
+#### Business Rules
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = SignatureType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_5_3_43701b0_1520358515166_885840_6088"></a>*The **TemporalBallotRequest** Class*
 ![Image of TemporalBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358515169_841616_6089.png)
 
@@ -561,6 +615,15 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `EndDate`|1|`date`|The date at which the request is no longer effective.
 `StartDate`|1|`date`|The date the request comes into effect.
+
+#### Business Rules
+
+The start date must occur before or at the end date:
+
+```English
+StartDate <= EndDate
+```
+
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
 ![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1522779528451_974674_7331.png)
 
@@ -596,6 +659,21 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherAssertion`|0..1|`string`|An locally defined assertion value.
 `OtherType`|0..1|`string`|Used when VoterClassificationType value is other.
 `Type`|1|`VoterClassificationType`|A classification type, e.g., felon.
+
+#### Business Rules
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
+```
+
+When OtherType is defined, Type must be other:
+
+```OCL2.0
+not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
+```
+
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
 ![Image of VoterId](VRI_UML_Documentation_files/_18_0_2_6340208_1448398287463_421964_4483.png)
 
@@ -613,6 +691,21 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherType`|0..1|`string`|Used when VoterIdType value is other.
 `StringValue`|0..1|`string`|Used to include the ID as a string.
 `Type`|1|`VoterIdType`|The type of voter ID
+
+#### Business Rules
+
+FileValue or StringValue must be defined (but not both):
+
+```OCL2.0
+not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
+```
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
+```
+
 ### <a name="_18_5_3_43701b0_1521144693004_190730_6034"></a>*The **VoterRecord** Class*
 ![Image of VoterRecord](VRI_UML_Documentation_files/_18_5_3_43701b0_1521144693023_685785_6035.png)
 
@@ -657,6 +750,15 @@ Attribute | Multiplicity | Type | Attribute Description
 `TransactionId`|0..1|`string`|An identifier of the voter records request transaction.
 `Type`|1..*|`VoterRequestType`|The type of request, e.g., registration.
 `VendorApplicationId`|0..1|`string`|An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
+
+#### Business Rules
+
+Ballot Request must have BallotRequest obj:
+
+```OCL2.0
+self.Type->exists(c | c = VoterRequestType::_'ballot-request') implies self.OtherType->size() = 1
+```
+
 ### <a name="_18_0_2_6340208_1455906719413_171772_4514"></a>*The **VoterRecordsResponse** Class*
 ![Image of VoterRecordsResponse](VRI_UML_Documentation_files/_18_0_2_6340208_1455906719422_329791_4515.png)
 
