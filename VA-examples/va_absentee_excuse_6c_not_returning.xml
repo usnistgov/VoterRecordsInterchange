@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
 <VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd ../NIST_V0_voter_records_interchange.xsd">
-	<GeneralRequest>
-		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">			
-			<BallotReceiptPreference>email</BallotReceiptPreference>
-			<BallotReceiptPreference>mail</BallotReceiptPreference>
-			<Election>
-				<StartDate>2018-06-12</StartDate>
-			</Election>
-		</AbsenteeBallotRequest>
+	<BallotRequest xsi:type="ElectionBasedBallotRequest">
+		<BallotReceiptPreference>email</BallotReceiptPreference>
+		<BallotReceiptPreference>mail</BallotReceiptPreference>
+		<Election>
+			<StartDate>2018-06-12</StartDate>
+		</Election>
+	</BallotRequest>
+	<Form>other</Form>
+	<GeneratedDate>2018-03-12</GeneratedDate>
+	<OtherForm>SBE-701</OtherForm>
+	<RequestMethod>voter-via-mail</RequestMethod>
+	<Subject>
 		<ContactMethod xsi:type="PhoneContactMethod">
-			<Type>email</Type>			
-			<Value>Devyn_Durgan76@yahoo.com</Value>			
-		</ContactMethod>		
+			<Type>email</Type>
+			<Value>Devyn_Durgan76@yahoo.com</Value>
+		</ContactMethod>
 		<Name>
 			<FirstName>Devyn</FirstName>
-			<LastName>Durgan</LastName>			
+			<LastName>Durgan</LastName>
 			<MiddleName>Everett</MiddleName>
 		</Name>
-		<OtherForm>SBE-701</OtherForm>
 		<Party>
 			<Name>Republican</Name>
 		</Party>
@@ -27,8 +30,8 @@
 				<addr:CompleteAddressNumber>
 					<addr_type:AddressNumber>9921</addr_type:AddressNumber>
 				</addr:CompleteAddressNumber>
-				<addr:CompleteStreetName>		
-				<addr_type:StreetNamePreModifier>W</addr_type:StreetNamePreModifier>			
+				<addr:CompleteStreetName>
+					<addr_type:StreetNamePreModifier>W</addr_type:StreetNamePreModifier>
 					<addr_type:StreetName>Broad</addr_type:StreetName>
 					<addr_type:StreetNamePostModifier>St</addr_type:StreetNamePostModifier>
 				</addr:CompleteStreetName>
@@ -42,14 +45,13 @@
 		</ResidenceAddress>
 		<VoterClassification>
 			<Assertion>other</Assertion>
-			<OtherAssertion>2017-01-30</OtherAssertion>			
+			<OtherAssertion>2017-01-30</OtherAssertion>
 			<Type>citizen-abroad-return-uncertain</Type>
 		</VoterClassification>
 		<VoterId>
 			<StringValue>4567</StringValue>
 			<Type>ssn4</Type>
 		</VoterId>
-	</GeneralRequest>
-	<GeneratedDate>2018-03-12</GeneratedDate>
+	</Subject>
 	<Type>ballot-request</Type>
 </VoterRecordsRequest>

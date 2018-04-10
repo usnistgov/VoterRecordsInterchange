@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
 <!--Examples of features used:
-	- 1B Excuse with mailing address --> 
+	- 1B Excuse with mailing address -->
 <VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
-	<GeneralRequest>
-		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">
-			<Election>
-				<StartDate>2018-06-12</StartDate>
-			</Election>
-		</AbsenteeBallotRequest>
+	<BallotRequest xsi:type="ElectionBasedBallotRequest">
+		<Election>
+			<StartDate>2018-06-12</StartDate>
+		</Election>
+	</BallotRequest>
+	<Form>other</Form>
+	<GeneratedDate>2018-03-10</GeneratedDate>
+	<OtherForm>SBE-701</OtherForm>
+	<RequestMethod>voter-via-mail</RequestMethod>
+	<Subject>
 		<ContactMethod>
 			<Type>email</Type>
 			<Value>akono@fakeemail.com</Value>
 		</ContactMethod>
 		<DateOfBirth>1956-05-24</DateOfBirth>
-		<Form>other</Form>
 		<MailingAddress>
 			<NumberedThoroughfareAddress_type>
 				<addr:CompleteAddressNumber>
@@ -36,7 +39,6 @@
 			<FirstName>Annabel</FirstName>
 			<LastName>Konopelski</LastName>
 		</Name>
-		<OtherForm>SBE-701</OtherForm>
 		<Party>
 			<Name>Democratic</Name>
 		</Party>
@@ -67,7 +69,6 @@
 			<StringValue>234567890</StringValue>
 			<Type>ssn</Type>
 		</VoterId>
-	</GeneralRequest>
-	<GeneratedDate>2018-03-10</GeneratedDate>
+	</Subject>
 	<Type>ballot-request</Type>
 </VoterRecordsRequest>

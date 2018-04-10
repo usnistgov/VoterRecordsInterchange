@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
 <VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd ../NIST_V0_voter_records_interchange.xsd">
-	<GeneralRequest>
-		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">
-			<BallotReceiptPreference>email</BallotReceiptPreference>
-			<BallotReceiptPreference>mail</BallotReceiptPreference>
-			<Election>
-				<StartDate>2018-06-12</StartDate>
-			</Election>
-		</AbsenteeBallotRequest>
+	<BallotRequest xsi:type="ElectionBasedBallotRequest">
+		<BallotReceiptPreference>email</BallotReceiptPreference>
+		<BallotReceiptPreference>mail</BallotReceiptPreference>
+		<Election>
+			<StartDate>2018-06-12</StartDate>
+		</Election>
+	</BallotRequest>	
+	<Form>other</Form>
+	<GeneratedDate>2018-03-12</GeneratedDate>
+	<OtherForm>SBE-701</OtherForm>
+	<RequestMethod>voter-via-mail</RequestMethod>
+	<Subject>
 		<ContactMethod>
 			<Type>email</Type>
 			<Value>linger.on@fakeemail.com</Value>
@@ -29,7 +33,7 @@
 					<addr_type:PlaceName>APO</addr_type:PlaceName>
 				</addr_type:CompletePlaceName>
 				<addr_type:StateName>AE</addr_type:StateName>
-				<addr_type:ZipCode>09096</addr_type:ZipCode>				
+				<addr_type:ZipCode>09096</addr_type:ZipCode>
 			</USPSPostalDeliveryRoute_type>
 		</MailingAddress>
 		<Name>
@@ -37,7 +41,6 @@
 			<LastName>Kendall</LastName>
 			<MiddleName>Anderson</MiddleName>
 		</Name>
-		<OtherForm>SBE-701</OtherForm>
 		<Party>
 			<Name>Democratic</Name>
 		</Party>
@@ -46,7 +49,7 @@
 				<addr:CompleteAddressNumber>
 					<addr_type:AddressNumber>139</addr_type:AddressNumber>
 				</addr:CompleteAddressNumber>
-				<addr:CompleteStreetName>					
+				<addr:CompleteStreetName>
 					<addr_type:StreetName>Factory Outlet</addr_type:StreetName>
 					<addr_type:StreetNamePostModifier>St</addr_type:StreetNamePostModifier>
 				</addr:CompleteStreetName>
@@ -67,7 +70,6 @@
 			<StringValue>0987</StringValue>
 			<Type>ssn4</Type>
 		</VoterId>
-	</GeneralRequest>
-	<GeneratedDate>2018-03-12</GeneratedDate>
+	</Subject>
 	<Type>ballot-request</Type>
 </VoterRecordsRequest>

@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
 <VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
-	<GeneralRequest>
-		<AbsenteeBallotRequest xsi:type="ElectionBasedAbsenteeBallotRequest">
+			<BallotRequest xsi:type="ElectionBasedBallotRequest">
 			<Election>
 				<StartDate>2012-11-06</StartDate>
 			</Election>			
-		</AbsenteeBallotRequest>
+		</BallotRequest>
+		<Form>other</Form>
+		<GeneratedDate>2018-03-10</GeneratedDate>
+		<OtherForm>SBE-701</OtherForm>
+		<RequestMethod>voter-via-mail</RequestMethod>
+<Subject>
 		<ContactMethod>
 			<Type>phone</Type>
 			<Value>5441112222</Value>
-		</ContactMethod>
-		<Form>other</Form>
+		</ContactMethod>		
 		<Name>
 			<FirstName>Sabrina </FirstName>
 			<LastName>Jones</LastName>
 			<MiddleName>Shamika</MiddleName>
-		</Name>
-		<OtherForm>SBE-701</OtherForm>
+		</Name>		
 		<ResidenceAddress>
 			<NumberedThoroughfareAddress_type>
 				<addr:CompleteAddressNumber>
@@ -44,7 +46,6 @@
 			<StringValue>5678</StringValue>
 			<Type>ssn4</Type>
 		</VoterId>
-	</GeneralRequest>
-	<GeneratedDate>2018-03-10</GeneratedDate>
+	</Subject>	
 	<Type>ballot-request</Type>
 </VoterRecordsRequest>

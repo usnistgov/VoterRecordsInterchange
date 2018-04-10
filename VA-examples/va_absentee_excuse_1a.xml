@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
 <n2:VoterRecordsRequest xmlns:n2="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
-	<n2:GeneralRequest>
-		<n2:AbsenteeBallotRequest xsi:type="n2:ElectionBasedAbsenteeBallotRequest">
-			<n2:Election>
-				<n2:EndDate>2018-11-06</n2:EndDate>
-				<n2:Name>November General 2018</n2:Name>
-				<n2:StartDate>2018-11-06</n2:StartDate>
-			</n2:Election>
-		</n2:AbsenteeBallotRequest>
+	<n2:BallotRequest xsi:type="n2:ElectionBasedBallotRequest">
+		<n2:Election>
+			<n2:EndDate>2018-11-06</n2:EndDate>
+			<n2:Name>November General 2018</n2:Name>
+			<n2:StartDate>2018-11-06</n2:StartDate>
+		</n2:Election>
+	</n2:BallotRequest>
+	<n2:GeneratedDate>1957-08-13</n2:GeneratedDate>
+	<n2:Issuer>VRI POC</n2:Issuer>
+	<n2:RequestMethod>voter-via-mail</n2:RequestMethod>
+	<n2:Subject>
 		<n2:ContactMethod>
 			<n2:Type>email</n2:Type>
 			<n2:Value>patty.smith@fakeemail.com</n2:Value>
@@ -52,6 +55,11 @@ Blacksburg</addr_type:PlaceName>
 		<n2:Party>
 			<n2:Name>Democractic</n2:Name>
 		</n2:Party>
+			<n2:PreviousName>
+			<n2:FirstName>Patricia</n2:FirstName>
+			<n2:LastName>Sekusky</n2:LastName>
+			<n2:MiddleName>Sarah</n2:MiddleName>
+		</n2:PreviousName>
 		<n2:ResidenceAddress>
 			<n2:NumberedThoroughfareAddress_type>
 				<addr:CompleteAddressNumber>
@@ -71,8 +79,7 @@ Blacksburg</addr_type:PlaceName>
 				<addr_type:StateName>Virginia</addr_type:StateName>
 				<addr_type:ZipCode>22601</addr_type:ZipCode>
 			</n2:NumberedThoroughfareAddress_type>
-		</n2:ResidenceAddress>
-		<n2:SelectedLanguage>en-us</n2:SelectedLanguage>
+		</n2:ResidenceAddress>				
 		<n2:VoterClassification>
 			<n2:Assertion>other</n2:Assertion>
 			<n2:OtherAssertion>Virginia Tech</n2:OtherAssertion>
@@ -82,18 +89,8 @@ Blacksburg</addr_type:PlaceName>
 		<n2:VoterId>
 			<n2:StringValue>1234</n2:StringValue>
 			<n2:Type>ssn4</n2:Type>
-		</n2:VoterId>
-		<n2:VoterRegistration>
-			<n2:PreviousName>
-				<n2:FirstName>Patricia</n2:FirstName>
-				<n2:LastName>Sekusky</n2:LastName>
-				<n2:MiddleName>Sarah</n2:MiddleName>
-			</n2:PreviousName>
-			<n2:RegistrationMethod>voter-via-mail</n2:RegistrationMethod>
-		</n2:VoterRegistration>
-	</n2:GeneralRequest>
-	<n2:GeneratedDate>1957-08-13</n2:GeneratedDate>
-	<n2:Issuer>VRI POC</n2:Issuer>
+		</n2:VoterId>		
+	</n2:Subject>
 	<n2:TransactionId>String</n2:TransactionId>
 	<n2:Type>registration</n2:Type>
 	<n2:VendorApplicationId>VRI POC APP</n2:VendorApplicationId>

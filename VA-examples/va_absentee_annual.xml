@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
 <VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd ../NIST_V0_voter_records_interchange.xsd">
-	<GeneralRequest>
-		<AbsenteeBallotRequest xsi:type="CalendarBasedAbsenteeBallotRequest">
-			<EndDate>2018-12-31</EndDate>
-			<StartDate>2018-01-01</StartDate>
-		</AbsenteeBallotRequest>
-		<Form>other</Form>
+	<BallotRequest xsi:type="TemporalBallotRequest">
+		<EndDate>2018-12-31</EndDate>
+		<StartDate>2018-01-01</StartDate>
+	</BallotRequest>
+	<Form>other</Form>
+	<GeneratedDate>2018-03-12</GeneratedDate>
+	<OtherForm>SBE-703.1</OtherForm>
+	<RequestMethod>voter-via-internet</RequestMethod>
+	<Subject>
 		<Name>
 			<FirstName>Donnie</FirstName>
 			<LastName>Smith</LastName>
 		</Name>
-		<OtherForm>SBE-703.1</OtherForm>
 		<ResidenceAddress>
 			<NumberedThoroughfareAddress_type>
 				<addr:CompleteAddressNumber>
@@ -39,7 +41,6 @@
 			<StringValue>4567</StringValue>
 			<Type>ssn4</Type>
 		</VoterId>
-	</GeneralRequest>
-	<GeneratedDate>2018-03-12</GeneratedDate>
+	</Subject>
 	<Type>ballot-request</Type>
 </VoterRecordsRequest>
