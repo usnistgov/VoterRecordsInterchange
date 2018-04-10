@@ -33,7 +33,6 @@
   - Classes
     - *The **[AdditionalInfo](#_18_0_2_6340208_1446587509996_176108_6861)** Class*
     - *The **[BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731)** Class*
-    - *The **[CalendarBasedBallotRequest](#_18_5_3_43701b0_1520358515166_885840_6088)** Class*
     - *The **[ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444)** Class*
     - *The **[Election](#_18_5_2_43701b0_1510603645561_775691_5960)** Class*
     - *The **[ElectionAdministration](#_18_0_2_6340208_1458237760549_706380_5243)** Class*
@@ -55,10 +54,12 @@
     - *The **[RequestHelper](#_18_0_2_6340208_1470256600538_323550_4366)** Class*
     - *The **[RequestProxy](#_18_0_2_6340208_1448401688329_700093_4402)** Class*
     - *The **[Signature](#_18_0_2_6340208_1452788035217_489009_4409)** Class*
+    - *The **[TemporalBallotRequest](#_18_5_3_43701b0_1520358515166_885840_6088)** Class*
     - *The **[Voter](#_18_5_3_43701b0_1520354792154_717315_5628)** Class*
     - *The **[VoterClassification](#_18_0_2_6340208_1452701375494_353834_4295)** Class*
     - *The **[VoterId](#_18_0_2_6340208_1448398278986_542661_4430)** Class*
     - *The **[VoterRecord](#_18_5_3_43701b0_1521144693004_190730_6034)** Class*
+    - *The **[VoterRecords](#_18_5_3_43701b0_1523305927438_977151_6481)** Class*
     - *The **[VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961)** Class*
     - *The **[VoterRecordsResponse](#_18_0_2_6340208_1455906719413_171772_4514)** Class*
 # Enumerations
@@ -82,7 +83,7 @@ Name | Value
 `mail`|For postal mail.
 `online`|For downloadable from a website, e.g., the voter is sent a hypertext link to a ballot.
   ### <a name="_18_0_2_6340208_1464893409742_774328_4470"></a>*The **ContactMethodType** Enumeration*
-![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1464893409752_571424_4471.png)
+![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1467137029940_934610_4555.png)
     
 Name | Value
 ---- | -----
@@ -101,7 +102,7 @@ Name | Value
 `state-level`|For a code that is specific to a state.
 `other`|Used when the type of code is not included in this enumeration.
   ### <a name="_18_0_2_6340208_1465494051199_895769_4463"></a>*The **PhoneCapability** Enumeration*
-![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1465494055245_880506_4464.png)
+![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1467137299147_510499_4665.png)
     
 Name | Value
 ---- | -----
@@ -306,26 +307,8 @@ An abstract class for a request for a ballot. Classes for specific types of Ball
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `BallotReceiptPreference`|0..*|`BallotReceiptMethod`|The voter's preference on how to receive their ballot in order from their most preferred method to least, used if it is a pre-election day ballot request. If omitted, the default method for the [form](#_18_0_2_6340208_1452790770728_957008_4772) will be used.
-### <a name="_18_5_3_43701b0_1520358515166_885840_6088"></a>*The **CalendarBasedBallotRequest** Class*
-![Image of CalendarBasedBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358515169_841616_6089.png)
-
-A kind of ballot request in which election opportunities that the voter is qualified during a given time frame will be requested.
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-`EndDate`|1|`date`|The date at which the request is no longer effective.
-`StartDate`|1|`date`|The date the request comes into effect.
-
-#### Business Rules
-
-The start date must occur before or at the end date:
-
-```English
-StartDate <= EndDate
-```
-
 ### <a name="_18_0_2_6340208_1464893400979_739933_4444"></a>*The **ContactMethod** Class*
-![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1464893400986_87872_4445.png)
+![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137004544_113383_4528.png)
 
 Used in request and response messages.
  
@@ -392,7 +375,7 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `{Election}`|1|`Election`|
 ### <a name="_18_0_2_6340208_1446584770723_729230_6705"></a>*The **ExternalIdentifier** Class*
-![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1446584770729_88052_6718.png)
+![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1458237601050_674272_5135.png)
 
 Used in request and response messages.
  
@@ -508,7 +491,7 @@ Attribute | Multiplicity | Type | Attribute Description
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 ### <a name="_18_0_2_6340208_1465493970792_917703_4430"></a>*The **PhoneContactMethod** Class*
-![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1465493970801_186622_4431.png)
+![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137273798_668126_4636.png)
 
 Used in request and response messages.
  
@@ -635,8 +618,26 @@ OtherType must be defined when Type = other:
 self.Type = SignatureType::other implies not self.OtherType.oclIsUndefined()
 ```
 
+### <a name="_18_5_3_43701b0_1520358515166_885840_6088"></a>*The **TemporalBallotRequest** Class*
+![Image of TemporalBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358515169_841616_6089.png)
+
+A kind of ballot request in which election opportunities that the voter is qualified during a given time frame will be requested.
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+`EndDate`|1|`date`|The date at which the request is no longer effective.
+`StartDate`|1|`date`|The date the request comes into effect.
+
+#### Business Rules
+
+The start date must occur before or at the end date:
+
+```English
+StartDate <= EndDate
+```
+
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1522779528451_974674_7331.png)
 
 A specific request for a particular voter.
 
@@ -705,16 +706,16 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-OtherType must be defined when Type = other:
-
-```OCL2.0
-self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
-```
-
 FileValue or StringValue must be defined (but not both):
 
 ```OCL2.0
 not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
+```
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
 ```
 
 ### <a name="_18_5_3_43701b0_1521144693004_190730_6034"></a>*The **VoterRecord** Class*
@@ -724,8 +725,18 @@ not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`{ReportingUnit}`||`ReportingUnit`|
-`{ReportingUnit}`||`ReportingUnit`|
+`{ElectionAdministration}`|0..1|`ElectionAdministration`|
+`District`|0..*|`ReportingUnit`|
+`Locality`|0..*|`ReportingUnit`|
+`PollingLocation`|0..1|`ReportingUnit`|
+### <a name="_18_5_3_43701b0_1523305927438_977151_6481"></a>*The **VoterRecords** Class*
+![Image of VoterRecords](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
+
+
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+`{VoterRecord}`|0..*|`VoterRecord`|
 ### <a name="_18_0_2_6340208_1446583854986_237644_5961"></a>*The **VoterRecordsRequest** Class*
 ![Image of VoterRecordsRequest](VRI_UML_Documentation_files/_18_0_2_6340208_1446583855033_382783_6135.png)
 
