@@ -1316,6 +1316,69 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
+  <xsd:complexType name="BallotStyle">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        &lt;p&gt;
+        For defining a ballot style composed of ordered content (i.e. Headers or Contests) and their ballot selections, and associating the ballot style with a political party, a reference to an image of the ballot, and a reference to the a precinct or other geopolitical unit that the ballot is unique to. &lt;a href="mdel://_17_0_2_4_f71035d_1426101822599_430942_2209"&gt;Election&lt;/a&gt; includes BallotStyle.
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        &amp;#160;
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        BallotStyle references &lt;a href="mdel://_18_5_3_43701b0_1520434015209_434672_4990"&gt;OrderedContent&lt;/a&gt; to include content that appears on that ballot style. To preserve any rotation associated with the ballot, it is expected that the generating application will list the occurrences of &lt;a href="mdel://_17_0_3_43401a7_1394476416139_808596_3142"&gt;OrderedContest&lt;/a&gt; in the order as on the ballot for the associated geopolitical unit.
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        &amp;#160;
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        BallotStyle references one or more &lt;a href="mdel://_17_0_2_4_78e0236_1389366233346_42391_2380"&gt;GpUnit&lt;/a&gt; instances defined for the associated precincts or split precincts. If the ballot style is associated with multiple precincts (or other geographies), multiple references to the precinct &lt;a href="mdel://_17_0_2_4_78e0236_1389366233346_42391_2380"&gt;GpUnit&lt;/a&gt; instances can be included.
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        &amp;#160;
+        
+            &lt;/p&gt;
+        
+            &lt;p&gt;
+        When including &lt;a href="mdel://_17_0_2_4_f71035d_1430405712653_451634_2410"&gt;ExternalIdentifier&lt;/a&gt;, if the type is not listed in enumeration &lt;a href="mdel://_17_0_2_4_f71035d_1425061188508_163854_2613"&gt;IdentifierType&lt;/a&gt;, use other and include the type (that is not listed in the enumeration) in &lt;a href="mdel://_17_0_2_4_f71035d_1430405732252_109247_2429"&gt;OtherType&lt;/a&gt;.
+        
+            &lt;/p&gt;
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For associating an ID with the ballot style.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ImageUri" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            URI for a ballot image.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Party" type="Party" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Unique identifier for one or more Party instances.  For associating one or more parties with the ballot style.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
   <xsd:complexType name="ContactMethod">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -2443,6 +2506,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
+      <xsd:element name="VoterParticipation" type="VoterParticipation" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:complexType name="VoterClassification">
@@ -2569,6 +2633,17 @@
       </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
+  <xsd:complexType name="VoterParticipation">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        For indicating an election that the voter participated in. Participation does not imply a counted ballot.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="BallotStyle" type="BallotStyle" minOccurs="0"/>
+      <xsd:element name="Election" type="Election"/>
+    </xsd:sequence>
+  </xsd:complexType>
   <xsd:complexType name="VoterRecord">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -2692,7 +2767,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherRegistrationRequestMethod" type="xsd:string" minOccurs="0">
+      <xsd:element name="OtherRequestMethod" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when &lt;RegistrationMethod&gt; value is other.
