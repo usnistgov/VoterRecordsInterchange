@@ -28,7 +28,6 @@
     - *The **[ElectionBasedBallotRequest](#_18_5_3_43701b0_1520358467277_635751_6047)** Class*
     - *The **[ExternalIdentifier](#_18_0_2_6340208_1446584770723_729230_6705)** Class*
     - *The **[File](#_18_0_2_6340208_1452879654116_509055_5255)** Class*
-    - *The **[FpcaBallotRequest](#_18_5_3_43701b0_1520354672759_423588_5569)** Class*
     - *The **[Image](#_18_0_2_6340208_1452879607465_248768_5229)** Class*
     - *The **[LatLng](#_18_0_2_6340208_1458229746146_45435_4773)** Class*
     - *The **[Location](#_18_0_2_6340208_1460480132036_876890_4538)** Class*
@@ -297,6 +296,7 @@ An abstract class representing a request for a ballot. Classes for specific type
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `BallotReceiptPreference`|0..*|`BallotReceiptMethod`|The voter's preference on how to receive their ballot in order from their most preferred method to least, used if it is a pre-election day ballot request. If omitted, the default method for the [form](#_18_0_2_6340208_1452790770728_957008_4772) will be used.
+`MailForwardingAddress`|0..1|`Address`|
 ### <a name="_18_5_3_43701b0_1523391256329_329490_7455"></a>*The **BallotStyle** Class*
 ![Image of BallotStyle](VRI_UML_Documentation_files/_18_5_3_43701b0_1523391256343_926826_7476.png)
 
@@ -417,14 +417,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `Data`|1|`base64Binary`|The file content encoded using base64.
 `fileName`|0..1|`string`|The filename.
 `mimeType`|0..1|`string`|The MIME type associated with the file.
-### <a name="_18_5_3_43701b0_1520354672759_423588_5569"></a>*The **FpcaBallotRequest** Class*
-![Image of FpcaBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354672781_362534_5570.png)
-
-A kind of calendar based ballot request afforded to those whose voter classifications qualify them under the FPCA.
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-`MailForwardingAddress`|0..1|`Address`|
 ### <a name="_18_0_2_6340208_1452879607465_248768_5229"></a>*The **Image** Class*
 ![Image of Image](VRI_UML_Documentation_files/_18_0_2_6340208_1452879607469_640085_5230.png)
 
@@ -463,7 +455,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 Used in request messages.
  
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using [PreviousName](#_18_0_2_6340208_1446583855001_628958_6011) instead of Name. [ReguestHelper](#_18_0_2_6340208_1470256600538_323550_4366) also includes this class for specifying the name of a registration helper.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using [PreviousName](#_18_0_2_6340208_1446583855001_628958_6011) instead of Name. [ReguestHelper](#_18_0_2_6340208_1470256600538_323550_4366) also includes this class for specifying the name of a registration helper.
  
 Multiple occurrences of the [MiddleName](#_18_0_2_6340208_1453305616868_302875_4310) attribute can be used as needed, e.g., for names with additional middle names or nicknames such as “John Andrew Winston (Jack) Smith”.
  
@@ -477,12 +469,22 @@ Attribute | Multiplicity | Type | Attribute Description
 `MiddleName`|0..*|`string`|Person’s middle name.
 `Prefix`|0..1|`string`|A prefix associated with the person, e.g., Mr.
 `Suffix`|0..1|`string`|A suffix associated with the person, e.g., Jr.
+
+#### Business Rules
+
+:
+
+```OCL2.0
+self.FirstName.oclIsUndefined() and self.LastName.oclIsUndefined() and self.MiddleName->size() = 0 and self.Prefix.oclIsUndefined() and self.Suffix..oclIsUndefined() 
+implies not self.FullName.oclIsUndefined() 
+```
+
 ### <a name="_18_0_2_6340208_1446583854985_482559_5956"></a>*The **Party** Class*
 ![Image of Party](VRI_UML_Documentation_files/_18_0_2_6340208_1446583855033_152433_6134.png)
 
 Used in request messages.
  
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) includes this element to specify a voter’s political party.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this element to specify a voter’s political party.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -501,7 +503,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 Used in request and response messages.
  
-[RegistrationHelper](#_18_0_2_6340208_1470256600538_323550_4366), and [RegistrationProxy](#_18_0_2_6340208_1448401688329_700093_4402) use this class to specify a telephone number as well as the capabilities of the telephone, e.g., sms, fax, etc.
+[RequestHelper](#_18_0_2_6340208_1470256600538_323550_4366), and [RequestProxy](#_18_0_2_6340208_1448401688329_700093_4402) use this class to specify a telephone number as well as the capabilities of the telephone, e.g., sms, fax, etc.
  
 PhoneContactMethod is subtype [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444). Thus, the elements that include [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444) could use PhoneContactMethod as applicable.
 
@@ -528,24 +530,24 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_0_2_6340208_1456261767184_144968_4436"></a>*The **RequestAcknowledgement** Class*
 ![Image of RequestAcknowledgement](VRI_UML_Documentation_files/_18_0_2_6340208_1456261767195_161515_4437.png)
 
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) optionally includes this element to specify information about a registration helper, i.e., a registration assistant or registration witness involved in a voter’s registration request.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) optionally includes this element to specify information about a request helper, i.e., a request assistant or witness involved in a voter’s request.
  
-RegistrationAssistant includes the [Name](#_18_0_2_6340208_1446583854986_538708_5957) element to specify the registration helper’s name and optionally includes the [Signature](#_18_0_2_6340208_1452788035217_489009_4409) element if a registration helper’s signature is required.
+RequestAssistant includes the [Name](#_18_0_2_6340208_1446583854986_538708_5957) element to specify the registration helper’s name and optionally includes the [Signature](#_18_0_2_6340208_1452788035217_489009_4409) element if a registration helper’s signature is required.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 ### <a name="_18_0_2_6340208_1470256600538_323550_4366"></a>*The **RequestHelper** Class*
 ![Image of RequestHelper](VRI_UML_Documentation_files/_18_0_2_6340208_1470256600539_764405_4367.png)
 
- [VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) optionally includes this element to specify information about a registration helper, i.e., a registration assistant or registration witness involved in a voter’s registration request.
+[VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961) optionally includes this element to specify information about a request helper, i.e., a request assistant or witness involved in a voter’s request.
  
-RegistrationAssistant includes the [Name](#_18_0_2_6340208_1446583854986_538708_5957) element to specify the registration helper’s name and optionally includes the [Signature](#_18_0_2_6340208_1452788035217_489009_4409) element if a registration helper’s signature is required.
+RequestAssistant includes the [Name](#_18_0_2_6340208_1446583854986_538708_5957) element to specify the registration helper’s name and optionally includes the [Signature](#_18_0_2_6340208_1452788035217_489009_4409) element if a registration helper’s signature is required.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`Address`|0..1|`Address`|Address of the registration helper.
+`Address`|0..1|`Address`|Address of the request helper.
 `Name`|0..1|`Name`|To specify the name of the helper.
-`Phone`|0..1|`PhoneContactMethod`|Registration helper’s phone number.
+`Phone`|0..1|`PhoneContactMethod`|Request helper’s phone number.
 `Signature`|0..1|`Signature`|To specify the signature of the helper.
 `Type`|1|`VoterHelperType`|To specify the type of helper, e.g., assistant.
 ### <a name="_18_0_2_6340208_1448401688329_700093_4402"></a>*The **RequestProxy** Class*
@@ -553,7 +555,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 Used in request messages.
  
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) optionally includes this class to specify information about a registration proxy involved in a voter records request.
+[VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961) optionally includes this class to specify information about a request proxy involved in a voter records request.
  
 OriginTransactionId can be used to include an optional identifier of the originating external transaction from the proxy, e.g., used for the transaction ID generated by a DMV application enacting a voter registration request to a registration portal application (on behalf of a citizen obtaining a driver’s license). This sub-element is not to be confused with TransactionId in [VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961), which is used to include a transaction ID of the voter records request, e.g., the transaction ID of the registration portal’s voter records request.
 
@@ -578,17 +580,17 @@ self.Type = RequestProxyType::other implies not self.OtherType.oclIsUndefined()
 ### <a name="_18_0_2_6340208_1458226815148_390496_4430"></a>*The **RequestRejection** Class*
 ![Image of RequestRejection](VRI_UML_Documentation_files/_18_0_2_6340208_1458226815154_812582_4431.png)
 
-Used in responses. For indicating that the request failed. The   sub-element is used to indicate the type of error that occurred. The   sub-element can be used to provide more information as to the rejection.
+Used in responses. For indicating that the request failed. The Error attribute is used to indicate the type of error that occurred. The AdditionalDetails attribute can be used to provide more information as to the rejection.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `AdditionalDetails`|0..*|`string`|Used to provide additional details as applicable.
 `Error`|0..*|`RequestError`|Used to indicate the type of error.
-`OtherError`|0..*|`string`|Used when   value is other.
+`OtherError`|0..*|`string`|Used when RegistrationError value is other.
 ### <a name="_18_0_2_6340208_1460483674993_168854_4684"></a>*The **RequestSuccess** Class*
 ![Image of RequestSuccess](VRI_UML_Documentation_files/_18_0_2_6340208_1460483674995_528178_4685.png)
 
-Used in responses. For indicating a successful response to a request. The   sub-element is used to indicate the action that occurred, which may differ from what was requested. For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create. The response also includes, optionally, other information useful to the voter, including a description of the voter’s polling place, districts (i.e., contests) associated with the polling place, or other geopolitical geographies such as the voter’s precinct.
+Used in responses. For indicating a successful response to a request. The Action attribute is used to indicate the action that occurred, which may differ from what was requested. For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create. The response also includes, optionally, other information useful to the voter, including a description of the voter’s polling place, districts (i.e., contests) associated with the polling place, or other geopolitical geographies such as the voter’s precinct.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -603,7 +605,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 Used in request messages.
  
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) includes this class for specifying information about a voter’s signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, [VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) uses PreviousSignature instead of Signature.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class for specifying information about a voter’s signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, [Voter](#_18_5_3_43701b0_1520354792154_717315_5628) uses PreviousSignature instead of Signature.
  
 Source is used to specify the source of the voter’s signature, for example, on file at a department of motor vehicles. FileValue is used to include an image of the voter’s signature.
 
@@ -643,7 +645,7 @@ StartDate <= EndDate
 ```
 
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520953921629_235073_5691.png)
 
 Voter contains attributes specific to identifying a voter.
 
@@ -664,13 +666,12 @@ Attribute | Multiplicity | Type | Attribute Description
 `Signature`|0..1|`Signature`|Information about the voter signature on the registration form.
 `VoterClassification`|0..*|`VoterClassification`|How the voter is classified per assertions the voter has made on a registration form.
 `VoterId`|0..*|`VoterId`|Information to provide voter identity.
-`VoterParticipation`|0..*|`VoterParticipation`|
 ### <a name="_18_0_2_6340208_1452701375494_353834_4295"></a>*The **VoterClassification** Class*
 ![Image of VoterClassification](VRI_UML_Documentation_files/_18_0_2_6340208_1452701375514_47142_4296.png)
 
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) includes this class to describe a voter’s classification per criteria on the voter’s registration form, e.g., united-states-citizen or eighteen-on-election-day.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class to describe a voter’s classification per criteria on the voter’s request form, e.g., united-states-citizen or eighteen-on-election-day.
  
-VoterClassification includes assertions of the voter in response to the voter registration form criteria. For example, an assertion of true may be used with a criterion of united-states-citizen. Assertions can be negative, such as providing an assertion of false for a criterion of felon, an assertion of unknown to indicate that the voter does not know whether they meet or do not meet the specific criteria on the form or an assertion of other, in which the assertion is specified by the value of OtherAssertion.
+VoterClassification includes assertions of the voter in response to the voter request form criteria. For example, an assertion of true may be used with a criterion of united-states-citizen. Assertions can be negative, such as providing an assertion of false for a criterion of felon, an assertion of unknown to indicate that the voter does not know whether they meet or do not meet the specific criteria on the form or an assertion of other, in which the assertion is specified by the value of OtherAssertion.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -681,16 +682,16 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-When OtherType is defined, Type must be other:
-
-```OCL2.0
-not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
-```
-
 OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
+```
+
+When OtherType is defined, Type must be other:
+
+```OCL2.0
+not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
 ```
 
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
@@ -698,7 +699,7 @@ self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndef
 
 Used in request messages.
  
-Used to include information about a voter’s identification that may be required in a registration request. [VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) includes VoterId.
+Used to include information about a voter’s identification that may be required in a registration request. [Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes VoterId.
  
 AttestNoSuchId is used to attest that the voter has no ID of a specified type, thus it must be included with a value of true if attesting that the voter has no ID for that specified type. It can be included with a value of false to attest that the voter does have an ID of the specified type, in which case either StringValue or FileValue must be included; however, it is assumed to be false if not included. The StringValue and FileValue sub-elements are both optional, however at least one of them must be included.
 
@@ -709,20 +710,20 @@ Attribute | Multiplicity | Type | Attribute Description
 `FileValue`|0..1|`File`|Used to include a file name for the ID.
 `OtherType`|0..1|`string`|Used when VoterIdType value is other.
 `StringValue`|0..1|`string`|Used to include the ID as a string.
-`Type`|1|`VoterIdType`|The type of voter ID
+`Type`|1|`VoterIdType`|The type of voter ID.
 
 #### Business Rules
-
-FileValue or StringValue must be defined (but not both):
-
-```OCL2.0
-not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
-```
 
 OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
+```
+
+FileValue or StringValue must be defined (but not both):
+
+```OCL2.0
+not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
 ```
 
 ### <a name="_18_5_3_43701b0_1523390807847_148436_7270"></a>*The **VoterParticipation** Class*
@@ -743,8 +744,11 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `District`|0..*|`ReportingUnit`|One or more districts associated with the voter’s precinct.
 `ElectionAdministration`|0..1|`ElectionAdministration`|The election administration that conducts elections for the voter.
+`HavaIdRequired`||``|
 `Locality`|0..*|`ReportingUnit`|Other geographies such as the voter’s precinct.
 `PollingLocation`|0..1|`ReportingUnit`|The voter’s polling place.
+`Status`||``|
+`VoterParticipation`|0..*|`VoterParticipation`|
 ### <a name="_18_5_3_43701b0_1523305927438_977151_6481"></a>*The **VoterRecords** Class*
 ![Image of VoterRecords](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
 
@@ -763,7 +767,7 @@ For defining items pertaining to the status and type of the voter records reques
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `AdditionalInfo`|0..*|`AdditionalInfo`|For including other information not specified by this model.
-`BallotRequest`|0..1|`BallotRequest`|
+`BallotRequest`|0..1|`BallotRequest`|Specifies information relating to a request for a ballot.
 `Form`|0..1|`RequestForm`|If the request is for a voter registration, the registration form used by the voter.
 `GeneratedDate`|1|`date`|The date that the voter records request was generated.
 `Issuer`|0..1|`string`|The name of the issuer of the voter records request transaction, e.g., State of West Virginia Voter Registration Portal.
