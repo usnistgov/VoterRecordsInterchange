@@ -279,7 +279,7 @@ Name | Value
 ### <a name="_18_0_2_6340208_1446587509996_176108_6861"></a>*The **AdditionalInfo** Class*
 ![Image of AdditionalInfo](VRI_UML_Documentation_files/_18_0_2_6340208_1446587510003_656308_6862.png)
 
-Class for specifying information not addressed in this model by other elements and attributes, e.g. state-specific information that does not “fit” in any other element. The information will thus be highly specific to the generating application, and consuming applications must “know” the meaning of the information to make use of it. For this reason, use of this class is discouraged as much as is possible.
+Class for specifying information not addressed in this model by other attributes, e.g. state-specific information that does not “fit” in any other attribute. The information will thus be highly specific to the generating application, and consuming applications must “know” the meaning of the information to make use of it. For this reason, use of this class is discouraged as much as is possible.
 
  
 
@@ -311,19 +311,7 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_5_3_43701b0_1523391256329_329490_7455"></a>*The **BallotStyle** Class*
 ![Image of BallotStyle](VRI_UML_Documentation_files/_18_5_3_43701b0_1523391256343_926826_7476.png)
 
-For defining a ballot style composed of ordered content (i.e. Headers or Contests) and their ballot selections, and associating the ballot style with a political party, a reference to an image of the ballot, and a reference to the a precinct or other geopolitical unit that the ballot is unique to. [Election](#_17_0_2_4_f71035d_1426101822599_430942_2209) includes BallotStyle.
-
- 
-
-BallotStyle references [OrderedContent](#_18_5_3_43701b0_1520434015209_434672_4990) to include content that appears on that ballot style. To preserve any rotation associated with the ballot, it is expected that the generating application will list the occurrences of [OrderedContest](#_17_0_3_43401a7_1394476416139_808596_3142) in the order as on the ballot for the associated geopolitical unit.
-
- 
-
-BallotStyle references one or more [GpUnit](#_17_0_2_4_78e0236_1389366233346_42391_2380) instances defined for the associated precincts or split precincts. If the ballot style is associated with multiple precincts (or other geographies), multiple references to the precinct [GpUnit](#_17_0_2_4_78e0236_1389366233346_42391_2380) instances can be included.
-
- 
-
-When including [ExternalIdentifier](#_17_0_2_4_f71035d_1430405712653_451634_2410), if the type is not listed in enumeration [IdentifierType](#_17_0_2_4_f71035d_1425061188508_163854_2613), use other and include the type (that is not listed in the enumeration) in [OtherType](#_17_0_2_4_f71035d_1430405732252_109247_2429).
+For referencing a ballot style defined elsewhere, such as in an Election Management System (EMS).
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -341,7 +329,7 @@ Used in request and response messages.
 
  
 
-[VoterRegistration](#_18_0_2_6340208_1446583854986_159465_5958) optionally includes this class to specify the method for contacting a voter regarding the voter’s registration request. If the voter can be contacted in multiple ways, the application creating the data should order the occurrences of [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444) by priority.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) optionally includes this class to specify the method for contacting a voter regarding the voter’s request. If the voter can be contacted in multiple ways, the application creating the data should order the occurrences of [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444) by priority.
 
  
 
@@ -368,7 +356,7 @@ self.Type = ContactMethodType::other implies not self.OtherType.oclIsUndefined()
 ### <a name="_18_5_2_43701b0_1510603645561_775691_5960"></a>*The **Election** Class*
 ![Image of Election](VRI_UML_Documentation_files/_18_5_2_43701b0_1510603645585_3700_5994.png)
 
-Describes an election event. Only the date of the election is required. Other attributes may be used to describe the election for which a ballot is requested.
+Used in request and response messages. Describes an election event. Only the date of the election is required. Other attributes may be used to describe the election for which a ballot is requested or a voter participated.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -402,7 +390,11 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_5_3_43701b0_1520358467277_635751_6047"></a>*The **ElectionBasedBallotRequest** Class*
 ![Image of ElectionBasedBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358467299_274020_6048.png)
 
-A kind of ballot request in which a ballot for a single election event is requested.
+Used in request messages.
+
+ 
+
+Implementation of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) in which a ballot for a single election event is requested.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -424,7 +416,7 @@ Used in request and response messages.
 
  
 
-[Election](#_18_5_2_43701b0_1510603645561_775691_5960), [Party](#_18_0_2_6340208_1446583854985_482559_5956) and [ReportingUnit](#_18_0_2_6340208_1458229422042_966646_4539) optionally include this class for associating a jurisdiction’s codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns, precincts, etc. Multiple occurrences of [ExternalIdentifier](#_18_0_2_6340208_1446584770723_729230_6705) can be used to associate multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-specific codes as well as OCD-IDs (Open Civic Data Identifiers).
+[BallotStyle](#_18_5_3_43701b0_1523391256329_329490_7455), [Election](#_18_5_2_43701b0_1510603645561_775691_5960), [Party](#_18_0_2_6340208_1446583854985_482559_5956) and [ReportingUnit](#_18_0_2_6340208_1458229422042_966646_4539) optionally include this class for associating a jurisdiction’s codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns, precincts, etc. Multiple occurrences of [ExternalIdentifier](#_18_0_2_6340208_1446584770723_729230_6705) can be used to associate multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-specific codes as well as OCD-IDs (Open Civic Data Identifiers).
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -455,7 +447,7 @@ File extends the xsd:base64Binary type to add the attributes for filename and (M
 
  
 
-The [Image](#_18_0_2_6340208_1452879607465_248768_5229) element uses this element as an supertype, thus [Image](#_18_0_2_6340208_1452879607465_248768_5229) can be used when the type of file is for an image, e.g., image/png.
+The [Image](#_18_0_2_6340208_1452879607465_248768_5229) element uses this class as an supertype, thus [Image](#_18_0_2_6340208_1452879607465_248768_5229) can be used when the type of file is for an image, e.g., image/png.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -484,8 +476,8 @@ Used in response messages.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`Latitude`|1|`float`|Latitude of the contact location.
-`Longitude`|1|`float`|Longitude of the contact location.
+`Latitude`|1|`float`|Latitude of the location.
+`Longitude`|1|`float`|Longitude of the location.
 `Source`|0..1|`string`|System used to perform the lookup from location name to lat/lng, e.g., the name of a geocoding service.
 ### <a name="_18_0_2_6340208_1460480132036_876890_4538"></a>*The **Location** Class*
 ![Image of Location](VRI_UML_Documentation_files/_18_0_2_6340208_1460480132037_37951_4539.png)
@@ -508,7 +500,7 @@ Used in request messages.
 
  
 
-[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using [PreviousName](#_18_0_2_6340208_1446583855001_628958_6011) instead of Name. [ReguestHelper](#_18_0_2_6340208_1470256600538_323550_4366) also includes this class for specifying the name of a registration helper.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using [PreviousName](#_18_5_3_43701b0_1520545273362_721771_5308) instead of Name. [RequestHelper](#_18_0_2_6340208_1470256600538_323550_4366) also includes this class for specifying the name of a registration helper.
 
  
 
@@ -543,7 +535,11 @@ Used in request messages.
 
  
 
-[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this element to specify a voter’s political party.
+[BallotStyle](#_18_5_3_43701b0_1523391256329_329490_7455) optionally includes this attribute to specify the associated political party, such as for closed primaries.
+
+ 
+
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) optionally includes this attribute to specify a voter’s political party.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -553,7 +549,11 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_5_3_43701b0_1520358982522_606259_6124"></a>*The **PermanentBallotRequest** Class*
 ![Image of PermanentBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358982544_874394_6125.png)
 
-A kind of ballot request which serves to request ballots for election events that the voter is qualified on a long term basis. Although "permanent", the request may be subject to renewal or cancellation procedures.
+Used in request messages.
+
+ 
+
+Implementation of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) which serves to request ballots for election events that the voter is qualified on a long term basis. Although "permanent", the request may be subject to renewal or cancellation procedures.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -568,7 +568,7 @@ Used in request and response messages.
 
  
 
-PhoneContactMethod is subtype [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444). Thus, the elements that include [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444) could use PhoneContactMethod as applicable.
+PhoneContactMethod is subtype of [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444). Thus, the elements that include [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444) could use PhoneContactMethod as applicable.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -580,7 +580,7 @@ Used in response messages.
 
  
 
-[VoterRecordsResponse](#_18_0_2_6340208_1455906719413_171772_4514) includes this class when a registration request is successful so as to provide a list of geopolitical geography associated with the voter’s registration, e.g., the voter’s precinct, polling place, districts, etc. The Type attribute uses the [ReportingUnitType](#_18_0_2_6340208_1458229388461_823405_4464) enumeration to specify the type of geopolitical geography being defined. If the reporting unit type is not listed in enumeration [ReportingUnitType](#_18_0_2_6340208_1458229388461_823405_4464), use other and include the reporting unit type (that is not listed in the enumeration) in OtherType.
+[RequestSuccess](#_18_0_2_6340208_1460483674993_168854_4684) and [VoterRecord](#_18_5_3_43701b0_1521144693004_190730_6034) include this class so as to provide a list of geopolitical geography associated with the voter’s registration, e.g., the voter’s precinct, polling place, districts, etc. The Type attribute uses the [ReportingUnitType](#_18_0_2_6340208_1458229388461_823405_4464) enumeration to specify the type of geopolitical geography being defined. If the reporting unit type is not listed in enumeration [ReportingUnitType](#_18_0_2_6340208_1458229388461_823405_4464), use other and include the reporting unit type (that is not listed in the enumeration) in OtherType.
 
  
 
@@ -597,11 +597,7 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_0_2_6340208_1456261767184_144968_4436"></a>*The **RequestAcknowledgement** Class*
 ![Image of RequestAcknowledgement](VRI_UML_Documentation_files/_18_0_2_6340208_1456261767195_161515_4437.png)
 
-[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) optionally includes this element to specify information about a request helper, i.e., a request assistant or witness involved in a voter’s request.
-
- 
-
-RequestAssistant includes the [Name](#_18_0_2_6340208_1446583854986_538708_5957) element to specify the registration helper’s name and optionally includes the [Signature](#_18_0_2_6340208_1452788035217_489009_4409) element if a registration helper’s signature is required.
+Used in response messages. For indicating that the request was received but action on the request is pending.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -612,7 +608,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
  
 
-RequestAssistant includes the [Name](#_18_0_2_6340208_1446583854986_538708_5957) element to specify the registration helper’s name and optionally includes the [Signature](#_18_0_2_6340208_1452788035217_489009_4409) element if a registration helper’s signature is required.
+RequestHelper includes the [Name](#_18_0_2_6340208_1446583854986_538708_5957) element to specify the registration helper’s name and optionally includes the [Signature](#_18_0_2_6340208_1452788035217_489009_4409) element if a registration helper’s signature is required.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -681,7 +677,11 @@ Used in request messages.
 
  
 
-[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class for specifying information about a voter’s signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, [Voter](#_18_5_3_43701b0_1520354792154_717315_5628) uses PreviousSignature instead of Signature.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) optionally includes this class for specifying information about a voter’s signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, [Voter](#_18_5_3_43701b0_1520354792154_717315_5628) uses PreviousSignature instead of Signature.
+
+ 
+
+[RequestHelper](#_18_0_2_6340208_1470256600538_323550_4366) optionally includes this class for specifying information about the helper's signature.
 
  
 
@@ -707,12 +707,12 @@ self.Type = SignatureType::other implies not self.OtherType.oclIsUndefined()
 ### <a name="_18_5_3_43701b0_1520358515166_885840_6088"></a>*The **TemporalBallotRequest** Class*
 ![Image of TemporalBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358515169_841616_6089.png)
 
-A kind of ballot request in which election opportunities that the voter is qualified during a given time frame will be requested.
+Implementation of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) in which election opportunities that the voter is qualified during a given time frame will be requested.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `EndDate`|1|`date`|The date at which the request is no longer effective.
-`StartDate`|1|`date`|The date the request comes into effect.
+`StartDate`|1|`date`|The date at which the request comes into effect.
 
 #### Business Rules
 
@@ -740,14 +740,14 @@ Attribute | Multiplicity | Type | Attribute Description
 `PreviousResidenceAddress`|0..1|`Address`|Where the voter was previously registered, mapped to the FGDC specification Address classes.
 `PreviousSignature`|0..1|`Signature`|Information about a previous voter signature on the registration form.
 `ResidenceAddress`|1|`Address`|Where the voter is registered or requests to be registered, mapped to the FGDC specification Address classes.
-`ResidenceAddressIsMailingAddress`|0..1|`boolean`|If set to true,  need not be included.
+`ResidenceAddressIsMailingAddress`|0..1|`boolean`|If set to true, MailingAddress need not be included.
 `Signature`|0..1|`Signature`|Information about the voter signature on the registration form.
 `VoterClassification`|0..*|`VoterClassification`|How the voter is classified per assertions the voter has made on a registration form.
 `VoterId`|0..*|`VoterId`|Information to provide voter identity.
 ### <a name="_18_0_2_6340208_1452701375494_353834_4295"></a>*The **VoterClassification** Class*
 ![Image of VoterClassification](VRI_UML_Documentation_files/_18_0_2_6340208_1452701375514_47142_4296.png)
 
-[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class to describe a voter’s classification per criteria on the voter’s request form, e.g., united-states-citizen or eighteen-on-election-day.
+[Voter](#_18_5_3_43701b0_1520354792154_717315_5628) optionally includes this class to describe a voter’s classification per criteria on the voter’s request form, e.g., united-states-citizen or eighteen-on-election-day.
 
  
 
@@ -822,7 +822,7 @@ Attribute | Multiplicity | Type | Attribute Description
 ### <a name="_18_5_3_43701b0_1521144693004_190730_6034"></a>*The **VoterRecord** Class*
 ![Image of VoterRecord](VRI_UML_Documentation_files/_18_5_3_43701b0_1521144693023_685785_6035.png)
 
-A subtype of Voter representing a voter record stored in a Voter Registration Database (VRDB). VoterRecord optionally contains additional information useful to the voter, including a description of the voter’s polling place, districts associated with the polling place, or other geopolitical geographies such as the voter’s precinct.
+A subtype of Voter representing a voter record stored in a Voter Registration Database (VRDB). VoterRecord optionally contains additional information useful to the voter, including a description of the voter’s polling place, districts associated with the voter's precinct, or other geopolitical geographies such as the voter’s precinct.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -848,7 +848,7 @@ The root element for request messages.
 
  
 
-For defining items pertaining to the status and type of the voter records request and when it was generated. VoterRecordsRequest includes the [VoterRegistration](#_18_0_2_6340208_1465929705246_568919_4464) association to specify various information about the voter in question. It includes the [AbsenteeBallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) association to handle a request for an absentee ballot; this request may be part of an FPCA form registration or may be submitted independently.
+For defining items pertaining to the status and type of the voter records request and when it was generated. VoterRecordsRequest includes the [Subject](#_18_0_2_6340208_1465929705246_568919_4464) association to specify various information about the voter in question. It includes the [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) association to handle a request for an ballot; this request may be part of an FPCA form registration or may be submitted independently.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -857,8 +857,8 @@ Attribute | Multiplicity | Type | Attribute Description
 `Form`|0..1|`RequestForm`|If the request is for a voter registration, the registration form used by the voter.
 `GeneratedDate`|1|`date`|The date that the voter records request was generated.
 `Issuer`|0..1|`string`|The name of the issuer of the voter records request transaction, e.g., State of West Virginia Voter Registration Portal.
-`OtherForm`|0..1|`string`|Used when  value is other.
-`OtherRequestMethod`|0..1|`string`|Used when  value is other.
+`OtherForm`|0..1|`string`|Used when RegistrationForm value is other.
+`OtherRequestMethod`|0..1|`string`|Used when RegistrationMethod value is other.
 `OtherType`|0..1|`string`|Used when [RequestType](#_18_0_2_6340208_1446586298843_421997_6821) value is other.
 `RequestHelper`|0..*|`RequestHelper`|Included if the registration involves a registration assistant organization.
 `RequestMethod`|1|`RequestMethod`|The method used by the voter to register.
