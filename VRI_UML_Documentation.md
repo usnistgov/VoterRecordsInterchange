@@ -723,7 +723,7 @@ StartDate <= EndDate
 ```
 
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520953921629_235073_5691.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
 
 Voter contains attributes specific to identifying a voter.
 
