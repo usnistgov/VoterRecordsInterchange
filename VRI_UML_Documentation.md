@@ -1,6 +1,18 @@
 # Table of Contents
 - Table of Contents
   - Enumerations
+  - Classes
+# Enumerations
+# Classes
+# Table of Contents
+- Table of Contents
+  - Enumerations
+  - Classes
+# Enumerations
+# Classes
+# Table of Contents
+- Table of Contents
+  - Enumerations
     - *The **[AssertionValue](#_18_0_2_6340208_1455829091671_996796_4447)** Enumeration*
     - *The **[BallotReceiptMethod](#_18_0_2_6340208_1470255961792_690679_4334)** Enumeration*
     - *The **[ContactMethodType](#_18_0_2_6340208_1464893409742_774328_4470)** Enumeration*
@@ -257,7 +269,7 @@ Name | Value
 `unspecified-document`|Used for an unspecified document, not known whether the document contains name, address, or photo ID.
 `unspecified-document-with-name-and-address`|Used for a document that contains the voter’s name and address, such as a utility bill.
 `unspecified-document-with-photo-identification`|Used for a document that contains a photograph of the voter.
-`unknown`|
+`unknown`|Used for documentation that was not captured.
 `other`|Used when the type of ID is not included in this enumeration.
   ### <a name="_18_0_2_6340208_1446583913045_906582_6615"></a>*The **VoterRequestType** Enumeration*
 ![Image of VoterRequestType](VRI_UML_Documentation_files/_18_0_2_6340208_1446583913054_479906_6616.png)
@@ -273,8 +285,9 @@ Name | Value
     
 Name | Value
 ---- | -----
-`active`|
-`confirmation`|
+`active`|For a voter in active status.
+`confirmation`|For a voter in confirmation status
+`other`|Used when the type of voter status is not included in this enumeration.
   # Classes
 ### <a name="_18_0_2_6340208_1446587509996_176108_6861"></a>*The **AdditionalInfo** Class*
 ![Image of AdditionalInfo](VRI_UML_Documentation_files/_18_0_2_6340208_1446587510003_656308_6862.png)
@@ -288,8 +301,8 @@ The [StringValue](#_18_0_2_6340208_1446587603679_902003_6890) and [FileValue](#_
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `FileValue`|0..1|`File`|Used if the value is in a file; contains the filename and MIME type
-`Name`|1|`string`|Name of the value.
-`StringValue`|0..1|`string`|Used if the value is a string; contains the string.
+`Name`|1|`String`|Name of the value.
+`StringValue`|0..1|`String`|Used if the value is a string; contains the string.
 
 #### Business Rules
 
@@ -341,9 +354,9 @@ The [Capability](#_18_0_2_6340208_1465493985158_54379_4458) attribute is provide
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`OtherType`|0..1|`string`|Used when ContactMethodType value is other.
+`OtherType`|0..1|`String`|Used when ContactMethodType value is other.
 `Type`|1|`ContactMethodType`|The contact method type, e.g. email or phone.
-`Value`|1|`string`|The value of the ContactMethod. This will be the text value of the phone number, email address, or other mechanism. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
+`Value`|1|`String`|The value of the ContactMethod. This will be the text value of the phone number, email address, or other mechanism. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
 
 #### Business Rules
 
@@ -362,7 +375,7 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `EndDate`|0..1|`date`|For an election that spans multiple days, the last day of the election.
 `ExternalIdentifier`|0..*|`ExternalIdentifier`|For associating an ID with the election.
-`Name`|0..1|`string`|For including a name for the election; the name could be the same name as appears on the ballot.
+`Name`|0..1|`String`|For including a name for the election; the name could be the same name as appears on the ballot.
 `StartDate`|1|`date`|The first day of the election.
 
 #### Business Rules
@@ -385,7 +398,7 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `ContactMethod`|0..*|`ContactMethod`|For including various contact information.
 `Location`|0..1|`Location`|Location of the election authority.
-`Name`|0..1|`string`|Name of the election authority.
+`Name`|0..1|`String`|Name of the election authority.
 `Uri`|0..*|`anyURI`|A URL for the election authority.
 ### <a name="_18_5_3_43701b0_1520358467277_635751_6047"></a>*The **ElectionBasedBallotRequest** Class*
 ![Image of ElectionBasedBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358467299_274020_6048.png)
@@ -407,8 +420,8 @@ Used in response messages. RequestRejection includes this class to describe the 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Name`|1|`RequestError`|Used to indicate the type of error.
-`OtherError`|0..1|`string`|Used when RegistrationError value is other.
-`Ref`|0..1|`string`|Reference (e.g. XPath) to the entity that the error applies.
+`OtherError`|0..1|`String`|Used when RegistrationError value is other.
+`Ref`|0..1|`String`|Reference (e.g. XPath) to the entity that the error applies.
 ### <a name="_18_0_2_6340208_1446584770723_729230_6705"></a>*The **ExternalIdentifier** Class*
 ![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1446584770729_88052_6718.png)
 
@@ -420,9 +433,9 @@ Used in request and response messages.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`OtherType`|0..1|`string`|Used when Type value is other.
+`OtherType`|0..1|`String`|Used when Type value is other.
 `Type`|1|`IdentifierType`|An identifier type, e.g., FIPS.
-`Value`|1|`string`|The identifier used by the jurisdiction.
+`Value`|1|`String`|The identifier used by the jurisdiction.
 
 #### Business Rules
 
@@ -478,7 +491,7 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Latitude`|1|`float`|Latitude of the location.
 `Longitude`|1|`float`|Longitude of the location.
-`Source`|0..1|`string`|System used to perform the lookup from location name to lat/lng, e.g., the name of a geocoding service.
+`Source`|0..1|`String`|System used to perform the lookup from location name to lat/lng, e.g., the name of a geocoding service.
 ### <a name="_18_0_2_6340208_1460480132036_876890_4538"></a>*The **Location** Class*
 ![Image of Location](VRI_UML_Documentation_files/_18_0_2_6340208_1460480132037_37951_4539.png)
 
@@ -491,7 +504,7 @@ Used in response messages.
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Address`|0..1|`Address`|Address of the voting location.
-`Directions`|0..1|`string`|Directions to the voting location.
+`Directions`|0..1|`String`|Directions to the voting location.
 `LatLng`|0..1|`LatLng`|Latitude/longitude of the voting location.
 ### <a name="_18_0_2_6340208_1446583854986_538708_5957"></a>*The **Name** Class*
 ![Image of Name](VRI_UML_Documentation_files/_18_0_2_6340208_1446583855033_467904_6133.png)
@@ -512,12 +525,12 @@ All elements are optional, however at least [FullName](#_18_0_2_6340208_14465914
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`FirstName`|0..1|`string`|Person’s first (given) name.
-`FullName`|0..1|`string`|Person’s full name.
-`LastName`|0..1|`string`|Person’s last (family) name.
-`MiddleName`|0..*|`string`|Person’s middle name.
-`Prefix`|0..1|`string`|A prefix associated with the person, e.g., Mr.
-`Suffix`|0..1|`string`|A suffix associated with the person, e.g., Jr.
+`FirstName`|0..1|`String`|Person’s first (given) name.
+`FullName`|0..1|`String`|Person’s full name.
+`LastName`|0..1|`String`|Person’s last (family) name.
+`MiddleName`|0..*|`String`|Person’s middle name.
+`Prefix`|0..1|`String`|A prefix associated with the person, e.g., Mr.
+`Suffix`|0..1|`String`|A suffix associated with the person, e.g., Jr.
 
 #### Business Rules
 
@@ -543,9 +556,9 @@ Used in request messages.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`Abbreviation`|0..1|`string`|Short name for the party, e.g., “DEM”.
+`Abbreviation`|0..1|`String`|Short name for the party, e.g., “DEM”.
 `ExternalIdentifier`|0..*|`ExternalIdentifier`|For associating an ID with the party.
-`Name`|1|`string`|Official full name of the party, e.g., “Republican”.
+`Name`|1|`String`|Official full name of the party, e.g., “Republican”.
 ### <a name="_18_5_3_43701b0_1520358982522_606259_6124"></a>*The **PermanentBallotRequest** Class*
 ![Image of PermanentBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358982544_874394_6125.png)
 
@@ -591,8 +604,8 @@ Attribute | Multiplicity | Type | Attribute Description
 `ExternalIdentifier`|0..*|`ExternalIdentifier`|For associating an ID with the ReportingUnit.
 `IsDistricted`|0..1|`boolean`|Boolean to indicate that the reporting unit is a district.
 `Location`|0..1|`Location`|Location of the district office.
-`Name`|0..1|`string`|Name of the reporting unit.Name of the reporting unit.
-`OtherType`|0..1|`string`|Used when ReportingUnitType value is other.
+`Name`|0..1|`String`|Name of the reporting unit.Name of the reporting unit.
+`OtherType`|0..1|`String`|Used when ReportingUnitType value is other.
 `Type`|1|`ReportingUnitType`|Enumerated type of reporting unit, e.g., district, precinct.
 ### <a name="_18_0_2_6340208_1456261767184_144968_4436"></a>*The **RequestAcknowledgement** Class*
 ![Image of RequestAcknowledgement](VRI_UML_Documentation_files/_18_0_2_6340208_1456261767195_161515_4437.png)
@@ -633,9 +646,9 @@ OriginTransactionId can be used to include an optional identifier of the origina
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Address`|0..1|`Address`|An address associated with the proxy.
-`Name`|0..1|`string`|A name associated with the proxy.
-`OriginTransactionId`|0..1|`string`|An identifier associated with the transaction between the proxy and, e.g., the registration portal.
-`OtherType`|0..1|`string`|Used when RegistrationProxyType value is other.
+`Name`|0..1|`String`|A name associated with the proxy.
+`OriginTransactionId`|0..1|`String`|An identifier associated with the transaction between the proxy and, e.g., the registration portal.
+`OtherType`|0..1|`String`|Used when RegistrationProxyType value is other.
 `Phone`|0..1|`PhoneContactMethod`|A phone number associated with the proxy.
 `TimeStamp`|0..1|`date`|The date of the request from the proxy.
 `Type`|1|`RequestProxyType`|The type of the requesting proxy, e.g., motor-vehicle-office, voter-via-email.
@@ -691,8 +704,8 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Date`|0..1|`date`|The date of the signature, i.e., when created.
 `FileValue`|0..1|`Image`|The signature image in base 64 binary
-`OtherSource`|0..1|`string`|Used when Source value is other.
-`OtherType`|0..1|`string`|Used when SignatureType value is other.
+`OtherSource`|0..1|`String`|Used when Source value is other.
+`OtherType`|0..1|`String`|Used when SignatureType value is other.
 `Source`|0..1|`SignatureSource`|A source for the signature, e.g., dmv.
 `Type`|0..1|`SignatureType`|A signature type, e.g., dynamic.
 
@@ -723,7 +736,7 @@ StartDate <= EndDate
 ```
 
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520953921629_235073_5691.png)
 
 Voter contains attributes specific to identifying a voter.
 
@@ -731,8 +744,8 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `ContactMethod`|0..*|`ContactMethod`|How to contact the voter, listed in order of preference.
 `DateOfBirth`|0..1|`date`|The voter’s data of birth in YYYY-MM-DD format.
-`Ethnicity`|0..1|`string`|The voter’s ethnicity.
-`Gender`|0..1|`string`|Older systems may not understand values other than 'Male' or 'Female' (the only choices available on FPCA).
+`Ethnicity`|0..1|`String`|The voter’s ethnicity.
+`Gender`|0..1|`String`|Older systems may not understand values other than 'Male' or 'Female' (the only choices available on FPCA).
 `MailingAddress`|0..1|`Address`|Where the voter receives postal mail, mapped to the FGDC specification Address classes.
 `Name`|1|`Name`|Voter’s name.
 `Party`|0..1|`Party`|Voter’s political party.
@@ -756,22 +769,22 @@ VoterClassification includes assertions of the voter in response to the voter re
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Assertion`|1|`AssertionValue`|A positive, negative, other or unknown assertion
-`OtherAssertion`|0..1|`string`|An locally defined assertion value.
-`OtherType`|0..1|`string`|Used when VoterClassificationType value is other.
+`OtherAssertion`|0..1|`String`|An locally defined assertion value.
+`OtherType`|0..1|`String`|Used when VoterClassificationType value is other.
 `Type`|1|`VoterClassificationType`|A classification type, e.g., felon.
 
 #### Business Rules
-
-When OtherType is defined, Type must be other:
-
-```OCL2.0
-not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
-```
 
 OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
+```
+
+When OtherType is defined, Type must be other:
+
+```OCL2.0
+not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
 ```
 
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
@@ -792,22 +805,22 @@ Attribute | Multiplicity | Type | Attribute Description
 `AttestNoSuchId`|0..1|`boolean`|Used to attest that the voter has no ID. Assumed to be false if not present.
 `DateOfIssuance`|0..1|`date`|Date the ID was issued.
 `FileValue`|0..1|`File`|Used to include a file name for the ID.
-`OtherType`|0..1|`string`|Used when VoterIdType value is other.
-`StringValue`|0..1|`string`|Used to include the ID as a string.
+`OtherType`|0..1|`String`|Used when VoterIdType value is other.
+`StringValue`|0..1|`String`|Used to include the ID as a string.
 `Type`|1|`VoterIdType`|The type of voter ID.
 
 #### Business Rules
-
-FileValue or StringValue must be defined (but not both):
-
-```OCL2.0
-not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
-```
 
 OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
+```
+
+FileValue or StringValue must be defined (but not both):
+
+```OCL2.0
+not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
 ```
 
 ### <a name="_18_5_3_43701b0_1523390807847_148436_7270"></a>*The **VoterParticipation** Class*
@@ -819,6 +832,7 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `BallotStyle`|0..1|`BallotStyle`|For associating the voter participation to a specific ballot style, such to a partisan ballot in a closed primary.
 `Election`|1|`Election`|For associating the voter participation to a specific election event.
+`PollingLocation`|0..1|`ReportingUnit`|The polling place used by the voter.
 ### <a name="_18_5_3_43701b0_1521144693004_190730_6034"></a>*The **VoterRecord** Class*
 ![Image of VoterRecord](VRI_UML_Documentation_files/_18_5_3_43701b0_1521144693023_685785_6035.png)
 
@@ -828,11 +842,12 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `District`|0..*|`ReportingUnit`|One or more districts associated with the voter’s precinct.
 `ElectionAdministration`|0..1|`ElectionAdministration`|The election administration that conducts elections for the voter.
-`HavaIdRequired`|0..1|`boolean`|
+`HavaIdRequired`|0..1|`boolean`|Indicates that the voter must present identification at the polls per HAVA.
 `Locality`|0..*|`ReportingUnit`|Other geographies such as the voter’s precinct.
+`OtherStatus`|0..1|`String`|Used when VoterStatus value is other.
 `PollingLocation`|0..1|`ReportingUnit`|The voter’s polling place.
-`Status`|0..1|`VoterStatus`|The status of the VoterRecord, possibly to indicate the ability to receive a regular ballot.
 `VoterParticipation`|0..*|`VoterParticipation`|For associating a VoterRecord to elections the voter has participated in.
+`VoterStatus`|0..1|`VoterStatus`|The status of the VoterRecord, possibly to indicate the ability to receive a regular ballot.
 ### <a name="_18_5_3_43701b0_1523305927438_977151_6481"></a>*The **VoterRecords** Class*
 ![Image of VoterRecords](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
 
@@ -858,16 +873,16 @@ Attribute | Multiplicity | Type | Attribute Description
 `GeneratedDate`|1|`date`|The date that the voter records request was generated.
 `Issuer`|0..1|`string`|The name of the issuer of the voter records request transaction, e.g., State of West Virginia Voter Registration Portal.
 `OtherForm`|0..1|`string`|Used when RegistrationForm value is other.
-`OtherRequestMethod`|0..1|`string`|Used when RegistrationMethod value is other.
-`OtherType`|0..1|`string`|Used when [RequestType](#_18_0_2_6340208_1446586298843_421997_6821) value is other.
+`OtherRequestMethod`|0..1|`String`|Used when RegistrationMethod value is other.
+`OtherType`|0..1|`String`|Used when [RequestType](#_18_0_2_6340208_1446586298843_421997_6821) value is other.
 `RequestHelper`|0..*|`RequestHelper`|Included if the registration involves a registration assistant organization.
 `RequestMethod`|1|`RequestMethod`|The method used by the voter to register.
 `RequestProxy`|0..1|`RequestProxy`|Included if the registration request is via a proxy, e.g., the DMV.
 `SelectedLanguage`|0..1|`language`|The language specified by the voter, if any.
 `Subject`|1|`Voter`|Specifies information about the voter who is the subject of the request.
-`TransactionId`|0..1|`string`|An identifier of the voter records request transaction.
+`TransactionId`|0..1|`String`|An identifier of the voter records request transaction.
 `Type`|1..*|`VoterRequestType`|The type of request, e.g., registration.
-`VendorApplicationId`|0..1|`string`|An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
+`VendorApplicationId`|0..1|`String`|An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
 
 #### Business Rules
 
@@ -884,4 +899,4 @@ The root element for response messages. For defining items pertaining to the sta
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`TransactionId`|0..1|`string`|Transaction ID associated with the voter records request.
+`TransactionId`|0..1|`String`|Transaction ID associated with the voter records request.
