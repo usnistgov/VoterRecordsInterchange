@@ -166,42 +166,6 @@
       },
       "type": "object"
     },
-    "VA.Ballot Request": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VA.Ballot Request"
-          ],
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "VA.Ballot Tracking Event": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VA.Ballot Tracking Event"
-          ],
-          "type": "string"
-        },
-        "Date": {
-        },
-        "EventDescription": {
-        },
-        "EventName": {
-        }
-      },
-      "type": "object"
-    },
     "VRI.AdditionalInfo": {
       "required": [
         "@type",
@@ -857,10 +821,6 @@
       "enum": [
         "identity-lookup-failed",
         "incomplete",
-        "incomplete-address",
-        "incomplete-birth-date",
-        "incomplete-name",
-        "incomplete-signature",
         "ineligible",
         "invalid-form",
         "other"

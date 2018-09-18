@@ -140,10 +140,6 @@ Name | Value
 ---- | -----
 `identity-lookup-failed`|A lookup on the voter’s identity failed.
 `incomplete`|The registration request is incomplete.
-`incomplete-address`|An address is incomplete.
-`incomplete-birth-date`|The registration request does not contain a birthdate.
-`incomplete-name`|The voter’s name is incomplete.
-`incomplete-signature`|The registration request does not contain a signature.
 `ineligible`|The voter is ineligible to be registered.
 `invalid-form`|The registration form specified is invalid.
 `other`|Used when the type of error is not included in this enumeration.
@@ -248,11 +244,11 @@ Name | Value
 Name | Value
 ---- | -----
 `drivers-license`|Used for a driver’s license.
-`local-voter-registration-id`|Used for a local voter registration ID.
+`local-voter-registration-id`|Used for a local voter registration record ID.
 `ssn`|Used for a complete Social Security number.
 `ssn4`|Used for the last four digits of a Social Security number.
 `state-id`|Used for a state ID that is not a state voter registration ID.
-`state-voter-registration-id`|Used for a state’s voter registration ID.
+`state-voter-registration-id`|Used for a state’s voter registration record ID.
 `unspecified-document`|Used for an unspecified document, not known whether the document contains name, address, or photo ID.
 `unspecified-document-with-name-and-address`|Used for a document that contains the voter’s name and address, such as a utility bill.
 `unspecified-document-with-photo-identification`|Used for a document that contains a photograph of the voter.
@@ -452,8 +448,8 @@ The [Image](#_18_0_2_6340208_1452879607465_248768_5229) element uses this class 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Data`|1|`base64Binary`|The file content encoded using base64.
-`fileName`|0..1|`string`|The filename.
-`mimeType`|0..1|`string`|The MIME type associated with the file.
+`fileName`|0..1|`String`|The filename.
+`mimeType`|0..1|`String`|The MIME type associated with the file.
 ### <a name="_18_0_2_6340208_1452879607465_248768_5229"></a>*The **Image** Class*
 ![Image of Image](VRI_UML_Documentation_files/_18_0_2_6340208_1452879607469_640085_5230.png)
 
@@ -589,7 +585,7 @@ The IsDistricted boolean is not strictly necessary, as it is possible to identif
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `ExternalIdentifier`|0..*|`ExternalIdentifier`|For associating an ID with the ReportingUnit.
-`IsDistricted`|0..1|`boolean`|Boolean to indicate that the reporting unit is a district.
+`IsDistricted`|0..1|`Boolean`|Boolean to indicate that the reporting unit is a district.
 `Location`|0..1|`Location`|Location of the district office.
 `Name`|0..1|`String`|Name of the reporting unit.Name of the reporting unit.
 `OtherType`|0..1|`String`|Used when ReportingUnitType value is other.
@@ -655,7 +651,7 @@ Used in responses. For indicating that the request failed. The Error attribute i
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`AdditionalDetails`|0..*|`string`|Used to provide additional details as applicable.
+`AdditionalDetails`|0..*|`String`|Used to provide additional details as applicable.
 `Error`|0..*|`Error`|For associating a RequestRejection with one or more Errors.
 ### <a name="_18_0_2_6340208_1460483674993_168854_4684"></a>*The **RequestSuccess** Class*
 ![Image of RequestSuccess](VRI_UML_Documentation_files/_18_0_2_6340208_1460483674995_528178_4685.png)
@@ -723,7 +719,7 @@ StartDate <= EndDate
 ```
 
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520953921629_235073_5691.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
 
 Voter contains attributes specific to identifying a voter.
 
@@ -740,7 +736,7 @@ Attribute | Multiplicity | Type | Attribute Description
 `PreviousResidenceAddress`|0..1|`Address`|Where the voter was previously registered, mapped to the FGDC specification Address classes.
 `PreviousSignature`|0..1|`Signature`|Information about a previous voter signature on the registration form.
 `ResidenceAddress`|1|`Address`|Where the voter is registered or requests to be registered, mapped to the FGDC specification Address classes.
-`ResidenceAddressIsMailingAddress`|0..1|`boolean`|If set to true, MailingAddress need not be included.
+`ResidenceAddressIsMailingAddress`|0..1|`Boolean`|If set to true, MailingAddress need not be included.
 `Signature`|0..1|`Signature`|Information about the voter signature on the registration form.
 `VoterClassification`|0..*|`VoterClassification`|How the voter is classified per assertions the voter has made on a registration form.
 `VoterId`|0..*|`VoterId`|Information to provide voter identity.
@@ -777,7 +773,7 @@ not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType:
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
 ![Image of VoterId](VRI_UML_Documentation_files/_18_0_2_6340208_1448398287463_421964_4483.png)
 
-Used in request messages.
+Used in request and response messages.
 
  
 
@@ -789,7 +785,7 @@ AttestNoSuchId is used to attest that the voter has no ID of a specified type, t
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
-`AttestNoSuchId`|0..1|`boolean`|Used to attest that the voter has no ID. Assumed to be false if not present.
+`AttestNoSuchId`|0..1|`Boolean`|Used to attest that the voter has no ID. Assumed to be false if not present.
 `DateOfIssuance`|0..1|`date`|Date the ID was issued.
 `FileValue`|0..1|`File`|Used to include a file name for the ID.
 `OtherType`|0..1|`String`|Used when VoterIdType value is other.
@@ -829,7 +825,7 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `District`|0..*|`ReportingUnit`|One or more districts associated with the voter’s precinct.
 `ElectionAdministration`|0..1|`ElectionAdministration`|The election administration that conducts elections for the voter.
-`HavaIdRequired`|0..1|`boolean`|Indicates that the voter must present identification at the polls per HAVA.
+`HavaIdRequired`|0..1|`Boolean`|Indicates that the voter must present identification at the polls per HAVA.
 `Locality`|0..*|`ReportingUnit`|Other geographies such as the voter’s precinct.
 `OtherStatus`|0..1|`String`|Used when VoterStatus value is other.
 `PollingLocation`|0..1|`ReportingUnit`|The voter’s polling place.
@@ -858,8 +854,8 @@ Attribute | Multiplicity | Type | Attribute Description
 `BallotRequest`|0..1|`BallotRequest`|Specifies information relating to a request for a ballot.
 `Form`|0..1|`RequestForm`|If the request is for a voter registration, the registration form used by the voter.
 `GeneratedDate`|1|`date`|The date that the voter records request was generated.
-`Issuer`|0..1|`string`|The name of the issuer of the voter records request transaction, e.g., State of West Virginia Voter Registration Portal.
-`OtherForm`|0..1|`string`|Used when RegistrationForm value is other.
+`Issuer`|0..1|`String`|The name of the issuer of the voter records request transaction, e.g., State of West Virginia Voter Registration Portal.
+`OtherForm`|0..1|`String`|Used when RegistrationForm value is other.
 `OtherRequestMethod`|0..1|`String`|Used when RegistrationMethod value is other.
 `OtherType`|0..1|`String`|Used when [RequestType](#_18_0_2_6340208_1446586298843_421997_6821) value is other.
 `RequestHelper`|0..*|`RequestHelper`|Included if the registration involves a registration assistant organization.
