@@ -1,3 +1,4 @@
 *.xml.bak
 *.mdxml.bak
 .DS_Store
+*.spp
