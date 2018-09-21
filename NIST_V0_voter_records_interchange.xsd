@@ -1290,14 +1290,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Name" type="PrimitiveTypes:String">
+      <xsd:element name="Name" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Name of the value.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="StringValue" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="StringValue" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used if the value is a string; contains the string.
@@ -1415,7 +1415,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when ContactMethodType value is other.
@@ -1429,7 +1429,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Value" type="PrimitiveTypes:String">
+      <xsd:element name="Value" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The value of the ContactMethod. This will be the text value of the phone number, email address, or other mechanism. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
@@ -1447,7 +1447,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="EndDate" type="datatypes:date" minOccurs="0">
+      <xsd:element name="EndDate" type="xsd:date" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             For an election that spans multiple days, the last day of the election.
@@ -1461,14 +1461,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Name" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Name" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             For including a name for the election; the name could be the same name as appears on the ballot.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="StartDate" type="datatypes:date">
+      <xsd:element name="StartDate" type="xsd:date">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The first day of the election.
@@ -1507,7 +1507,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Name" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Name" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Name of the election authority.
@@ -1572,14 +1572,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherError" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherError" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when RegistrationError value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Ref" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Ref" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Reference (e.g. XPath) to the entity that the error applies.
@@ -1608,7 +1608,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when Type value is other.
@@ -1622,7 +1622,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Value" type="PrimitiveTypes:String">
+      <xsd:element name="Value" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The identifier used by the jurisdiction.
@@ -1672,14 +1672,14 @@
     </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="xsd:base64Binary">
-        <xsd:attribute name="fileName" type="PrimitiveTypes:String">
+        <xsd:attribute name="fileName" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The filename.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="mimeType" type="PrimitiveTypes:String">
+        <xsd:attribute name="mimeType" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The MIME type associated with the file.
@@ -1747,7 +1747,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Source" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Source" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             System used to perform the lookup from location name to lat/lng, e.g., the name of a geocoding service.
@@ -1783,7 +1783,7 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="Directions" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Directions" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Directions to the voting location.
@@ -1839,42 +1839,42 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="FirstName" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="FirstName" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Person’s first (given) name.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="FullName" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="FullName" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Person’s full name.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="LastName" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="LastName" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Person’s last (family) name.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="MiddleName" type="PrimitiveTypes:String" minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="MiddleName" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Person’s middle name.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Prefix" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Prefix" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A prefix associated with the person, e.g., Mr.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Suffix" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Suffix" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A suffix associated with the person, e.g., Jr.
@@ -1913,7 +1913,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="Abbreviation" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Abbreviation" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Short name for the party, e.g., “DEM”.
@@ -1927,7 +1927,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Name" type="PrimitiveTypes:String">
+      <xsd:element name="Name" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Official full name of the party, e.g., “Republican”.
@@ -2040,7 +2040,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="IsDistricted" type="PrimitiveTypes:Boolean" minOccurs="0">
+      <xsd:element name="IsDistricted" type="xsd:boolean" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Boolean to indicate that the reporting unit is a district.
@@ -2054,14 +2054,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Name" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Name" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Name of the reporting unit.Name of the reporting unit.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when ReportingUnitType value is other.
@@ -2184,21 +2184,21 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="Name" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Name" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A name associated with the proxy.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OriginTransactionId" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OriginTransactionId" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An identifier associated with the transaction between the proxy and, e.g., the registration portal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when RegistrationProxyType value is other.
@@ -2212,7 +2212,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="TimeStamp" type="datatypes:date" minOccurs="0">
+      <xsd:element name="TimeStamp" type="xsd:date" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The date of the request from the proxy.
@@ -2239,7 +2239,7 @@
     <xsd:complexContent>
       <xsd:extension base="VoterRecordsResponse">
         <xsd:sequence>
-          <xsd:element name="AdditionalDetails" type="PrimitiveTypes:String" minOccurs="0" maxOccurs="unbounded">
+          <xsd:element name="AdditionalDetails" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Used to provide additional details as applicable.
@@ -2284,7 +2284,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="EffectiveDate" type="datatypes:date" minOccurs="0">
+          <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The effective date of the action.
@@ -2356,7 +2356,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="Date" type="datatypes:date" minOccurs="0">
+      <xsd:element name="Date" type="xsd:date" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The date of the signature, i.e., when created.
@@ -2370,14 +2370,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherSource" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherSource" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when Source value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when SignatureType value is other.
@@ -2409,14 +2409,14 @@
     <xsd:complexContent>
       <xsd:extension base="BallotRequest">
         <xsd:sequence>
-          <xsd:element name="EndDate" type="datatypes:date">
+          <xsd:element name="EndDate" type="xsd:date">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The date at which the request is no longer effective.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="StartDate" type="datatypes:date">
+          <xsd:element name="StartDate" type="xsd:date">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The date at which the request comes into effect.
@@ -2441,7 +2441,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="DateOfBirth" type="datatypes:date" minOccurs="0">
+      <xsd:element name="DateOfBirth" type="xsd:date" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The voter’s data of birth in YYYY-MM-DD
@@ -2449,14 +2449,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Ethnicity" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Ethnicity" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The voter’s ethnicity.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Gender" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Gender" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Older systems may not understand values other than 'Male' or 'Female' (the only choices available on FPCA).
@@ -2512,7 +2512,7 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="ResidenceAddressIsMailingAddress" type="PrimitiveTypes:Boolean" minOccurs="0">
+      <xsd:element name="ResidenceAddressIsMailingAddress" type="xsd:boolean" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             If set to true, MailingAddress need not be included.
@@ -2569,14 +2569,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherAssertion" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherAssertion" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An locally defined assertion value.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when VoterClassificationType value is other.
@@ -2622,14 +2622,14 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="AttestNoSuchId" type="PrimitiveTypes:Boolean" minOccurs="0">
+      <xsd:element name="AttestNoSuchId" type="xsd:boolean" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used to attest that the voter has no ID. Assumed to be false if not present.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="DateOfIssuance" type="datatypes:date" minOccurs="0">
+      <xsd:element name="DateOfIssuance" type="xsd:date" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Date the ID was issued.
@@ -2643,14 +2643,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when VoterIdType value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="StringValue" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="StringValue" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used to include the ID as a string.
@@ -2721,7 +2721,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="HavaIdRequired" type="PrimitiveTypes:Boolean" minOccurs="0">
+          <xsd:element name="HavaIdRequired" type="xsd:boolean" minOccurs="0">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Indicates that the voter must present identification at the polls per HAVA.
@@ -2735,7 +2735,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="OtherStatus" type="PrimitiveTypes:String" minOccurs="0">
+          <xsd:element name="OtherStatus" type="xsd:string" minOccurs="0">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Used when VoterStatus value is other.
@@ -2832,35 +2832,35 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="GeneratedDate" type="datatypes:date">
+      <xsd:element name="GeneratedDate" type="xsd:date">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The date that the voter records request was generated.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="Issuer" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="Issuer" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The name of the issuer of the voter records request transaction, e.g., State of West Virginia Voter Registration Portal.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherForm" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherForm" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when RegistrationForm value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherRequestMethod" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherRequestMethod" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Used when RegistrationMethod value is other.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherType" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             &lt;p&gt;
@@ -2905,7 +2905,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="TransactionId" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="TransactionId" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An identifier of the voter records request transaction.
@@ -2919,7 +2919,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="VendorApplicationId" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="VendorApplicationId" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
@@ -2942,7 +2942,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:element name="TransactionId" type="PrimitiveTypes:String" minOccurs="0">
+      <xsd:element name="TransactionId" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Transaction ID associated with the voter records request.
