@@ -1,3 +1,16 @@
+# Table of Contents
+- Table of Contents
+  - Enumerations
+  - Classes
+# Enumerations
+# Classes
+# Table of Contents
+- Table of Contents
+  - Enumerations
+  - Classes
+# Enumerations
+# Classes
+# Table of Contents
 - Table of Contents
   - Enumerations
     - *The **[AssertionValue](#_18_0_2_6340208_1455829091671_996796_4447)** Enumeration*
@@ -73,7 +86,7 @@ Name | Value
 `mail`|For postal mail.
 `online`|For downloadable from a website, e.g., the voter is sent a hypertext link to a ballot.
   ### <a name="_18_0_2_6340208_1464893409742_774328_4470"></a>*The **ContactMethodType** Enumeration*
-![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1464893409752_571424_4471.png)
+![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1467137029940_934610_4555.png)
     
 Name | Value
 ---- | -----
@@ -92,7 +105,7 @@ Name | Value
 `state-level`|For a code that is specific to a state.
 `other`|Used when the type of code is not included in this enumeration.
   ### <a name="_18_0_2_6340208_1465494051199_895769_4463"></a>*The **PhoneCapability** Enumeration*
-![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1465494055245_880506_4464.png)
+![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1467137299147_510499_4665.png)
     
 Name | Value
 ---- | -----
@@ -292,7 +305,7 @@ Attribute | Multiplicity | Type | Attribute Description
 FileValue or StringValue must be defined (but not both):
 
 ```OCL2.0
-not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
+ self.StringValue.oclIsUndefined() xor self.FileValue.oclIsUndefined()
 ```
 
 ### <a name="_18_5_2_43701b0_1510599050811_549888_5731"></a>*The **BallotRequest** Class*
@@ -315,7 +328,7 @@ Attribute | Multiplicity | Type | Attribute Description
 `ImageUri`|0..*|`anyURI`|URI for a ballot image.
 `Party`|0..*|`Party`|Unique identifier for one or more Party instances. For associating one or more parties with the ballot style.
 ### <a name="_18_0_2_6340208_1464893400979_739933_4444"></a>*The **ContactMethod** Class*
-![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1464893400986_87872_4445.png)
+![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137004544_113383_4528.png)
 
 Used in request and response messages.
 
@@ -350,7 +363,7 @@ self.Type = ContactMethodType::other implies not self.OtherType.oclIsUndefined()
 ```
 
 ### <a name="_18_5_2_43701b0_1510603645561_775691_5960"></a>*The **Election** Class*
-![Image of Election](VRI_UML_Documentation_files/_18_5_2_43701b0_1510603645585_3700_5994.png)
+![Image of Election](VRI_UML_Documentation_files/_18_5_3_43701b0_1523390875922_771644_7321.png)
 
 Used in request and response messages. Describes an election event. Only the date of the election is required. Other attributes may be used to describe the election for which a ballot is requested or a voter participated.
 
@@ -360,15 +373,6 @@ Attribute | Multiplicity | Type | Attribute Description
 `ExternalIdentifier`|0..*|`ExternalIdentifier`|For associating an ID with the election.
 `Name`|0..1|`String`|For including a name for the election; the name could be the same name as appears on the ballot.
 `StartDate`|1|`date`|The first day of the election.
-
-#### Business Rules
-
-The start date must occur before or at the end date:
-
-```English
-StartDate <= EndDate
-```
-
 ### <a name="_18_0_2_6340208_1458237760549_706380_5243"></a>*The **ElectionAdministration** Class*
 ![Image of ElectionAdministration](VRI_UML_Documentation_files/_18_0_2_6340208_1458237760552_785040_5253.png)
 
@@ -406,7 +410,7 @@ Attribute | Multiplicity | Type | Attribute Description
 `OtherError`|0..1|`String`|Used when RegistrationError value is other.
 `Ref`|0..1|`String`|Reference (e.g. XPath) to the entity that the error applies.
 ### <a name="_18_0_2_6340208_1446584770723_729230_6705"></a>*The **ExternalIdentifier** Class*
-![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1446584770729_88052_6718.png)
+![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1458237601050_674272_5135.png)
 
 Used in request and response messages.
 
@@ -517,15 +521,15 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-:
+Either FullName or component parts must be defined.:
 
 ```OCL2.0
-self.FirstName.oclIsUndefined() and self.LastName.oclIsUndefined() and self.MiddleName->size() = 0 and self.Prefix.oclIsUndefined() and self.Suffix..oclIsUndefined() 
-implies not self.FullName.oclIsUndefined() 
+(self.FirstName.oclIsUndefined() and self.LastName.oclIsUndefined() and self.MiddleName->size() = 0 and self.Prefix.oclIsUndefined() and self.Suffix.oclIsUndefined()) 
+xor not self.FullName.oclIsUndefined() 
 ```
 
 ### <a name="_18_0_2_6340208_1446583854985_482559_5956"></a>*The **Party** Class*
-![Image of Party](VRI_UML_Documentation_files/_18_0_2_6340208_1446583855033_152433_6134.png)
+![Image of Party](VRI_UML_Documentation_files/_18_5_3_43701b0_1523391450716_472827_7537.png)
 
 Used in request messages.
 
@@ -554,7 +558,7 @@ Implementation of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) wh
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 ### <a name="_18_0_2_6340208_1465493970792_917703_4430"></a>*The **PhoneContactMethod** Class*
-![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1465493970801_186622_4431.png)
+![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137273798_668126_4636.png)
 
 Used in request and response messages.
 
@@ -719,7 +723,7 @@ StartDate <= EndDate
 ```
 
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1522779528451_974674_7331.png)
 
 Voter contains attributes specific to identifying a voter.
 
@@ -758,16 +762,16 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-OtherType must be defined when Type = other:
-
-```OCL2.0
-self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
-```
-
 When OtherType is defined, Type must be other:
 
 ```OCL2.0
 not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
+```
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
 ```
 
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
@@ -794,16 +798,16 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-OtherType must be defined when Type = other:
-
-```OCL2.0
-self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
-```
-
 FileValue or StringValue must be defined (but not both):
 
 ```OCL2.0
 not self.StringValue.oclIsUndefined() xor not self.FileValue.oclIsUndefined()
+```
+
+OtherType must be defined when Type = other:
+
+```OCL2.0
+self.Type = VoterIdType::other implies not self.OtherType.oclIsUndefined()
 ```
 
 ### <a name="_18_5_3_43701b0_1523390807847_148436_7270"></a>*The **VoterParticipation** Class*
@@ -872,7 +876,7 @@ Attribute | Multiplicity | Type | Attribute Description
 Ballot Request must have BallotRequest obj:
 
 ```OCL2.0
-self.Type->exists(c | c = VoterRequestType::_'ballot-request') implies self.OtherType->size() = 1
+self.Type->exists(c | c = VoterRequestType::_'ballot-request') implies self.BallotRequest->size() = 1
 ```
 
 ### <a name="_18_0_2_6340208_1455906719413_171772_4514"></a>*The **VoterRecordsResponse** Class*
