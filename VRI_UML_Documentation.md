@@ -1,3 +1,4 @@
+# Table of Contents
 - Table of Contents
   - Enumerations
     - *The **[AssertionValue](#_18_0_2_6340208_1455829091671_996796_4447)** Enumeration*
@@ -49,7 +50,7 @@
     - *The **[VoterId](#_18_0_2_6340208_1448398278986_542661_4430)** Class*
     - *The **[VoterParticipation](#_18_5_3_43701b0_1523390807847_148436_7270)** Class*
     - *The **[VoterRecord](#_18_5_3_43701b0_1521144693004_190730_6034)** Class*
-    - *The **[VoterRecords](#_18_5_3_43701b0_1523305927438_977151_6481)** Class*
+    - *The **[VoterRecordResults](#_18_5_3_43701b0_1523305927438_977151_6481)** Class*
     - *The **[VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961)** Class*
     - *The **[VoterRecordsResponse](#_18_0_2_6340208_1455906719413_171772_4514)** Class*
 # Enumerations
@@ -439,8 +440,8 @@ The [Image](#_18_0_2_6340208_1452879607465_248768_5229) element uses this class 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 `Data`|1|`base64Binary`|The file content encoded using base64.
-`fileName`|0..1|`String`|The filename.
-`mimeType`|0..1|`String`|The MIME type associated with the file.
+`FileName`|0..1|`String`|The filename.
+`MimeType`|0..1|`String`|The MIME type associated with the file.
 ### <a name="_18_0_2_6340208_1452879607465_248768_5229"></a>*The **Image** Class*
 ![Image of Image](VRI_UML_Documentation_files/_18_0_2_6340208_1452879607469_640085_5230.png)
 
@@ -749,16 +750,16 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### Business Rules
 
-When OtherType is defined, Type must be other:
-
-```OCL2.0
-not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
-```
-
 OtherType must be defined when Type = other:
 
 ```OCL2.0
 self.Type = VoterClassificationType::other implies not self.OtherType.oclIsUndefined()
+```
+
+When OtherType is defined, Type must be other:
+
+```OCL2.0
+not self.OtherType.oclIsUndefined() implies self.Type = VoterClassificationType::other
 ```
 
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
@@ -820,10 +821,11 @@ Attribute | Multiplicity | Type | Attribute Description
 `Locality`|0..*|`ReportingUnit`|Other geographies such as the voter’s precinct.
 `OtherStatus`|0..1|`String`|Used when VoterStatus value is other.
 `PollingLocation`|0..1|`ReportingUnit`|The voter’s polling place.
+`Voter`|1|`Voter`|
 `VoterParticipation`|0..*|`VoterParticipation`|For associating a VoterRecord to elections the voter has participated in.
 `VoterStatus`|0..1|`VoterStatus`|The status of the VoterRecord, possibly to indicate the ability to receive a regular ballot.
-### <a name="_18_5_3_43701b0_1523305927438_977151_6481"></a>*The **VoterRecords** Class*
-![Image of VoterRecords](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
+### <a name="_18_5_3_43701b0_1523305927438_977151_6481"></a>*The **VoterRecordResults** Class*
+![Image of VoterRecordResults](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
 
 Used in responses. For indicating a successful response to a lookup request. A lookup for a single voter may result in multiple VoterRecords being returned. This can occur if the voter has duplicate records in the VRDB, or if the criteria specified in the lookup request was broad.
 
