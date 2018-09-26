@@ -1672,14 +1672,14 @@
     </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="xsd:base64Binary">
-        <xsd:attribute name="fileName" type="xsd:string">
+        <xsd:attribute name="FileName" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The filename.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="mimeType" type="xsd:string">
+        <xsd:attribute name="MimeType" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The MIME type associated with the file.
@@ -2704,70 +2704,67 @@
         VoterRecord optionally contains additional information useful to the voter, including a description of the voter’s polling place, districts associated with the voter's precinct, or other geopolitical geographies such as the voter’s precinct.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="Voter">
-        <xsd:sequence>
-          <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                One or more districts associated with the voter’s precinct.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="ElectionAdministration" type="ElectionAdministration" minOccurs="0">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The election administration that conducts elections for the voter.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="HavaIdRequired" type="xsd:boolean" minOccurs="0">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Indicates that the voter must present identification at the polls per HAVA.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Other geographies such as the voter’s precinct.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="OtherStatus" type="xsd:string" minOccurs="0">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Used when VoterStatus value is other.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="PollingLocation" type="ReportingUnit" minOccurs="0">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The voter’s polling place.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="VoterParticipation" type="VoterParticipation" minOccurs="0" maxOccurs="unbounded">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                For associating a VoterRecord to elections the voter has participated in.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="VoterStatus" type="VoterStatus" minOccurs="0">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The status of the VoterRecord, possibly to indicate the ability to receive a regular ballot.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-      </xsd:extension>
-    </xsd:complexContent>
+    <xsd:sequence>
+      <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            One or more districts associated with the voter’s precinct.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ElectionAdministration" type="ElectionAdministration" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The election administration that conducts elections for the voter.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="HavaIdRequired" type="xsd:boolean" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Indicates that the voter must present identification at the polls per HAVA.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Other geographies such as the voter’s precinct.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="OtherStatus" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Used when VoterStatus value is other.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="PollingLocation" type="ReportingUnit" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The voter’s polling place.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Voter" type="Voter"/>
+      <xsd:element name="VoterParticipation" type="VoterParticipation" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            For associating a VoterRecord to elections the voter has participated in.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="VoterStatus" type="VoterStatus" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The status of the VoterRecord, possibly to indicate the ability to receive a regular ballot.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="VoterRecords">
+  <xsd:complexType name="VoterRecordResults">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Used in responses.
