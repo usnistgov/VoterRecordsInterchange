@@ -201,6 +201,39 @@
     "VRI.Address": {
       "oneOf": [
         {
+          "$ref": "#/definitions/addr.CommunityAddress_type"
+        },
+        {
+          "$ref": "#/definitions/addr.FourNumberAddressRange_type"
+        },
+        {
+          "$ref": "#/definitions/addr.GeneralAddressClass_type"
+        },
+        {
+          "$ref": "#/definitions/addr.IntersectionAddress_type"
+        },
+        {
+          "$ref": "#/definitions/addr.LandmarkAddress_type"
+        },
+        {
+          "$ref": "#/definitions/addr.NumberedThoroughfareAddress_type"
+        },
+        {
+          "$ref": "#/definitions/addr.TwoNumberAddressRange_type"
+        },
+        {
+          "$ref": "#/definitions/addr.USPSGeneralDeliveryOffice_type"
+        },
+        {
+          "$ref": "#/definitions/addr.USPSPostalDeliveryBox_type"
+        },
+        {
+          "$ref": "#/definitions/addr.USPSPostalDeliveryRoute_type"
+        },
+        {
+          "$ref": "#/definitions/addr.UnnumberedThoroughfareAddress_type"
+        },
+        {
           "$ref": "#/definitions/FGDCAddressStandard.CommunityAddress_type"
         },
         {
@@ -499,10 +532,10 @@
           "type": "string",
           "format": "byte"
         },
-        "fileName": {
+        "FileName": {
           "type": "string"
         },
-        "mimeType": {
+        "MimeType": {
           "type": "string"
         }
       },
@@ -536,10 +569,10 @@
           "type": "string",
           "format": "byte"
         },
-        "fileName": {
+        "FileName": {
           "type": "string"
         },
-        "mimeType": {
+        "MimeType": {
           "type": "string"
         }
       },
@@ -1338,8 +1371,7 @@
     "VRI.VoterRecord": {
       "required": [
         "@type",
-        "Name",
-        "ResidenceAddress"
+        "Voter"
       ],
       "additionalProperties": false,
       "properties": {
@@ -1348,24 +1380,6 @@
             "VRI.VoterRecord"
           ],
           "type": "string"
-        },
-        "ContactMethod": {
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "#/definitions/VRI.ContactMethod"
-              },
-              {
-                "$ref": "#/definitions/VRI.PhoneContactMethod"
-              }
-            ]
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "DateOfBirth": {
-          "type": "string",
-          "format": "date"
         },
         "District": {
           "items": {
@@ -1377,12 +1391,6 @@
         "ElectionAdministration": {
           "$ref": "#/definitions/VRI.ElectionAdministration"
         },
-        "Ethnicity": {
-          "type": "string"
-        },
-        "Gender": {
-          "type": "string"
-        },
         "HavaIdRequired": {
           "type": "boolean"
         },
@@ -1393,52 +1401,14 @@
           "minItems": 0,
           "type": "array"
         },
-        "MailingAddress": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "Name": {
-          "$ref": "#/definitions/VRI.Name"
-        },
         "OtherStatus": {
           "type": "string"
-        },
-        "Party": {
-          "$ref": "#/definitions/VRI.Party"
         },
         "PollingLocation": {
           "$ref": "#/definitions/VRI.ReportingUnit"
         },
-        "PreviousName": {
-          "$ref": "#/definitions/VRI.Name"
-        },
-        "PreviousResidenceAddress": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "PreviousSignature": {
-          "$ref": "#/definitions/VRI.Signature"
-        },
-        "ResidenceAddress": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "ResidenceAddressIsMailingAddress": {
-          "type": "boolean"
-        },
-        "Signature": {
-          "$ref": "#/definitions/VRI.Signature"
-        },
-        "VoterClassification": {
-          "items": {
-            "$ref": "#/definitions/VRI.VoterClassification"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "VoterId": {
-          "items": {
-            "$ref": "#/definitions/VRI.VoterId"
-          },
-          "minItems": 0,
-          "type": "array"
+        "Voter": {
+          "$ref": "#/definitions/VRI.Voter"
         },
         "VoterParticipation": {
           "items": {
@@ -1453,7 +1423,7 @@
       },
       "type": "object"
     },
-    "VRI.VoterRecords": {
+    "VRI.VoterRecordResults": {
       "required": [
         "@type"
       ],
@@ -1461,7 +1431,7 @@
       "properties": {
         "@type": {
           "enum": [
-            "VRI.VoterRecords"
+            "VRI.VoterRecordResults"
           ],
           "type": "string"
         },
@@ -1550,14 +1520,7 @@
           "type": "string"
         },
         "Subject": {
-          "oneOf": [
-            {
-              "$ref": "#/definitions/VRI.Voter"
-            },
-            {
-              "$ref": "#/definitions/VRI.VoterRecord"
-            }
-          ]
+          "$ref": "#/definitions/VRI.Voter"
         },
         "TransactionId": {
           "type": "string"
@@ -1606,6 +1569,2884 @@
         }
       },
       "type": "object"
+    },
+    "addr.CommunityAddress_type": {
+      "required": [
+        "@type",
+        "CompleteAddressNumber"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.CommunityAddress_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompleteAddressNumber": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteLandmarkName": {
+          "$ref": "#/definitions/addr_type.CompleteLandmarkName_type"
+        },
+        "CompletePlaceName1": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompletePlaceName2": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteSubaddress": {
+          "$ref": "#/definitions/addr_type.CompleteSubaddress_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.FourNumberAddressRange_type": {
+      "required": [
+        "@type",
+        "CompleteAddressNumber1",
+        "CompleteAddressNumber2",
+        "CompleteAddressNumber3",
+        "CompleteAddressNumber4",
+        "CompleteStreetName",
+        "SeparatorElement1",
+        "SeparatorElement2"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.FourNumberAddressRange_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompleteAddressNumber1": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteAddressNumber2": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteAddressNumber3": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteAddressNumber4": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteLandmarkName": {
+          "$ref": "#/definitions/addr_type.CompleteLandmarkName_type"
+        },
+        "CompletePlaceName1": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompletePlaceName2": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteStreetName": {
+          "$ref": "#/definitions/addr_type.CompleteStreetName_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "SeparatorElement1": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "SeparatorElement2": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.GeneralAddressClass_type": {
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.GeneralAddressClass_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompletePlaceName": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "GeneralAddress": {
+          "$ref": "#/definitions/addr_type.GeneralAddress_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "USPSGeneralDeliveryPoint": {
+          "$ref": "#/definitions/addr_type.USPSGeneralDeliveryPoint_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.IntersectionAddress_type": {
+      "required": [
+        "@type",
+        "CompleteStreetName1",
+        "CompleteStreetName2",
+        "SeparatorElement"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.IntersectionAddress_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompleteLandmarkName": {
+          "$ref": "#/definitions/addr_type.CompleteLandmarkName_type"
+        },
+        "CompletePlaceName1": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompletePlaceName2": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteStreetName1": {
+          "$ref": "#/definitions/addr_type.CompleteStreetName_type"
+        },
+        "CompleteStreetName2": {
+          "$ref": "#/definitions/addr_type.CompleteStreetName_type"
+        },
+        "CornerOf": {
+          "$ref": "#/definitions/addr_type.CornerOf_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "SeparatorElement": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.LandmarkAddress_type": {
+      "required": [
+        "@type",
+        "CompleteLandmarkName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.LandmarkAddress_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompleteLandmarkName": {
+          "$ref": "#/definitions/addr_type.CompleteLandmarkName_type"
+        },
+        "CompletePlaceName": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteSubaddress": {
+          "$ref": "#/definitions/addr_type.CompleteSubaddress_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.NumberedThoroughfareAddress_type": {
+      "required": [
+        "@type",
+        "CompleteAddressNumber",
+        "CompleteStreetName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.NumberedThoroughfareAddress_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompleteAddressNumber": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteLandmarkName": {
+          "$ref": "#/definitions/addr_type.CompleteLandmarkName_type"
+        },
+        "CompletePlaceName1": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompletePlaceName2": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteStreetName": {
+          "$ref": "#/definitions/addr_type.CompleteStreetName_type"
+        },
+        "CompleteSubaddress": {
+          "$ref": "#/definitions/addr_type.CompleteSubaddress_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.TwoNumberAddressRange_type": {
+      "required": [
+        "@type",
+        "CompleteAddressNumber1",
+        "CompleteAddressNumber2",
+        "CompleteStreetName",
+        "SeparatorElement"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.TwoNumberAddressRange_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompleteAddressNumber1": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteAddressNumber2": {
+          "$ref": "#/definitions/addr_type.CompleteAddressNumber_type"
+        },
+        "CompleteLandmarkName": {
+          "$ref": "#/definitions/addr_type.CompleteLandmarkName_type"
+        },
+        "CompletePlaceName1": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompletePlaceName2": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteStreetName": {
+          "$ref": "#/definitions/addr_type.CompleteStreetName_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "SeparatorElement": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.USPSGeneralDeliveryOffice_type": {
+      "required": [
+        "@type",
+        "USPSGeneralDeliveryPoint"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.USPSGeneralDeliveryOffice_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompletePlaceName": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "USPSGeneralDeliveryPoint": {
+          "$ref": "#/definitions/addr_type.USPSGeneralDeliveryPoint_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.USPSPostalDeliveryBox_type": {
+      "required": [
+        "@type",
+        "USPSBox"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.USPSPostalDeliveryBox_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompletePlaceName": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteSubaddress": {
+          "$ref": "#/definitions/addr_type.CompleteSubaddress_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "USPSBox": {
+          "$ref": "#/definitions/addr_type.USPSBox_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.USPSPostalDeliveryRoute_type": {
+      "required": [
+        "@type",
+        "USPSAddress"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.USPSPostalDeliveryRoute_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompletePlaceName": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "USPSAddress": {
+          "$ref": "#/definitions/addr_type.USPSAddress_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr.UnnumberedThoroughfareAddress_type": {
+      "required": [
+        "@type",
+        "CompleteStreetName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr.UnnumberedThoroughfareAddress_type"
+          ],
+          "type": "string"
+        },
+        "AddressAnomalyStatus": {
+          "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
+        },
+        "AddressAuthority": {
+          "$ref": "#/definitions/addr_type.AddressAuthority_type"
+        },
+        "AddressClassification": {
+          "$ref": "#/definitions/addr_type.AddressClassification_type"
+        },
+        "AddressCoordinateReferenceSystem": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystem_type"
+        },
+        "AddressElevation": {
+          "$ref": "#/definitions/addr_type.AddressElevation_type"
+        },
+        "AddressEndDate": {
+          "$ref": "#/definitions/addr_type.AddressEndDate_type"
+        },
+        "AddressFeatureType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressFeatureType_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressId": {
+          "$ref": "#/definitions/addr_type.AddressID_type"
+        },
+        "AddressLatitude": {
+          "$ref": "#/definitions/addr_type.AddressLatitude_type"
+        },
+        "AddressLifecycleStatus": {
+          "$ref": "#/definitions/addr_type.AddressLifecycleStatus_type"
+        },
+        "AddressLongitude": {
+          "$ref": "#/definitions/addr_type.AddressLongitude_type"
+        },
+        "AddressParcelIdentifier": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifier_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressParcelIdentifierSource": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressParcelIdentifierSource_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeDirectionality": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeDirectionality_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeParity": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeParity_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeSpan": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeSpan_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressRangeType": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AddressRangeType_type"
+          },
+          "maxItems": 2,
+          "minItems": 0,
+          "type": "array"
+        },
+        "AddressReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemAuthority_type"
+        },
+        "AddressReferenceSystemId": {
+          "$ref": "#/definitions/addr_type.AddressReferenceSystemId_type"
+        },
+        "AddressSideOfStreet": {
+          "$ref": "#/definitions/addr_type.AddressSideOfStreet_type"
+        },
+        "AddressStartDate": {
+          "$ref": "#/definitions/addr_type.AddressStartDate_type"
+        },
+        "AddressTransportationFeatureID": {
+          "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+        },
+        "AddressTransportationFeatureType": {
+          "$ref": "#/definitions/addr_type.AddressTransportationFeatureType_type"
+        },
+        "AddressTransportationSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemAuthority_type"
+        },
+        "AddressTransportationSystemName": {
+          "$ref": "#/definitions/addr_type.AddressTransportationSystemName_type"
+        },
+        "AddressXCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressXCoordinate_type"
+        },
+        "AddressYCoordinate": {
+          "$ref": "#/definitions/addr_type.AddressYCoordinate_type"
+        },
+        "AddressZLevel": {
+          "$ref": "#/definitions/addr_type.AddressZLevel_type"
+        },
+        "CompleteLandmarkName": {
+          "$ref": "#/definitions/addr_type.CompleteLandmarkName_type"
+        },
+        "CompletePlaceName1": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompletePlaceName2": {
+          "$ref": "#/definitions/addr_type.CompletePlaceName_type"
+        },
+        "CompleteStreetName": {
+          "$ref": "#/definitions/addr_type.CompleteStreetName_type"
+        },
+        "CompleteSubaddress": {
+          "$ref": "#/definitions/addr_type.CompleteSubaddress_type"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/addr_type.CountryName_type"
+        },
+        "DataSetID": {
+          "$ref": "#/definitions/addr_type.DataSetID_type"
+        },
+        "LocationDescription": {
+          "$ref": "#/definitions/addr_type.LocationDescription_type"
+        },
+        "MailableAddress": {
+          "$ref": "#/definitions/addr_type.MailableAddress_type"
+        },
+        "OfficialStatus": {
+          "$ref": "#/definitions/addr_type.OfficialStatus_type"
+        },
+        "PlaceStateZip": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceStateZip_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedAddressId": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "RelatedTransportationFeatureID": {
+          "items": {
+            "$ref": "#/definitions/addr_type.AssociatedAddressId_type"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "StateName": {
+          "$ref": "#/definitions/addr_type.StateName_type"
+        },
+        "USNationalGridCoordinate": {
+          "$ref": "#/definitions/addr_type.LocationUSNG_type"
+        },
+        "ZipCode": {
+          "$ref": "#/definitions/addr_type.ZipCode_type"
+        },
+        "ZipPlus4": {
+          "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.Action_type": {
+      "enum": [
+        "ADD",
+        "DELETE"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressAnomalyStatus_type": {
+      "type": "string"
+    },
+    "addr_type.AddressAuthority_type": {
+      "type": "string"
+    },
+    "addr_type.AddressClassification_type": {
+      "enum": [
+        "CommunityAddress",
+        "FourNumberAddressRange",
+        "GeneralAddressClass",
+        "IntersectionAddress",
+        "LandmarkAddress",
+        "NumberedThoroughfareAddress",
+        "TwoNumberAddressRange",
+        "USPSGeneral DeliveryOffice",
+        "USPSPostal DeliveryRoute",
+        "USPSPostalDeliveryBox",
+        "UnnumberedThoroughfareAddress"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressCoordinateReferenceSystemAuthority_type": {
+      "type": "string"
+    },
+    "addr_type.AddressCoordinateReferenceSystemID_type": {
+      "type": "integer"
+    },
+    "addr_type.AddressCoordinateReferenceSystem_type": {
+      "required": [
+        "@type",
+        "AddressCoordinateReferenceSystemAuthority",
+        "AddressCoordinateReferenceSystemID"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.AddressCoordinateReferenceSystem_type"
+          ],
+          "type": "string"
+        },
+        "AddressCoordinateReferenceSystemAuthority": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystemAuthority_type"
+        },
+        "AddressCoordinateReferenceSystemID": {
+          "$ref": "#/definitions/addr_type.AddressCoordinateReferenceSystemID_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.AddressElevation_type": {
+      "type": "number"
+    },
+    "addr_type.AddressEndDate_type": {
+      "type": "string",
+      "format": "date"
+    },
+    "addr_type.AddressFeatureType_type": {
+      "type": "string"
+    },
+    "addr_type.AddressID_type": {
+      "type": "string"
+    },
+    "addr_type.AddressLatitude_type": {
+      "type": "number"
+    },
+    "addr_type.AddressLifecycleStatus_type": {
+      "enum": [
+        "Active",
+        "Potential",
+        "Proposed",
+        "Retired"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressLongitude_type": {
+      "type": "number"
+    },
+    "addr_type.AddressNumberParity_type": {
+      "enum": [
+        "Even",
+        "Odd"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressNumberPrefix_type": {
+      "required": [
+        "@type",
+        "Value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.AddressNumberPrefix_type"
+          ],
+          "type": "string"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.AddressNumberSuffix_type": {
+      "required": [
+        "@type",
+        "Value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.AddressNumberSuffix_type"
+          ],
+          "type": "string"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.AddressNumber_type": {
+      "type": "string"
+    },
+    "addr_type.AddressParcelIdentifierSource_type": {
+      "type": "string"
+    },
+    "addr_type.AddressParcelIdentifier_type": {
+      "type": "string"
+    },
+    "addr_type.AddressRangeDirectionality_type": {
+      "enum": [
+        "Against",
+        "Against-With",
+        "NA",
+        "Null",
+        "Unknown",
+        "With",
+        "With-Against"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressRangeParity_type": {
+      "enum": [
+        "both",
+        "even",
+        "none",
+        "odd",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressRangeSpan_type": {
+      "enum": [
+        "Entire Street",
+        "Multi Segment",
+        "Partial Segment",
+        "Single Segment",
+        "Unknown"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressRangeType_type": {
+      "enum": [
+        "Actual",
+        "Potential",
+        "Unknown"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressReferenceSystemAuthority_type": {
+      "type": "string"
+    },
+    "addr_type.AddressReferenceSystemId_type": {
+      "type": "integer"
+    },
+    "addr_type.AddressSideOfStreet_type": {
+      "enum": [
+        "both",
+        "left",
+        "none",
+        "right",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "addr_type.AddressStartDate_type": {
+      "type": "string",
+      "format": "date"
+    },
+    "addr_type.AddressTransportationFeatureType_type": {
+      "type": "string"
+    },
+    "addr_type.AddressTransportationSystemAuthority_type": {
+      "type": "string"
+    },
+    "addr_type.AddressTransportationSystemName_type": {
+      "type": "string"
+    },
+    "addr_type.AddressXCoordinate_type": {
+      "type": "number"
+    },
+    "addr_type.AddressYCoordinate_type": {
+      "type": "number"
+    },
+    "addr_type.AddressZLevel_type": {
+      "type": "string"
+    },
+    "addr_type.AssociatedAddressId_type": {
+      "type": "string"
+    },
+    "addr_type.AttachedElement_type": {
+      "enum": [
+        "Attached",
+        "Not Attached",
+        "Unknown"
+      ],
+      "type": "string"
+    },
+    "addr_type.CompleteAddressNumber_type": {
+      "required": [
+        "@type",
+        "AddressNumber"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.CompleteAddressNumber_type"
+          ],
+          "type": "string"
+        },
+        "AddressNumber": {
+          "$ref": "#/definitions/addr_type.AddressNumber_type"
+        },
+        "AddressNumberParity": {
+          "$ref": "#/definitions/addr_type.AddressNumberParity_type"
+        },
+        "AddressNumberPrefix": {
+          "$ref": "#/definitions/addr_type.AddressNumberPrefix_type"
+        },
+        "AddressNumberSuffix": {
+          "$ref": "#/definitions/addr_type.AddressNumberSuffix_type"
+        },
+        "AttachedElement": {
+          "$ref": "#/definitions/addr_type.AttachedElement_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.CompleteLandmarkName_type": {
+      "required": [
+        "@type",
+        "LandmarkName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.CompleteLandmarkName_type"
+          ],
+          "type": "string"
+        },
+        "LandmarkName": {
+          "items": {
+            "$ref": "#/definitions/addr_type.LandmarkName_type"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.CompletePlaceName_type": {
+      "required": [
+        "@type",
+        "PlaceName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.CompletePlaceName_type"
+          ],
+          "type": "string"
+        },
+        "PlaceName": {
+          "items": {
+            "$ref": "#/definitions/addr_type.PlaceName_type"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.CompleteStreetName_type": {
+      "required": [
+        "@type",
+        "StreetName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.CompleteStreetName_type"
+          ],
+          "type": "string"
+        },
+        "AttachedElement": {
+          "$ref": "#/definitions/addr_type.AttachedElement_type"
+        },
+        "StreetName": {
+          "$ref": "#/definitions/addr_type.StreetName_type"
+        },
+        "StreetNamePostDirectional": {
+          "$ref": "#/definitions/addr_type.StreetNamePreDirectional_type"
+        },
+        "StreetNamePostModifier": {
+          "$ref": "#/definitions/addr_type.StreetNamePreModifier_type"
+        },
+        "StreetNamePostType": {
+          "$ref": "#/definitions/addr_type.StreetNamePreType_type"
+        },
+        "StreetNamePreDirectional": {
+          "$ref": "#/definitions/addr_type.StreetNamePreDirectional_type"
+        },
+        "StreetNamePreModifier": {
+          "$ref": "#/definitions/addr_type.StreetNamePreModifier_type"
+        },
+        "StreetNamePreType": {
+          "$ref": "#/definitions/addr_type.StreetNamePreType_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.CompleteSubaddress_type": {
+      "required": [
+        "@type",
+        "SubaddressElement"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.CompleteSubaddress_type"
+          ],
+          "type": "string"
+        },
+        "SubaddressElement": {
+          "items": {
+            "$ref": "#/definitions/addr_type.SubaddressElement_type"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.CornerOf_type": {
+      "type": "string"
+    },
+    "addr_type.CountryName_type": {
+      "type": "string"
+    },
+    "addr_type.DataSetID_type": {
+      "type": "string"
+    },
+    "addr_type.ElementSequenceNumber_type": {
+      "type": "integer"
+    },
+    "addr_type.GNISFeatureID_type": {
+      "type": "integer"
+    },
+    "addr_type.GeneralAddress_type": {
+      "type": "string"
+    },
+    "addr_type.LandmarkName_type": {
+      "required": [
+        "@type",
+        "Value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.LandmarkName_type"
+          ],
+          "type": "string"
+        },
+        "ElementSequenceNumber": {
+          "$ref": "#/definitions/addr_type.ElementSequenceNumber_type"
+        },
+        "GNISFeatureID": {
+          "$ref": "#/definitions/addr_type.GNISFeatureID_type"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.LocationDescription_type": {
+      "type": "string"
+    },
+    "addr_type.LocationUSNG_type": {
+      "type": "string"
+    },
+    "addr_type.MailableAddress_type": {
+      "enum": [
+        "No",
+        "Unknown",
+        "Yes"
+      ],
+      "type": "string"
+    },
+    "addr_type.OfficialStatus_type": {
+      "enum": [
+        "Alternate Names Established by Colloquial Use in a Community",
+        "Alternate or Alias",
+        "Alternates Established by an Address Authority",
+        "Official",
+        "Official Alternate or Alias",
+        "Official Renaming Action of the Address Authority",
+        "Posted or Vanity Address",
+        "Unofficial Alternate Names Frequently Encountered",
+        "Unofficial Alternate Names In Use by an Agency or Entity",
+        "Unofficial Alternate or Alias",
+        "Verified Invalid"
+      ],
+      "type": "string"
+    },
+    "addr_type.PlaceNameType_type": {
+      "enum": [
+        "County",
+        "MunicipalJurisdiction",
+        "USPSCommunity"
+      ],
+      "type": "string"
+    },
+    "addr_type.PlaceName_type": {
+      "required": [
+        "@type",
+        "Value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.PlaceName_type"
+          ],
+          "type": "string"
+        },
+        "ElementSequenceNumber": {
+          "$ref": "#/definitions/addr_type.ElementSequenceNumber_type"
+        },
+        "GNISFeatureID": {
+          "$ref": "#/definitions/addr_type.GNISFeatureID_type"
+        },
+        "PlaceNameType": {
+          "$ref": "#/definitions/addr_type.PlaceNameType_type"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.PlaceStateZip_type": {
+      "type": "string"
+    },
+    "addr_type.Separator_type": {
+      "type": "string"
+    },
+    "addr_type.StateName_type": {
+      "type": "string"
+    },
+    "addr_type.StreetNamePreDirectional_type": {
+      "required": [
+        "@type",
+        "Value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.StreetNamePreDirectional_type"
+          ],
+          "type": "string"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.StreetNamePreModifier_type": {
+      "required": [
+        "@type",
+        "Value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.StreetNamePreModifier_type"
+          ],
+          "type": "string"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.StreetNamePreType_type": {
+      "required": [
+        "@type",
+        "Value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.StreetNamePreType_type"
+          ],
+          "type": "string"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "Value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.StreetName_type": {
+      "type": "string"
+    },
+    "addr_type.SubaddressComponentOrder_type": {
+      "enum": [
+        "1",
+        "2",
+        "3"
+      ],
+      "type": "string"
+    },
+    "addr_type.SubaddressElement_type": {
+      "required": [
+        "@type",
+        "SubaddressIdentifier"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.SubaddressElement_type"
+          ],
+          "type": "string"
+        },
+        "ElementSequenceNumber": {
+          "$ref": "#/definitions/addr_type.ElementSequenceNumber_type"
+        },
+        "GNISFeatureID": {
+          "$ref": "#/definitions/addr_type.GNISFeatureID_type"
+        },
+        "Separator": {
+          "$ref": "#/definitions/addr_type.Separator_type"
+        },
+        "SubaddressComponentOrder": {
+          "$ref": "#/definitions/addr_type.SubaddressComponentOrder_type"
+        },
+        "SubaddressIdentifier": {
+          "$ref": "#/definitions/addr_type.SubaddressIdentifier_type"
+        },
+        "SubaddressType": {
+          "$ref": "#/definitions/addr_type.SubaddressType_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.SubaddressIdentifier_type": {
+      "type": "string"
+    },
+    "addr_type.SubaddressType_type": {
+      "type": "string"
+    },
+    "addr_type.USPSAddress_type": {
+      "required": [
+        "@type",
+        "USPSBox",
+        "USPSRoute"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.USPSAddress_type"
+          ],
+          "type": "string"
+        },
+        "USPSBox": {
+          "$ref": "#/definitions/addr_type.USPSBox_type"
+        },
+        "USPSRoute": {
+          "$ref": "#/definitions/addr_type.USPSRoute_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.USPSBoxGroupId_type": {
+      "type": "string"
+    },
+    "addr_type.USPSBoxGroupType_type": {
+      "type": "string"
+    },
+    "addr_type.USPSBoxId_type": {
+      "type": "string"
+    },
+    "addr_type.USPSBoxType_type": {
+      "type": "string"
+    },
+    "addr_type.USPSBox_type": {
+      "required": [
+        "@type",
+        "USPSBoxId",
+        "USPSBoxType"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.USPSBox_type"
+          ],
+          "type": "string"
+        },
+        "USPSBoxId": {
+          "$ref": "#/definitions/addr_type.USPSBoxId_type"
+        },
+        "USPSBoxType": {
+          "$ref": "#/definitions/addr_type.USPSBoxType_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.USPSGeneralDeliveryPoint_type": {
+      "type": "string"
+    },
+    "addr_type.USPSRoute_type": {
+      "required": [
+        "@type",
+        "USPSBoxGroupId",
+        "USPSBoxGroupType"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "addr_type.USPSRoute_type"
+          ],
+          "type": "string"
+        },
+        "USPSBoxGroupId": {
+          "$ref": "#/definitions/addr_type.USPSBoxGroupId_type"
+        },
+        "USPSBoxGroupType": {
+          "$ref": "#/definitions/addr_type.USPSBoxGroupType_type"
+        }
+      },
+      "type": "object"
+    },
+    "addr_type.ZipCode_type": {
+      "type": "string"
+    },
+    "addr_type.ZipPlus4_type": {
+      "type": "string"
     }
   },
   "oneOf": [
@@ -1622,7 +4463,7 @@
       "$ref": "#/definitions/VRI.RequestSuccess"
     },
     {
-      "$ref": "#/definitions/VRI.VoterRecords"
+      "$ref": "#/definitions/VRI.VoterRecordResults"
     }
   ]
 }
