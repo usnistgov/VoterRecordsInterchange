@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
+<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+			<BallotRequest xsi:type="ElectionBasedBallotRequest">
+			<Election>
+				<StartDate>2012-11-06</StartDate>
+			</Election>			
+		</BallotRequest>
+		<Form>other</Form>
+		<GeneratedDate>2018-03-10</GeneratedDate>
+		<OtherForm>SBE-701</OtherForm>
+		<RequestMethod>voter-via-mail</RequestMethod>
+<Subject>
+		<ContactMethod>
+			<Type>phone</Type>
+			<Value>5441112222</Value>
+		</ContactMethod>		
+		<Name>
+			<FirstName>Sabrina </FirstName>
+			<LastName>Jones</LastName>
+			<MiddleName>Shamika</MiddleName>
+		</Name>		
+		<ResidenceAddress>
+			<NumberedThoroughfareAddress_type>
+				<addr:CompleteAddressNumber>
+					<addr_type:AddressNumber>1311</addr_type:AddressNumber>
+				</addr:CompleteAddressNumber>
+				<addr:CompleteStreetName>
+					<addr_type:StreetName>Aylor</addr_type:StreetName>
+					<addr_type:StreetNamePostModifier>Rd</addr_type:StreetNamePostModifier>
+				</addr:CompleteStreetName>
+				<addr_type:CompletePlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="1" PlaceNameType="USPSCommunity">Stephens City</addr_type:PlaceName>
+					<addr_type:PlaceName ElementSequenceNumber="2" PlaceNameType="County">Frederick</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>Virginia</addr_type:StateName>
+				<addr_type:ZipCode>22655</addr_type:ZipCode>
+			</NumberedThoroughfareAddress_type>			
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>yes</Assertion>			
+			<OtherType>primary-caretaker</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterId>
+			<StringValue>5678</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+	</Subject>	
+	<Type>ballot-request</Type>
+</VoterRecordsRequest>

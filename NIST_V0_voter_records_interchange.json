@@ -73,6 +73,7 @@
     "VRI.AssertionValue": {
       "enum": [
         "no",
+        "other",
         "unknown",
         "yes"
       ],
@@ -87,6 +88,43 @@
         "online"
       ],
       "type": "string"
+    },
+    "VRI.BallotStyle": {
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.BallotStyle"
+          ],
+          "type": "string"
+        },
+        "ExternalIdentifier": {
+          "items": {
+            "$ref": "#/definitions/VRI.ExternalIdentifier"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "ImageUri": {
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "Party": {
+          "items": {
+            "$ref": "#/definitions/VRI.Party"
+          },
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "type": "object"
     },
     "VRI.ContactMethod": {
       "required": [
@@ -121,6 +159,40 @@
         "phone"
       ],
       "type": "string"
+    },
+    "VRI.Election": {
+      "required": [
+        "@type",
+        "StartDate"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.Election"
+          ],
+          "type": "string"
+        },
+        "EndDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "ExternalIdentifier": {
+          "items": {
+            "$ref": "#/definitions/VRI.ExternalIdentifier"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "type": "object"
     },
     "VRI.ElectionAdministration": {
       "required": [
@@ -161,6 +233,60 @@
           },
           "minItems": 0,
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.ElectionBasedBallotRequest": {
+      "required": [
+        "@type",
+        "Election"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.ElectionBasedBallotRequest"
+          ],
+          "type": "string"
+        },
+        "BallotReceiptPreference": {
+          "items": {
+            "$ref": "#/definitions/VRI.BallotReceiptMethod"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "Election": {
+          "$ref": "#/definitions/VRI.Election"
+        },
+        "MailForwardingAddress": {
+          "$ref": "#/definitions/VRI.Address"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.Error": {
+      "required": [
+        "@type",
+        "Name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.Error"
+          ],
+          "type": "string"
+        },
+        "Name": {
+          "$ref": "#/definitions/VRI.RequestError"
+        },
+        "OtherError": {
+          "type": "string"
+        },
+        "Ref": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -370,6 +496,31 @@
       },
       "type": "object"
     },
+    "VRI.PermanentBallotRequest": {
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.PermanentBallotRequest"
+          ],
+          "type": "string"
+        },
+        "BallotReceiptPreference": {
+          "items": {
+            "$ref": "#/definitions/VRI.BallotReceiptMethod"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "MailForwardingAddress": {
+          "$ref": "#/definitions/VRI.Address"
+        }
+      },
+      "type": "object"
+    },
     "VRI.PhoneCapability": {
       "enum": [
         "fax",
@@ -407,248 +558,6 @@
           "$ref": "#/definitions/VRI.ContactMethodType"
         },
         "Value": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "VRI.RegistrationAcknowledgement": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VRI.RegistrationAcknowledgement"
-          ],
-          "type": "string"
-        },
-        "TransactionId": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "VRI.RegistrationError": {
-      "enum": [
-        "identity-lookup-failed",
-        "incomplete",
-        "incomplete-address",
-        "incomplete-birth-date",
-        "incomplete-name",
-        "incomplete-signature",
-        "ineligible",
-        "invalid-form",
-        "other"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationForm": {
-      "enum": [
-        "fpca",
-        "nvra",
-        "other"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationHelper": {
-      "required": [
-        "@type",
-        "Type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VRI.RegistrationHelper"
-          ],
-          "type": "string"
-        },
-        "Address": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "Name": {
-          "$ref": "#/definitions/VRI.Name"
-        },
-        "Phone": {
-          "$ref": "#/definitions/VRI.PhoneContactMethod"
-        },
-        "Signature": {
-          "$ref": "#/definitions/VRI.Signature"
-        },
-        "Type": {
-          "$ref": "#/definitions/VRI.RegistrationHelperType"
-        }
-      },
-      "type": "object"
-    },
-    "VRI.RegistrationHelperType": {
-      "enum": [
-        "assistant",
-        "witness"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationMethod": {
-      "enum": [
-        "armed-forces-recruitment-office",
-        "motor-vehicle-office",
-        "other",
-        "other-agency-designated-by-state",
-        "public-assistance-office",
-        "registration-drive-from-advocacy-group-or-political-party",
-        "state-funded-agency-serving-persons-with-disabilities",
-        "unknown",
-        "voter-via-election-registrars-office",
-        "voter-via-email",
-        "voter-via-fax",
-        "voter-via-internet",
-        "voter-via-mail"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationProxy": {
-      "required": [
-        "@type",
-        "Type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VRI.RegistrationProxy"
-          ],
-          "type": "string"
-        },
-        "Address": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "OriginTransactionId": {
-          "type": "string"
-        },
-        "OtherType": {
-          "type": "string"
-        },
-        "Phone": {
-          "$ref": "#/definitions/VRI.PhoneContactMethod"
-        },
-        "TimeStamp": {
-          "type": "string",
-          "format": "date"
-        },
-        "Type": {
-          "$ref": "#/definitions/VRI.RegistrationProxyType"
-        }
-      },
-      "type": "object"
-    },
-    "VRI.RegistrationProxyType": {
-      "enum": [
-        "armed-forces-recruitment-office",
-        "motor-vehicle-office",
-        "other",
-        "other-agency-designated-by-state",
-        "public-assistance-office",
-        "registration-drive-from-advocacy-group-or-political-party",
-        "state-funded-agency-serving-persons-with-disabilities"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationRejection": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VRI.RegistrationRejection"
-          ],
-          "type": "string"
-        },
-        "AdditionalDetails": {
-          "items": {
-            "type": "string"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "Error": {
-          "items": {
-            "$ref": "#/definitions/VRI.RegistrationError"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "OtherError": {
-          "items": {
-            "type": "string"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "TransactionId": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "VRI.RegistrationRequestType": {
-      "enum": [
-        "ballot-request",
-        "other",
-        "registration"
-      ],
-      "type": "string"
-    },
-    "VRI.RegistrationSuccess": {
-      "required": [
-        "@type"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VRI.RegistrationSuccess"
-          ],
-          "type": "string"
-        },
-        "Action": {
-          "items": {
-            "$ref": "#/definitions/VRI.SuccessAction"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "District": {
-          "items": {
-            "$ref": "#/definitions/VRI.ReportingUnit"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "EffectiveDate": {
-          "type": "string",
-          "format": "date"
-        },
-        "ElectionAdministration": {
-          "$ref": "#/definitions/VRI.ElectionAdministration"
-        },
-        "Locality": {
-          "items": {
-            "$ref": "#/definitions/VRI.ReportingUnit"
-          },
-          "minItems": 0,
-          "type": "array"
-        },
-        "PollingPlace": {
-          "$ref": "#/definitions/VRI.ReportingUnit"
-        },
-        "TransactionId": {
           "type": "string"
         }
       },
@@ -725,6 +634,222 @@
       ],
       "type": "string"
     },
+    "VRI.RequestAcknowledgement": {
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.RequestAcknowledgement"
+          ],
+          "type": "string"
+        },
+        "TransactionId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.RequestError": {
+      "enum": [
+        "identity-lookup-failed",
+        "incomplete",
+        "ineligible",
+        "invalid-form",
+        "other"
+      ],
+      "type": "string"
+    },
+    "VRI.RequestForm": {
+      "enum": [
+        "fpca",
+        "nvra",
+        "other"
+      ],
+      "type": "string"
+    },
+    "VRI.RequestHelper": {
+      "required": [
+        "@type",
+        "Type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.RequestHelper"
+          ],
+          "type": "string"
+        },
+        "Address": {
+          "$ref": "#/definitions/VRI.Address"
+        },
+        "Name": {
+          "$ref": "#/definitions/VRI.Name"
+        },
+        "Phone": {
+          "$ref": "#/definitions/VRI.PhoneContactMethod"
+        },
+        "Signature": {
+          "$ref": "#/definitions/VRI.Signature"
+        },
+        "Type": {
+          "$ref": "#/definitions/VRI.VoterHelperType"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.RequestMethod": {
+      "enum": [
+        "armed-forces-recruitment-office",
+        "motor-vehicle-office",
+        "other",
+        "other-agency-designated-by-state",
+        "public-assistance-office",
+        "registration-drive-from-advocacy-group-or-political-party",
+        "state-funded-agency-serving-persons-with-disabilities",
+        "unknown",
+        "voter-via-election-registrars-office",
+        "voter-via-email",
+        "voter-via-fax",
+        "voter-via-internet",
+        "voter-via-mail"
+      ],
+      "type": "string"
+    },
+    "VRI.RequestProxy": {
+      "required": [
+        "@type",
+        "Type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.RequestProxy"
+          ],
+          "type": "string"
+        },
+        "Address": {
+          "$ref": "#/definitions/VRI.Address"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "OriginTransactionId": {
+          "type": "string"
+        },
+        "OtherType": {
+          "type": "string"
+        },
+        "Phone": {
+          "$ref": "#/definitions/VRI.PhoneContactMethod"
+        },
+        "TimeStamp": {
+          "type": "string",
+          "format": "date"
+        },
+        "Type": {
+          "$ref": "#/definitions/VRI.RequestProxyType"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.RequestProxyType": {
+      "enum": [
+        "armed-forces-recruitment-office",
+        "motor-vehicle-office",
+        "other",
+        "other-agency-designated-by-state",
+        "public-assistance-office",
+        "registration-drive-from-advocacy-group-or-political-party",
+        "state-funded-agency-serving-persons-with-disabilities"
+      ],
+      "type": "string"
+    },
+    "VRI.RequestRejection": {
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.RequestRejection"
+          ],
+          "type": "string"
+        },
+        "AdditionalDetails": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "Error": {
+          "items": {
+            "$ref": "#/definitions/VRI.Error"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "TransactionId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.RequestSuccess": {
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.RequestSuccess"
+          ],
+          "type": "string"
+        },
+        "Action": {
+          "items": {
+            "$ref": "#/definitions/VRI.SuccessAction"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "District": {
+          "items": {
+            "$ref": "#/definitions/VRI.ReportingUnit"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "ElectionAdministration": {
+          "$ref": "#/definitions/VRI.ElectionAdministration"
+        },
+        "Locality": {
+          "items": {
+            "$ref": "#/definitions/VRI.ReportingUnit"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "PollingPlace": {
+          "$ref": "#/definitions/VRI.ReportingUnit"
+        },
+        "TransactionId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "VRI.Signature": {
       "required": [
         "@type"
@@ -789,6 +914,123 @@
       ],
       "type": "string"
     },
+    "VRI.TemporalBallotRequest": {
+      "required": [
+        "@type",
+        "EndDate",
+        "StartDate"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.TemporalBallotRequest"
+          ],
+          "type": "string"
+        },
+        "BallotReceiptPreference": {
+          "items": {
+            "$ref": "#/definitions/VRI.BallotReceiptMethod"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "EndDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "MailForwardingAddress": {
+          "$ref": "#/definitions/VRI.Address"
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.Voter": {
+      "required": [
+        "@type",
+        "Name",
+        "ResidenceAddress"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.Voter"
+          ],
+          "type": "string"
+        },
+        "ContactMethod": {
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/definitions/VRI.ContactMethod"
+              },
+              {
+                "$ref": "#/definitions/VRI.PhoneContactMethod"
+              }
+            ]
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "DateOfBirth": {
+          "type": "string",
+          "format": "date"
+        },
+        "Ethnicity": {
+          "type": "string"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "MailingAddress": {
+          "$ref": "#/definitions/VRI.Address"
+        },
+        "Name": {
+          "$ref": "#/definitions/VRI.Name"
+        },
+        "Party": {
+          "$ref": "#/definitions/VRI.Party"
+        },
+        "PreviousName": {
+          "$ref": "#/definitions/VRI.Name"
+        },
+        "PreviousResidenceAddress": {
+          "$ref": "#/definitions/VRI.Address"
+        },
+        "PreviousSignature": {
+          "$ref": "#/definitions/VRI.Signature"
+        },
+        "ResidenceAddress": {
+          "$ref": "#/definitions/VRI.Address"
+        },
+        "ResidenceAddressIsMailingAddress": {
+          "type": "boolean"
+        },
+        "Signature": {
+          "$ref": "#/definitions/VRI.Signature"
+        },
+        "VoterClassification": {
+          "items": {
+            "$ref": "#/definitions/VRI.VoterClassification"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "VoterId": {
+          "items": {
+            "$ref": "#/definitions/VRI.VoterId"
+          },
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "VRI.VoterClassification": {
       "required": [
         "@type",
@@ -805,6 +1047,9 @@
         },
         "Assertion": {
           "$ref": "#/definitions/VRI.AssertionValue"
+        },
+        "OtherAssertion": {
+          "type": "string"
         },
         "OtherType": {
           "type": "string"
@@ -832,6 +1077,13 @@
         "protected-voter",
         "restored-felon",
         "united-states-citizen"
+      ],
+      "type": "string"
+    },
+    "VRI.VoterHelperType": {
+      "enum": [
+        "assistant",
+        "witness"
       ],
       "type": "string"
     },
@@ -893,62 +1145,124 @@
       ],
       "type": "string"
     },
+    "VRI.VoterParticipation": {
+      "required": [
+        "@type",
+        "Election"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.VoterParticipation"
+          ],
+          "type": "string"
+        },
+        "BallotStyle": {
+          "$ref": "#/definitions/VRI.BallotStyle"
+        },
+        "Election": {
+          "$ref": "#/definitions/VRI.Election"
+        },
+        "PollingLocation": {
+          "$ref": "#/definitions/VRI.ReportingUnit"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.VoterRecord": {
+      "required": [
+        "@type",
+        "Voter"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.VoterRecord"
+          ],
+          "type": "string"
+        },
+        "District": {
+          "items": {
+            "$ref": "#/definitions/VRI.ReportingUnit"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "ElectionAdministration": {
+          "$ref": "#/definitions/VRI.ElectionAdministration"
+        },
+        "HavaIdRequired": {
+          "type": "boolean"
+        },
+        "Locality": {
+          "items": {
+            "$ref": "#/definitions/VRI.ReportingUnit"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "OtherStatus": {
+          "type": "string"
+        },
+        "PollingLocation": {
+          "$ref": "#/definitions/VRI.ReportingUnit"
+        },
+        "Voter": {
+          "$ref": "#/definitions/VRI.Voter"
+        },
+        "VoterParticipation": {
+          "items": {
+            "$ref": "#/definitions/VRI.VoterParticipation"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "VoterStatus": {
+          "$ref": "#/definitions/VRI.VoterStatus"
+        }
+      },
+      "type": "object"
+    },
+    "VRI.VoterRecordResults": {
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "VRI.VoterRecordResults"
+          ],
+          "type": "string"
+        },
+        "TransactionId": {
+          "type": "string"
+        },
+        "VoterRecord": {
+          "items": {
+            "$ref": "#/definitions/VRI.VoterRecord"
+          },
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "VRI.VoterRecordsRequest": {
       "required": [
         "@type",
         "GeneratedDate",
-        "Type",
-        "VoterRegistration"
+        "RequestMethod",
+        "Subject",
+        "Type"
       ],
       "additionalProperties": false,
       "properties": {
         "@type": {
           "enum": [
             "VRI.VoterRecordsRequest"
-          ],
-          "type": "string"
-        },
-        "GeneratedDate": {
-          "type": "string",
-          "format": "date"
-        },
-        "Issuer": {
-          "type": "string"
-        },
-        "OtherType": {
-          "type": "string"
-        },
-        "TransactionId": {
-          "type": "string"
-        },
-        "Type": {
-          "items": {
-            "$ref": "#/definitions/VRI.RegistrationRequestType"
-          },
-          "minItems": 1,
-          "type": "array"
-        },
-        "VendorApplicationId": {
-          "type": "string"
-        },
-        "VoterRegistration": {
-          "$ref": "#/definitions/VRI.VoterRegistration"
-        }
-      },
-      "type": "object"
-    },
-    "VRI.VoterRegistration": {
-      "required": [
-        "@type",
-        "Name",
-        "RegistrationAddress",
-        "RegistrationMethod"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "@type": {
-          "enum": [
-            "VRI.VoterRegistration"
           ],
           "type": "string"
         },
@@ -959,115 +1273,89 @@
           "minItems": 0,
           "type": "array"
         },
-        "BallotReceiptPreference": {
-          "items": {
-            "$ref": "#/definitions/VRI.BallotReceiptMethod"
-          },
-          "minItems": 0,
-          "type": "array"
+        "BallotRequest": {
+          "oneOf": [
+            {
+              "$ref": "#/definitions/VRI.ElectionBasedBallotRequest"
+            },
+            {
+              "$ref": "#/definitions/VRI.PermanentBallotRequest"
+            },
+            {
+              "$ref": "#/definitions/VRI.TemporalBallotRequest"
+            }
+          ]
         },
-        "ContactMethod": {
-          "items": {
-            "oneOf": [
-              {
-                "$ref": "#/definitions/VRI.ContactMethod"
-              },
-              {
-                "$ref": "#/definitions/VRI.PhoneContactMethod"
-              }
-            ]
-          },
-          "minItems": 0,
-          "type": "array"
+        "Form": {
+          "$ref": "#/definitions/VRI.RequestForm"
         },
-        "DateOfBirth": {
+        "GeneratedDate": {
           "type": "string",
           "format": "date"
         },
-        "Ethnicity": {
+        "Issuer": {
           "type": "string"
         },
-        "Gender": {
+        "OtherForm": {
           "type": "string"
         },
-        "LastDateOfUSResidency": {
-          "type": "string",
-          "format": "date"
-        },
-        "MailForwardingAddress": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "MailingAddress": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "Name": {
-          "$ref": "#/definitions/VRI.Name"
-        },
-        "OtherRegistrationForm": {
+        "OtherRequestMethod": {
           "type": "string"
         },
-        "OtherRegistrationMethod": {
+        "OtherType": {
           "type": "string"
         },
-        "OverseasEmployer": {
-          "type": "string"
-        },
-        "Party": {
-          "$ref": "#/definitions/VRI.Party"
-        },
-        "PreviousName": {
-          "$ref": "#/definitions/VRI.Name"
-        },
-        "PreviousRegistrationAddress": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "PreviousSignature": {
-          "$ref": "#/definitions/VRI.Signature"
-        },
-        "RegistrationAddress": {
-          "$ref": "#/definitions/VRI.Address"
-        },
-        "RegistrationAddressIsMailingAddress": {
-          "type": "boolean"
-        },
-        "RegistrationForm": {
-          "$ref": "#/definitions/VRI.RegistrationForm"
-        },
-        "RegistrationHelper": {
+        "RequestHelper": {
           "items": {
-            "$ref": "#/definitions/VRI.RegistrationHelper"
+            "$ref": "#/definitions/VRI.RequestHelper"
           },
           "minItems": 0,
           "type": "array"
         },
-        "RegistrationMethod": {
-          "$ref": "#/definitions/VRI.RegistrationMethod"
+        "RequestMethod": {
+          "$ref": "#/definitions/VRI.RequestMethod"
         },
-        "RegistrationProxy": {
-          "$ref": "#/definitions/VRI.RegistrationProxy"
+        "RequestProxy": {
+          "$ref": "#/definitions/VRI.RequestProxy"
         },
         "SelectedLanguage": {
           "type": "string"
         },
-        "Signature": {
-          "$ref": "#/definitions/VRI.Signature"
+        "Subject": {
+          "$ref": "#/definitions/VRI.Voter"
         },
-        "VoterClassification": {
+        "TransactionId": {
+          "type": "string"
+        },
+        "Type": {
           "items": {
-            "$ref": "#/definitions/VRI.VoterClassification"
+            "$ref": "#/definitions/VRI.VoterRequestType"
           },
-          "minItems": 0,
+          "minItems": 1,
           "type": "array"
         },
-        "VoterId": {
-          "items": {
-            "$ref": "#/definitions/VRI.VoterId"
-          },
-          "minItems": 0,
-          "type": "array"
+        "VendorApplicationId": {
+          "type": "string"
         }
       },
       "type": "object"
+    },
+    "VRI.VoterRequestType": {
+      "enum": [
+        "ballot-request",
+        "lookup",
+        "other",
+        "registration"
+      ],
+      "type": "string"
+    },
+    "VRI.VoterStatus": {
+      "enum": [
+        "active",
+        "confirmation",
+        "other"
+      ],
+      "type": "string"
     },
     "Xmldsig.Signature": {
       "required": [
@@ -1096,9 +1384,6 @@
             "addr.CommunityAddress_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -1277,6 +1562,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -1299,9 +1587,6 @@
             "addr.FourNumberAddressRange_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -1495,6 +1780,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -1510,9 +1798,6 @@
             "addr.GeneralAddressClass_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -1685,6 +1970,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -1703,9 +1991,6 @@
             "addr.IntersectionAddress_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -1890,6 +2175,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -1906,9 +2194,6 @@
             "addr.LandmarkAddress_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -2081,6 +2366,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -2098,9 +2386,6 @@
             "addr.NumberedThoroughfareAddress_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -2282,6 +2567,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -2301,9 +2589,6 @@
             "addr.TwoNumberAddressRange_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -2488,6 +2773,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -2504,9 +2792,6 @@
             "addr.USPSGeneralDeliveryOffice_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -2676,6 +2961,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -2692,9 +2980,6 @@
             "addr.USPSPostalDeliveryBox_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -2867,6 +3152,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -2883,9 +3171,6 @@
             "addr.USPSPostalDeliveryRoute_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -3055,6 +3340,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -3071,9 +3359,6 @@
             "addr.UnnumberedThoroughfareAddress_type"
           ],
           "type": "string"
-        },
-        "Action": {
-          "$ref": "#/definitions/addr_type.Action_type"
         },
         "AddressAnomalyStatus": {
           "$ref": "#/definitions/addr_type.AddressAnomalyStatus_type"
@@ -3252,6 +3537,9 @@
         },
         "ZipPlus4": {
           "$ref": "#/definitions/addr_type.ZipPlus4_type"
+        },
+        "action": {
+          "$ref": "#/definitions/addr_type.Action_type"
         }
       },
       "type": "object"
@@ -3968,13 +4256,16 @@
       "$ref": "#/definitions/VRI.VoterRecordsRequest"
     },
     {
-      "$ref": "#/definitions/VRI.RegistrationAcknowledgement"
+      "$ref": "#/definitions/VRI.RequestAcknowledgement"
     },
     {
-      "$ref": "#/definitions/VRI.RegistrationRejection"
+      "$ref": "#/definitions/VRI.RequestRejection"
     },
     {
-      "$ref": "#/definitions/VRI.RegistrationSuccess"
+      "$ref": "#/definitions/VRI.RequestSuccess"
+    },
+    {
+      "$ref": "#/definitions/VRI.VoterRecordResults"
     }
   ]
 }
