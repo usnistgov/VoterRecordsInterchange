@@ -1352,7 +1352,7 @@
     "VRI.VoterStatus": {
       "enum": [
         "active",
-        "confirmation",
+        "inactive",
         "other"
       ],
       "type": "string"
