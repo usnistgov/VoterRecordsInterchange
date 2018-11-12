@@ -61,6 +61,8 @@
 
 ![Image of AssertionValue](VRI_UML_Documentation_files/_18_0_2_6340208_1455829091682_555041_4448.png)
 
+Enumeration for assertions from a voter or a third party such as a department of motor vehicles (DMV) in response to questions on a registration form, used in the [Assertion](#_18_0_2_6340208_1452702303368_675707_4326) attribute of [VoterClassification](#_18_0_2_6340208_1452701375494_353834_4295).
+
 Name | Value
 ---- | -----
 `no`|For a voter’s or third party’s assertion of “no” or “false”.
@@ -71,6 +73,9 @@ Name | Value
 ### <a name="_18_0_2_6340208_1470255961792_690679_4334"></a>*The **BallotReceiptMethod** Enumeration*
 
 ![Image of BallotReceiptMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1470255961795_83043_4335.png)
+
+Enumeration for methods for delivering a ballot to the voter, used in the [BallotReceiptPreference](#_18_0_2_6340208_1470255941618_803419_4330) attribute of
+[BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731). The sub-element may be repeated multiple times with different values as applicable, e.g., to specify both **mail** and **online**.
 
 Name | Value
 ---- | -----
@@ -84,6 +89,11 @@ Name | Value
 
 ![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1467137029940_934610_4555.png)
 
+Used in requests AND responses.
+
+Enumeration for methods for contacting a voter or an election administration office, used in the [Type](#_18_0_2_6340208_1464893427968_428993_4498) attribute of [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444).
+
+
 Name | Value
 ---- | -----
 `email`|For electronic mail.
@@ -93,6 +103,12 @@ Name | Value
 ### <a name="_18_0_2_6340208_1446584873809_129867_6769"></a>*The **IdentifierType** Enumeration*
 
 ![Image of IdentifierType](VRI_UML_Documentation_files/_18_0_2_6340208_1446584873812_311564_6776.png)
+
+Used in request messages.
+
+ 
+
+Enumeration for election data-related codes in the [ExternalIdentifier](#_18_0_2_6340208_1446584770723_729230_6705) class.
 
 Name | Value
 ---- | -----
@@ -107,6 +123,11 @@ Name | Value
 
 ![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1467137299147_510499_4665.png)
 
+Used in request and response messages.
+
+Enumeration for telephone capabilities, used in the [Capability](#_18_0_2_6340208_1465493985158_54379_4458) attribute of [PhoneContactMethod](#_18_0_2_6340208_1465493970792_917703_4430).
+
+
 Name | Value
 ---- | -----
 `fax`|For telephones that include facsimile capabilities.
@@ -117,6 +138,11 @@ Name | Value
 ### <a name="_18_0_2_6340208_1458229388461_823405_4464"></a>*The **ReportingUnitType** Enumeration*
 
 ![Image of ReportingUnitType](VRI_UML_Documentation_files/_18_0_2_6340208_1458229388472_819289_4493.png)
+
+Used in request and response messages.
+
+Enumeration for the type of geopolitical unit, used in the [Type](#_18_0_2_6340208_1458229422044_801308_4545) sub-element in the [ReportingUnit](#_18_0_2_6340208_1458229422042_966646_4539) element.
+
 
 Name | Value
 ---- | -----
@@ -153,6 +179,12 @@ Name | Value
 
 ![Image of RequestError](VRI_UML_Documentation_files/_18_0_2_6340208_1455907053346_215454_4601.png)
 
+Used in response messages.
+
+ 
+
+Enumeration for registration-related errors, used in the [Error](#_18_0_2_6340208_1455907039816_598163_4597) attribute of [RegistrationRejection](#_18_0_2_6340208_1458226815148_390496_4430).
+
 Name | Value
 ---- | -----
 `identity-lookup-failed`|A lookup on the voter’s identity failed.
@@ -165,6 +197,12 @@ Name | Value
 
 ![Image of RequestForm](VRI_UML_Documentation_files/_18_0_2_6340208_1452790695466_76710_4743.png)
 
+Used in request messages.
+
+ 
+
+Enumeration for types of registration forms, used in the [RegistrationForm](#_18_0_2_6340208_1452790770728_957008_4772) attribute of [VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961).
+
 Name | Value
 ---- | -----
 `fpca`|For the Federal Post Card Application form.
@@ -174,6 +212,8 @@ Name | Value
 ### <a name="_18_0_2_6340208_1467134022102_846181_4446"></a>*The **RequestMethod** Enumeration*
 
 ![Image of RequestMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467134022106_149631_4447.png)
+
+
 
 Name | Value
 ---- | -----
@@ -195,6 +235,11 @@ Name | Value
 
 ![Image of RequestProxyType](VRI_UML_Documentation_files/_18_0_2_6340208_1449004272912_447080_4396.png)
 
+Used in request messages.
+
+Enumeration for the registration proxy, e.g., the MVA/DMV , involved in the voter’s registration request, used in the [Type](#_18_0_2_6340208_1449004222447_98580_4390) attribute of [RegistrationProxy](#_18_0_2_6340208_1448401688329_700093_4402).
+
+
 Name | Value
 ---- | -----
 `armed-forces-recruitment-office`|The voter assisted by an armed forces recruitment office.
@@ -209,6 +254,11 @@ Name | Value
 
 ![Image of SignatureSource](VRI_UML_Documentation_files/_18_0_2_6340208_1452792593424_253015_4844.png)
 
+Used in request messages.
+
+Enumeration for source of the voter’s signature, used in the [Source](#_18_0_2_6340208_1455826981569_267749_4433) sub-element of [Signature](#_18_0_2_6340208_1452788035217_489009_4409).
+
+
 Name | Value
 ---- | -----
 `dmv`|For the department of motor vehicles or motor vehicle authority.
@@ -221,6 +271,11 @@ Name | Value
 
 ![Image of SignatureType](VRI_UML_Documentation_files/_18_0_2_6340208_1452788065983_503779_4436.png)
 
+Used in request messages.
+
+Enumeration for the type of voter signature, used in the [Type](#_18_0_2_6340208_1452788086928_168327_4463) sub-element of [Signature](#_18_0_2_6340208_1452788035217_489009_4409).
+
+
 Name | Value
 ---- | -----
 `dynamic`|For use with biometrics or other artifacts captured as part of the act of the voter signing the registration form.
@@ -230,6 +285,11 @@ Name | Value
 ### <a name="_18_0_2_6340208_1465405678263_931387_4502"></a>*The **SuccessAction** Enumeration*
 
 ![Image of SuccessAction](VRI_UML_Documentation_files/_18_0_2_6340208_1465405678265_17574_4503.png)
+
+Used in response messages.
+
+Enumeration for a response to a voter records request, indicating that the response to the request is successful and the action that occurred, used in the [Action](#_18_0_2_6340208_1465405831538_561001_4536) sub-element of [RegistrationSuccess](#_18_0_2_6340208_1460483674993_168854_4684). The success action may not necessarily match the requested action.
+
 
 Name | Value
 ---- | -----
@@ -244,6 +304,11 @@ Name | Value
 ### <a name="_18_0_2_6340208_1448395608700_92014_4229"></a>*The **VoterClassificationType** Enumeration*
 
 ![Image of VoterClassificationType](VRI_UML_Documentation_files/_18_0_2_6340208_1448395608702_446714_4230.png)
+
+Used in request messages.
+
+Enumeration for voter status classifications, used in the [Type](#_18_0_2_6340208_1452702268850_457342_4324) attribute of [VoterClassification](#_18_0_2_6340208_1452701375494_353834_4295). Whether the voter status, e.g., eighteen-on-election-day, is true, false, or unknown depends on the value of the [Assertion](#_18_0_2_6340208_1452702303368_675707_4326) attribute.
+
 
 Name | Value
 ---- | -----
@@ -267,6 +332,11 @@ Name | Value
 
 ![Image of VoterHelperType](VRI_UML_Documentation_files/_18_0_2_6340208_1470256957604_938376_4437.png)
 
+Used in request messages.
+
+Enumeration for types of registration helpers, used in the [Type](#_18_0_2_6340208_1470256926542_116930_4431) attribute of [RegistrationHelper](#_18_0_2_6340208_1470256600538_323550_4366).
+
+
 Name | Value
 ---- | -----
 `assistant`|For a registration assistant.
@@ -275,6 +345,11 @@ Name | Value
 ### <a name="_18_0_2_6340208_1448398278987_184146_4431"></a>*The **VoterIdType** Enumeration*
 
 ![Image of VoterIdType](VRI_UML_Documentation_files/_18_0_2_6340208_1448398287461_480100_4458.png)
+
+Used in request messages.
+
+Enumeration for the type of voter ID, used in the [Type](#_18_0_2_6340208_1448398278989_134134_4433) attribute of [VoterId](#_18_0_2_6340208_1448398278986_542661_4430).
+
 
 Name | Value
 ---- | -----
@@ -294,6 +369,11 @@ Name | Value
 
 ![Image of VoterRequestType](VRI_UML_Documentation_files/_18_0_2_6340208_1446583913054_479906_6616.png)
 
+Used in request messages.
+
+Enumeration for the type of voter records request, used in the [Type](#_18_0_2_6340208_1446586298843_421997_6821) attribute of [VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961).
+
+
 Name | Value
 ---- | -----
 `ballot-request`|For requesting a ballot, possibly in conjunction with an FPCA registration request.
@@ -304,6 +384,8 @@ Name | Value
 ### <a name="_19_0_43701b0_1536088404947_60047_5153"></a>*The **VoterStatus** Enumeration*
 
 ![Image of VoterStatus](VRI_UML_Documentation_files/_19_0_43701b0_1536088404965_967026_5154.png)
+
+Used in request messages. Enumeration for the status of the voter in a Voter Registration Database.
 
 Name | Value
 ---- | -----
