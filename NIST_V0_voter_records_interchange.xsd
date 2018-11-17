@@ -9,7 +9,7 @@
   <!-- ========== Enumerations ========== -->
   <xsd:simpleType name="AssertionValue">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Enumeration for assertions from a voter or a third party such as a department of motor vehicles (DMV) in response to questions on a registration form, used in the Assertion attribute of VoterClassification.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages.Enumeration for assertions from a voter or a third party such as a department of motor vehicles (DMV) in response to questions on a registration form, used in the Assertion attribute of VoterClassification.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="no">
@@ -36,8 +36,7 @@
   </xsd:simpleType>
   <xsd:simpleType name="BallotReceiptMethod">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Enumeration for methods for delivering a ballot to the voter, used in the BallotReceiptPreference attribute of
-BallotRequest. The sub-element may be repeated multiple times with different values as applicable, e.g., to specify both mail and online.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request messages.Enumeration for methods for delivering a ballot to the voter, used in the BallotReceiptPreference attribute ofBallotRequest. The sub-element may be repeated multiple times with different values as applicable, e.g., to specify both mail and online.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="email">
@@ -69,7 +68,7 @@ BallotRequest. The sub-element may be repeated multiple times with different val
   </xsd:simpleType>
   <xsd:simpleType name="ContactMethodType">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in requests AND responses. Enumeration for methods for contacting a voter or an election administration office, used in the Type attribute of ContactMethod.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Enumeration for methods for contacting a voter or an election administration office, used in the Type attribute of ContactMethod.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="email">
@@ -91,9 +90,7 @@ BallotRequest. The sub-element may be repeated multiple times with different val
   </xsd:simpleType>
   <xsd:simpleType name="IdentifierType">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages.
-
-Enumeration for election data-related codes in the ExternalIdentifier class.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Enumeration for election data-related codes in the ExternalIdentifier class.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="fips">
@@ -304,9 +301,7 @@ Enumeration for election data-related codes in the ExternalIdentifier class.</xs
   </xsd:simpleType>
   <xsd:simpleType name="RequestError">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in response messages.
-
-Enumeration for registration-related errors, used in the Error attribute of RegistrationRejection.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in response messages. Enumeration for registration-related errors, used in the Error attribute of RegistrationRejection.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="identity-lookup-failed">
@@ -338,9 +333,7 @@ Enumeration for registration-related errors, used in the Error attribute of Regi
   </xsd:simpleType>
   <xsd:simpleType name="RequestForm">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages.
-
-Enumeration for types of registration forms, used in the RegistrationForm attribute of VoterRecordsRequest.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request messages. Enumeration for types of registration forms, used in the RegistrationForm attribute of VoterRecordsRequest.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="fpca">
@@ -361,6 +354,9 @@ Enumeration for types of registration forms, used in the RegistrationForm attrib
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="RequestMethod">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">Used in request messages.   Enumeration for the method used by the voter to register, used in the RequestMethod attribute of VoterRecordsRequest.</xsd:documentation>
+    </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="armed-forces-recruitment-office">
         <xsd:annotation>
@@ -473,7 +469,7 @@ Enumeration for types of registration forms, used in the RegistrationForm attrib
   </xsd:simpleType>
   <xsd:simpleType name="SignatureSource">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages. Enumeration for source of the voter's signature, used in the Source sub-element of Signature.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Enumeration for source of the voter's signature, used in the Source sub-element of Signature.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="dmv">
@@ -505,7 +501,7 @@ Enumeration for types of registration forms, used in the RegistrationForm attrib
   </xsd:simpleType>
   <xsd:simpleType name="SignatureType">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages. Enumeration for the type of voter signature, used in the Type sub-element of Signature.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Enumeration for the type of voter signature, used in the Type sub-element of Signature.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="dynamic">
@@ -569,7 +565,7 @@ Enumeration for types of registration forms, used in the RegistrationForm attrib
   </xsd:simpleType>
   <xsd:simpleType name="VoterClassificationType">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages. Enumeration for voter status classifications, used in the Type attribute of VoterClassification. Whether the voter status, e.g., eighteen-on-election-day, is true, false, or unknown depends on the value of the Assertion attribute.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Enumeration for voter status classifications, used in the Type attribute of VoterClassification. Whether the voter status, e.g., eighteen-on-election-day, is true, false, or unknown depends on the value of the Assertion attribute.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="activated-national-guard">
@@ -668,7 +664,7 @@ Enumeration for types of registration forms, used in the RegistrationForm attrib
   </xsd:simpleType>
   <xsd:simpleType name="VoterIdType">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages. Enumeration for the type of voter ID, used in the Type attribute of VoterId.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Enumeration for the type of voter ID, used in the Type attribute of VoterId.</xsd:documentation>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="drivers-license">
@@ -757,7 +753,7 @@ Enumeration for types of registration forms, used in the RegistrationForm attrib
   </xsd:simpleType>
   <xsd:simpleType name="VoterStatus">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages.
+      <xsd:documentation xml:lang="en">Used in response messages.
 
 Enumeration for the status of the voter in a Voter Registration Database.</xsd:documentation>
     </xsd:annotation>
@@ -782,6 +778,9 @@ Enumeration for the status of the voter in a Voter Registration Database.</xsd:d
   <!-- ========== Interfaces Defined ========== -->
   <!-- === Interface Address === -->
   <xsd:group name="Address">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The UML model includes an interface to the FGDC address schema, which permits any one of the 11 address subtypes to be used in any of the address elements that are of type Address.</xsd:documentation>
+    </xsd:annotation>
     <xsd:choice>
       <xsd:element name="CommunityAddress_type" type="addr:CommunityAddress_type"/>
       <xsd:element name="FourNumberAddressRange_type" type="addr:FourNumberAddressRange_type"/>
@@ -799,9 +798,7 @@ Enumeration for the status of the voter in a Voter Registration Database.</xsd:d
   <!-- ========== Classes ========== -->
   <xsd:complexType name="AdditionalInfo">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Class for specifying information not addressed in this model by other attributes, e.g. state-specific information that does not "fit" in any other attribute. The information will thus be highly specific to the generating application, and consuming applications must "know" the meaning of the information to make use of it. For this reason, use of this class is discouraged as much as is possible.
-
-The StringValue and FileValue attributes are both optional, however exactly one of them must be included.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request messages.Class for specifying information not addressed in this model by other attributes, e.g. state-specific information that does not "fit" in any other attribute. The information will thus be highly specific to the generating application, and consuming applications must "know" the meaning of the information to make use of it. For this reason, use of this class is discouraged as much as is possible. The StringValue and FileValue attributes are both optional, however exactly one of them must be included.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="FileValue" type="File" minOccurs="0">
@@ -823,7 +820,9 @@ The StringValue and FileValue attributes are both optional, however exactly one 
   </xsd:complexType>
   <xsd:complexType name="BallotRequest" abstract="true">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">An abstract class representing a request for a ballot. Classes for specific types of BallotRequest inherit the attributes and define their own.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request messages.
+
+An abstract class representing a request for a ballot. Classes for specific types of BallotRequest inherit the attributes and define their own.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="BallotReceiptPreference" type="BallotReceiptMethod" minOccurs="0" maxOccurs="unbounded">
@@ -842,7 +841,9 @@ The StringValue and FileValue attributes are both optional, however exactly one 
   </xsd:complexType>
   <xsd:complexType name="BallotStyle">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">For referencing a ballot style defined elsewhere, such as in an Election Management System (EMS).</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in response messages.
+
+For referencing a ballot style defined elsewhere, such as in an Election Management System (EMS).</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded">
@@ -864,15 +865,7 @@ The StringValue and FileValue attributes are both optional, however exactly one 
   </xsd:complexType>
   <xsd:complexType name="ContactMethod">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request and response messages.
-
-ElectionAdministration optionally includes this class to specify how to contact the election administration.
-
-Voter optionally includes this class to specify the method for contacting a voter regarding the voter's request. If the voter can be contacted in multiple ways, the application creating the data should order the occurrences of ContactMethod by priority.
-
-The PhoneContactMethod class uses ContactMethod as a base class, and should be used with when the contact method is for a telephone and it is necessary to describe the capabilities of the telephone.
-
-The Capability attribute is provided by the PhoneContactMethod class.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. ElectionAdministration optionally includes this class to specify how to contact the election administration. Voter optionally includes this class to specify the method for contacting a voter regarding the voter's request. If the voter can be contacted in multiple ways, the application creating the data should order the occurrences of ContactMethod by priority. The PhoneContactMethod class uses ContactMethod as a base class, and should be used with when the contact method is for a telephone and it is necessary to describe the capabilities of the telephone. The Capability attribute is provided by the PhoneContactMethod class.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
@@ -988,9 +981,7 @@ Describes an election event. Only the date of the election is required. Other at
   </xsd:complexType>
   <xsd:complexType name="ExternalIdentifier">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request and response messages.
-
-BallotStyle, Election, Party and ReportingUnit optionally include this class for associating a jurisdiction's codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns, precincts, etc. Multiple occurrences of ExternalIdentifier can be used to associate multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-specific codes as well as OCD-IDs (Open Civic Data Identifiers).</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. BallotStyle, Election, Party and ReportingUnit optionally include this class for associating a jurisdiction's codes, i.e., identifiers, with political parties or geopolitical units such as counties, towns, precincts, etc. Multiple occurrences of ExternalIdentifier can be used to associate multiple codes, e.g., if there is a desire to associate multiple codes with an object such as state-specific codes as well as OCD-IDs (Open Civic Data Identifiers).</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="OtherType" type="xsd:string" minOccurs="0">
@@ -1012,13 +1003,7 @@ BallotStyle, Election, Party and ReportingUnit optionally include this class for
   </xsd:complexType>
   <xsd:complexType name="File">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages.
-
-VoterId optionally uses this class for FileValue to specify a filename for voter identification purposes such as for a utility bill. AdditionalInfo also optionally includes FileValue.
-
-File extends the xsd:base64Binary type to add the attributes for filename and (Multi-Purpose Internet Mail Extensions) MIME type, e.g., application/pdf for a file of type PDF.
-
-The Image element uses this class as an base class, thus Image can be used when the type of file is for an image, e.g., image/png.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. VoterId optionally uses this class for FileValue to specify a filename for voter identification purposes such as for a utility bill. AdditionalInfo also optionally includes FileValue. File extends the xsd:base64Binary type to add the attributes for filename and (Multi-Purpose Internet Mail Extensions) MIME type, e.g., application/pdf for a file of type PDF. The Image element uses this class as an base class, thus Image can be used when the type of file is for an image, e.g., image/png.</xsd:documentation>
     </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="xsd:base64Binary">
@@ -1037,7 +1022,7 @@ The Image element uses this class as an base class, thus Image can be used when 
   </xsd:complexType>
   <xsd:complexType name="Image">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages. Signature optionally includes this class to indicate that a file contains an image of a voter's signature. Image uses File as a base class, thus attributes of File can be included in Image.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Signature optionally includes this class to indicate that a file contains an image of a voter's signature. Image uses File as a base class, thus attributes of File can be included in Image.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="File">
@@ -1092,7 +1077,7 @@ The Image element uses this class as an base class, thus Image can be used when 
   </xsd:complexType>
   <xsd:complexType name="Name">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages. Voter includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using PreviousName instead of Name. RequestHelper also includes this class for specifying the name of a request helper. Multiple occurrences of the MiddleName attribute can be used as needed, e.g., for names with additional middle names or nicknames such as "John Andrew Winston (Jack) Smith". All elements are optional, however at least FullName must be included if the other attributes are not.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Voter includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using PreviousName instead of Name. RequestHelper also includes this class for specifying the name of a request helper. Multiple occurrences of the MiddleName attribute can be used as needed, e.g., for names with additional middle names or nicknames such as "John Andrew Winston (Jack) Smith". All elements are optional, however at least FullName must be included if the other attributes are not.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="FirstName" type="xsd:string" minOccurs="0">
@@ -1364,7 +1349,7 @@ For indicating that the request was received but action on the request is pendin
   </xsd:complexType>
   <xsd:complexType name="Signature">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in request messages. Voter optionally includes this class for specifying information about a voter's signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, Voter uses PreviousSignature instead of Signature. RequestHelper optionally includes this class for specifying information about the helper's signature. Source is used to specify the source of the voter's signature, for example, on file at a department of motor vehicles. FileValue is used to include an image of the voter's signature.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in request and response messages. Voter optionally includes this class for specifying information about a voter's signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, Voter uses PreviousSignature instead of Signature. RequestHelper optionally includes this class for specifying information about the helper's signature. Source is used to specify the source of the voter's signature, for example, on file at a department of motor vehicles. FileValue is used to include an image of the voter's signature.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="Date" type="xsd:date" minOccurs="0">
@@ -1628,7 +1613,7 @@ VoterRecord optionally contains additional information useful to the voter, incl
           <xsd:documentation xml:lang="en">Other geographies such as the voter’s precinct.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="OtherStatus" type="xsd:string" minOccurs="0">
+      <xsd:element name="OtherVoterStatus" type="xsd:string" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">Used when VoterStatus value is other.</xsd:documentation>
         </xsd:annotation>
@@ -1657,7 +1642,7 @@ VoterRecord optionally contains additional information useful to the voter, incl
   </xsd:complexType>
   <xsd:complexType name="VoterRecordResults">
     <xsd:annotation>
-      <xsd:documentation xml:lang="en">Used in responses.For indicating a successful response to a lookup request.A lookup for a single voter may result in multiple VoterRecord being returned. This can occur if the voter has duplicate records in the VRDB, or if the criteria specified in the lookup request was broad.</xsd:documentation>
+      <xsd:documentation xml:lang="en">Used in response messages.For indicating a successful response to a lookup request.A lookup for a single voter may result in multiple VoterRecord being returned. This can occur if the voter has duplicate records in the VRDB, or if the criteria specified in the lookup request was broad.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="VoterRecordsResponse">

@@ -886,7 +886,7 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_3_43701b0_1523308699224_862322_6626"></a>`ElectionAdministration`|0..1|`ElectionAdministration`|The election administration that conducts elections for the voter.
 <a name="_18_5_3_43701b0_1524169058325_142051_6434"></a>`HavaIdRequired`|0..1|`Boolean`|Indicates that the voter must present identification at the polls per HAVA.
 <a name="_18_5_3_43701b0_1522785557431_296316_7408"></a>`Locality`|0..*|`ReportingUnit`|Other geographies such as the voter’s precinct.
-<a name="_19_0_43701b0_1537283642388_774863_5190"></a>`OtherStatus`|0..1|`String`|Used when [VoterStatus](#_18_5_3_43701b0_1524168892961_117849_6431) value is other.
+<a name="_19_0_43701b0_1537283642388_774863_5190"></a>`OtherVoterStatus`|0..1|`String`|Used when [VoterStatus](#_18_5_3_43701b0_1524168892961_117849_6431) value is other.
 <a name="_18_5_3_43701b0_1522785527338_156954_7383"></a>`PollingLocation`|0..1|`ReportingUnit`|The voter’s polling place.
 <a name="_19_0_43701b0_1538056056711_903517_5865"></a>`Voter`|1|`Voter`|For details specific to a particular voter.
 <a name="_18_5_3_43701b0_1523390822767_626731_7301"></a>`VoterParticipation`|0..*|`VoterParticipation`|For associating a [VoterRecord](#_18_5_3_43701b0_1521144693004_190730_6034) to elections the voter has participated in.
