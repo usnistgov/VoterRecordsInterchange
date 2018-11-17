@@ -61,7 +61,10 @@
 
 ![Image of AssertionValue](VRI_UML_Documentation_files/_18_0_2_6340208_1455829091682_555041_4448.png)
 
+Used in request and response messages.
+
 Enumeration for assertions from a voter or a third party such as a department of motor vehicles (DMV) in response to questions on a registration form, used in the [Assertion](#_18_0_2_6340208_1452702303368_675707_4326) attribute of [VoterClassification](#_18_0_2_6340208_1452701375494_353834_4295).
+
 
 Name | Value
 ---- | -----
@@ -74,8 +77,11 @@ Name | Value
 
 ![Image of BallotReceiptMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1470255961795_83043_4335.png)
 
+Used in request messages.
+
 Enumeration for methods for delivering a ballot to the voter, used in the [BallotReceiptPreference](#_18_0_2_6340208_1470255941618_803419_4330) attribute of
-[BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731). The sub-element may be repeated multiple times with different values as applicable, e.g., to specify both **mail** and **online**.
+[BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731). The sub-element may be repeated multiple times with different values as applicable, e.g., to specify both mail and online.
+
 
 Name | Value
 ---- | -----
@@ -87,9 +93,9 @@ Name | Value
 
 ### <a name="_18_0_2_6340208_1464893409742_774328_4470"></a>*The **ContactMethodType** Enumeration*
 
-![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1464893409752_571424_4471.png)
+![Image of ContactMethodType](VRI_UML_Documentation_files/_18_0_2_6340208_1467137029940_934610_4555.png)
 
-Used in requests AND responses.
+Used in request and response messages.
 
 Enumeration for methods for contacting a voter or an election administration office, used in the [Type](#_18_0_2_6340208_1464893427968_428993_4498) attribute of [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444).
 
@@ -104,11 +110,10 @@ Name | Value
 
 ![Image of IdentifierType](VRI_UML_Documentation_files/_18_0_2_6340208_1446584873812_311564_6776.png)
 
-Used in request messages.
-
- 
+Used in request and response messages.
 
 Enumeration for election data-related codes in the [ExternalIdentifier](#_18_0_2_6340208_1446584770723_729230_6705) class.
+
 
 Name | Value
 ---- | -----
@@ -121,7 +126,7 @@ Name | Value
 
 ### <a name="_18_0_2_6340208_1465494051199_895769_4463"></a>*The **PhoneCapability** Enumeration*
 
-![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1465494055245_880506_4464.png)
+![Image of PhoneCapability](VRI_UML_Documentation_files/_18_0_2_6340208_1467137299147_510499_4665.png)
 
 Used in request and response messages.
 
@@ -181,9 +186,8 @@ Name | Value
 
 Used in response messages.
 
- 
-
 Enumeration for registration-related errors, used in the [Error](#_18_0_2_6340208_1455907039816_598163_4597) attribute of [RegistrationRejection](#_18_0_2_6340208_1458226815148_390496_4430).
+
 
 Name | Value
 ---- | -----
@@ -199,9 +203,8 @@ Name | Value
 
 Used in request messages.
 
- 
-
 Enumeration for types of registration forms, used in the [RegistrationForm](#_18_0_2_6340208_1452790770728_957008_4772) attribute of [VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961).
+
 
 Name | Value
 ---- | -----
@@ -213,6 +216,9 @@ Name | Value
 
 ![Image of RequestMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467134022106_149631_4447.png)
 
+Used in request messages.
+
+Enumeration for the method used by the voter to register, used in the [RequestMethod](#_18_0_2_6340208_1467133994025_761560_4440) attribute of [VoterRecordsRequest](#_18_0_2_6340208_1446583854986_237644_5961).
 
 
 Name | Value
@@ -254,7 +260,7 @@ Name | Value
 
 ![Image of SignatureSource](VRI_UML_Documentation_files/_18_0_2_6340208_1452792593424_253015_4844.png)
 
-Used in request messages.
+Used in request and response messages.
 
 Enumeration for source of the voter’s signature, used in the [Source](#_18_0_2_6340208_1455826981569_267749_4433) sub-element of [Signature](#_18_0_2_6340208_1452788035217_489009_4409).
 
@@ -271,7 +277,7 @@ Name | Value
 
 ![Image of SignatureType](VRI_UML_Documentation_files/_18_0_2_6340208_1452788065983_503779_4436.png)
 
-Used in request messages.
+Used in request and response messages.
 
 Enumeration for the type of voter signature, used in the [Type](#_18_0_2_6340208_1452788086928_168327_4463) sub-element of [Signature](#_18_0_2_6340208_1452788035217_489009_4409).
 
@@ -305,7 +311,7 @@ Name | Value
 
 ![Image of VoterClassificationType](VRI_UML_Documentation_files/_18_0_2_6340208_1448395608702_446714_4230.png)
 
-Used in request messages.
+Used in request and response messages.
 
 Enumeration for voter status classifications, used in the [Type](#_18_0_2_6340208_1452702268850_457342_4324) attribute of [VoterClassification](#_18_0_2_6340208_1452701375494_353834_4295). Whether the voter status, e.g., eighteen-on-election-day, is true, false, or unknown depends on the value of the [Assertion](#_18_0_2_6340208_1452702303368_675707_4326) attribute.
 
@@ -346,7 +352,7 @@ Name | Value
 
 ![Image of VoterIdType](VRI_UML_Documentation_files/_18_0_2_6340208_1448398287461_480100_4458.png)
 
-Used in request messages.
+Used in request and response messages.
 
 Enumeration for the type of voter ID, used in the [Type](#_18_0_2_6340208_1448398278989_134134_4433) attribute of [VoterId](#_18_0_2_6340208_1448398278986_542661_4430).
 
@@ -385,7 +391,7 @@ Name | Value
 
 ![Image of VoterStatus](VRI_UML_Documentation_files/_19_0_43701b0_1536088404965_967026_5154.png)
 
-Used in request messages. Enumeration for the status of the voter in a Voter Registration Database.
+Used in response messages. Enumeration for the status of the voter in a Voter Registration Database.
 
 Name | Value
 ---- | -----
@@ -398,6 +404,8 @@ Name | Value
 ### <a name="_18_0_2_6340208_1446587509996_176108_6861"></a>*The **AdditionalInfo** Class*
 
 ![Image of AdditionalInfo](VRI_UML_Documentation_files/_18_0_2_6340208_1446587510003_656308_6862.png)
+
+Used in request messages.
 
 Class for specifying information not addressed in this model by other attributes, e.g. state-specific information that does not “fit” in any other attribute. The information will thus be highly specific to the generating application, and consuming applications must “know” the meaning of the information to make use of it. For this reason, use of this class is discouraged as much as is possible.
 
@@ -416,7 +424,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ![Image of BallotRequest](VRI_UML_Documentation_files/_18_5_2_43701b0_1510599050830_791767_5732.png)
 
-An abstract class representing a request for a ballot. Classes for specific types of BallotRequest inherit the attributes and define their own.
+Used in request messages. An abstract class representing a request for a ballot. Classes for specific types of BallotRequest inherit the attributes and define their own.
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -470,7 +478,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ![Image of BallotStyle](VRI_UML_Documentation_files/_18_5_3_43701b0_1523391256343_926826_7476.png)
 
-For referencing a ballot style defined elsewhere, such as in an Election Management System (EMS).
+Used in response messages. For referencing a ballot style defined elsewhere, such as in an Election Management System (EMS).
 
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
@@ -482,7 +490,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ### <a name="_18_0_2_6340208_1464893400979_739933_4444"></a>*The **ContactMethod** Class*
 
-![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1464893400986_87872_4445.png)
+![Image of ContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137004544_113383_4528.png)
 
 Used in request and response messages.
 
@@ -504,7 +512,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 #### <a name="_18_0_2_6340208_1465493970792_917703_4430"></a>*The **PhoneContactMethod** Class*
 
-![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1465493970801_186622_4431.png)
+![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137273798_668126_4636.png)
 
 Used in request and response messages.
 
@@ -522,7 +530,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ### <a name="_18_5_2_43701b0_1510603645561_775691_5960"></a>*The **Election** Class*
 
-![Image of Election](VRI_UML_Documentation_files/_18_5_2_43701b0_1510603645585_3700_5994.png)
+![Image of Election](VRI_UML_Documentation_files/_18_5_3_43701b0_1523390875922_771644_7321.png)
 
 Used in request and response messages. Describes an election event. Only the date of the election is required. Other attributes may be used to describe the election for which a ballot is requested or a voter participated.
 
@@ -571,7 +579,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ### <a name="_18_0_2_6340208_1446584770723_729230_6705"></a>*The **ExternalIdentifier** Class*
 
-![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1446584770729_88052_6718.png)
+![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1458237601050_674272_5135.png)
 
 Used in request and response messages.
 
@@ -590,7 +598,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ![Image of File](VRI_UML_Documentation_files/_18_0_2_6340208_1452879654120_445800_5256.png)
 
-Used in request messages.
+Used in request and response messages.
 
 [VoterId](#_18_0_2_6340208_1448398278986_542661_4430) optionally uses this class for [FileValue](#_18_0_2_6340208_1464186405548_20750_4438) to specify a filename for voter identification purposes such as for a utility bill. [AdditionalInfo](#_18_0_2_6340208_1446587509996_176108_6861) also optionally includes [FileValue](#_18_0_2_6340208_1464186843386_982801_4458).
 
@@ -610,7 +618,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ![Image of Image](VRI_UML_Documentation_files/_18_0_2_6340208_1452879607469_640085_5230.png)
 
-Used in request messages.
+Used in request and response messages.
 
 [Signature](#_18_0_2_6340208_1452788035217_489009_4409) optionally includes this class to indicate that a file contains an image of a voter’s signature. Image uses [File](#_18_0_2_6340208_1452879654116_509055_5255) as a base class, thus attributes of [File](#_18_0_2_6340208_1452879654116_509055_5255) can be included in Image.
 
@@ -655,7 +663,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ![Image of Name](VRI_UML_Documentation_files/_18_0_2_6340208_1446583855033_467904_6133.png)
 
-Used in request messages.
+Used in request and response messages.
 
 [Voter](#_18_5_3_43701b0_1520354792154_717315_5628) includes this class for specifying the name of a voter and, optionally, for specifying a previous name of the voter, using [PreviousName](#_18_5_3_43701b0_1520545273362_721771_5308) instead of [Name](#_18_0_2_6340208_1449006181433_992071_4512). [RequestHelper](#_18_0_2_6340208_1470256600538_323550_4366) also includes this class for specifying the name of a request helper.
 
@@ -677,7 +685,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ### <a name="_18_0_2_6340208_1446583854985_482559_5956"></a>*The **Party** Class*
 
-![Image of Party](VRI_UML_Documentation_files/_18_0_2_6340208_1446583855033_152433_6134.png)
+![Image of Party](VRI_UML_Documentation_files/_18_5_3_43701b0_1523391450716_472827_7537.png)
 
 Used in request and response messages.
 
@@ -764,7 +772,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ![Image of Signature](VRI_UML_Documentation_files/_18_0_2_6340208_1452788035221_169450_4410.png)
 
-Used in request messages.
+Used in request and response messages.
 
 [Voter](#_18_5_3_43701b0_1520354792154_717315_5628) optionally includes this class for specifying information about a voter’s signature on a registration request. If there is a need to include previous signature that uses a different name, e.g., a maiden name, [Voter](#_18_5_3_43701b0_1520354792154_717315_5628) uses [PreviousSignature](#_18_0_2_6340208_1492617539359_425782_4577) instead of [Signature](#_18_0_2_6340208_1452788173305_113537_4476).
 
@@ -786,7 +794,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
 
-![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1520354792157_431055_5629.png)
+![Image of Voter](VRI_UML_Documentation_files/_18_5_3_43701b0_1522779528451_974674_7331.png)
 
 Used in request and response messages. Contains attributes specific to identifying a voter.
 
@@ -988,7 +996,7 @@ Attribute | Multiplicity | Type | Attribute Description
 
 ![Image of VoterRecordResults](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
 
-Used in responses.
+Used in response messages.
 
 For indicating a successful response to a lookup request.
 
