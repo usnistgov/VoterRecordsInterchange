@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
+<VoterRecordsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///F:/IT/DEV/Current%20Project%20Documents/IEEE%201622/OVF%20CDF/NIST_V0_voter_records_interchange.xsd" xmlns="NIST_V0_voter_records_interchange.xsd">
+	<VoterRegistration>
+		<VoterId>
+			<StringValue>8392</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+		<Name>
+			<FirstName>TYEE</FirstName>
+			<LastName>ZEHR</LastName>
+			<MiddleName>L</MiddleName>
+		</Name>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<Type>united-states-citizen</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<Type>18-on-election-day</Type>
+		</VoterClassification>
+		<Signature>
+			<Date>2016-12-29</Date>
+			<FileValue xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" fileName="" mimeType="" xfa:contentType="image/png" href="">iVBORw0KGgoAAAANSUhEUgAAAOgAAAA5CAIAAACzqfClAAANbUlEQVR4nO2df0hb1xfA77K3NAsh
+CyEEcSErw4UsOMk6cbaEIF0mwYnLRGQUERWRIlLEFQlDRDoZRUYZIxMpmQuhiBSRIC5IKFJKCEGy
+TEIJWRoeLohLXYhZCCGG1OyPw/d9g/n18t6tXdj7/GXfO+/ce947795zzz15fa1QKCAOjkaD96o7
+wMHBBM5xORoSznE5GhLOcTkaEs5xORoSznE5GhLOcTkaEs5xORoSznE5GhLOcTkaEs5xOS6C58+f
+f/TRR9988w0uha9xtQocF8Do6KjNZhMKhclk8o033mCvkGCvguPlcXJysru7G4lE1Gr1559//qq7
+w5AXL144nU6EUE9PDxavRRfjuKenp9Fo9L333qMj/Ouvv46MjMTj8T///PNld+wV8scffxweHsZi
+sXQ6nc1mpVJpIpHI5/NnZ2e5XC6dTicSCZIk3W53MplECEkkkpOTk1fda4bs7OwcHx8jhAYGBrAp
+LdRPJpMJhUJwW+12+507d8bHx41Go1arbW5uFolEfD5fLpeLxWK9Xm+321tbWxFC09PTNTW73W6R
+SIQQunbtGoOO/csJhULz8/M6nQ5spA+Px7Pb7a+6+xW5f/++VCp1OByVBIxGI0JIIBCk02lcjdZw
+XIPBYDQaTSaTXq/XaDRNTU18Pp/Hq2NJd/ny5StXrsDfjx8/rtJWPB6XSqUIIaFQuL+/j8vCfwmp
+VOry5ct07hifzycIgiD+PxkuLy9fcG8PDw/VajWd4SOdTsN7ePPmzbICmUxGIBAghHp7ewuFQjKZ
+tFgsfX19SqWSIAipVNrV1bW6ulpvD2s4blkf5fF4TU1NWq322rVrcEQsFlsqAGMzn89HCBkMhipt
+TU1NwWPb3t6m2fu9vb2JiQmNRiMSiUQiUXt7+9LSUiaToWs9PiU1uX37NtwrjUaztLTk8Xji8Xg+
+ny+VzOfzJEk2NzfDrV5ZWWHWIhu7Hjx4AGNkTcnNzU2wa2lpqawARLcIIavVure3J5fLy76udCbk
+Ymo4rtfrtdvtDodja2vL6XT6/f6joyPqdj958gRanZmZqa7n5s2bIBkIBMoKBINBGGPu3r1Ls+vz
+8/Nlb0FraytNDbiU0OHhw4dqtZrO0JLNZiG4IgjCZrMxa46lXbdu3UIItbS01JRcWFgAzU+ePCkr
+MDk5CW9gLBbT6/Xwd2dn58zMzNLS0tzcHLgyQRDJZJK+gUxiXArKHZ8+fVpdMhqNwnwxNjZWejaf
+z+t0OoSQUqmkGQZNT09TD6O7u3txcRE0wJhNs/9YlOAlFot1dnZCBzY3N5kpYW8XzKUwuVcH1lsE
+QVR6cEqlEiHU3t5eKBQ6Ojp0Ot25wYsa/ioNamVh7rj5fF4mkyGE2tra6MjDSywQCOLx+LlTi4uL
+0HWn00lHld1uB3mxWLy1tUUdd7vdZrPZ5XJdmBK8hEIhiINFItGjR4+YKWFvVzabhVFmfn6+prBK
+pUIIabXasmf9fj90BlSFw+FcLndOJpVKgUxdCxvmjkvFLouLi3TkDw4OIGI+FwzFYjGI7gcHB2k2
+DTeLz+czfrq4lGDE7/fDQCCTyfb29hjrYW+X2+2mOY4kk0l4phMTE2UFvv76a1Dl9XorKVlbW4P4
+oXREqwJzxx0eHoY+BYNBmpdAiKNWq4sPjo+Pw1xDXw+MByxTZliU4CIcDkNGRalU0r8PZWFv1927
+d8GTagadDocDfMBqtZYVUCgUCCGJRFJ2GVooFEiSBMOHhobq6iRDx81ms2KxuNQLq3P//v1zMXEg
+EIBXdmpqir4eyK+1tLRks9n6+o1bCRYSiUR7ezt0JhqNstTG3q7u7m6E0JUrV2hKVlrk+Hw+ONvf
+31/28kAgABGwWq2ua2VWYOy4W1tb0KdKSZCyxONxyIstLCzAkb6+PpgcE4kEfT0zMzPQekdHx/b2
+dmnYdGFK2BOLxTQaDUJIoVAcHBywV8jSLirAvX37dk1hiG3EYnHZs3fu3IGerK+vl55dX1+HELGt
+re3o6KiuThYYO+7Q0BAEUsfHx3VdCJsokJTZ398Hw+jnnx0OR39/P3g/BZ01BHYlWDg6OoKQVC6X
+h0Ihltqw2OVyueDCmsu4SCQCkl1dXWUFID3S3Nx87vj+/n5vby81GKdSqbp6CDBx3FwuJ5FIqkwB
+VbBardDjcDgMw22lBek5YrEYOH0pN27coNk6FiW4OD4+VqvVCCGJRMJypxCjXZB2FQqFZSONfD4f
+CASsVuvExERLSwvVCmzy63Q6KvEcj8chCLx16xZ1eSKRGBsbg+NCoZDNjiATx6XyCcXZFprEYjHo
+N7Xr9vDhw5pX+f1+CPMBpVI5OTl57949i8WytbVVKfB/GUpwEY/H29raEEIikcjj8bBRhdcuUGU0
+GqkjJEmur6/PzMzodDqhUFj29aDg8XhwFeQKEEKQ3CBJcnp6GiJagiDGxsZYxkVMHBfyAHK5nNnD
+pkoXEEIqlaqmfDweB4MRQjKZ7MGDBwzaxaIEF6lUClZjAoGAZTIOr107Ozugqru7e35+3mg0QhRb
+7Jetra0jIyPUhhmPx1tbWwuHw7u7uxaLZW5uDlRNTEzAawlBNuxgI4SGh4dJkmRjMsDEcWGPrlJR
+RU2oXXtUOY1CkU6nu7q6QFin08ViMQYtYlGCi0wmA/tYBEFUqaiiA0u7KpUNnIMgiPb29tnZWafT
+Sa39nz59CmcrBbgwPPX19cE/DQYDyH///fdsTKao23E9Hk/xFMCA9fV10KBQKGqueeHFhVvAuPAF
+ixIs5HI5SCFhqVRkaRe1D1yKUCgcGBhYWVnZ29sru5e7uroKkrOzs6Vn0+k0VJ788MMPcOTw8BBi
+YoIgGG9lF1O345rNZjCMcf6IWrd+++231SWDwSAExNevX2fcHBYlWMjn81QltcViYamNvV25XG57
+e3t5eRnq+Pr7+6FvWq225uBNbT+VzQhR2dLi8gOSJJuamhBCfD5/Z2eHQYeLqdtxYUmh1+sZN0mt
+W2vmbqHQUSaTsZncsSjBAvWwa76xdMBrVz6fp2ZzOi8VtRyMRCKlZ2/cuIHKFZf5fD7I3QoEApbV
+IPU57tHREdwsxrc+k8lAKq3S7nYxkONk+ZixKGHP2NgYPGmz2YxFIV67AoEAFSfU3L2jMrilOVoA
+Rtayj9jlcsEGh0AgYDPu1ue4NpsNmmScywANiF6FA+TS3W43s7YwKmEJ5GEQQpOTk7h04rULKscR
+QgMDAzWFqa374eHh0rPUO1ApiHe5XJBWEwgEGxsbzDpc33cV3G63Uqlsa2t755136rqQAjYguru7
+33///ZrC8GxIkmTQ0MnJyenpKS4ljHnx4sXo6ChYPTQ09OOPP7LRVgxeu6j6Q4hAqvP48WP4g4ou
+iqGKyyDlV8qnn37qdDpFIlE2mx0YGPjkk09+/vnn33///e+//6ZtQZ0/loSUIYMNMyAYDEKjNOcI
+CArrLXTKZrMQY3V0dOBSwoxMJtPT0wMmm0wmvJljvHZBWk2hUNBRQv2sqOyGP5QDCIXC6ko8Hs+5
+JDGqnFwrpQ7HPTw8BO00C3BLgfoPjUZDU35jYwNaLN42rI7T6YTlI/rfNj0WJQwgSZIacgwGA/Ya
+NLx2Qa0fnRq9UCgEGjo7O8sKQPANP3moTjQaNZlMxb9rpD9M1OG4Xq8XtDPY6S0UCtlsFt6we/fu
+0b+Kqsbo7Ox89OhRpd+HBIPBhYWF4t3zwcFBylewKKmLtbU1cAXAbDbDFxIYqKoCLrsoX6STm19Z
+WQHhss8xk8mAI46MjNC0giRJm81mtVp3d3fpT0r1jbhSqdRgMDB7AMvLywghPp9fVw1bJpMxmUzU
+HScIQq1WT01Nmc1mi8WyuLhoMBhgDUshlUrPJRexKKmL0kkQkMvlPT09c3NzDoeDfektLrtgN0Ei
+kdDJBw8ODiKEBAJB2TiBqsF92WkcVj+WrAt44+stdAdWV1f1en3N7zmoVKrvvvuuUpkcFiU08Xq9
+UNRX/HmEsn5sNBpp+rHH4zGZTAqF4lwGlL1dEJXSyScUCoXx8XGCIKiahHNQAQyd2ik2XNBH7375
+5ReY1wKBwAcffMBMyV9//eVyuXZ3d30+H0mSZ2dncrk8lUpptdqurq7e3t4PP/zwYpTUy+npaSQS
+2d/f9/l8Xq/X7/fncrlSMblcfv36dRgm4YNAPB4vkUj4fL6NjQ0qzbS5ufnFF19gtOutt95KpVKr
+q6ujo6MsLf3tt99MJtO7777rdDrffPNNltqqcEGO+9lnnzmdzpaWlmfPnl1Ac/9yTk9P/X5/IBCI
+RqM+n8/n8yUSCToXyuXy2dnZr776Cm9/Ll26dHZ2dnBw8Pbbb+PV/PK4iI/ePX/+HOoTigOy/zKX
+Ll26evXq1atXqSPPnj2D8TISiRwfH6dSqVwul8/nCYIQCoUymUylUn355ZdDQ0Ovv/469v7YbDaF
+QtFAXosuZsT96aefYOvI6/V+/PHHL7s5jv8CF/FF8nA4jBBSqVSc13Lg4iIcV6fT8fl86tenHBzs
+4T6lz9GQcP95CUdDwjkuR0PCOS5HQ8I5LkdDwjkuR0PCOS5HQ8I5LkdDwjkuR0PCOS5HQ/IP5Cua
+ti3BUK8AAAAASUVORK5CYII=</FileValue>
+		</Signature>
+		<ContactMethod>
+			<Type>phone</Type>
+			<Value>4406448595</Value>
+		</ContactMethod>
+		<DateOfBirth>1964-03-13</DateOfBirth>
+		<PreviousName>
+			<FullName>TYEE MILLER</FullName>
+		</PreviousName>
+		<PreviousRegistrationAddress>
+			<GeneralAddressClass_type action="">
+				<addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr">3687 FALLEN NECTAR WAY</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator="">
+					<addr_type:PlaceName PlaceNameType="MunicipalJurisdiction" ElementSequenceNumber="" GNISFeatureID="">GUERNE</addr_type:PlaceName>
+					<addr_type:PlaceName PlaceNameType="County" ElementSequenceNumber="" GNISFeatureID="">85</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">OH</addr_type:StateName>
+				<addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"/>
+			</GeneralAddressClass_type>
+		</PreviousRegistrationAddress>
+		<RegistrationAddress>
+			<GeneralAddressClass_type action="">
+				<addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr">6047 CINDER MALL</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator="">
+					<addr_type:PlaceName PlaceNameType="MunicipalJurisdiction" ElementSequenceNumber="" GNISFeatureID="">HUBBARD</addr_type:PlaceName>
+					<addr_type:PlaceName PlaceNameType="County" ElementSequenceNumber="" GNISFeatureID="">78</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">OH</addr_type:StateName>
+				<addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">45300</addr_type:ZipCode>
+			</GeneralAddressClass_type>
+		</RegistrationAddress>
+		<RegistrationMethod>unknown</RegistrationMethod>
+	</VoterRegistration>
+	<GeneratedDate>2016-12-29</GeneratedDate>
+	<Type>registration</Type>
+</VoterRecordsRequest>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///F:/IT/DEV/Current%20Project%20Documents/IEEE%201622/OVF%20CDF/NIST_V0_voter_records_interchange.xsd">
+	<VoterRegistration>
+		<VoterId>
+			<AttestNoSuchId>true</AttestNoSuchId>
+			<Type>drivers-license</Type>
+		</VoterId>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>9998</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+		<Name>
+			<FirstName>LISA</FirstName>
+			<LastName>SMITH</LastName>
+			<MiddleName>A</MiddleName>
+		</Name>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<Type>18-on-election-day</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<Type>united-states-citizen</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<OtherType>ohio-resident</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<OtherType>bmv-authorization</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<ContactMethod>
+			<Type>phone</Type>
+			<Value>3335554444</Value>
+		</ContactMethod>
+		<DateOfBirth>1953-12-26</DateOfBirth>
+		<MailingAddress>
+			<GeneralAddressClass_type>
+				<USPSGeneralDeliveryPoint xmlns="http://www.fgdc.gov/schemas/address/addr">84 CHARING CROSS RD</USPSGeneralDeliveryPoint>
+				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
+					<PlaceName PlaceNameType="MunicipalJurisdiction">LONDON</PlaceName>
+				</CompletePlaceName>
+				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">WC2H 0JA</ZipCode>
+				<CountryName xmlns="http://www.fgdc.gov/schemas/address/addr_type">UK</CountryName>
+			</GeneralAddressClass_type>
+		</MailingAddress>		
+		<RegistrationAddress>
+			<NumberedThoroughfareAddress_type>
+				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">1810</AddressNumber>
+				</CompleteAddressNumber>
+				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
+					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">MERRIMAN</StreetName>
+					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">RD</StreetNamePostType>
+					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
+				</CompleteStreetName>
+				<CompleteSubaddress xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<SubaddressElement xmlns="http://www.fgdc.gov/schemas/address/addr_type">
+						<SubaddressType/>
+						<SubaddressIdentifier/>
+					</SubaddressElement>
+				</CompleteSubaddress>
+				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
+					<PlaceName PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName PlaceNameType="County">SUMMIT </PlaceName>
+				</CompletePlaceName>
+				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
+				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44313</ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</RegistrationAddress>
+		<RegistrationMethod>voter-via-mail</RegistrationMethod>
+	</VoterRegistration>
+	<GeneratedDate>2017-02-06</GeneratedDate>
+	<Issuer>Ohio Secretary of State</Issuer>
+	<TransactionId>daaf6e36-caa4-4eb5-a716-484c00a4b757</TransactionId>
+	<Type>registration</Type>
+	<VendorApplicationId>OLVR 2.0</VendorApplicationId>
+</VoterRecordsRequest>

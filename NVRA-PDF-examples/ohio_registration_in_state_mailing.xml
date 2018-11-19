@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///F:/IT/DEV/Current%20Project%20Documents/IEEE%201622/OVF%20CDF/NIST_V0_voter_records_interchange.xsd">
+	<VoterRegistration>
+		<AdditionalInfo>
+			<Name>Language</Name>
+			<StringValue>en_US</StringValue>
+		</AdditionalInfo>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>AB321345</StringValue>
+			<Type>drivers-license</Type>
+		</VoterId>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>2222</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+		<Name>
+			<FirstName>JENNY</FirstName>
+			<LastName>DAVIS</LastName>
+			<MiddleName>NANCY</MiddleName>
+		</Name>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<Type>18-on-election-day</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<Type>united-states-citizen</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<OtherType>ohio-resident</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>true</Assertion>
+			<OtherType>bmv-authorization</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<ContactMethod>
+			<Type>phone</Type>
+			<Value>3301112345</Value>
+		</ContactMethod>
+		<ContactMethod>
+			<Type>email</Type>
+			<Value>JDAVIS@GMAIL.COM</Value>
+		</ContactMethod>
+		<DateOfBirth>1985-11-05</DateOfBirth>
+		<MailingAddress>
+			<NumberedThoroughfareAddress_type>
+				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">500</AddressNumber>
+				</CompleteAddressNumber>
+				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type">W</StreetNamePreDirectional>
+					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">TUSCARAWAS</StreetName>
+					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">AVE</StreetNamePostType>
+					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
+				</CompleteStreetName>
+				<CompleteSubaddress xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<SubaddressElement xmlns="http://www.fgdc.gov/schemas/address/addr_type">
+						<SubaddressIdentifier/>
+					</SubaddressElement>
+				</CompleteSubaddress>
+				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
+					<PlaceName PlaceNameType="MunicipalJurisdiction">BARBERTON</PlaceName>
+					<PlaceName PlaceNameType="County"/>
+				</CompletePlaceName>
+				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
+				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44203</ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</MailingAddress>
+		<PreviousRegistrationAddress>
+			<NumberedThoroughfareAddress_type>
+				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">2219</AddressNumber>
+				</CompleteAddressNumber>
+				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
+					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">STORER</StreetName>
+					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">AVE</StreetNamePostType>
+					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
+				</CompleteStreetName>			
+				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
+					<PlaceName PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName PlaceNameType="County">SUMMIT </PlaceName>
+				</CompletePlaceName>
+				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
+				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44320</ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</PreviousRegistrationAddress>
+		<RegistrationAddress>
+			<NumberedThoroughfareAddress_type>
+				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">3273</AddressNumber>
+				</CompleteAddressNumber>
+				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
+					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
+					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">MANCHESTER</StreetName>
+					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">RD</StreetNamePostType>
+					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
+				</CompleteStreetName>				
+				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
+					<PlaceName PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName PlaceNameType="County">SUMMIT </PlaceName>
+				</CompletePlaceName>
+				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
+				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44319</ZipCode>
+			</NumberedThoroughfareAddress_type>
+		</RegistrationAddress>
+		<RegistrationMethod>voter-via-mail</RegistrationMethod>
+	</VoterRegistration>
+	<GeneratedDate>2017-02-10</GeneratedDate>
+	<Issuer>Ohio Secretary of State</Issuer>
+	<TransactionId>ee688d9e-5c8d-49f4-87ff-cc4c4f05af45</TransactionId>
+	<Type>registration</Type>
+	<VendorApplicationId>OLVR 2.0</VendorApplicationId>
+</VoterRecordsRequest>
