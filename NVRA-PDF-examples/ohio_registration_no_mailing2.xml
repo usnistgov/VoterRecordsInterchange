@@ -1,43 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///F:/IT/DEV/Current%20Project%20Documents/IEEE%201622/OVF%20CDF/NIST_V0_voter_records_interchange.xsd">
-	<VoterRegistration>
-		<VoterId>
-			<AttestNoSuchId>false</AttestNoSuchId>
-			<StringValue>AA123456</StringValue>
-			<Type>drivers-license</Type>
-		</VoterId>
-		<VoterId>
-			<AttestNoSuchId>false</AttestNoSuchId>
-			<StringValue>1234</StringValue>
-			<Type>ssn4</Type>
-		</VoterId>
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+	<GeneratedDate>2017-02-06</GeneratedDate>
+	<Issuer>Ohio Secretary of State</Issuer>
+	<RequestMethod>voter-via-mail</RequestMethod>
+	<Subject>
+		<DateOfBirth>1959-01-24</DateOfBirth>
 		<Name>
 			<FirstName>JASON</FirstName>
 			<LastName>DAVIS</LastName>
 			<MiddleName>L</MiddleName>
 			<Suffix>SR</Suffix>
 		</Name>
-		<VoterClassification>
-			<Assertion>true</Assertion>
-			<Type>18-on-election-day</Type>
-		</VoterClassification>
-		<VoterClassification>
-			<Assertion>true</Assertion>
-			<Type>united-states-citizen</Type>
-		</VoterClassification>
-		<VoterClassification>
-			<Assertion>true</Assertion>
-			<OtherType>ohio-resident</OtherType>
-			<Type>other</Type>
-		</VoterClassification>
-		<VoterClassification>
-			<Assertion>true</Assertion>
-			<OtherType>bmv-authorization</OtherType>
-			<Type>other</Type>
-		</VoterClassification>		
-		<DateOfBirth>1959-01-24</DateOfBirth>		
-		<RegistrationAddress>
+		<ResidenceAddress>
 			<NumberedThoroughfareAddress_type>
 				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
 					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">1349</AddressNumber>
@@ -61,11 +36,36 @@
 				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
 				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44310</ZipCode>
 			</NumberedThoroughfareAddress_type>
-		</RegistrationAddress>
-		<RegistrationMethod>voter-via-mail</RegistrationMethod>
-	</VoterRegistration>
-	<GeneratedDate>2017-02-06</GeneratedDate>
-	<Issuer>Ohio Secretary of State</Issuer>
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>eighteen-on-election-day</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>united-states-citizen</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<OtherType>ohio-resident</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<OtherType>bmv-authorization</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>AA123456</StringValue>
+			<Type>drivers-license</Type>
+		</VoterId>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>1234</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+	</Subject>
 	<TransactionId>d885c274-6873-4873-b61d-f760f47c0c1f</TransactionId>
 	<Type>registration</Type>
 	<VendorApplicationId>OLVR 2.0</VendorApplicationId>
