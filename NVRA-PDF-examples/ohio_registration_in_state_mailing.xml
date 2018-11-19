@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
 	<AdditionalInfo>
 		<Name>Language</Name>
 		<StringValue>en_US</StringValue>
@@ -19,28 +19,9 @@
 		</ContactMethod>
 		<DateOfBirth>1985-11-05</DateOfBirth>
 		<MailingAddress>
-			<NumberedThoroughfareAddress_type>
-				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">500</AddressNumber>
-				</CompleteAddressNumber>
-				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type">W</StreetNamePreDirectional>
-					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">TUSCARAWAS</StreetName>
-					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">AVE</StreetNamePostType>
-					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-				</CompleteStreetName>
-				<CompleteSubaddress xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<SubaddressElement xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-						<SubaddressIdentifier/>
-					</SubaddressElement>
-				</CompleteSubaddress>
-				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-					<PlaceName PlaceNameType="MunicipalJurisdiction">BARBERTON</PlaceName>
-					<PlaceName PlaceNameType="County"/>
-				</CompletePlaceName>
-				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
-				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44203</ZipCode>
-			</NumberedThoroughfareAddress_type>
+			<GeneralAddressClass_type>						
+				<addr:GeneralAddress>500 W TUSCARAWAS AVE BARBERTON OH 44203</addr:GeneralAddress>					
+			</GeneralAddressClass_type>
 		</MailingAddress>
 		<Name>
 			<FirstName>JENNY</FirstName>
@@ -48,42 +29,26 @@
 			<MiddleName>NANCY</MiddleName>
 		</Name>
 		<PreviousResidenceAddress>
-			<NumberedThoroughfareAddress_type>
-				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">2219</AddressNumber>
-				</CompleteAddressNumber>
-				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">STORER</StreetName>
-					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">AVE</StreetNamePostType>
-					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-				</CompleteStreetName>
-				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-					<PlaceName PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
-					<PlaceName PlaceNameType="County">SUMMIT </PlaceName>
-				</CompletePlaceName>
-				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
-				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44320</ZipCode>
-			</NumberedThoroughfareAddress_type>
+				<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>2219 STORER AVE</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">SUMMIT </PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>44320</addr_type:ZipCode>
+			</GeneralAddressClass_type>
 		</PreviousResidenceAddress>
 		<ResidenceAddress>
-			<NumberedThoroughfareAddress_type>
-				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">3273</AddressNumber>
-				</CompleteAddressNumber>
-				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">MANCHESTER</StreetName>
-					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">RD</StreetNamePostType>
-					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-				</CompleteStreetName>
-				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-					<PlaceName PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
-					<PlaceName PlaceNameType="County">SUMMIT </PlaceName>
-				</CompletePlaceName>
-				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
-				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44319</ZipCode>
-			</NumberedThoroughfareAddress_type>
+					<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>3273 MANCHESTER RD</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">SUMMIT </PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>44319</addr_type:ZipCode>
+			</GeneralAddressClass_type>
 		</ResidenceAddress>
 		<VoterClassification>
 			<Assertion>yes</Assertion>

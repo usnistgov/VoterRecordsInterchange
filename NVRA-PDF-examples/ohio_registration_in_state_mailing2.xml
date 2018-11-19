@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
 	<AdditionalInfo>
 		<Name>Language</Name>
 		<StringValue>en_US</StringValue>
@@ -19,29 +19,9 @@
 		</ContactMethod>
 		<DateOfBirth>1971-11-09</DateOfBirth>
 		<MailingAddress>
-			<NumberedThoroughfareAddress_type>
-				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">2264</AddressNumber>
-				</CompleteAddressNumber>
-				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type">W</StreetNamePreDirectional>
-					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">4TH</StreetName>
-					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">ST</StreetNamePostType>
-					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type">S</StreetNamePostDirectional>
-				</CompleteStreetName>
-				<CompleteSubaddress xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<SubaddressElement xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-						<SubaddressType>SIDE</SubaddressType>
-						<SubaddressIdentifier>A</SubaddressIdentifier>
-					</SubaddressElement>
-				</CompleteSubaddress>
-				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-					<PlaceName PlaceNameType="MunicipalJurisdiction">MANSFIELD</PlaceName>
-					<PlaceName PlaceNameType="County"/>
-				</CompletePlaceName>
-				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
-				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44906</ZipCode>
-			</NumberedThoroughfareAddress_type>
+			<GeneralAddressClass_type>
+				<addr:GeneralAddress>2264 W 4TH ST S SIDE A MANSFIELD OH 44906</addr:GeneralAddress>
+			</GeneralAddressClass_type>
 		</MailingAddress>
 		<Name>
 			<FirstName>JACKI</FirstName>
@@ -49,54 +29,26 @@
 			<MiddleName>NICHOLE</MiddleName>
 		</Name>
 		<PreviousResidenceAddress>
-			<NumberedThoroughfareAddress_type>
-				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">740</AddressNumber>
-				</CompleteAddressNumber>
-				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">POLARIS</StreetName>
-					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">PKWY</StreetNamePostType>
-					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-				</CompleteStreetName>
-				<CompleteSubaddress xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<SubaddressElement xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-						<SubaddressType>STE</SubaddressType>
-						<SubaddressIdentifier>1</SubaddressIdentifier>
-					</SubaddressElement>
-				</CompleteSubaddress>
-				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-					<PlaceName PlaceNameType="MunicipalJurisdiction">LEWIS CENTER</PlaceName>
-					<PlaceName PlaceNameType="County"/>
-				</CompletePlaceName>
-				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
-				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">43035</ZipCode>
-			</NumberedThoroughfareAddress_type>
+			<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>740 POLARIS PKWY STE 1</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">LEWIS CENTER</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County"/>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>43035</addr_type:ZipCode>
+			</GeneralAddressClass_type>
 		</PreviousResidenceAddress>
 		<ResidenceAddress>
-			<NumberedThoroughfareAddress_type>
-				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">6850</AddressNumber>
-				</CompleteAddressNumber>
-				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type">W</StreetNamePreDirectional>
-					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">FRANK</StreetName>
-					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">AVE</StreetNamePostType>
-					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type">NW</StreetNamePostDirectional>
-				</CompleteStreetName>
-				<CompleteSubaddress xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<SubaddressElement xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-						<SubaddressType>STE</SubaddressType>
-						<SubaddressIdentifier>1</SubaddressIdentifier>
-					</SubaddressElement>
-				</CompleteSubaddress>
-				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-					<PlaceName PlaceNameType="MunicipalJurisdiction">NORTH CANTON</PlaceName>
-					<PlaceName PlaceNameType="County">STARK </PlaceName>
-				</CompletePlaceName>
-				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
-				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44720</ZipCode>
-			</NumberedThoroughfareAddress_type>
+			<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>6850 W FRANK AVE NW STE 1</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">NORTH CANTON</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">STARK </PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>44720</addr_type:ZipCode>
+			</GeneralAddressClass_type>
 		</ResidenceAddress>
 		<VoterClassification>
 			<Assertion>yes</Assertion>

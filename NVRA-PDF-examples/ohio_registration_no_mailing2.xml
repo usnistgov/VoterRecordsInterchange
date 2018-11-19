@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"  xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
 	<GeneratedDate>2017-02-06</GeneratedDate>
 	<Issuer>Ohio Secretary of State</Issuer>
 	<RequestMethod>voter-via-mail</RequestMethod>
@@ -13,29 +13,15 @@
 			<Suffix>SR</Suffix>
 		</Name>
 		<ResidenceAddress>
-			<NumberedThoroughfareAddress_type>
-				<CompleteAddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<AddressNumber xmlns="http://www.fgdc.gov/schemas/address/addr_type">1349</AddressNumber>
-				</CompleteAddressNumber>
-				<CompleteStreetName xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<StreetNamePreDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-					<StreetName xmlns="http://www.fgdc.gov/schemas/address/addr_type">TALLMADGE</StreetName>
-					<StreetNamePostType xmlns="http://www.fgdc.gov/schemas/address/addr_type">AVE</StreetNamePostType>
-					<StreetNamePostDirectional xmlns="http://www.fgdc.gov/schemas/address/addr_type"/>
-				</CompleteStreetName>
-				<CompleteSubaddress xmlns="http://www.fgdc.gov/schemas/address/addr">
-					<SubaddressElement xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-						<SubaddressType/>
-						<SubaddressIdentifier/>
-					</SubaddressElement>
-				</CompleteSubaddress>
-				<CompletePlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type">
-					<PlaceName PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
-					<PlaceName PlaceNameType="County">SUMMIT </PlaceName>
-				</CompletePlaceName>
-				<StateName xmlns="http://www.fgdc.gov/schemas/address/addr_type">OH</StateName>
-				<ZipCode xmlns="http://www.fgdc.gov/schemas/address/addr_type">44310</ZipCode>
-			</NumberedThoroughfareAddress_type>
+		<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>1349 TALLMADGE AVE</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">SUMMIT </PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>44310</addr_type:ZipCode>
+			</GeneralAddressClass_type>
 		</ResidenceAddress>
 		<VoterClassification>
 			<Assertion>yes</Assertion>

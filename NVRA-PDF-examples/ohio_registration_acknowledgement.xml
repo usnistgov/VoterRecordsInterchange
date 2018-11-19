@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DISCLAIMER: All persons and places listed below are fictitious -->
+<VoterRecordsResponse xsi:type="RegistrationSuccess" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+	<Action>registration-created</Action>
+	<Districts>
+		<Name>Akron</Name>
+		<Type>municipality</Type>
+	</Districts>
+	<EffectiveDate>2017-07-31</EffectiveDate>
+	<ElectionAdministration>
+		<ContactMethod>
+			<Type>phone</Type>
+			<Value>3306435200</Value>
+		</ContactMethod>
+		<Location>
+			<Address>
+				<GeneralAddressClass_type>
+					<addr:USPSGeneralDeliveryPoint>470 GRANT ST</addr:USPSGeneralDeliveryPoint>
+					<addr_type:PlaceStateZip>AKRON, OH 44311</addr_type:PlaceStateZip>
+				</GeneralAddressClass_type>
+			</Address>
+		</Location>
+		<Name>Summit</Name>
+	</ElectionAdministration>
+	<PollingPlace>
+		<Location>
+			<Address>
+				<GeneralAddressClass_type>
+					<addr:USPSGeneralDeliveryPoint>630 MULL AVE</addr:USPSGeneralDeliveryPoint>
+					<addr_type:PlaceStateZip>AKRON, OH 44313</addr_type:PlaceStateZip>
+				</GeneralAddressClass_type>
+			</Address>
+		</Location>
+		<Name>PERKINS BUILDING</Name>
+		<Type>polling-place</Type>
+	</PollingPlace>
+	<Locality>
+		<Name>AKRON 4-F</Name>
+		<Type>precinct</Type>
+	</Locality>
+</VoterRecordsResponse>
