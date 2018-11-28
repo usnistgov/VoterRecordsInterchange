@@ -33,7 +33,7 @@
 				<addr:USPSGeneralDeliveryPoint>740 POLARIS PKWY STE 1</addr:USPSGeneralDeliveryPoint>
 				<addr_type:CompletePlaceName>
 					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">LEWIS CENTER</PlaceName>
-					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County"/>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">DELAWARE</PlaceName>
 				</addr_type:CompletePlaceName>
 				<addr_type:StateName>OH</addr_type:StateName>
 				<addr_type:ZipCode>43035</addr_type:ZipCode>
