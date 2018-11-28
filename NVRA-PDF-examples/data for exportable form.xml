@@ -1,27 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///F:/IT/DEV/Current%20Project%20Documents/IEEE%201622/OVF%20CDF/NIST_V0_voter_records_interchange.xsd" xmlns="NIST_V0_voter_records_interchange.xsd">
-	<VoterRegistration>
-		<VoterId>
-			<StringValue>8392</StringValue>
-			<Type>ssn4</Type>
-		</VoterId>
+<VoterRecordsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+	<GeneratedDate>2016-12-29</GeneratedDate>
+	<RequestMethod>unknown</RequestMethod>
+	<Subject>		
+			<ContactMethod>
+			<Type>phone</Type>
+			<Value>4406448595</Value>
+		</ContactMethod>
+		<DateOfBirth>1964-03-13</DateOfBirth>
 		<Name>
 			<FirstName>TYEE</FirstName>
 			<LastName>ZEHR</LastName>
 			<MiddleName>L</MiddleName>
 		</Name>
-		<VoterClassification>
-			<Assertion>true</Assertion>
-			<Type>united-states-citizen</Type>
-		</VoterClassification>
-		<VoterClassification>
-			<Assertion>true</Assertion>
-			<Type>18-on-election-day</Type>
-		</VoterClassification>
+			<PreviousName>
+			<FullName>TYEE MILLER</FullName>
+		</PreviousName>	
+			<PreviousResidenceAddress>
+			<GeneralAddressClass_type >
+				<addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr">3687 FALLEN NECTAR WAY</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator="">
+					<addr_type:PlaceName PlaceNameType="MunicipalJurisdiction">GUERNE</addr_type:PlaceName>
+					<addr_type:PlaceName PlaceNameType="County">85</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">OH</addr_type:StateName>
+				<addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">44691</addr_type:ZipCode>
+			</GeneralAddressClass_type>
+		</PreviousResidenceAddress>
+		<ResidenceAddress>
+			<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr">6047 CINDER MALL</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator="">
+					<addr_type:PlaceName PlaceNameType="MunicipalJurisdiction">HUBBARD</addr_type:PlaceName>
+					<addr_type:PlaceName PlaceNameType="County">78</addr_type:PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">OH</addr_type:StateName>
+				<addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">45300</addr_type:ZipCode>
+			</GeneralAddressClass_type>
+		</ResidenceAddress>		
 		<Signature>
 			<Date>2016-12-29</Date>
-			<FileValue xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" fileName="" mimeType="" xfa:contentType="image/png" href="">iVBORw0KGgoAAAANSUhEUgAAAOgAAAA5CAIAAACzqfClAAANbUlEQVR4nO2df0hb1xfA77K3NAsh
+			<FileValue xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">iVBORw0KGgoAAAANSUhEUgAAAOgAAAA5CAIAAACzqfClAAANbUlEQVR4nO2df0hb1xfA77K3NAsh
 CyEEcSErw4UsOMk6cbaEIF0mwYnLRGQUERWRIlLEFQlDRDoZRUYZIxMpmQuhiBSRIC5IKFJKCEGy
 TEIJWRoeLohLXYhZCCGG1OyPw/d9g/n18t6tXdj7/GXfO+/ce947795zzz15fa1QKCAOjkaD96o7
 wMHBBM5xORoSznE5GhLOcTkaEs5xORoSznE5GhLOcTkaEs5xORoSznE5GhLOcTkaEs5xOS6C58+f
@@ -84,38 +104,18 @@ QtFAXosuZsT96aefYOvI6/V+/PHHL7s5jv8CF/FF8nA4jBBSqVSc13Lg4iIcV6fT8fl86tenHBzs
 4T6lz9GQcP95CUdDwjkuR0PCOS5HQ8I5LkdDwjkuR0PCOS5HQ8I5LkdDwjkuR0PCOS5HQ/IP5Cua
 ti3BUK8AAAAASUVORK5CYII=</FileValue>
 		</Signature>
-		<ContactMethod>
-			<Type>phone</Type>
-			<Value>4406448595</Value>
-		</ContactMethod>
-		<DateOfBirth>1964-03-13</DateOfBirth>
-		<PreviousName>
-			<FullName>TYEE MILLER</FullName>
-		</PreviousName>
-		<PreviousRegistrationAddress>
-			<GeneralAddressClass_type action="">
-				<addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr">3687 FALLEN NECTAR WAY</addr:USPSGeneralDeliveryPoint>
-				<addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator="">
-					<addr_type:PlaceName PlaceNameType="MunicipalJurisdiction" ElementSequenceNumber="" GNISFeatureID="">GUERNE</addr_type:PlaceName>
-					<addr_type:PlaceName PlaceNameType="County" ElementSequenceNumber="" GNISFeatureID="">85</addr_type:PlaceName>
-				</addr_type:CompletePlaceName>
-				<addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">OH</addr_type:StateName>
-				<addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"/>
-			</GeneralAddressClass_type>
-		</PreviousRegistrationAddress>
-		<RegistrationAddress>
-			<GeneralAddressClass_type action="">
-				<addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr">6047 CINDER MALL</addr:USPSGeneralDeliveryPoint>
-				<addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator="">
-					<addr_type:PlaceName PlaceNameType="MunicipalJurisdiction" ElementSequenceNumber="" GNISFeatureID="">HUBBARD</addr_type:PlaceName>
-					<addr_type:PlaceName PlaceNameType="County" ElementSequenceNumber="" GNISFeatureID="">78</addr_type:PlaceName>
-				</addr_type:CompletePlaceName>
-				<addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">OH</addr_type:StateName>
-				<addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">45300</addr_type:ZipCode>
-			</GeneralAddressClass_type>
-		</RegistrationAddress>
-		<RegistrationMethod>unknown</RegistrationMethod>
-	</VoterRegistration>
-	<GeneratedDate>2016-12-29</GeneratedDate>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>united-states-citizen</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>eighteen-on-election-day</Type>
+		</VoterClassification>
+		<VoterId>
+			<StringValue>8392</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>	
+	</Subject>
 	<Type>registration</Type>
 </VoterRecordsRequest>
