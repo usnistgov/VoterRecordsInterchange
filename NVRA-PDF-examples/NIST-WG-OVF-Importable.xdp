@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2018-11-19T15:36:11Z" uuid="73290471-68df-4931-bc1a-11b5080f28ef">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2018-11-28T18:38:55Z" uuid="15244395-5574-49b3-ab13-59896f9a3d7f">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -583,7 +583,7 @@
                      <speak>Yes, I am a U.S. citizen.</speak>
                   </assist>
                   <items>
-                     <text>true</text>
+                     <text>yes</text>
                   </items>
                </field>
                <field y="0mm" x="18.491mm" w="28mm" h="5.097mm" name="No">
@@ -609,7 +609,7 @@
                      <speak>No, I am not a U.S. citizen.</speak>
                   </assist>
                   <items>
-                     <text>false</text>
+                     <text>no</text>
                   </items>
                </field>
                <traversal>
@@ -661,7 +661,7 @@
                      <speak>Yes, I will be 18 years of age on or before the next general election.</speak>
                   </assist>
                   <items>
-                     <text>true</text>
+                     <text>yes</text>
                   </items>
                </field>
                <field y="0mm" x="18.491mm" w="28mm" h="5.097mm" name="No">
@@ -687,7 +687,7 @@
                      <speak>No, I will not be 18 years of age on or before the next general election.</speak>
                   </assist>
                   <items>
-                     <text>false</text>
+                     <text>no</text>
                   </items>
                </field>
                <traversal>
@@ -697,7 +697,7 @@
                   <speak>Will you be at least 18 years of age on or before the next general election?</speak>
                </assist>
                <?templateDesigner expand 0?>
-               <bind match="dataRef" ref="$.Subject.VoterClassification[*].Assertion.[Type==&quot;18-on-election-day&quot;]"/>
+               <bind match="dataRef" ref="$.Subject.VoterClassification[*].Assertion.[Type==&quot;eighteen-on-election-day&quot;]"/>
             </exclGroup>
             <draw name="P_statementToContinue" y="10.674mm" w="113.003mm" h="4.706mm" x="4.68mm">
                <ui>
@@ -832,7 +832,7 @@
             <font typeface="Myriad Pro"/>
             <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
             <para vAlign="middle"/>
-            <caption reserve="0.134931in" placement="top">
+            <caption reserve="3.8272mm" placement="top">
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
@@ -942,7 +942,7 @@
             <traversal>
                <traverse ref="selVotingCounty[0]"/>
             </traversal>
-            <bind match="dataRef" ref="$.Subject.MailingAddress.GeneralAddressClass_type.GeneralAddress"/>
+            <bind match="dataRef" ref="$.Subject.MailingAddress.GeneralAddressClass_type.USPSGeneralDeliveryPoint"/>
          </field>
          <draw name="Line18_vertical" y="44.406mm" x="109.371mm" w="0in" h="10.414mm">
             <value>
@@ -1964,11 +1964,8 @@ State</text>
    <?templateDesigner WidowOrphanControl 0?>
    <?originalXFAVersion http://www.xfa.org/schema/xfa-template/3.3/?>
    <?templateDesigner Grid show:0, snap:0, units:0, color:ff8080, origin:(0,0), interval:(125000,125000), objsnap:0, guidesnap:0, pagecentersnap:0?>
-   <?templateDesigner Zoom 83?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner SaveTaggedPDF 0?>
-   <?templateDesigner SavePDFWithEmbeddedFonts 0?>
    <?templateDesigner SavePDFWithLog 0?>
+   <?templateDesigner Zoom 83?>
    <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner DefaultLanguage JavaScript?>
    <?templateDesigner DefaultRunAt client?>
@@ -1982,8 +1979,12 @@ State</text>
    <?templateDesigner DefaultPreviewType interactive?>
    <?templateDesigner DefaultPreviewPagination simplex?>
    <?templateDesigner XDPPreviewFormat 19?>
+   <?templateDesigner DefaultPreviewDataFileName .\ohio_registration_out_of_county_mailing.xml?>
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
-   <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?></template>
+   <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 0?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner SaveTaggedPDF 0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -1997,10 +1998,10 @@ State</text>
       <!--  [0..n]  -->
       <pdf>
          <!--  [0..n]  -->
-         <tagged>0</tagged>
          <fontInfo>
             <embed>0</embed>
          </fontInfo>
+         <tagged>0</tagged>
          <version>1.7</version>
          <adobeExtensionLevel>8</adobeExtensionLevel>
       </pdf>
@@ -7598,14 +7599,14 @@ State</text>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.156067, 2014/03/04-12:38:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2018-11-19T15:36:11Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2018-11-28T18:38:55Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:73290471-68df-4931-bc1a-11b5080f28ef</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:15244395-5574-49b3-ab13-59896f9a3d7f</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:24384056-13d2-4177-92f2-8706d44d7064</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
