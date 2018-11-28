@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd"
+><GeneratedDate
+>2018-11-28</GeneratedDate
+><RequestMethod
+>unknown</RequestMethod
+><Subject
+><ContactMethod
+><Type
+>phone</Type
+><Value
+>3307148935</Value
+></ContactMethod
+><DateOfBirth
+>2018-11-28</DateOfBirth
+><Name
+/><PreviousResidenceAddress
+><GeneralAddressClass_type action=""
+><addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr"
+>PREV ADDR</addr:USPSGeneralDeliveryPoint
+><addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator=""
+><addr_type:PlaceName PlaceNameType="MunicipalJurisdiction" ElementSequenceNumber="" GNISFeatureID=""
+>PREV CITY</addr_type:PlaceName
+><addr_type:PlaceName PlaceNameType="County" ElementSequenceNumber="" GNISFeatureID=""
+>19</addr_type:PlaceName
+></addr_type:CompletePlaceName
+><addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"
+>AL</addr_type:StateName
+><addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"
+/></GeneralAddressClass_type
+></PreviousResidenceAddress
+><ResidenceAddress
+><GeneralAddressClass_type action=""
+><addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr"
+>RESIDENCE ADDRESS RES APT ADDL MAIL</addr:USPSGeneralDeliveryPoint
+><addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator=""
+><addr_type:PlaceName PlaceNameType="MunicipalJurisdiction" ElementSequenceNumber="" GNISFeatureID=""
+>RES CITY</addr_type:PlaceName
+><addr_type:PlaceName PlaceNameType="County" ElementSequenceNumber="" GNISFeatureID=""
+/></addr_type:CompletePlaceName
+><addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"
+>OH</addr_type:StateName
+><addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"
+>RES ZIP</addr_type:ZipCode
+></GeneralAddressClass_type
+></ResidenceAddress
+><Signature
+><Date
+>2018-11-29</Date
+><FileValue xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/" FileName="" MimeType="" xfa:contentType="image/png" href=""
+>iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAR9SURBVFhH7ZhPaBxVHMd/M5vNbrWH/KEYaEwORT0Utd3ZlKanDS2CBPQgvSgiuLVJ
+bWMvAS9S8ORdIyZtib0aUFAMCCJWCkLanWzUWPBQoUGDlbRNaFjZzew83+/Nm503u/M2781OexA/
+sDu/39vZme/8fr/3mzcD/5MwBt92hDtrVQ0DuplDDdi7l5mwvQ1ACDMJIRVzcvlx5sQgtlAyZxEY
+GgLYt4+PKHL7NsDGBhgTtta5tXYmCydTcP93ByyLj3SIbSsLVhbKIpiUwGYUBO8q1L04ctB4+qnV
+Rt09LNbXqeAHaeP9Hxw+EqKtUHfOqhuWZXL3kUBsu2pO2FnuNpCKwFSjyMK5a2COXIJqPQM395yH
+F99bgyXnTXjm1at8z2Sh58y4c7kd7jaIjCjdcc2w8k/+OXABhoeHwVkqgpG/CJvX3obtfxzY3wew
+Q7LQPfIhkNJp/q9kIcvLM+bp0hR3oyOKIo9N/QKDg4NMJBuj/dF47gMmEkGRUeAFiZ+4GLncOW4y
+WoSy2U358aNnmY9pxxP29vZCf38/vLvQA79m32G/bW1tsa1PlLDUkcvc0sfXgoRSH9WChl7+Cta+
+fIl7Ab6oDdq8Xz/5AnxztYx3HzamgmmaUL9+intySMmumZN2Jix0qUggleLe7mC0dcTJcO2zYJCW
++eOxuQnGiQWjkXpsRToifRYXF7kVH9P6WF7PPT04uSsNoXSySFtVFOMX/vC24+Ns246UEABMOX6i
+kIml03hPI/W0zSjnUHr1EbRrX39vd8MThRnuBUT9hwl1Z3M1I59Ps5FdUBWp01+bjxk10VgOaNqV
+RKqA/Vb3JoD7i+Xhui63ArTqUgX3xlvc0sO/sfi0RJl9p9UDms1mYXp6mnsBcSLZTFdXF7daYTVK
+PjtO4MABNqBCVJ12KtJHPLZYq15EKxW2UUWsp4eJWKue0FqNbVRprqckkfXY2JMJa9JHtDslk8lw
+K3xcJpQAqTNPA3F2y6IQh2IxyJa4jmBnMCeW5dNNwg48xi2Ael37OqVUJPMlCEW5zA010hAcMMnU
+z8/Pcwtg5fMznkGfUgOhEXcDVZJY6iHnP/mLWx7PD3uZoqXpNoTqvrloBtemnTLz6dfcEqhWsTRT
+4VlAQ6yD2OQ7jerCreOhvukfm6yusgO3RJFcPkLg0CHu7Y64yo9a9aiQPjoPjhO8d3BunIWUQVf8
+whuUcESRU9dbx9ogtimMiOoyEDn42nfsQkWRo6OjnkiKWI4tougvhD5QafWb5vs8im0nuOJk2e83
+f7sFY2NjbKGDfH+l2Hj6JXbpLjM40gkU56VYJw972OL87NBAEfrkGQqiNM0s7JqTC09UKBS4p4Z/
+V2snEpFG1IdG9grkcm/QS+YjauCLB4yuLMKkNIHfnoPQhRH5+adXzMnyF3wkhPLZ45SCMkm8HxUh
+c/kT9PvbJN84k5q735wqr/MRKXr5FGARPnwYi4yPKIILmJUV7TthbKEi7qzl0hL2jtXXBzAwQK+E
+1t+dOwD37rFhLNeoSfIfA+BfYYqn2zRa1/MAAAAASUVORK5CYII=</FileValue
+></Signature
+><VoterClassification
+><Assertion
+>no</Assertion
+><Type
+>united-states-citizen</Type
+></VoterClassification
+><VoterClassification
+><Assertion
+>yes</Assertion
+><Type
+>eighteen-on-election-day</Type
+></VoterClassification
+><VoterId
+><StringValue
+>AA123456</StringValue
+><Type
+>drivers-license</Type
+></VoterId
+></Subject
+><Type
+>registration</Type
+></VoterRecordsRequest
+>
