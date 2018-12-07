@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"  xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+	<GeneratedDate>2017-02-06</GeneratedDate>
+	<Issuer>Ohio Secretary of State</Issuer>
+	<RequestMethod>voter-via-mail</RequestMethod>
+	<Subject>
+		<ContactMethod>
+			<Type>phone</Type>
+			<Value>3335554444</Value>
+		</ContactMethod>
+		<DateOfBirth>1953-12-26</DateOfBirth>
+		<MailingAddress>
+			<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>84 CHARING CROSS RD</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">LONDON</PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName></addr_type:StateName>
+				<addr_type:CountryName>UK</addr_type:CountryName>
+			</GeneralAddressClass_type>
+		</MailingAddress>
+		<Name>
+			<FirstName>LISA</FirstName>
+			<LastName>SMITH</LastName>
+			<MiddleName>A</MiddleName>
+		</Name>
+		<ResidenceAddress>
+				<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>1810 MERRIMAN RD</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">SUMMIT </PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>44313</addr_type:ZipCode>
+			</GeneralAddressClass_type>
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>eighteen-on-election-day</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>united-states-citizen</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<OtherType>ohio-resident</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<OtherType>bmv-authorization</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterId>
+			<AttestNoSuchId>true</AttestNoSuchId>
+			<Type>drivers-license</Type>
+		</VoterId>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>9998</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+	</Subject>
+	<TransactionId>daaf6e36-caa4-4eb5-a716-484c00a4b757</TransactionId>
+	<Type>registration</Type>
+	<VendorApplicationId>OLVR 2.0</VendorApplicationId>
+</VoterRecordsRequest>

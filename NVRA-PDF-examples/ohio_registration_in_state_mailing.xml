@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DISCLAIMER: All persons listed below are fictitious -->
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+	<AdditionalInfo>
+		<Name>Language</Name>
+		<StringValue>en_US</StringValue>
+	</AdditionalInfo>
+	<GeneratedDate>2017-02-10</GeneratedDate>
+	<Issuer>Ohio Secretary of State</Issuer>
+	<RequestMethod>voter-via-mail</RequestMethod>
+	<Subject>
+		<ContactMethod>
+			<Type>phone</Type>
+			<Value>3301112345</Value>
+		</ContactMethod>
+		<ContactMethod>
+			<Type>email</Type>
+			<Value>JDAVIS@GMAIL.COM</Value>
+		</ContactMethod>
+		<DateOfBirth>1985-11-05</DateOfBirth>
+		<MailingAddress>
+			<GeneralAddressClass_type>						
+				<addr:GeneralAddress>500 W TUSCARAWAS AVE BARBERTON OH 44203</addr:GeneralAddress>					
+			</GeneralAddressClass_type>
+		</MailingAddress>
+		<Name>
+			<FirstName>JENNY</FirstName>
+			<LastName>DAVIS</LastName>
+			<MiddleName>NANCY</MiddleName>
+		</Name>
+		<PreviousResidenceAddress>
+				<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>2219 STORER AVE</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">SUMMIT </PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>44320</addr_type:ZipCode>
+			</GeneralAddressClass_type>
+		</PreviousResidenceAddress>
+		<ResidenceAddress>
+					<GeneralAddressClass_type>
+				<addr:USPSGeneralDeliveryPoint>3273 MANCHESTER RD</addr:USPSGeneralDeliveryPoint>
+				<addr_type:CompletePlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
+					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="County">SUMMIT </PlaceName>
+				</addr_type:CompletePlaceName>
+				<addr_type:StateName>OH</addr_type:StateName>
+				<addr_type:ZipCode>44319</addr_type:ZipCode>
+			</GeneralAddressClass_type>
+		</ResidenceAddress>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>eighteen-on-election-day</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<Type>united-states-citizen</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<OtherType>ohio-resident</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterClassification>
+			<Assertion>yes</Assertion>
+			<OtherType>bmv-authorization</OtherType>
+			<Type>other</Type>
+		</VoterClassification>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>AB321345</StringValue>
+			<Type>drivers-license</Type>
+		</VoterId>
+		<VoterId>
+			<AttestNoSuchId>false</AttestNoSuchId>
+			<StringValue>2222</StringValue>
+			<Type>ssn4</Type>
+		</VoterId>
+	</Subject>
+	<TransactionId>ee688d9e-5c8d-49f4-87ff-cc4c4f05af45</TransactionId>
+	<Type>registration</Type>
+	<VendorApplicationId>OLVR 2.0</VendorApplicationId>
+</VoterRecordsRequest>

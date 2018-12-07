@@ -1,0 +1,181 @@
+{
+	"@type": "VRI.VoterRecordsRequest",
+	"AdditionalInfo": [
+		{
+			"@type": "VRI.AdditionalInfo",
+			"Name": "Language",
+			"StringValue": "en_US"
+		},
+		{
+			"@type": "VRI.AdditionalInfo",
+			"Name": "IsPollWorker",
+			"StringValue": "false"
+		}
+	],
+	"GeneratedDate": "2017-7-30",
+	"Issuer": "Ohio Secretary of State",
+	"TransactionId": "0bb1bfd7-4316-42be-99d5-9c9e3bb9ccc0",
+	"Type": [
+		"registration"
+	],
+	"VendorApplicationId": "OLVR 2.0",
+	"Subject": {
+		"@type": "VRI.Voter",
+		"DateOfBirth": "1993-11-12T00:00:00",
+		"VoterId": [
+			{
+				"@type": "VRI.VoterId",
+				"Type": "drivers-license",
+				"StringValue": "AA999888",
+				"AttestNoSuchId": false
+			},
+			{
+				"@type": "VRI.VoterId",
+				"Type": "ssn4",
+				"AttestNoSuchId": true
+			}
+		],
+		"Name": {
+			"@type": "VRI.Name",
+			"FirstName": "JANE",
+			"MiddleName": [
+				"A"
+			],
+			"LastName": "DOE",
+			"Suffix": ""
+		},
+		"VoterClassification": [
+			{
+				"@type": "VRI.VoterClassification",
+				"Assertion": "yes",
+				"Type": "eighteen-on-election-day"
+			},
+			{
+				"@type": "VRI.VoterClassification",
+				"Assertion": "yes",
+				"Type": "united-states-citizen"
+			},
+			{
+				"@type": "VRI.VoterClassification",
+				"Assertion": "yes",
+				"Type": "other",
+				"OtherType": "swear-accuracy"
+			},
+			{
+				"@type": "VRI.VoterClassification",
+				"Assertion": "yes",
+				"Type": "other",
+				"OtherType": "filled-on-own-behalf"
+			},
+			{
+				"@type": "VRI.VoterClassification",
+				"Assertion": "yes",
+				"Type": "other",
+				"OtherType": "ohio-resident"
+			},
+			{
+				"@type": "VRI.VoterClassification",
+				"Assertion": "yes",
+				"Type": "other",
+				"OtherType": "bmv-authorization"
+			},
+			{
+				"@type": "VRI.VoterClassification",
+				"Assertion": "yes",
+				"Type": "other",
+				"OtherType": "meets-all-requirements"
+			}
+		],
+		"ContactMethod": [
+			{
+				"@type": "VRI.ContactMethod",
+				"Type": "phone",
+				"Value": "(330) 614-8004"
+			},
+			{
+				"@type": "VRI.ContactMethod",
+				"Type": "email",
+				"Value": "JDOE@TESTEMAIL.COM"
+			}
+		],
+		"ResidenceAddress": {
+			"@type": "addr.NumberedThoroughfareAddress_type",
+			"CompleteAddressNumber": {
+				"@type": "addr_type.CompleteAddressNumber_type",
+				"AddressNumber": "3818"
+			},
+			"CompleteStreetName": {
+				"@type": "addr_type.CompleteStreetName_type",
+				"StreetNamePreDirectional": {
+					"@type": "addr_type.StreetNamePreDirectional_type",
+					"Value": ""
+				},
+				"StreetName": "BELMONT",
+				"StreetNamePostType": {
+					"@type": "addr_type.StreetNamePreType_type",
+					"Value": "AVE"
+				},
+				"StreetNamePostDirectional": {
+					"@type": "addr_type.StreetNamePreDirectional_type",
+					"Value": ""
+				}
+			},
+			"CompletePlaceName1": {
+				"@type": "addr_type.CompletePlaceName_type",
+				"PlaceName": [
+					{
+						"@type": "addr_type.PlaceName_type",
+						"PlaceNameType": "MunicipalJurisdiction",
+						"Value": "YOUNGSTOWN"
+					},
+					{
+						"@type": "addr_type.PlaceName_type",
+						"PlaceNameType": "County",
+						"Value": "78"
+					}
+				]
+			},
+			"StateName": "OH",
+			"ZipCode": "44505"
+		},
+		"MailingAddress": {
+			"@type": "addr.NumberedThoroughfareAddress_type",
+			"CompleteAddressNumber": {
+				"@type": "addr_type.CompleteAddressNumber_type",
+				"AddressNumber": "2299"
+			},
+			"CompleteStreetName": {
+				"@type": "addr_type.CompleteStreetName_type",
+				"StreetNamePreDirectional": {
+					"@type": "addr_type.StreetNamePreDirectional_type",
+					"Value": "E"
+				},
+				"StreetName": "STATE",
+				"StreetNamePostType": {
+					"@type": "addr_type.StreetNamePreType_type",
+					"Value": "ST"
+				}		
+			},
+			"CompletePlaceName1": {
+				"@type": "addr_type.CompletePlaceName_type",
+				"PlaceName": [
+					{
+						"@type": "addr_type.PlaceName_type",
+						"PlaceNameType": "MunicipalJurisdiction",
+						"Value": "SALEM"
+					},
+					{
+						"@type": "addr_type.PlaceName_type",
+						"PlaceNameType": "County",
+						"Value": "COLUMBIANA"
+					}
+				]
+			},
+			"StateName": "OH",
+			"ZipCode": "44460"
+		}
+	},
+	"RequestMethod": "voter-via-internet",
+	"Form": "other",
+	"OtherForm": "4010"
+}
