@@ -13,21 +13,18 @@ The UML model, JSON and XML schemas are planned to be finalized in time to be co
 
 Contact [John P. Wack](mailto:john.wack@nist.gov) for questions and more information.
 
-|Name     |Description  |
-|---------|---------|
-|**NVRA-PDF-examples**     |Examples of VRI CDF using OH VR form|
-|**VA-examples**|Examples of absentee use-case in VA |
+## Repo Structure
+
+|Name     |Description                                         |
+|---------|----------------------------------------------------|
+|**NVRA-PDF-examples**|Examples of VRI CDF using OH VR form    |
+|**VA-examples**|Examples of absentee use-case in VA           |
 |**VRI_UML_Documentation_files**|Images of UML classes         |
-|.gitignore     |         |
-|CODE_OF_CONDUCT.md|         |
-|CONTRIBUTING.md     |         |
 |DRAFT NIST 1500-102 VRI Specification 2018-12-07.docm|Word version of VRI specification|
-|DRAFT NIST 1500-102 VRI Specification 2018-12-07.pdf|PDF version of VRI specification         |
-|LICENSE.md|License of repo         |
-|NIST_V0_voter_records_interchange.json|JSON Schema|
-|NIST_V0_voter_records_interchange.xsd|XML Schema|
-|README.md|The file you are reading|
-|VRI Implementation.xml|MagicDraw UML Model|
-|VRI_UML_Documentation.md|UML Documentation|
-|VoterRecordsRequest.png|Image of Voter Records Request model|
-|VoterRecordsResponse|Image of Voter Records Response model|
+|DRAFT NIST 1500-102 VRI Specification 2018-12-07.pdf|PDF version of VRI specification|
+|NIST_V0_voter_records_interchange.json|JSON Schema            |
+|NIST_V0_voter_records_interchange.xsd|XML Schema              |
+|VRI Implementation.xml|MagicDraw UML Model                    |
+|VRI_UML_Documentation.md|UML Documentation                    |
+|VoterRecordsRequest.png|Image of Voter Records Request model  |
+|VoterRecordsResponse.png|Image of Voter Records Response model|
