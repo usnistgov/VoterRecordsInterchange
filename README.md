@@ -1,6 +1,6 @@
 # Voting - Voter Records Interchange (VRI) CDF Specification
 
-This repository holds voter records interchange (VRI) specification common data format and related information and files that are being created by NIST and collaborators.  The VRI specification is complete and awaiting final publishing by NIST.  Besides the PDF and Word versions of the specification located in this repository, there is an HTML version being developed at https://pages.nist.gov/VoterRecordsInterchange.
+This repository holds the NIST Special Publication 1500-102 Voter Records Interchange (VRI) common data format specification and related information and files that are being created by NIST and collaborators.  The VRI specification is complete and awaiting final publishing by NIST.  Besides the PDF and Word versions of the specification located in this repository, there is an HTML version being developed at https://pages.nist.gov/VoterRecordsInterchange.
 
 The VRI specification supports the following use cases:
 
