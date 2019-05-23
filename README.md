@@ -19,12 +19,12 @@ Please contact [John P. Wack](mailto:john.wack@nist.gov) for questions and more 
 |---------|----------------------------------------------------|
 |**NVRA-PDF-examples**|Examples of VRI CDF using OH VR form    |
 |**VA-examples**|Examples of absentee use-case in VA           |
-|**VRI_UML_Documentation_files**|Images of UML classes         |
-|Flattened VRI XML schema.zip|Flattened version of the XML schema and external schemas|
+|VRI_UML_Documentation_files|Images of UML classes         |
+|**Flattened VRI XML schema.zip**|Flattened version of the XML schema and external schemas|
 |NIST 1500-102 VRI Specification 2019-02-08.docm|Word version of VRI specification|
-|NIST 1500-102 VRI Specification 2019-02-08.pdf|PDF version of VRI specification|
-|NIST_V0_voter_records_interchange.json|JSON Schema            |
-|NIST_V0_voter_records_interchange.xsd|XML Schema              |
+|**NIST 1500-102 VRI Specification 2019-02-08.pdf**|PDF version of VRI specification|
+|**NIST_V0_voter_records_interchange.json**|VRI JSON schema            |
+|**NIST_V0_voter_records_interchange.xsd**|VRI XML schema              |
 |VoterRecordsRequest.png|Image of Voter Records Request model  |
 |VoterRecordsResponse.png|Image of Voter Records Response model|
 |VRI Implementation.xml|MagicDraw UML Model                    |
