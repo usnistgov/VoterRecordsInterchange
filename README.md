@@ -1,6 +1,12 @@
 # Voting - Voter Records Interchange (VRI) CDF Specification
 
-This repository holds the NIST Special Publication 1500-102 Voter Records Interchange (VRI) common data format specification and related information and files that are being created by NIST and collaborators.  The VRI specification is complete and awaiting final publishing by NIST.  Besides the PDF and Word versions of the specification located in this repository, there is an HTML version being developed at https://pages.nist.gov/VoterRecordsInterchange.
+This repository holds Version 1.0 of the NIST Special Publication 1500-102 Voter Records Interchange (VRI) Common Data Format Specification and other related information and supporting files.  The VRI specification is now complete and available using either of the following Digital Object Identifiers (DOI):
+
+1. https://doi.org/10.6028/NIST.SP.1500-102
+
+2. https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1500-102.pdf
+
+Besides the PDF and Word versions of the specification located in this repository, there is an HTML version being developed at https://pages.nist.gov/VoterRecordsInterchange.
 
 The VRI specification supports the following use cases:
 
@@ -9,9 +15,9 @@ The VRI specification supports the following use cases:
 3. OVR Transfer: Subsets of such applications used for third-party OVR assistant organizations to transfer users and user data to state OVR systems.
 4. Voter Records Lookup: Requests for information regarding voter records within a VR system, or between a VR system and a third party.
 
-There is a "flattened" version of the XML schema included in this repository; the .zip includes the other XML schemas that are normally referenced by URL.
+There is a "flattened" version of the XML schema included in this repository; the .zip includes the other XML schemas that are normally referenced by URL or DOI.
 
-Please contact [John P. Wack](mailto:john.wack@nist.gov) for questions and more information.
+Please contact [John Wack](mailto:john.wack@nist.gov) or [John Dziurlaj](mailto:john@hiltonroscoe.com) for more information.
 
 ## Repo Structure
 
