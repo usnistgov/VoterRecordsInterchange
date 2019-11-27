@@ -1,4 +1,4 @@
-# Voting - NIST SP 1500-102 Voter Records Interchange (VRI) CDF Specification Version 1
+# Voting - NIST Special Publication 1500-102 Voter Records Interchange (VRI) CDF Specification Version 1
 
 This repository holds the NIST Special Publication 1500-102 Voter Records Interchange (VRI) Common Data Format Specification Version 1 and supporting files. Besides the PDF and Word versions of the specification located in this repository, there is an HTML version being developed at https://pages.nist.gov/VoterRecordsInterchange. The VRI specification is also available using the following Digital Object Identifier (DOI):
 
