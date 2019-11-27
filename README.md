@@ -27,7 +27,7 @@ Please contact [John Wack](mailto:john.wack@nist.gov) or [John Dziurlaj](mailto:
 |**NIST 1500-102 VRI Specification V1.pdf**|PDF version of VRI specification|
 |**NIST_V0_voter_records_interchange.json**|VRI JSON schema            |
 |**NIST_V0_voter_records_interchange.xsd**|VRI XML schema              |
-|VoterRecordsRequest.png|Image of Voter Records Request model  |
-|VoterRecordsResponse.png|Image of Voter Records Response model|
 |VRI Implementation.xml|MagicDraw UML Model                    |
 |VRI_UML_Documentation.md|UML Documentation                    |
+|VoterRecordsRequest.png|Image of Voter Records Request model  |
+|VoterRecordsResponse.png|Image of Voter Records Response model|
