@@ -1,5 +1,5 @@
-<title>NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0</title>
-# **NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0**
+<title>NIST SP 1500-102 Voter Records Interchange Common Data Format Specification Draft Version 1.0</title>
+# **NIST SP 1500-102 Voter Records Interchange Common Data Format Specification Draft Version 1.0**
 
 **John P. Wack, editor**
 
@@ -42,7 +42,7 @@
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [**NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0**](#nist-sp-1500-103-voter-records-interchange-common-data-format-specification-draft-version-10)
+- [**NIST SP 1500-102 Voter Records Interchange Common Data Format Specification Draft Version 1.0**](#nist-sp-1500-102-voter-records-interchange-common-data-format-specification-draft-version-10)
 	- [Table of Contents](#table-of-contents)
 	- [Acknowledgements](#acknowledgements)
 - [Executive Summary](#executive-summary)
