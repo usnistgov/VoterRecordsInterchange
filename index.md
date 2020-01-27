@@ -8,7 +8,7 @@
 **August 2017**
 
 
-*NOTE: this version of the VRI spec is the most recent and to be used for reviews; an older version in PDF is available on the VRI GitHub repository.  Once the VRI spec is finalized, both versions of the spec will be synced.*
+*NOTE: This version of the VRI specification is from an earlier draft. The final version is available on the VRI GitHub repository.*
 
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
