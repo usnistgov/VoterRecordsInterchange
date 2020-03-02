@@ -419,7 +419,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1446587603679_902003_6890"></a>`StringValue`|0..1|`String`|Used if the value is a string; contains the string.
 
 
-
 ### <a name="_18_5_2_43701b0_1510599050811_549888_5731"></a>*The **BallotRequest** Class*
 
 ![Image of BallotRequest](VRI_UML_Documentation_files/_18_5_2_43701b0_1510599050830_791767_5732.png)
@@ -430,48 +429,6 @@ Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 <a name="_18_0_2_6340208_1470255941618_803419_4330"></a>`BallotReceiptPreference`|0..*|`BallotReceiptMethod`|The voter's preference on how to receive their ballot in order from their most preferred method to least. If omitted, the default method for the [form](#_18_0_2_6340208_1452790770728_957008_4772) will be used.
 <a name="_18_0_2_6340208_1470255052387_244061_4321"></a>`MailForwardingAddress`|0..1|`Address`|
-
-
-#### <a name="_18_5_3_43701b0_1520358467277_635751_6047"></a>*The **ElectionBasedBallotRequest** Class*
-
-![Image of ElectionBasedBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358467299_274020_6048.png)
-
-Used in request messages.
-
-Implementation of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) in which a ballot for a single election event is requested.
-
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-<a name="_18_5_2_43701b0_1510603960046_473210_6072"></a>`{Election}`|1|`Election`|The election for which the ballot is requested.
-
-
-
-#### <a name="_18_5_3_43701b0_1520358982522_606259_6124"></a>*The **PermanentBallotRequest** Class*
-
-![Image of PermanentBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358982544_874394_6125.png)
-
-Used in request messages.
-
-Subtype of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) which serves to request ballots for election events that the voter is qualified on a long term basis. Although "permanent", the request may be subject to renewal or cancellation procedures.
-
-
-
-
-#### <a name="_18_5_3_43701b0_1520358515166_885840_6088"></a>*The **TemporalBallotRequest** Class*
-
-![Image of TemporalBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358515169_841616_6089.png)
-
-Used in request messages.
-
-Subtype of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) in which election opportunities that the voter is qualified during a given time frame may be requested.
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-<a name="_18_5_2_43701b0_1510603980380_983913_6088"></a>`StartDate`|1|`date`|The date at which the request comes into effect.
-<a name="_18_5_3_43701b0_1520881700794_22779_5367"></a>`EndDate`|1|`date`|The date at which the request is no longer effective.
-
-
 
 
 ### <a name="_18_5_3_43701b0_1523391256329_329490_7455"></a>*The **BallotStyle** Class*
@@ -485,7 +442,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_3_43701b0_1523391256331_940269_7456"></a>`ExternalIdentifier`|0..*|`ExternalIdentifier`|For associating an ID with the ballot style.
 <a name="_18_5_3_43701b0_1523391256331_407235_7457"></a>`ImageUri`|0..*|`anyURI`|URI for a ballot image.
 <a name="_18_5_3_43701b0_1523391256332_916539_7459"></a>`{Party}`|0..*|`Party`|For associating one or more parties with the ballot style.
-
 
 
 ### <a name="_18_0_2_6340208_1464893400979_739933_4444"></a>*The **ContactMethod** Class*
@@ -510,24 +466,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1464893423513_525159_4496"></a>`Value`|1|`String`|The value of the ContactMethod. This will be the text value of the phone number, email address, or other mechanism. The values must be free of any formatting characters, such as parentheses or dashes for a phone number.
 
 
-#### <a name="_18_0_2_6340208_1465493970792_917703_4430"></a>*The **PhoneContactMethod** Class*
-
-![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137273798_668126_4636.png)
-
-Used in request and response messages.
-
-[RequestHelper](#_18_0_2_6340208_1470256600538_323550_4366), and [RequestProxy](#_18_0_2_6340208_1448401688329_700093_4402) use this class to specify a telephone number as well as the capabilities of the telephone, e.g., sms, fax, etc.
-
-PhoneContactMethod is subtype of [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444). Thus, the elements that include [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444) could use [PhoneContactMethod](#_18_0_2_6340208_1465493970792_917703_4430) as applicable.
-
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-<a name="_18_0_2_6340208_1465493985158_54379_4458"></a>`Capability`|0..*|`PhoneCapability`|Specifies the phone’s capabilities, e.g., fax, sms.
-
-
-
-
 ### <a name="_18_5_2_43701b0_1510603645561_775691_5960"></a>*The **Election** Class*
 
 ![Image of Election](VRI_UML_Documentation_files/_18_5_3_43701b0_1523390875922_771644_7321.png)
@@ -540,7 +478,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_2_43701b0_1510603645564_296232_5962"></a>`Name`|0..1|`String`|For including a name for the election; the name could be the same name as appears on the ballot.
 <a name="_18_5_2_43701b0_1510603645564_242065_5963"></a>`StartDate`|1|`date`|The first day of the election.
 <a name="_18_5_2_43701b0_1510603645565_34473_5964"></a>`EndDate`|0..1|`date`|For an election that spans multiple days, the last day of the election.
-
 
 
 ### <a name="_18_0_2_6340208_1458237760549_706380_5243"></a>*The **ElectionAdministration** Class*
@@ -560,6 +497,19 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1458229746147_486101_4781"></a>`Uri`|0..*|`anyURI`|A URL for the election authority.
 
 
+### <a name="_18_5_3_43701b0_1520358467277_635751_6047"></a>*The **ElectionBasedBallotRequest** Class*
+
+![Image of ElectionBasedBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358467299_274020_6048.png)
+
+Used in request messages.
+
+Implementation of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) in which a ballot for a single election event is requested.
+
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+<a name="_18_5_2_43701b0_1510603960046_473210_6072"></a>`{Election}`|1|`Election`|The election for which the ballot is requested.
+
 
 ### <a name="_18_5_3_43701b0_1527771278107_788121_5682"></a>*The **Error** Class*
 
@@ -576,7 +526,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_3_43701b0_1527771290342_857718_5719"></a>`Ref`|0..1|`String`|Reference (e.g. XPath) to the entity that the error applies.
 
 
-
 ### <a name="_18_0_2_6340208_1446584770723_729230_6705"></a>*The **ExternalIdentifier** Class*
 
 ![Image of ExternalIdentifier](VRI_UML_Documentation_files/_18_0_2_6340208_1458237601050_674272_5135.png)
@@ -591,7 +540,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1446584770724_50890_6707"></a>`Type`|1|`IdentifierType`|An identifier type, e.g., FIPS.
 <a name="_18_0_2_6340208_1446584770724_559181_6708"></a>`OtherType`|0..1|`String`|Used when [Type](#_18_0_2_6340208_1446584770724_50890_6707) value is other.
 <a name="_18_0_2_6340208_1446584770724_173723_6709"></a>`Value`|1|`String`|The identifier used by the jurisdiction.
-
 
 
 ### <a name="_18_0_2_6340208_1452879654116_509055_5255"></a>*The **File** Class*
@@ -614,15 +562,13 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1452882386267_707244_5351"></a>`MimeType`|0..1|`String`|The MIME type associated with the file.
 
 
-#### <a name="_18_0_2_6340208_1452879607465_248768_5229"></a>*The **Image** Class*
+### <a name="_18_0_2_6340208_1452879607465_248768_5229"></a>*The **Image** Class*
 
 ![Image of Image](VRI_UML_Documentation_files/_18_0_2_6340208_1452879607469_640085_5230.png)
 
 Used in request and response messages.
 
 [Signature](#_18_0_2_6340208_1452788035217_489009_4409) optionally includes this class to indicate that a file contains an image of a voter’s signature. Image uses [File](#_18_0_2_6340208_1452879654116_509055_5255) as a base class, thus attributes of [File](#_18_0_2_6340208_1452879654116_509055_5255) can be included in Image.
-
-
 
 
 ### <a name="_18_0_2_6340208_1458229746146_45435_4773"></a>*The **LatLng** Class*
@@ -641,7 +587,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1458229746148_501713_4795"></a>`Source`|0..1|`String`|System used to perform the lookup from location name to lat/lng, e.g., the name of a geocoding service.
 
 
-
 ### <a name="_18_0_2_6340208_1460480132036_876890_4538"></a>*The **Location** Class*
 
 ![Image of Location](VRI_UML_Documentation_files/_18_0_2_6340208_1460480132037_37951_4539.png)
@@ -656,7 +601,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1460493899294_400003_4467"></a>`Address`|0..1|`Address`|Address of the voting location.
 <a name="_18_0_2_6340208_1458229746146_777819_4775"></a>`Directions`|0..1|`String`|Directions to the voting location.
 <a name="_18_0_2_6340208_1458229746149_332646_4800"></a>`{LatLng}`|0..1|`LatLng`|Latitude/longitude of the voting location.
-
 
 
 ### <a name="_18_0_2_6340208_1446583854986_538708_5957"></a>*The **Name** Class*
@@ -682,7 +626,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1446583855000_441516_6001"></a>`Suffix`|0..1|`String`|A suffix associated with the person, e.g., Jr.
 
 
-
 ### <a name="_18_0_2_6340208_1446583854985_482559_5956"></a>*The **Party** Class*
 
 ![Image of Party](VRI_UML_Documentation_files/_18_5_3_43701b0_1523391450716_472827_7537.png)
@@ -700,6 +643,31 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_5_43401a7_1467296326731_60767_4483"></a>`{ExternalIdentifier}`|0..*|`ExternalIdentifier`|For associating an ID with the party.
 <a name="_18_0_2_6340208_1446583854999_279392_5995"></a>`Name`|1|`String`|Official full name of the party, e.g., “Republican”.
 
+
+### <a name="_18_5_3_43701b0_1520358982522_606259_6124"></a>*The **PermanentBallotRequest** Class*
+
+![Image of PermanentBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358982544_874394_6125.png)
+
+Used in request messages.
+
+Subtype of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) which serves to request ballots for election events that the voter is qualified on a long term basis. Although "permanent", the request may be subject to renewal or cancellation procedures.
+
+
+
+### <a name="_18_0_2_6340208_1465493970792_917703_4430"></a>*The **PhoneContactMethod** Class*
+
+![Image of PhoneContactMethod](VRI_UML_Documentation_files/_18_0_2_6340208_1467137273798_668126_4636.png)
+
+Used in request and response messages.
+
+[RequestHelper](#_18_0_2_6340208_1470256600538_323550_4366), and [RequestProxy](#_18_0_2_6340208_1448401688329_700093_4402) use this class to specify a telephone number as well as the capabilities of the telephone, e.g., sms, fax, etc.
+
+PhoneContactMethod is subtype of [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444). Thus, the elements that include [ContactMethod](#_18_0_2_6340208_1464893400979_739933_4444) could use [PhoneContactMethod](#_18_0_2_6340208_1465493970792_917703_4430) as applicable.
+
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+<a name="_18_0_2_6340208_1465493985158_54379_4458"></a>`Capability`|0..*|`PhoneCapability`|Specifies the phone’s capabilities, e.g., fax, sms.
 
 
 ### <a name="_18_0_2_6340208_1458229422042_966646_4539"></a>*The **ReportingUnit** Class*
@@ -723,6 +691,12 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1458229422044_377016_4546"></a>`OtherType`|0..1|`String`|Used when [Type](#_18_0_2_6340208_1458229422044_801308_4545) value is other.
 
 
+### <a name="_18_0_2_6340208_1456261767184_144968_4436"></a>*The **RequestAcknowledgement** Class*
+
+![Image of RequestAcknowledgement](VRI_UML_Documentation_files/_18_0_2_6340208_1456261767195_161515_4437.png)
+
+Used in response messages. For indicating that the request was received but action on the request is pending.
+
 
 ### <a name="_18_0_2_6340208_1470256600538_323550_4366"></a>*The **RequestHelper** Class*
 
@@ -742,7 +716,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1449004018574_638446_4281"></a>`Phone`|0..1|`PhoneContactMethod`|Request helper’s phone number.
 <a name="_18_0_2_6340208_1465498406376_433216_4546"></a>`{Signature}`|0..1|`Signature`|To specify the signature of the helper.
 <a name="_18_0_2_6340208_1470256926542_116930_4431"></a>`Type`|1|`VoterHelperType`|To specify the type of helper, e.g., assistant.
-
 
 
 ### <a name="_18_0_2_6340208_1448401688329_700093_4402"></a>*The **RequestProxy** Class*
@@ -765,6 +738,39 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1449004222447_98580_4390"></a>`Type`|1|`RequestProxyType`|The type of the requesting proxy, e.g., motor-vehicle-office, public-assistance-office.
 <a name="_18_0_2_6340208_1449004618710_652726_4439"></a>`OtherType`|0..1|`String`|Used when [OtherType](#_18_0_2_6340208_1449004618710_652726_4439) value is other.
 
+
+### <a name="_18_0_2_6340208_1458226815148_390496_4430"></a>*The **RequestRejection** Class*
+
+![Image of RequestRejection](VRI_UML_Documentation_files/_18_0_2_6340208_1458226815154_812582_4431.png)
+
+Used in response messages.
+
+For indicating that the request failed. The [Error](#_18_5_3_43701b0_1527771278145_89966_5684) attribute is used to indicate the type of error that occurred. The [AdditionalDetails](#_18_0_5_43401a7_1466533383266_843518_4448) attribute can be used to provide more information as to the rejection.
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+<a name="_18_0_5_43401a7_1466533383266_843518_4448"></a>`AdditionalDetails`|0..*|`String`|Used to provide additional details as applicable.
+<a name="_18_5_3_43701b0_1527771278145_89966_5684"></a>`{Error}`|0..*|`Error`|For associating a [RequestRejection](#_18_0_2_6340208_1458226815148_390496_4430) with one or more [Error](#_18_5_3_43701b0_1527771278145_89966_5684).
+
+
+### <a name="_18_0_2_6340208_1460483674993_168854_4684"></a>*The **RequestSuccess** Class*
+
+![Image of RequestSuccess](VRI_UML_Documentation_files/_18_0_2_6340208_1460483674995_528178_4685.png)
+
+Used in response messages.
+
+For indicating a successful response to a request. The [Action](#_18_0_2_6340208_1465405831538_561001_4536) attribute is used to indicate the action that occurred, which may differ from what was requested. For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
+
+The response also includes, optionally, other information useful to the voter, including a description of the voter’s polling place, districts (i.e., contests) associated with the polling place, or other geopolitical geographies such as the voter’s precinct.
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+<a name="_18_0_2_6340208_1465405831538_561001_4536"></a>`Action`|0..*|`SuccessAction`|Used to indicate the action that occurred.
+<a name="_18_0_2_6340208_1460480053765_398742_4483"></a>`{District}`|0..*|`ReportingUnit`|One or more districts associated with the voter’s precinct.
+<a name="_18_0_2_6340208_1465576589038_936326_4438"></a>`EffectiveDate`|0..1|`date`|The effective date of the action.
+<a name="_18_0_2_6340208_1458237768093_586675_5281"></a>`{ElectionAdministration}`|0..1|`ElectionAdministration`|The election administration that conducts elections for the voter.
+<a name="_18_0_2_6340208_1460480018439_304252_4448"></a>`{Locality}`|0..*|`ReportingUnit`|Other geographies such as the voter’s precinct.
+<a name="_18_0_2_6340208_1458238628374_827167_5425"></a>`{PollingPlace}`|0..1|`ReportingUnit`|The voter’s polling place.
 
 
 ### <a name="_18_0_2_6340208_1452788035217_489009_4409"></a>*The **Signature** Class*
@@ -789,6 +795,19 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1452788086928_168327_4463"></a>`Type`|0..1|`SignatureType`|A signature type, e.g., dynamic.
 <a name="_18_0_5_43401a7_1466101952104_73374_4556"></a>`OtherType`|0..1|`String`|Used when [Type](#_18_0_2_6340208_1452788086928_168327_4463) value is other.
 
+
+### <a name="_18_5_3_43701b0_1520358515166_885840_6088"></a>*The **TemporalBallotRequest** Class*
+
+![Image of TemporalBallotRequest](VRI_UML_Documentation_files/_18_5_3_43701b0_1520358515169_841616_6089.png)
+
+Used in request messages.
+
+Subtype of [BallotRequest](#_18_5_2_43701b0_1510599050811_549888_5731) in which election opportunities that the voter is qualified during a given time frame may be requested.
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+<a name="_18_5_2_43701b0_1510603980380_983913_6088"></a>`StartDate`|1|`date`|The date at which the request comes into effect.
+<a name="_18_5_3_43701b0_1520881700794_22779_5367"></a>`EndDate`|1|`date`|The date at which the request is no longer effective.
 
 
 ### <a name="_18_5_3_43701b0_1520354792154_717315_5628"></a>*The **Voter** Class*
@@ -816,7 +835,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_3_43701b0_1520355588761_324546_5986"></a>`{VoterId}`|0..*|`VoterId`|Information to provide voter identity.
 
 
-
 ### <a name="_18_0_2_6340208_1452701375494_353834_4295"></a>*The **VoterClassification** Class*
 
 ![Image of VoterClassification](VRI_UML_Documentation_files/_18_0_2_6340208_1452701375514_47142_4296.png)
@@ -834,7 +852,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_3_43701b0_1520357756289_358083_6036"></a>`OtherAssertion`|0..1|`String`|An locally defined assertion value.
 <a name="_18_0_2_6340208_1452702268850_457342_4324"></a>`Type`|1|`VoterClassificationType`|A classification type, e.g., felon.
 <a name="_18_0_2_6340208_1452703117530_845631_4357"></a>`OtherType`|0..1|`String`|Used when [Type](#_18_0_2_6340208_1452702268850_457342_4324) value is other.
-
 
 
 ### <a name="_18_0_2_6340208_1448398278986_542661_4430"></a>*The **VoterId** Class*
@@ -858,7 +875,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1448398278989_463089_4435"></a>`OtherType`|0..1|`String`|Used when [Type](#_18_0_2_6340208_1448398278989_134134_4433) value is other.
 
 
-
 ### <a name="_18_5_3_43701b0_1523390807847_148436_7270"></a>*The **VoterParticipation** Class*
 
 ![Image of VoterParticipation](VRI_UML_Documentation_files/_18_5_3_43701b0_1523390807871_783291_7271.png)
@@ -870,7 +886,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_3_43701b0_1523391427889_565721_7508"></a>`{BallotStyle}`|0..1|`BallotStyle`|For associating the voter participation to a specific ballot style, such to a partisan ballot in a closed primary.
 <a name="_18_5_3_43701b0_1523390882603_527268_7351"></a>`{Election}`|1|`Election`|For associating the voter participation to a specific election event.
 <a name="_19_0_43701b0_1537277058654_997916_5158"></a>`{PollingLocation}`|0..1|`ReportingUnit`|The polling place used by the voter.
-
 
 
 ### <a name="_18_5_3_43701b0_1521144693004_190730_6034"></a>*The **VoterRecord** Class*
@@ -891,6 +906,20 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_5_3_43701b0_1524168892961_117849_6431"></a>`VoterStatus`|0..1|`VoterStatus`|The status of the VoterRecord, possibly to indicate the ability to receive a regular ballot.
 <a name="_19_0_43701b0_1537283642388_774863_5190"></a>`OtherVoterStatus`|0..1|`String`|Used when [VoterStatus](#_18_5_3_43701b0_1524168892961_117849_6431) value is other.
 
+
+### <a name="_18_5_3_43701b0_1523305927438_977151_6481"></a>*The **VoterRecordResults** Class*
+
+![Image of VoterRecordResults](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
+
+Used in response messages.
+
+For indicating a successful response to a lookup request.
+
+A lookup for a single voter may result in multiple [VoterRecord](#_18_5_3_43701b0_1521144693004_190730_6034) being returned. This can occur if the voter has duplicate records in the VRDB, or if the criteria specified in the lookup request was broad.
+
+Attribute | Multiplicity | Type | Attribute Description
+--------- | ------------ | ---- | ---------------------
+<a name="_18_5_3_43701b0_1523306302886_361773_6512"></a>`{VoterRecord}`|0..*|`VoterRecord`|The voter record(s) returned.
 
 
 ### <a name="_18_0_2_6340208_1446583854986_237644_5961"></a>*The **VoterRecordsRequest** Class*
@@ -922,7 +951,6 @@ Attribute | Multiplicity | Type | Attribute Description
 <a name="_18_0_2_6340208_1452801800793_502602_4948"></a>`VendorApplicationId`|0..1|`String`|An identifier of the vendor application generating the voter registration request, e.g., X-VRDB Version 3.1.a.
 
 
-
 ### <a name="_18_0_2_6340208_1455906719413_171772_4514"></a>*The **VoterRecordsResponse** Class*
 
 ![Image of VoterRecordsResponse](VRI_UML_Documentation_files/_18_0_2_6340208_1455906719422_329791_4515.png)
@@ -944,66 +972,5 @@ For defining items pertaining to the status of a response to a voter records req
 Attribute | Multiplicity | Type | Attribute Description
 --------- | ------------ | ---- | ---------------------
 <a name="_18_2_43401a7_1463060312154_514212_4530"></a>`TransactionId`|0..1|`String`|Transaction ID associated with the voter records request.
-
-
-#### <a name="_18_0_2_6340208_1456261767184_144968_4436"></a>*The **RequestAcknowledgement** Class*
-
-![Image of RequestAcknowledgement](VRI_UML_Documentation_files/_18_0_2_6340208_1456261767195_161515_4437.png)
-
-Used in response messages. For indicating that the request was received but action on the request is pending.
-
-
-
-#### <a name="_18_0_2_6340208_1458226815148_390496_4430"></a>*The **RequestRejection** Class*
-
-![Image of RequestRejection](VRI_UML_Documentation_files/_18_0_2_6340208_1458226815154_812582_4431.png)
-
-Used in response messages.
-
-For indicating that the request failed. The [Error](#_18_5_3_43701b0_1527771278145_89966_5684) attribute is used to indicate the type of error that occurred. The [AdditionalDetails](#_18_0_5_43401a7_1466533383266_843518_4448) attribute can be used to provide more information as to the rejection.
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-<a name="_18_0_5_43401a7_1466533383266_843518_4448"></a>`AdditionalDetails`|0..*|`String`|Used to provide additional details as applicable.
-<a name="_18_5_3_43701b0_1527771278145_89966_5684"></a>`{Error}`|0..*|`Error`|For associating a [RequestRejection](#_18_0_2_6340208_1458226815148_390496_4430) with one or more [Error](#_18_5_3_43701b0_1527771278145_89966_5684).
-
-
-
-#### <a name="_18_0_2_6340208_1460483674993_168854_4684"></a>*The **RequestSuccess** Class*
-
-![Image of RequestSuccess](VRI_UML_Documentation_files/_18_0_2_6340208_1460483674995_528178_4685.png)
-
-Used in response messages.
-
-For indicating a successful response to a request. The [Action](#_18_0_2_6340208_1465405831538_561001_4536) attribute is used to indicate the action that occurred, which may differ from what was requested. For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
-
-The response also includes, optionally, other information useful to the voter, including a description of the voter’s polling place, districts (i.e., contests) associated with the polling place, or other geopolitical geographies such as the voter’s precinct.
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-<a name="_18_0_2_6340208_1465405831538_561001_4536"></a>`Action`|0..*|`SuccessAction`|Used to indicate the action that occurred.
-<a name="_18_0_2_6340208_1460480053765_398742_4483"></a>`{District}`|0..*|`ReportingUnit`|One or more districts associated with the voter’s precinct.
-<a name="_18_0_2_6340208_1465576589038_936326_4438"></a>`EffectiveDate`|0..1|`date`|The effective date of the action.
-<a name="_18_0_2_6340208_1458237768093_586675_5281"></a>`{ElectionAdministration}`|0..1|`ElectionAdministration`|The election administration that conducts elections for the voter.
-<a name="_18_0_2_6340208_1460480018439_304252_4448"></a>`{Locality}`|0..*|`ReportingUnit`|Other geographies such as the voter’s precinct.
-<a name="_18_0_2_6340208_1458238628374_827167_5425"></a>`{PollingPlace}`|0..1|`ReportingUnit`|The voter’s polling place.
-
-
-
-#### <a name="_18_5_3_43701b0_1523305927438_977151_6481"></a>*The **VoterRecordResults** Class*
-
-![Image of VoterRecordResults](VRI_UML_Documentation_files/_18_5_3_43701b0_1523305927444_622293_6482.png)
-
-Used in response messages.
-
-For indicating a successful response to a lookup request.
-
-A lookup for a single voter may result in multiple [VoterRecord](#_18_5_3_43701b0_1521144693004_190730_6034) being returned. This can occur if the voter has duplicate records in the VRDB, or if the criteria specified in the lookup request was broad.
-
-Attribute | Multiplicity | Type | Attribute Description
---------- | ------------ | ---- | ---------------------
-<a name="_18_5_3_43701b0_1523306302886_361773_6512"></a>`{VoterRecord}`|0..*|`VoterRecord`|The voter record(s) returned.
-
-
 
 
