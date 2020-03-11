@@ -1,5 +1,5 @@
-<title>NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0</title>
-# **NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0**
+<title>NIST SP 1500-102 Voter Records Interchange Common Data Format Specification Draft Version 1.0</title>
+# **NIST SP 1500-102 Voter Records Interchange Common Data Format Specification Draft Version 1.0**
 
 **John P. Wack, editor**
 
@@ -8,7 +8,7 @@
 **August 2017**
 
 
-*NOTE: this version of the VRI spec is the most recent and to be used for reviews; an older version in PDF is available on the VRI GitHub repository.  Once the VRI spec is finalized, both versions of the spec will be synced.*
+*NOTE: This version of the VRI specification is from an earlier draft. The final version is available on the VRI GitHub repository.*
 
 
     NIST Special Publication series 1500 is intended to capture external perspectives related to NIST
@@ -42,7 +42,7 @@
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [**NIST SP 1500-103 Voter Records Interchange Common Data Format Specification Draft Version 1.0**](#nist-sp-1500-103-voter-records-interchange-common-data-format-specification-draft-version-10)
+- [**NIST SP 1500-102 Voter Records Interchange Common Data Format Specification Draft Version 1.0**](#nist-sp-1500-102-voter-records-interchange-common-data-format-specification-draft-version-10)
 	- [Table of Contents](#table-of-contents)
 	- [Acknowledgements](#acknowledgements)
 - [Executive Summary](#executive-summary)
