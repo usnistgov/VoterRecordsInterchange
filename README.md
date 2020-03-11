@@ -6,7 +6,7 @@ https://pages.nist.gov/VoterRecordsInterchange.
 
 The VRI specification is also available using the following Digital Object Identifier (DOI):
 
-- https://doi.org/10.6028/NIST.SP.1500-102
+https://doi.org/10.6028/NIST.SP.1500-102
 
 The VRI specification supports the following use cases:
 
