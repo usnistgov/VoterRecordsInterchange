@@ -1,4 +1,4 @@
-# National Institute of Standards and Technology (NIST) Special Publication 1500-102, Voter Records Interchange Common Data Format Specification Version 1.0
+# National Institute of Standards and Technology (NIST) Special Publication 1500-102, Voter Records Interchange Common Data Format Specification Version 1
 
 **March 2020**
 
