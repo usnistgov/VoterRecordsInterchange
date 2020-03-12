@@ -2,39 +2,15 @@
 
 **March 2020**
 
-**The following is an excerpt from the SP 1500-102 specification. It contains the specification's executive summary and class documentation.**
+**The following is an excerpt from the SP 1500-102 V1 specification. It contains the specification's executive summary and class documentation.**
 
 The complete publication including JSON and XML schemas is available free of charge from:
 
 <https://github.com/usnistgov/ElectionResultsReporting>
 
-# Executive Summary
-
-Voter records are exchanged between an increasing number of entities. Whether it is voter registration offered during an interaction at the motor vehicles administration (MVA), an update to a voter record using an online portal, records exchanged as part of a voter matching database, or requests for absentee ballots, all of these systems need a common data format to effectively communicate.
-
-However, the data exchanged is generally in a non-uniform format. This can cause a number of complications in that each state/territory, or sometimes each individual portal application, may have its own format that must be interpreted and translated on the receiving end.  Voter addresses, in particular, are often provided to voter registration (VR) authorities in formats that are difficult to efficiently store in voter registration databases and use in various related applications.  The collection of accurate voter registration address information is central to the routing of voter registration requests and subsequently in assigning voters to election districts.  Each voter records application being developed must then be aware of each state’s specific formats or design its own format, which complicates development and inhibits the implementation of digital voter record systems.
-
-This specification assists election officials and developers in more easily implementing and supporting the development of online voter registration (OVR) systems by providing them with a uniform common data format for voter records interchange (VRI), that is, the voter registration requests and responses needed for OVR and for voter records maintenance. The languages used in the common data format are XML (eXtensible Markup Language) and JSON (JavaScript Object Notation).
-
-The advantages of using this specification include:
-
-- Providing a ready data interchange format for OVR systems to remove the need for individual system development projects to define their own data models and formats.
-- Assisting election officials by reducing or eliminating non-standard exchange formats for voter registration data. Currently, the systems involved and data they produce do not interoperate, adding complexity to the process.
-- Providing a baseline CDF (common data format) for voter registration data that can be continually refined to be more efficient and adaptable across all states. Once jurisdictions adopt the CDF VRI, their experience and feedback will refine the continued development of the specification.
-- Providing the foundation for additional use cases in the future, which could include:
-  - matching driver’s license data between the MVA and voter record systems,
-  - automated notifications between the MVA and voter record systems,
-  - interoperability with electronic pollbooks,
-  - voter record maintenance activities,
-  - cross-state record matching, or
-  - facilitating data reporting for the Election Administration and Voting Survey (EAVS).
-
-This specification provides background and explanation of how online voter registration typically works, using the data required by the National Voter Registration Act (NVRA) and Federal Post Card Application (FPCA) voter registration forms, including state-specific additions to these forms. It then contains an explanation of a UML (Unified Markup Language) model that was created to detail the data elements required in voter registration requests and responses. The UML model was used to generate XML and JSON schemas, which are both explained and used in various implementation examples.
-
-The intended audience of this specification includes election officials, VR system designers and developers, and others in the election community including the general public. Some background in election administration and registration is useful in understanding the material in this specification.
-
 # Table of Contents
 
+  - **[Executive Summary](#execsum)**
   - Enumerations
     - *The **[AssertionValue](#18_0_2_6340208_1455829091671_996796_4447)** Enumeration*
     - *The **[BallotReceiptMethod](#18_0_2_6340208_1470255961792_690679_4334)** Enumeration*
@@ -88,6 +64,32 @@ The intended audience of this specification includes election officials, VR syst
     - *The **[VoterRecordResults](#18_5_3_43701b0_1523305927438_977151_6481)** Class*
     - *The **[VoterRecordsRequest](#18_0_2_6340208_1446583854986_237644_5961)** Class*
     - *The **[VoterRecordsResponse](#18_0_2_6340208_1455906719413_171772_4514)** Class*
+
+
+## Executive Summary<a name="execsum"></a>
+
+Voter records are exchanged between an increasing number of entities. Whether it is voter registration offered during an interaction at the motor vehicles administration (MVA), an update to a voter record using an online portal, records exchanged as part of a voter matching database, or requests for absentee ballots, all of these systems need a common data format to effectively communicate.
+
+However, the data exchanged is generally in a non-uniform format. This can cause a number of complications in that each state/territory, or sometimes each individual portal application, may have its own format that must be interpreted and translated on the receiving end.  Voter addresses, in particular, are often provided to voter registration (VR) authorities in formats that are difficult to efficiently store in voter registration databases and use in various related applications.  The collection of accurate voter registration address information is central to the routing of voter registration requests and subsequently in assigning voters to election districts.  Each voter records application being developed must then be aware of each state’s specific formats or design its own format, which complicates development and inhibits the implementation of digital voter record systems.
+
+This specification assists election officials and developers in more easily implementing and supporting the development of online voter registration (OVR) systems by providing them with a uniform common data format for voter records interchange (VRI), that is, the voter registration requests and responses needed for OVR and for voter records maintenance. The languages used in the common data format are XML (eXtensible Markup Language) and JSON (JavaScript Object Notation).
+
+The advantages of using this specification include:
+
+- Providing a ready data interchange format for OVR systems to remove the need for individual system development projects to define their own data models and formats.
+- Assisting election officials by reducing or eliminating non-standard exchange formats for voter registration data. Currently, the systems involved and data they produce do not interoperate, adding complexity to the process.
+- Providing a baseline CDF (common data format) for voter registration data that can be continually refined to be more efficient and adaptable across all states. Once jurisdictions adopt the CDF VRI, their experience and feedback will refine the continued development of the specification.
+- Providing the foundation for additional use cases in the future, which could include:
+  - matching driver’s license data between the MVA and voter record systems,
+  - automated notifications between the MVA and voter record systems,
+  - interoperability with electronic pollbooks,
+  - voter record maintenance activities,
+  - cross-state record matching, or
+  - facilitating data reporting for the Election Administration and Voting Survey (EAVS).
+
+This specification provides background and explanation of how online voter registration typically works, using the data required by the National Voter Registration Act (NVRA) and Federal Post Card Application (FPCA) voter registration forms, including state-specific additions to these forms. It then contains an explanation of a UML (Unified Markup Language) model that was created to detail the data elements required in voter registration requests and responses. The UML model was used to generate XML and JSON schemas, which are both explained and used in various implementation examples.
+
+The intended audience of this specification includes election officials, VR system designers and developers, and others in the election community including the general public. Some background in election administration and registration is useful in understanding the material in this specification.
 
 ## Enumerations
 
