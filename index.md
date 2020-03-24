@@ -6,7 +6,7 @@
 
 The complete publication including JSON and XML schemas is available free of charge from:
 
-<https://github.com/usnistgov/ElectionResultsReporting>
+<https://github.com/usnistgov/VoterRecordsInterchange>
 
 # Table of Contents
 
