@@ -27,8 +27,8 @@ Please contact [John Wack](mailto:john.wack@nist.gov) or [John Dziurlaj](mailto:
 |**VA-examples**|Examples of absentee use-case in VA           |
 |VRI_UML_Documentation_files|Images of UML classes         |
 |**Flattened VRI XML schema.zip**|Flattened version of the XML schema and external schemas|
-|NIST 1500-102 VRI Specification V1.docm|Word version of VRI specification|
-|**NIST 1500-102 VRI Specification V1.pdf**|PDF version of VRI specification|
+|NIST.SP.1500-102-rev.docm|Word version of VRI specification|
+|**NIST.SP.1500-102-rev.pdf**|PDF version of VRI specification|
 |**NIST_V0_voter_records_interchange.json**|VRI JSON schema            |
 |**NIST_V0_voter_records_interchange.xsd**|VRI XML schema              |
 |VRI Implementation.xml|MagicDraw UML Model                    |
