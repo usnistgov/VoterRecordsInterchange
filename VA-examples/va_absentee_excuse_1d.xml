@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsRequest xmlns="http://itl.nist.gov/ns/voting/1500-102/v1" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://itl.nist.gov/ns/voting/1500-102/v1 file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/http://itl.nist.gov/ns/voting/1500-102/v1">
 	<BallotRequest xsi:type="ElectionBasedBallotRequest">
 		<Election>
 			<StartDate>2018-06-12</StartDate>
