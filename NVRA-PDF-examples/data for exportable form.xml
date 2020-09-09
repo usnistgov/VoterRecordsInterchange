@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://itl.nist.gov/ns/voting/1500-102/v1">
 	<GeneratedDate>2016-12-29</GeneratedDate>
 	<RequestMethod>unknown</RequestMethod>
-	<Subject>		
-			<ContactMethod>
+	<Subject>
+		<ContactMethod>
 			<Type>phone</Type>
 			<Value>4406448595</Value>
 		</ContactMethod>
@@ -14,11 +14,11 @@
 			<LastName>ZEHR</LastName>
 			<MiddleName>L</MiddleName>
 		</Name>
-			<PreviousName>
+		<PreviousName>
 			<FullName>TYEE MILLER</FullName>
-		</PreviousName>	
-			<PreviousResidenceAddress>
-			<GeneralAddressClass_type >
+		</PreviousName>
+		<PreviousResidenceAddress>
+			<GeneralAddressClass_type>
 				<addr:USPSGeneralDeliveryPoint xmlns:addr="http://www.fgdc.gov/schemas/address/addr">3687 FALLEN NECTAR WAY</addr:USPSGeneralDeliveryPoint>
 				<addr_type:CompletePlaceName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" Separator="">
 					<addr_type:PlaceName PlaceNameType="MunicipalJurisdiction">GUERNE</addr_type:PlaceName>
@@ -38,7 +38,7 @@
 				<addr_type:StateName xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">OH</addr_type:StateName>
 				<addr_type:ZipCode xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">45300</addr_type:ZipCode>
 			</GeneralAddressClass_type>
-		</ResidenceAddress>		
+		</ResidenceAddress>
 		<Signature>
 			<Date>2016-12-29</Date>
 			<FileValue xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">iVBORw0KGgoAAAANSUhEUgAAAOgAAAA5CAIAAACzqfClAAANbUlEQVR4nO2df0hb1xfA77K3NAsh
@@ -115,7 +115,7 @@ ti3BUK8AAAAASUVORK5CYII=</FileValue>
 		<VoterId>
 			<StringValue>8392</StringValue>
 			<Type>ssn4</Type>
-		</VoterId>	
+		</VoterId>
 	</Subject>
 	<Type>registration</Type>
 </VoterRecordsRequest>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"  xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://itl.nist.gov/ns/voting/1500-102/v1" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
 	<GeneratedDate>2017-02-06</GeneratedDate>
 	<Issuer>Ohio Secretary of State</Issuer>
 	<RequestMethod>voter-via-mail</RequestMethod>
@@ -16,7 +16,7 @@
 				<addr_type:CompletePlaceName>
 					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">LONDON</PlaceName>
 				</addr_type:CompletePlaceName>
-				<addr_type:StateName></addr_type:StateName>
+				<addr_type:StateName/>
 				<addr_type:CountryName>UK</addr_type:CountryName>
 			</GeneralAddressClass_type>
 		</MailingAddress>
@@ -26,7 +26,7 @@
 			<MiddleName>A</MiddleName>
 		</Name>
 		<ResidenceAddress>
-				<GeneralAddressClass_type>
+			<GeneralAddressClass_type>
 				<addr:USPSGeneralDeliveryPoint>1810 MERRIMAN RD</addr:USPSGeneralDeliveryPoint>
 				<addr_type:CompletePlaceName>
 					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>

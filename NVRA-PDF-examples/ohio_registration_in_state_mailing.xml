@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- DISCLAIMER: All persons listed below are fictitious -->
-<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://itl.nist.gov/ns/voting/1500-102/v1" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:addr="http://www.fgdc.gov/schemas/address/addr">
 	<AdditionalInfo>
 		<Name>Language</Name>
 		<StringValue>en_US</StringValue>
@@ -19,8 +19,8 @@
 		</ContactMethod>
 		<DateOfBirth>1985-11-05</DateOfBirth>
 		<MailingAddress>
-			<GeneralAddressClass_type>						
-				<addr:GeneralAddress>500 W TUSCARAWAS AVE BARBERTON OH 44203</addr:GeneralAddress>					
+			<GeneralAddressClass_type>
+				<addr:GeneralAddress>500 W TUSCARAWAS AVE BARBERTON OH 44203</addr:GeneralAddress>
 			</GeneralAddressClass_type>
 		</MailingAddress>
 		<Name>
@@ -29,7 +29,7 @@
 			<MiddleName>NANCY</MiddleName>
 		</Name>
 		<PreviousResidenceAddress>
-				<GeneralAddressClass_type>
+			<GeneralAddressClass_type>
 				<addr:USPSGeneralDeliveryPoint>2219 STORER AVE</addr:USPSGeneralDeliveryPoint>
 				<addr_type:CompletePlaceName>
 					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
@@ -40,7 +40,7 @@
 			</GeneralAddressClass_type>
 		</PreviousResidenceAddress>
 		<ResidenceAddress>
-					<GeneralAddressClass_type>
+			<GeneralAddressClass_type>
 				<addr:USPSGeneralDeliveryPoint>3273 MANCHESTER RD</addr:USPSGeneralDeliveryPoint>
 				<addr_type:CompletePlaceName>
 					<PlaceName xmlns="http://www.fgdc.gov/schemas/address/addr_type" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PlaceNameType="MunicipalJurisdiction">AKRON</PlaceName>
