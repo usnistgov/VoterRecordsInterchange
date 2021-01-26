@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20160728.2.925958" APIVersion="3.6.16210.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2018-11-28T18:57:57Z" uuid="4a6c59cd-4023-4322-bdd1-71b21d715a7c">
-<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-09-09T12:00:11Z" uuid="30870041-20f6-489b-880d-4b854ce161f0">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
    <?formServer formModel both?>
@@ -18,7 +18,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Voter Registration and Information Update Form</text>
+               <text xliff:rid="84B7E47C-3DF3-450A-A180-1B9C9880D10B">Voter Registration and Information Update Form</text>
             </value>
             <font typeface="Arial" size="20pt" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -34,7 +34,7 @@
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="25088BCD-61FC-4B49-A2FA-2D9F6F0C0E44">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in">Please read<span style="xfa-spacerun:yes"> </span><span style="letter-spacing:0em">instructions</span> carefully. Please type or print clearly with blue or black ink.<span style="xfa-spacerun:yes"> </span></p><p style="text-decoration:none;letter-spacing:0in">For further information, you may consult the Secretary of State’s website at:<span style="xfa-spacerun:yes"> </span><a href="www.OhioSecretaryofState.gov" style="margin-top:0pt;margin-bottom:0pt;text-align:center;font-family:Arial;font-size:8pt">www.OhioSecretaryofState.gov</a> or call (877) 767-6446.</p></body>
                </exData>
             </value>
@@ -50,7 +50,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Eligibility</text>
+               <text xliff:rid="95C28978-B5F4-421D-94F4-634D33F879BE">Eligibility</text>
             </value>
             <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -66,7 +66,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>You are qualified to register to vote in Ohio if you meet all the following requirements:</text>
+               <text xliff:rid="C379AD7E-19F8-4487-8ABE-B24298E2C8BF">You are qualified to register to vote in Ohio if you meet all the following requirements:</text>
             </value>
             <font size="8.5pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -82,7 +82,7 @@
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="B80449A6-5DDE-4A2A-B1EB-8B35CD5124FF">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><ol style="text-decoration:none;letter-spacing:0in"><li>You are a citizen of the United States.</li><li>You will be at least 18 years old on or before the day of the general election.</li><li>You will be a resident of Ohio for at least 30 days immediately before the election in which you want to vote.</li><li>You are not incarcerated (in jail or in prison) for a felony conviction.</li><li>You have not been declared incompetent for voting purposes by a probate court.</li><li>You have not been permanently disenfranchised for violations of election laws.</li></ol></body>
                </exData>
             </value>
@@ -98,7 +98,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Use this form to register to vote or to update your current Ohio registration if you have changed your address or name.</text>
+               <text xliff:rid="CF407CDD-CBDC-4671-9D24-C12FE3C7CE51">Use this form to register to vote or to update your current Ohio registration if you have changed your address or name.</text>
             </value>
             <font size="8.5pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -114,7 +114,7 @@
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="A4AF50FC-317B-4074-AB6D-93EC36B0A957">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-weight:bold">NOTICE:<span style="font-weight:normal"> This form must be received or postmarked by the 30th day before an election at which you intend to vote. You will be notified by your county board of elections of the location where you vote. If you do not receive a notice following timely submission of this form, please contact your county board of elections.<span style="xfa-spacerun:yes"> </span></span></p></body>
                </exData>
             </value>
@@ -136,7 +136,7 @@
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="51A59CA3-A6BF-4D95-9515-9B8126FF0994">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-weight:bold">Numbers 1 and 2 below are required by law.<span style="font-weight:normal"> You must answer both of the questions for your registration to be processed.</span></p></body>
                </exData>
             </value>
@@ -155,7 +155,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Registering in Person</text>
+               <text xliff:rid="79CBDC6A-C4D5-468B-96B2-AC39D60A7B06">Registering in Person</text>
             </value>
             <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -171,7 +171,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>If you have a current valid Ohio driver’s license, you must provide that number on line 10. If you do not have an Ohio driver’s license, you must provide the last four digits of your Social Security number on line 10. If you have neither, please write “None.”</text>
+               <text xliff:rid="C53C72A9-AE32-41E7-B35E-2AC1022E834C">If you have a current valid Ohio driver’s license, you must provide that number on line 10. If you do not have an Ohio driver’s license, you must provide the last four digits of your Social Security number on line 10. If you have neither, please write “None.”</text>
             </value>
             <font size="8.5pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -189,7 +189,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Registering by Mail</text>
+               <text xliff:rid="0F7F1896-4B03-446E-9CB7-F604338461B1">Registering by Mail</text>
             </value>
             <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -205,7 +205,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>If you register by mail and do not provide either an Ohio driver’s license number or the last four digits of your Social Security number, you must enclose with your application a copy of one of the following forms of identification:</text>
+               <text xliff:rid="0463B5E5-7D0F-4851-A2D0-26539DE3E5EC">If you register by mail and do not provide either an Ohio driver’s license number or the last four digits of your Social Security number, you must enclose with your application a copy of one of the following forms of identification:</text>
             </value>
             <font size="8.5pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -223,7 +223,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Current and valid photo identification, a military identification, or a current (within the last 12 months) utility bill, bank statement, government check, paycheck, or government document (other than a notice of voter registration mailed by a board of elections) that shows the voter’s name and current address.</text>
+               <text xliff:rid="807A8885-3E11-46F4-831A-ABE714A4A496">Current and valid photo identification, a military identification, or a current (within the last 12 months) utility bill, bank statement, government check, paycheck, or government document (other than a notice of voter registration mailed by a board of elections) that shows the voter’s name and current address.</text>
             </value>
             <font size="8.5pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -232,7 +232,7 @@
                <traverse ref="H2_ResidencyRequirements[0]"/>
             </traversal>
             <assist>
-               <speak>Current and valid photo identification, a military identification, or a current (within the last 12 months) utility bill, bank statement, government check, paycheck, or government document (other than a notice of voter registration mailed by a board of elections) that shows the voter’s name and current address.</speak>
+               <speak xliff:rid="51C3E3AD-4633-4427-8A1B-6F8684562F1B">Current and valid photo identification, a military identification, or a current (within the last 12 months) utility bill, bank statement, government check, paycheck, or government document (other than a notice of voter registration mailed by a board of elections) that shows the voter’s name and current address.</speak>
             </assist>
             <?renderCache.bounds 262667 53300 0 0 1417 1417 0 0?>
             <?renderCache.textRun 72 Current and valid photo identification, a military identification, or a  0 10417 8128 0 0 0 "Arial" 0 0 8500 ISO-8859-1?>
@@ -245,7 +245,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Residency Requirements</text>
+               <text xliff:rid="59BB840B-08CF-4E30-ABB4-98D7ED0E0B99">Residency Requirements</text>
             </value>
             <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -261,7 +261,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Your voting residence is the location that you consider to be a permanent, not a temporary, residence. Your voting residence is the place in which your habitation is fixed and to which, whenever you are absent, you intend to return. If you do not have a fixed place of habitation, but you are a consistent or regular inhabitant of a shelter or other location to which you intend to return, you may use that shelter or other location as your residence for purposes of registering to vote. If you have questions about your specific residency circumstances, you may contact your local board of elections for further information.</text>
+               <text xliff:rid="2821B419-2600-4AFA-84B3-FD2AF07D4E03">Your voting residence is the location that you consider to be a permanent, not a temporary, residence. Your voting residence is the place in which your habitation is fixed and to which, whenever you are absent, you intend to return. If you do not have a fixed place of habitation, but you are a consistent or regular inhabitant of a shelter or other location to which you intend to return, you may use that shelter or other location as your residence for purposes of registering to vote. If you have questions about your specific residency circumstances, you may contact your local board of elections for further information.</text>
             </value>
             <font size="8.5pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -285,7 +285,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Your Signature</text>
+               <text xliff:rid="B6724A99-9594-499D-BCD3-200C0737AF99">Your Signature</text>
             </value>
             <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -301,7 +301,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>In the area below the arrow in Box 14, please write your cursive, hand-written signature or make your legal mark, taking care that it does not touch the surrounding lines so when it is digitally imaged by your county board of elections it can effectively be used to identify your signature.</text>
+               <text xliff:rid="24FC3A15-8104-45F1-B218-491DE53F71E9">In the area below the arrow in Box 14, please write your cursive, hand-written signature or make your legal mark, taking care that it does not touch the surrounding lines so when it is digitally imaged by your county board of elections it can effectively be used to identify your signature.</text>
             </value>
             <font size="8.5pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -320,7 +320,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>Please see information on back of this form to learn how to obtain an absentee ballot.</text>
+               <text xliff:rid="656B4E71-3A20-48F6-8105-22FCE9D79204">Please see information on back of this form to learn how to obtain an absentee ballot.</text>
             </value>
             <font size="8.5pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -336,7 +336,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>WHOEVER COMMITS ELECTION FALSIFICATION IS GUILTY OF A FELONY OF THE FIFTH DEGREE</text>
+               <text xliff:rid="7AF536AA-6112-4068-9EF3-6571B6A656D3">WHOEVER COMMITS ELECTION FALSIFICATION IS GUILTY OF A FELONY OF THE FIFTH DEGREE</text>
             </value>
             <font typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -419,7 +419,7 @@
                <textEdit/>
             </ui>
             <value>
-               <text>I am:</text>
+               <text xliff:rid="BA7020B6-1B9F-4270-B4E1-DD417102AE20">I am:</text>
             </value>
             <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -428,7 +428,7 @@
                <traverse ref="TwoRequiredQuestions[0]"/>
             </traversal>
             <assist>
-               <speak>Choose the reason why you are using this form today. I am:</speak>
+               <speak xliff:rid="480FA521-5893-4FC4-AC31-76EC1C270A87">Choose the reason why you are using this form today. I am:</speak>
             </assist>
             <?renderCache.bounds 39175 10506 0 0 1417 1417 0 0?>
             <?renderCache.textRun 5 I am: 0 1417 8523 0 0 0 "Arial" 1 0 9000 ISO-8859-1?></draw>
@@ -443,7 +443,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text>1. Are you a U.S. citizen?</text>
+                  <text xliff:rid="B1947B50-285C-49D5-84E1-F37F82365E2C">1. Are you a U.S. citizen?</text>
                </value>
                <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -470,15 +470,15 @@
                   <caption placement="right" reserve="10.7475mm">
                      <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                      <value>
-                        <text>Yes</text>
+                        <text xliff:rid="1AC67227-426B-4CAE-AB8F-69760B7921C4">Yes</text>
                      </value>
                      <font typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
                   </caption>
                   <assist>
-                     <speak>Yes, I am a U.S. citizen.</speak>
+                     <speak xliff:rid="230C311C-25F2-460F-9D0B-204C75DA7D4C">Yes, I am a U.S. citizen.</speak>
                   </assist>
                   <items>
-                     <text>yes</text>
+                     <text xliff:rid="F5A25174-F8C5-4AD4-8466-C8D6E0C08256">yes</text>
                   </items>
                </field>
                <field y="0mm" x="18.491mm" w="28mm" h="5.097mm" name="No">
@@ -496,22 +496,22 @@
                   <caption placement="right" reserve="19.9375mm">
                      <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                      <value>
-                        <text>No</text>
+                        <text xliff:rid="A19D3E7F-6F04-41F2-BF09-5EE4AEBCAA5F">No</text>
                      </value>
                      <font typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
                   </caption>
                   <assist>
-                     <speak>No, I am not a U.S. citizen.</speak>
+                     <speak xliff:rid="6D84DEF3-6CE4-4062-8474-36FC78B434DE">No, I am not a U.S. citizen.</speak>
                   </assist>
                   <items>
-                     <text>no</text>
+                     <text xliff:rid="10C5D446-E6C1-45C5-A886-C62BAE9536CD">no</text>
                   </items>
                </field>
                <traversal>
                   <traverse ref="HiddenBindings[0]"/>
                </traversal>
                <assist>
-                  <speak>Are you a U.S. citizen?</speak>
+                  <speak xliff:rid="7469FB55-2B2C-4BC7-8511-D7EE1F0628ED">Are you a U.S. citizen?</speak>
                </assist>
                <?templateDesigner expand 0?>
                <bind match="dataRef" ref="$.Subject.VoterClassification[0].Assertion"/>
@@ -521,7 +521,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text>2. Will you be at least 18 years of age on or before the next general election?</text>
+                  <text xliff:rid="3347D03A-2C87-4396-841B-661D9A6F77AD">2. Will you be at least 18 years of age on or before the next general election?</text>
                </value>
                <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -548,15 +548,15 @@
                   <caption placement="right" reserve="11.156mm">
                      <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                      <value>
-                        <text>Yes</text>
+                        <text xliff:rid="AFB4C22D-04A1-4E55-8061-501AD724AAEB">Yes</text>
                      </value>
                      <font typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
                   </caption>
                   <assist>
-                     <speak>Yes, I will be 18 years of age on or before the next general election.</speak>
+                     <speak xliff:rid="9F018313-9DD0-4D53-BC1E-0605A8C240E3">Yes, I will be 18 years of age on or before the next general election.</speak>
                   </assist>
                   <items>
-                     <text>yes</text>
+                     <text xliff:rid="59482559-2700-4315-B9CB-09AEABE5E029">yes</text>
                   </items>
                </field>
                <field y="0mm" x="18.491mm" w="28mm" h="5.097mm" name="No">
@@ -574,22 +574,22 @@
                   <caption placement="right" reserve="19.937mm">
                      <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                      <value>
-                        <text>No</text>
+                        <text xliff:rid="3BE9B9FF-0707-4BCA-A4BB-170EB0618643">No</text>
                      </value>
                      <font typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
                   </caption>
                   <assist>
-                     <speak>No, I will not be 18 years of age on or before the next general election.</speak>
+                     <speak xliff:rid="AC2ED5E0-913B-499C-B7E9-414CEDFC8E75">No, I will not be 18 years of age on or before the next general election.</speak>
                   </assist>
                   <items>
-                     <text>no</text>
+                     <text xliff:rid="EFAA1E4F-7824-42E1-96C8-A63B364182C4">no</text>
                   </items>
                </field>
                <traversal>
                   <traverse ref="P_statementToContinue[0]"/>
                </traversal>
                <assist>
-                  <speak>Will you be at least 18 years of age on or before the next general election?</speak>
+                  <speak xliff:rid="12EFED4D-177D-462D-B589-ECF46DAFB3A3">Will you be at least 18 years of age on or before the next general election?</speak>
                </assist>
                <?templateDesigner expand 0?>
                <bind match="dataRef" ref="$.Subject.VoterClassification[1].Assertion"/>
@@ -599,7 +599,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text>If you answered NO to either of the questions, do not complete this form.</text>
+                  <text xliff:rid="708384C2-673B-409A-B6F9-1D2C27CC554B">If you answered NO to either of the questions, do not complete this form.</text>
                </value>
                <font size="9pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -629,7 +629,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>3. Last Name</text>
+                  <text xliff:rid="D3C1109A-C7F8-4C7C-8850-4FED40CBF3FD">3. Last Name</text>
                </value>
             </caption>
             <traversal>
@@ -656,7 +656,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>First Name</text>
+                  <text xliff:rid="07328AF3-0BD9-401C-BBC7-0D6466DD6FD5">First Name</text>
                </value>
             </caption>
             <traversal>
@@ -683,7 +683,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>Middle Name or Initial</text>
+                  <text xliff:rid="72A7596C-648E-4DBD-90FE-7084DE0E786E">Middle Name or Initial</text>
                </value>
             </caption>
             <bind match="dataRef" ref="$.Subject.Name.MiddleName[*]"/>
@@ -707,7 +707,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>Jr., II, etc.</text>
+                  <text xliff:rid="33224E09-FAA5-48F3-8C9E-9CC93D79DD22">Jr., II, etc.</text>
                </value>
             </caption>
             <bind match="dataRef" ref="$.Subject.Name.Suffix"/>
@@ -731,7 +731,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>4. House Number and Street (Enter new address if changed)</text>
+                  <text xliff:rid="C8689E80-F525-4820-887B-BFE3E5C03CAF">4. House Number and Street (Enter new address if changed)</text>
                </value>
             </caption>
             <traversal>
@@ -753,7 +753,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>Apt. or Lot #</text>
+                  <text xliff:rid="76FFADA0-49FF-46C2-B6BF-FCA751B3C1C4">Apt. or Lot #</text>
                </value>
             </caption>
             <traversal>
@@ -780,7 +780,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>5. City or Post Office</text>
+                  <text xliff:rid="9DDAA50B-EB2E-4E96-AABC-461764C515B2">5. City or Post Office</text>
                </value>
             </caption>
             <bind match="dataRef" ref="$.Subject.ResidenceAddress.GeneralAddressClass_type.CompletePlaceName.PlaceName[0]"/>
@@ -804,7 +804,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>6. ZIP Code</text>
+                  <text xliff:rid="E8DE43E5-B992-4027-9296-89D7DC0BA7AC">6. ZIP Code</text>
                </value>
             </caption>
             <traversal>
@@ -831,7 +831,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>7. Additional Mailing Address (if necessary)</text>
+                  <text xliff:rid="A7FFC9A9-75A0-4591-8D20-4298152E8565">7. Additional Mailing Address (if necessary)</text>
                </value>
             </caption>
             <traversal>
@@ -858,189 +858,189 @@
             <caption reserve="15.5869mm">
                <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>8. County (where you live)</text>
+                  <text xliff:rid="721E20A3-B4FE-43E7-B366-66B829AACE2B">8. County (where you live)</text>
                </value>
                <font typeface="Arial" size="6pt" baselineShift="0pt"/>
             </caption>
             <items>
-               <text>Adams</text>
-               <text>Allen</text>
-               <text>Ashland</text>
-               <text>Ashtabula</text>
-               <text>Athens</text>
-               <text>Auglaize</text>
-               <text>Belmont</text>
-               <text>Brown</text>
-               <text>Butler</text>
-               <text>Carroll</text>
-               <text>Champaign</text>
-               <text>Clark</text>
-               <text>Clermont</text>
-               <text>Clinton</text>
-               <text>Columbiana</text>
-               <text>Coshocton</text>
-               <text>Crawford</text>
-               <text>Cuyahoga</text>
-               <text>Darke</text>
-               <text>Defiance</text>
-               <text>Delaware</text>
-               <text>Erie</text>
-               <text>Fairfield</text>
-               <text>Fayette</text>
-               <text>Franklin</text>
-               <text>Fulton</text>
-               <text>Gallia</text>
-               <text>Geauga</text>
-               <text>Greene</text>
-               <text>Guernsey </text>
-               <text>Hamilton</text>
-               <text>Hancock</text>
-               <text>Hardin</text>
-               <text>Harrison</text>
-               <text>Henry</text>
-               <text>Highland</text>
-               <text>Hocking</text>
-               <text>Holmes</text>
-               <text>Huron</text>
-               <text>Jackson</text>
-               <text>Jefferson</text>
-               <text>Knox</text>
-               <text>Lake</text>
-               <text>Lawrence</text>
-               <text>Licking</text>
-               <text>Logan </text>
-               <text>Lorain</text>
-               <text>Lucas</text>
-               <text>Madison</text>
-               <text>Mahoning</text>
-               <text>Marion</text>
-               <text>Medina</text>
-               <text>Meigs</text>
-               <text>Mercer</text>
-               <text>Miami</text>
-               <text>Monroe</text>
-               <text>Montgomery</text>
-               <text>Morgan</text>
-               <text>Morrow</text>
-               <text>Muskingum </text>
-               <text>Noble</text>
-               <text>Ottawa</text>
-               <text>Paulding</text>
-               <text>Perry</text>
-               <text>Pickaway</text>
-               <text>Pike</text>
-               <text>Portage</text>
-               <text>Preble</text>
-               <text>Putnam</text>
-               <text>Richland</text>
-               <text>Ross</text>
-               <text>Sandusky</text>
-               <text>Scioto</text>
-               <text>Seneca</text>
-               <text>Shelby</text>
-               <text>Stark</text>
-               <text>Summit</text>
-               <text>Trumbull</text>
-               <text>Tuscarawas</text>
-               <text>Union</text>
-               <text>Van Wert</text>
-               <text>Vinton</text>
-               <text>Warren</text>
-               <text>Washington</text>
-               <text>Wayne</text>
-               <text>Williams</text>
-               <text>Wood</text>
-               <text>Wyandot</text>
+               <text xliff:rid="CA9575E4-62F6-432D-B3FC-2FB3F60F65F8">Adams</text>
+               <text xliff:rid="0CB003FF-6EF1-4AE6-93BC-BE631F6AC1C1">Allen</text>
+               <text xliff:rid="FE861384-6A37-49E6-BCDE-7E944445F1C6">Ashland</text>
+               <text xliff:rid="258493A1-D998-443C-93E4-5DFFDC2CDE5B">Ashtabula</text>
+               <text xliff:rid="E8EEAEF9-F9F5-4A76-8089-F7060B8DD988">Athens</text>
+               <text xliff:rid="70A41C5D-312B-4B68-AFCA-8EBF65647440">Auglaize</text>
+               <text xliff:rid="59A12D07-6683-4B46-9E49-CC6409D66216">Belmont</text>
+               <text xliff:rid="EEA8235B-6DCD-4EDA-BF8D-626DA5D5568D">Brown</text>
+               <text xliff:rid="8B879392-212B-4A6D-84B5-D4612176B40D">Butler</text>
+               <text xliff:rid="49922EBE-309C-4BCB-9F74-FEB14C0A8E36">Carroll</text>
+               <text xliff:rid="AE9C245D-92A3-4944-95B6-918D2A1BB5AE">Champaign</text>
+               <text xliff:rid="66D3E8EE-1ABE-4E60-AC80-BA781ED95FCC">Clark</text>
+               <text xliff:rid="0D45B5CB-006E-468D-A1BA-8C0DB06E8D48">Clermont</text>
+               <text xliff:rid="3E451891-7CD3-484C-A084-282837BA4EDA">Clinton</text>
+               <text xliff:rid="C49C9A25-BB6E-4B21-A7B1-8BBB341C2BB4">Columbiana</text>
+               <text xliff:rid="32F626AF-0A97-4A44-87E9-1A3F043F69AA">Coshocton</text>
+               <text xliff:rid="8702CC6F-5E20-4379-8830-A09C368C0F1E">Crawford</text>
+               <text xliff:rid="4B0C3588-D797-42BC-A75A-8B85EABC9C8F">Cuyahoga</text>
+               <text xliff:rid="FC9B1BA5-CB0D-4E50-8833-F1252AF2A8FF">Darke</text>
+               <text xliff:rid="2788F6A0-8895-4514-86BE-967A8A6E3D1F">Defiance</text>
+               <text xliff:rid="DA8A26ED-04D1-41D0-B6A9-5F3B111375F9">Delaware</text>
+               <text xliff:rid="2CF75F67-E7C7-4020-90AE-39D973D715A0">Erie</text>
+               <text xliff:rid="DB3B4E87-E43F-41E4-AE69-8630C694B800">Fairfield</text>
+               <text xliff:rid="67A0DA70-780E-47B1-AADC-786C9084984A">Fayette</text>
+               <text xliff:rid="7BFF5810-0F8F-4609-82B1-3C77EF61AE95">Franklin</text>
+               <text xliff:rid="63CAC4A1-15E8-449E-A7FF-BEEF9A7EC482">Fulton</text>
+               <text xliff:rid="C0FB16FB-CB69-4E6C-AFE4-780390182DED">Gallia</text>
+               <text xliff:rid="AD3DB67F-0003-4CD8-80B0-275AA8122FC2">Geauga</text>
+               <text xliff:rid="05C39611-773B-46B9-B362-17B77854FB12">Greene</text>
+               <text xliff:rid="94240A3A-E25E-480D-AE17-945024FA0F43">Guernsey </text>
+               <text xliff:rid="3816AFBE-1F4B-4E70-B05C-D3BF13580FF2">Hamilton</text>
+               <text xliff:rid="2BF26C4B-A0A4-4396-B6A2-90ACF6014F57">Hancock</text>
+               <text xliff:rid="9E3850BB-C522-48A3-8FE6-81714A3DA310">Hardin</text>
+               <text xliff:rid="5D1FEFCD-7498-4174-8420-15B6D1046E97">Harrison</text>
+               <text xliff:rid="BE79CA97-FDCF-4B6E-91E5-A60706A98640">Henry</text>
+               <text xliff:rid="D6BD51B7-B3D0-4062-829C-AEC607ACC934">Highland</text>
+               <text xliff:rid="9E16E8DF-EBFD-4240-BB5E-26B726A31DC3">Hocking</text>
+               <text xliff:rid="FE8C0FB9-23E8-4DC9-AC82-8E4EA199D955">Holmes</text>
+               <text xliff:rid="37B7A8C9-846C-44C5-940B-4796965A12FF">Huron</text>
+               <text xliff:rid="5FE8E70E-159A-4873-BD33-9A1A65C9F875">Jackson</text>
+               <text xliff:rid="2941CC08-AEC6-4B4D-8A21-D15EB6ACCA69">Jefferson</text>
+               <text xliff:rid="8F7CFAA0-4BED-4970-801F-8ACB340346D3">Knox</text>
+               <text xliff:rid="B7FD6B59-0508-44BF-8E9E-AAD919A0D627">Lake</text>
+               <text xliff:rid="1D4A423F-3004-4CE3-BD56-9C421752CCD5">Lawrence</text>
+               <text xliff:rid="4877E7D3-7912-4712-905E-85DA6B3B589B">Licking</text>
+               <text xliff:rid="47E0A89A-E25F-4980-A262-10DA9E8C03FF">Logan </text>
+               <text xliff:rid="4A04BBB0-EA04-4AB3-ACD9-F515E4C8A7FD">Lorain</text>
+               <text xliff:rid="F3828154-73A2-436A-803D-F45E2E5A12D3">Lucas</text>
+               <text xliff:rid="1514015E-4BB8-4BA0-80F0-9C3C5EF961E2">Madison</text>
+               <text xliff:rid="E57A54EE-C1D3-43B1-9326-452DABDAF328">Mahoning</text>
+               <text xliff:rid="9E18D163-3628-4B3E-AEC1-487DAE49DB1B">Marion</text>
+               <text xliff:rid="978B2C41-583E-49F8-BC76-30EB79B1A4F9">Medina</text>
+               <text xliff:rid="21509D45-0808-441D-BC74-D151190BE501">Meigs</text>
+               <text xliff:rid="DD380F74-722C-4C56-9CD3-88CD96B2FB6F">Mercer</text>
+               <text xliff:rid="30B05BB3-8AF0-4734-8A83-BAF4DE920203">Miami</text>
+               <text xliff:rid="40ED5B0C-D249-4CDE-ADC2-719E708E069C">Monroe</text>
+               <text xliff:rid="B9CDEE7D-7B43-49AF-8DE8-7C3250E10703">Montgomery</text>
+               <text xliff:rid="DA3F2B23-F742-4C75-AE4C-E3CC57555F96">Morgan</text>
+               <text xliff:rid="15ED47A8-6440-4523-ADF6-332231057F41">Morrow</text>
+               <text xliff:rid="FA20862D-5A1C-4B13-A70C-E6C511003797">Muskingum </text>
+               <text xliff:rid="5DBFCBB4-8EE5-4D6C-BCAC-1C37BEEEE9CA">Noble</text>
+               <text xliff:rid="7FEBB08C-1738-4D73-BB61-2E92D6F3BA3B">Ottawa</text>
+               <text xliff:rid="1FB9F040-7797-43D0-B24C-3D6F5402D8F7">Paulding</text>
+               <text xliff:rid="28368CA1-D8A2-4B72-A08B-DEAE79B25094">Perry</text>
+               <text xliff:rid="07362B1B-55D8-4E99-8003-254264DAC962">Pickaway</text>
+               <text xliff:rid="0E23CDB2-2687-4F69-863A-3C8C41AA4AEA">Pike</text>
+               <text xliff:rid="9B0053B1-526C-4894-8597-EA1938EB64B6">Portage</text>
+               <text xliff:rid="A2928FD3-554C-43DE-ACCA-15CB649DF9E7">Preble</text>
+               <text xliff:rid="103EA948-B53D-441A-9F76-63845977A90E">Putnam</text>
+               <text xliff:rid="0B382EA9-F56D-471D-BCB1-6B4FDD121C31">Richland</text>
+               <text xliff:rid="14EDDF8A-9D4E-434B-9FB3-A31F6487A9AC">Ross</text>
+               <text xliff:rid="FC8380EC-6C12-4CFF-A249-678306D7EAB7">Sandusky</text>
+               <text xliff:rid="2B78682F-9367-47ED-8043-D1DFFD752128">Scioto</text>
+               <text xliff:rid="499492DE-3B1F-40CF-8C16-EEB61FBF8CBC">Seneca</text>
+               <text xliff:rid="1214A602-686E-4D28-9CD2-F53C07E6A0D4">Shelby</text>
+               <text xliff:rid="A1D29CC3-E54C-41AA-96E5-3DD0E61AA41A">Stark</text>
+               <text xliff:rid="026A4964-3BA4-4298-B2A2-42A051CE1A37">Summit</text>
+               <text xliff:rid="E9F8DCBF-1D27-4207-8C01-6CB56177B59A">Trumbull</text>
+               <text xliff:rid="E56545E4-687C-4656-934F-0527A708E706">Tuscarawas</text>
+               <text xliff:rid="05787517-2355-41E8-A2DE-7E97BE696B86">Union</text>
+               <text xliff:rid="0765A1E8-697A-4F7E-9745-2FA7C56B5E63">Van Wert</text>
+               <text xliff:rid="77194B78-BDDA-4435-B355-F91E330599AF">Vinton</text>
+               <text xliff:rid="43CA4ECC-0C13-45FB-8130-8366304B8CC9">Warren</text>
+               <text xliff:rid="84BF58D7-2A75-481B-BAB3-83A30EE06932">Washington</text>
+               <text xliff:rid="AE967114-1B64-4243-ACAF-50457206EEEC">Wayne</text>
+               <text xliff:rid="08BA318D-87E4-4450-B4B8-97065F8E676C">Williams</text>
+               <text xliff:rid="2549F144-18C6-42DD-A6AA-A9C468A3F118">Wood</text>
+               <text xliff:rid="DA3C025F-61EE-46CE-94B3-04A1706E164E">Wyandot</text>
             </items>
             <items save="1" presence="hidden">
-               <text>1</text>
-               <text>2</text>
-               <text>3</text>
-               <text>4</text>
-               <text>5</text>
-               <text>6</text>
-               <text>7</text>
-               <text>8</text>
-               <text>9</text>
-               <text>10</text>
-               <text>11</text>
-               <text>12</text>
-               <text>13</text>
-               <text>14</text>
-               <text>15</text>
-               <text>16</text>
-               <text>17</text>
-               <text>18</text>
-               <text>19</text>
-               <text>20</text>
-               <text>21</text>
-               <text>22</text>
-               <text>23</text>
-               <text>24</text>
-               <text>25</text>
-               <text>26</text>
-               <text>27</text>
-               <text>28</text>
-               <text>29</text>
-               <text>30</text>
-               <text>31</text>
-               <text>32</text>
-               <text>33</text>
-               <text>34</text>
-               <text>35</text>
-               <text>36</text>
-               <text>37</text>
-               <text>38</text>
-               <text>39</text>
-               <text>40</text>
-               <text>41</text>
-               <text>42</text>
-               <text>43</text>
-               <text>44</text>
-               <text>45</text>
-               <text>46</text>
-               <text>47</text>
-               <text>48</text>
-               <text>49</text>
-               <text>50</text>
-               <text>51</text>
-               <text>52</text>
-               <text>53</text>
-               <text>54</text>
-               <text>55</text>
-               <text>56</text>
-               <text>57</text>
-               <text>58</text>
-               <text>59</text>
-               <text>60</text>
-               <text>61</text>
-               <text>62</text>
-               <text>63</text>
-               <text>64</text>
-               <text>65</text>
-               <text>66</text>
-               <text>67</text>
-               <text>68</text>
-               <text>69</text>
-               <text>70</text>
-               <text>71</text>
-               <text>72</text>
-               <text>73</text>
-               <text>74</text>
-               <text>75</text>
-               <text>76</text>
-               <text>77</text>
-               <text>78</text>
-               <text>79</text>
-               <text>80</text>
-               <text>81</text>
-               <text>82</text>
-               <text>83</text>
-               <text>84</text>
-               <text>85</text>
-               <text>86</text>
-               <text>87</text>
-               <text>88</text>
+               <text xliff:rid="AC4B6082-EB50-4B6E-B3B5-5000A2D68E0F">1</text>
+               <text xliff:rid="27A5E272-7AF4-4923-B6E4-99803C7E608A">2</text>
+               <text xliff:rid="F62F08E7-B104-4135-91C7-59C5C399348C">3</text>
+               <text xliff:rid="0E26BB6D-A056-4B6B-B5E0-92ACCEDB0721">4</text>
+               <text xliff:rid="E162EDFD-81C8-4E97-96CA-61BC4D26DD2D">5</text>
+               <text xliff:rid="97B3880B-0FF1-4B0F-B77B-566A0D785AC7">6</text>
+               <text xliff:rid="529F6C98-1511-4BD9-85E2-1621EA6C9A7A">7</text>
+               <text xliff:rid="6D876E81-7C3A-42B2-944C-FD7EF9ABF9BC">8</text>
+               <text xliff:rid="5D7FEC65-003C-4FF6-B372-3DAEE0038A03">9</text>
+               <text xliff:rid="AF4836BA-E00C-4BCC-BB17-28E9716835A7">10</text>
+               <text xliff:rid="B28E9130-FD56-4130-8A8D-7A04C058123C">11</text>
+               <text xliff:rid="9DA273D3-D937-469A-89E9-A4EAF5E622DF">12</text>
+               <text xliff:rid="DB0D41FA-012C-4933-99E8-BE409A24DB6E">13</text>
+               <text xliff:rid="E8012775-2154-4400-B19D-A9BE23E457CA">14</text>
+               <text xliff:rid="791C799C-5479-4AD9-A99E-8D3B44A71AC9">15</text>
+               <text xliff:rid="1E030459-7430-4B11-9BED-8048E50231FE">16</text>
+               <text xliff:rid="40DFA420-A374-4295-B6E7-2E334A9BE419">17</text>
+               <text xliff:rid="C10D26D5-2535-4788-8D5E-D29DDD8E8407">18</text>
+               <text xliff:rid="5C689F47-5CC7-409F-8F0E-2D5DC260A48A">19</text>
+               <text xliff:rid="42BB6771-C182-4E97-9EC5-B945A86986BD">20</text>
+               <text xliff:rid="D1D02A64-4316-473A-A734-7113075B9313">21</text>
+               <text xliff:rid="1066F864-0C6E-4C30-AEE0-EEEDCCCC59FF">22</text>
+               <text xliff:rid="B1EF0E47-1F45-45CF-BD3B-FDC4C918F3F6">23</text>
+               <text xliff:rid="DD3F0B55-DCA6-45D2-9A09-CF4A01E888D2">24</text>
+               <text xliff:rid="CD582F86-E073-4FAF-82A5-50D391E71853">25</text>
+               <text xliff:rid="52109B01-CF2B-4884-ADB1-CC5B2F421F45">26</text>
+               <text xliff:rid="9F48D767-85D4-49F1-B39D-D1C4E3A535C8">27</text>
+               <text xliff:rid="8ADE60AD-DE4F-4D8F-B393-43EA8D5EC04B">28</text>
+               <text xliff:rid="18FB67BC-905B-4B43-BFDB-D580F2137049">29</text>
+               <text xliff:rid="370D0191-C099-4467-8B77-8220A9B35BFC">30</text>
+               <text xliff:rid="823701BD-9771-441E-A0AA-ACDD0BB0D650">31</text>
+               <text xliff:rid="239108BC-530B-4582-9891-D0CEF70BE976">32</text>
+               <text xliff:rid="FA49947E-1D19-44EA-8C29-B44D55AD6411">33</text>
+               <text xliff:rid="D56DCE8F-5726-47B4-8535-7E43F74B634F">34</text>
+               <text xliff:rid="3A94B77A-709B-4C77-9573-939307A94A2F">35</text>
+               <text xliff:rid="77D6BB07-2F79-4F1D-AE91-8E78F9A20C83">36</text>
+               <text xliff:rid="1B530198-0DB9-4E25-8B0A-74820D71E71C">37</text>
+               <text xliff:rid="763F69D3-08DE-495F-BDAF-BC23C16A3D14">38</text>
+               <text xliff:rid="D260CD27-A7BC-42D5-B2D9-0221DF5C1009">39</text>
+               <text xliff:rid="0400EFF9-C06B-4CB9-A5CA-4AB7164BAE63">40</text>
+               <text xliff:rid="DFFFBA02-E4EF-4372-BAA7-CF298B2CD8CB">41</text>
+               <text xliff:rid="C326D65C-999B-404B-96D8-F83628C485E2">42</text>
+               <text xliff:rid="9C3A4E50-D308-43A5-B261-BA1BA8EFFB1E">43</text>
+               <text xliff:rid="E9403A4B-5DA7-4DE2-8FBC-FA6915211B7D">44</text>
+               <text xliff:rid="D0899334-316B-4B48-B047-55A3472CF846">45</text>
+               <text xliff:rid="50F16F19-2395-414B-9866-0DBC0D43C757">46</text>
+               <text xliff:rid="FBE333AD-88B4-49E4-A398-428936DD9867">47</text>
+               <text xliff:rid="E2579B52-D185-4F6C-9556-41CB28AB98DF">48</text>
+               <text xliff:rid="ABFAC4FF-7498-47CF-A7C4-49A91F51081A">49</text>
+               <text xliff:rid="85D9CE0E-7B4E-4463-8B85-CB12BB410EE6">50</text>
+               <text xliff:rid="92483764-7BF3-4779-989D-8ED51C64EAAB">51</text>
+               <text xliff:rid="42E83C91-9CDB-42E6-BE27-B0835DBB74B8">52</text>
+               <text xliff:rid="54DDD21D-C192-4B28-B39D-43FAA3D9CC05">53</text>
+               <text xliff:rid="32B4C1E9-DEEC-41ED-BDD9-93B0BEC7E786">54</text>
+               <text xliff:rid="66E4070F-97BF-4C06-B718-81F238A220A1">55</text>
+               <text xliff:rid="5C4A1637-BB16-4CD2-951C-A19719D5144F">56</text>
+               <text xliff:rid="DB9CC744-F6C9-479A-9306-D813C4F43C88">57</text>
+               <text xliff:rid="28FF9285-391D-4950-9F01-DE937CDEA1DA">58</text>
+               <text xliff:rid="947F777E-AF73-440B-A97B-EC76CF7F909D">59</text>
+               <text xliff:rid="74E9A5BA-7CFE-4339-9C88-AFB47901CA0E">60</text>
+               <text xliff:rid="70E4E279-F6E6-4909-B09B-01150A2B4157">61</text>
+               <text xliff:rid="B72B5154-3B5E-47A5-9538-A74A8728E115">62</text>
+               <text xliff:rid="C979E4EE-B741-466E-8024-41FAF0CE1E9A">63</text>
+               <text xliff:rid="9BBAEF37-B534-4E01-A200-D70C5CF75468">64</text>
+               <text xliff:rid="1D419A3C-2068-46A0-BD42-13EFBCC4018A">65</text>
+               <text xliff:rid="D94CE576-977E-46FC-A269-F9594D45B59C">66</text>
+               <text xliff:rid="066F0A5D-FEC8-4DA3-BE7F-363A29DACF79">67</text>
+               <text xliff:rid="6FCE2E65-3284-4AC8-8652-D0D435411EAF">68</text>
+               <text xliff:rid="143727B8-FE6C-4D7E-AEB0-399D9D142EE8">69</text>
+               <text xliff:rid="D90AA800-5CBE-443A-ACBE-500B1F4AD75C">70</text>
+               <text xliff:rid="64535CC8-EFD9-4D74-82E2-2B436D031F8D">71</text>
+               <text xliff:rid="7D95F2DD-B662-4624-8F25-38BD4A69627D">72</text>
+               <text xliff:rid="7ED2BC2F-C546-4ADF-AA31-7B94DB6413C6">73</text>
+               <text xliff:rid="F8F47DE8-CDAB-4EB3-BFB9-AAB52D871009">74</text>
+               <text xliff:rid="CB8F1846-7FA9-456E-AF1F-03D88ACE1638">75</text>
+               <text xliff:rid="D28C1AF9-59A3-49F3-8FFC-B21B51F69140">76</text>
+               <text xliff:rid="04009222-7545-496B-90DA-6EDAB0F6C52B">77</text>
+               <text xliff:rid="3EDB35FF-6ADF-4C26-A733-3CE7DBAAE982">78</text>
+               <text xliff:rid="13B0604A-E542-42FE-B7ED-E65D65FA5305">79</text>
+               <text xliff:rid="9000C3A0-2454-4C4D-8EE4-625245B438AD">80</text>
+               <text xliff:rid="B3BDC432-95FA-4029-831A-5A2D52567628">81</text>
+               <text xliff:rid="570912B2-0466-4953-AF27-787760C2DBFA">82</text>
+               <text xliff:rid="624DA0A9-CAB7-4C40-B42E-BE3CE40E6644">83</text>
+               <text xliff:rid="724054CA-D141-43A0-8496-338BDBE0C4A9">84</text>
+               <text xliff:rid="31392864-E173-4BC0-AE77-3025BA5954C0">85</text>
+               <text xliff:rid="4E2D3B3F-5CBC-4D7E-B91A-09A34F37515D">86</text>
+               <text xliff:rid="0457D4E8-A681-4D41-884E-9C19001B59FB">87</text>
+               <text xliff:rid="D23E385D-8EE1-4785-8FAE-B6F906CC6D42">88</text>
             </items>
             <bind match="dataRef" ref="$.Subject.ResidenceAddress.GeneralAddressClass_type.CompletePlaceName.PlaceName[1]"/>
          </field>
@@ -1067,7 +1067,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="F7C8A6C8-DCE6-4CBE-B61F-302B27FD9C56">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">9. Birthdate (MM/DD/YYYY) (<span style="letter-spacing:0em">required</span>)</p></body>
                   </exData>
                </value>
@@ -1099,7 +1099,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>10. Ohio Driver’s License number OR Last Four Digits of Social Security number (one form of ID required to be listed or provided)</text>
+                  <text xliff:rid="21A0F680-FB6D-4538-8A8E-6FB84C83B4DD">10. Ohio Driver’s License number OR Last Four Digits of Social Security number (one form of ID required to be listed or provided)</text>
                </value>
             </caption>
             <traversal>
@@ -1126,7 +1126,7 @@
                <font typeface="Arial" size="6pt" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>11. Phone Number (voluntary)</text>
+                  <text xliff:rid="57413ABD-F4BD-491E-A65C-759670A2EFD6">11. Phone Number (voluntary)</text>
                </value>
             </caption>
             <value>
@@ -1137,7 +1137,7 @@
             </format>
             <validate>
                <message>
-                  <text name="formatTest">Please enter area code + phone number using numerical characters only, e.g., enter (222) 333-4444 as 2223334444</text>
+                  <text name="formatTest" xliff:rid="20CE8806-6BAB-49E4-B8C9-FCE15879544A">Please enter area code + phone number using numerical characters only, e.g., enter (222) 333-4444 as 2223334444</text>
                </message>
                <picture>null{}|text{9999999999}</picture>
             </validate>
@@ -1170,7 +1170,7 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="683BEB24-AA00-4264-A5AE-AFC02AD088D6">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">12.<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">PREVIOUS ADDRESS IF UPDATING CURRENT REGISTRATION</span> - Previous House Number and Street</p></body>
                   </exData>
                </value>
@@ -1199,11 +1199,11 @@
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>Previous City or Post Office</text>
+                  <text xliff:rid="F1CDC2DF-A1DE-40FC-B8D2-E203226E2EEE">Previous City or Post Office</text>
                </value>
             </caption>
             <assist>
-               <speak>Enter your Previous City or Post Office</speak>
+               <speak xliff:rid="51666920-99AA-439B-B295-D5CDB745EF06">Enter your Previous City or Post Office</speak>
             </assist>
             <traversal>
                <traverse ref="txtFormerName[0]"/>
@@ -1229,190 +1229,190 @@
             <caption reserve="10.88mm">
                <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <text>Previous
+                  <text xliff:rid="1EA2CD46-809B-4159-847A-2473877361AF">Previous
 County</text>
                </value>
                <font typeface="Arial" size="6pt" baselineShift="0pt"/>
             </caption>
             <items>
-               <text>Adams</text>
-               <text>Allen</text>
-               <text>Ashland</text>
-               <text>Ashtabula</text>
-               <text>Athens</text>
-               <text>Auglaize</text>
-               <text>Belmont</text>
-               <text>Brown</text>
-               <text>Butler</text>
-               <text>Carroll</text>
-               <text>Champaign</text>
-               <text>Clark</text>
-               <text>Clermont</text>
-               <text>Clinton</text>
-               <text>Columbiana</text>
-               <text>Coshocton</text>
-               <text>Crawford</text>
-               <text>Cuyahoga</text>
-               <text>Darke</text>
-               <text>Defiance</text>
-               <text>Delaware</text>
-               <text>Erie</text>
-               <text>Fairfield</text>
-               <text>Fayette</text>
-               <text>Franklin</text>
-               <text>Fulton</text>
-               <text>Gallia</text>
-               <text>Geauga</text>
-               <text>Greene</text>
-               <text>Guernsey </text>
-               <text>Hamilton</text>
-               <text>Hancock</text>
-               <text>Hardin</text>
-               <text>Harrison</text>
-               <text>Henry</text>
-               <text>Highland</text>
-               <text>Hocking</text>
-               <text>Holmes</text>
-               <text>Huron</text>
-               <text>Jackson</text>
-               <text>Jefferson</text>
-               <text>Knox</text>
-               <text>Lake</text>
-               <text>Lawrence</text>
-               <text>Licking</text>
-               <text>Logan </text>
-               <text>Lorain</text>
-               <text>Lucas</text>
-               <text>Madison</text>
-               <text>Mahoning</text>
-               <text>Marion</text>
-               <text>Medina</text>
-               <text>Meigs</text>
-               <text>Mercer</text>
-               <text>Miami</text>
-               <text>Monroe</text>
-               <text>Montgomery</text>
-               <text>Morgan</text>
-               <text>Morrow</text>
-               <text>Muskingum </text>
-               <text>Noble</text>
-               <text>Ottawa</text>
-               <text>Paulding</text>
-               <text>Perry</text>
-               <text>Pickaway</text>
-               <text>Pike</text>
-               <text>Portage</text>
-               <text>Preble</text>
-               <text>Putnam</text>
-               <text>Richland</text>
-               <text>Ross</text>
-               <text>Sandusky</text>
-               <text>Scioto</text>
-               <text>Seneca</text>
-               <text>Shelby</text>
-               <text>Stark</text>
-               <text>Summit</text>
-               <text>Trumbull</text>
-               <text>Tuscarawas</text>
-               <text>Union</text>
-               <text>Van Wert</text>
-               <text>Vinton</text>
-               <text>Warren</text>
-               <text>Washington</text>
-               <text>Wayne</text>
-               <text>Williams</text>
-               <text>Wood</text>
-               <text>Wyandot</text>
+               <text xliff:rid="108C5C3A-05C1-4BF2-9E17-A2EA0027AFD8">Adams</text>
+               <text xliff:rid="45DAC304-F4E2-443D-AE8B-91C8D44B6C4D">Allen</text>
+               <text xliff:rid="36DD9FDA-EFA2-45A5-B6E1-10AEF551DED7">Ashland</text>
+               <text xliff:rid="AB50F7F6-FE01-4ADB-A9C2-F97CEFD9E239">Ashtabula</text>
+               <text xliff:rid="E89BC687-3BB7-44B4-A815-A697BC1ABD52">Athens</text>
+               <text xliff:rid="0649792D-ECF8-41A1-B7A6-79349A537267">Auglaize</text>
+               <text xliff:rid="6DBB9079-FFC7-43D1-A6D3-C7D4D4A1A652">Belmont</text>
+               <text xliff:rid="4BBD6830-8B1C-4489-A39E-12D70DE5466A">Brown</text>
+               <text xliff:rid="45FC7725-CB0F-409D-B81D-93958856D929">Butler</text>
+               <text xliff:rid="C93C1BFE-C810-48D8-9167-F43313699FF0">Carroll</text>
+               <text xliff:rid="DC0484D3-DCB9-435B-9B9E-9F9FF02E3DBB">Champaign</text>
+               <text xliff:rid="F1BCDD30-0359-424E-B6FA-BB59F692A51A">Clark</text>
+               <text xliff:rid="34D0BEF9-7F2B-4EA0-B6AC-67A292BE4D0B">Clermont</text>
+               <text xliff:rid="DCF118CF-EA23-4C47-8B77-1BE7C781F7AA">Clinton</text>
+               <text xliff:rid="AE2A489E-036D-45FA-B25D-C1300B4B7E68">Columbiana</text>
+               <text xliff:rid="E27101C3-ED90-452A-8389-612D881E988D">Coshocton</text>
+               <text xliff:rid="1FE7847A-F95A-47B0-AA35-662FCB9A7C6C">Crawford</text>
+               <text xliff:rid="A6C95DC2-FDC8-4D1C-81B5-1649AA60C441">Cuyahoga</text>
+               <text xliff:rid="94F2D8D4-6993-46FA-B1B9-276ECD7E1BAE">Darke</text>
+               <text xliff:rid="AA05F187-8AFC-4046-B865-706777065DEA">Defiance</text>
+               <text xliff:rid="498ABAF9-6A26-4F42-AC8D-F3711499AD7C">Delaware</text>
+               <text xliff:rid="C5428FED-967A-4DCF-9560-2948661CCF66">Erie</text>
+               <text xliff:rid="AE69AFF8-1B15-4D24-8993-ACF832E4688D">Fairfield</text>
+               <text xliff:rid="696F6A4A-6E94-4B1C-871F-967D10D41122">Fayette</text>
+               <text xliff:rid="234C0213-93B7-48D7-B170-5C3685E1D0C3">Franklin</text>
+               <text xliff:rid="D330B148-8C76-4044-B7A8-9026A98F394D">Fulton</text>
+               <text xliff:rid="D7C3D02B-3CA8-443A-994D-AD966DF728B0">Gallia</text>
+               <text xliff:rid="CFF56833-492E-4492-844B-A642CC5B6A00">Geauga</text>
+               <text xliff:rid="7124DF3F-136A-4F91-BF79-5D5F99152449">Greene</text>
+               <text xliff:rid="14F46F79-77EE-4429-B49B-5C7BC27E553B">Guernsey </text>
+               <text xliff:rid="D30ADB1F-BFFC-49E4-83DA-3FB0C108BD85">Hamilton</text>
+               <text xliff:rid="9593718F-6EA8-40B0-AF02-8927CD3DF688">Hancock</text>
+               <text xliff:rid="F2A51CD1-6F60-4E1B-965D-3221925E4FF5">Hardin</text>
+               <text xliff:rid="2CECC94B-CEF2-4DAD-AC05-6208B874C5C3">Harrison</text>
+               <text xliff:rid="62B7C921-ABDD-40B4-8300-5689E228CCE5">Henry</text>
+               <text xliff:rid="0EE7E4E6-B2E2-4211-89BB-74E735CC74A5">Highland</text>
+               <text xliff:rid="1777DC6B-31EB-4672-8CD2-B6E24184FDBA">Hocking</text>
+               <text xliff:rid="EDD7FBCD-2527-4520-B5E5-D986AB34AA2C">Holmes</text>
+               <text xliff:rid="CEA2F5E7-11C8-4411-AD6C-581ECF45284A">Huron</text>
+               <text xliff:rid="7DE66C54-78F3-4744-A798-C823F96364DD">Jackson</text>
+               <text xliff:rid="9D897B23-3410-4A63-9A34-A8CA554FB5F9">Jefferson</text>
+               <text xliff:rid="70DA81C1-BC0D-4968-B76D-F72945B68AD5">Knox</text>
+               <text xliff:rid="2FE8953D-9A66-4DC1-B9A8-58E061255342">Lake</text>
+               <text xliff:rid="C1A40930-00C9-4D50-85C7-7B14B6D43077">Lawrence</text>
+               <text xliff:rid="7EF2EC2C-B8C7-474B-82E8-60D4C18A2072">Licking</text>
+               <text xliff:rid="7C7A1163-5667-4E59-B38A-AEB219D18CC6">Logan </text>
+               <text xliff:rid="811A852E-89E1-4701-A90D-1DB66125C677">Lorain</text>
+               <text xliff:rid="955853E8-50AD-4A8F-8D01-0C1E66B5BF27">Lucas</text>
+               <text xliff:rid="27A1DD63-6587-44AC-93EF-991FB92A09FC">Madison</text>
+               <text xliff:rid="324BE4E1-0ACE-4EA6-AD80-386891248597">Mahoning</text>
+               <text xliff:rid="A2DE7828-83F9-4501-84A2-8CECFE15C53C">Marion</text>
+               <text xliff:rid="928429CF-51C2-4645-B393-DA46805169EB">Medina</text>
+               <text xliff:rid="40F8CE26-3788-4910-A34B-22B171F40825">Meigs</text>
+               <text xliff:rid="DB46D852-7BF3-4F0A-816E-2831E04F5DF2">Mercer</text>
+               <text xliff:rid="0F0D38A1-207C-4111-A0C3-7D0434487E4A">Miami</text>
+               <text xliff:rid="4B81F1A0-AA96-4A8B-B907-551215215E19">Monroe</text>
+               <text xliff:rid="51F38B94-6518-46AB-9BB6-DC1B8CBD530D">Montgomery</text>
+               <text xliff:rid="99FCDE96-A26E-4CD9-92F7-F20A61EA0DE7">Morgan</text>
+               <text xliff:rid="565E4F27-4463-42A6-8EAA-7EBDB5A2BA4E">Morrow</text>
+               <text xliff:rid="1E9C0345-3A45-4781-9FFB-C8DF7F2A40DD">Muskingum </text>
+               <text xliff:rid="E193D1DF-CEDE-4EE2-B484-3AE2C826B54F">Noble</text>
+               <text xliff:rid="072D910C-83AC-4D45-BDCF-F8FF22651F30">Ottawa</text>
+               <text xliff:rid="7C4F4551-385C-4D10-8AB9-143567FB1405">Paulding</text>
+               <text xliff:rid="858FCAD3-7528-4F89-B67A-9F8ECC8CD02D">Perry</text>
+               <text xliff:rid="53CEF835-988D-42FD-B694-81152EE3CD6C">Pickaway</text>
+               <text xliff:rid="05D11AD5-5484-4A4F-964E-C7C919635A1F">Pike</text>
+               <text xliff:rid="BAB46C76-E690-440B-B20F-166DA135D01A">Portage</text>
+               <text xliff:rid="429F367E-8E95-4639-8834-2134290C2547">Preble</text>
+               <text xliff:rid="7042A85A-C42B-44A1-835B-90396CC2623E">Putnam</text>
+               <text xliff:rid="8FEDCAE8-9ED5-4E36-BD47-EB69C9422D28">Richland</text>
+               <text xliff:rid="F1AE843C-CD9D-4725-90DC-05F0AC1C53E2">Ross</text>
+               <text xliff:rid="5170B812-4371-4067-9674-3B5B532EC6BC">Sandusky</text>
+               <text xliff:rid="FF553E1A-7DD2-45B3-A009-79BE51613C70">Scioto</text>
+               <text xliff:rid="9EDCE37C-3CBC-4607-B81F-C78FBA3A41D6">Seneca</text>
+               <text xliff:rid="22126007-2B1C-4008-A51C-CF66EDB636C7">Shelby</text>
+               <text xliff:rid="DE2D93ED-F42F-496B-9D7F-575D2E8BC508">Stark</text>
+               <text xliff:rid="3E1540F1-7D6E-408B-9DF6-6E0640E808DC">Summit</text>
+               <text xliff:rid="A6587446-57A9-4815-B249-A528D3326633">Trumbull</text>
+               <text xliff:rid="CF18C8A0-B14C-4E02-BC6D-28061DD42E76">Tuscarawas</text>
+               <text xliff:rid="A57E8196-4119-4CC3-9892-6CA09484A02E">Union</text>
+               <text xliff:rid="C9C6CCAD-4B5C-46F0-9804-4237F324BDE0">Van Wert</text>
+               <text xliff:rid="CBA47DAA-2C26-48C7-9597-B3D2D4639D9C">Vinton</text>
+               <text xliff:rid="8BEAAA5A-50BB-4AB2-AEDA-24C1132C24CC">Warren</text>
+               <text xliff:rid="B0F4833D-0CF6-469E-8542-BF5A16F4C643">Washington</text>
+               <text xliff:rid="E95B7686-69CD-4CC7-85E1-61DD16C2BB9A">Wayne</text>
+               <text xliff:rid="D83D9547-076B-4EB7-9560-859A62D9234E">Williams</text>
+               <text xliff:rid="0D5A007D-A43F-45A4-9665-B6365EF23355">Wood</text>
+               <text xliff:rid="CD97E8D8-8F2E-45B4-8295-7123B62D4B36">Wyandot</text>
             </items>
             <items save="1" presence="hidden">
-               <text>1</text>
-               <text>2</text>
-               <text>3</text>
-               <text>4</text>
-               <text>5</text>
-               <text>6</text>
-               <text>7</text>
-               <text>8</text>
-               <text>9</text>
-               <text>10</text>
-               <text>11</text>
-               <text>12</text>
-               <text>13</text>
-               <text>14</text>
-               <text>15</text>
-               <text>16</text>
-               <text>17</text>
-               <text>18</text>
-               <text>19</text>
-               <text>20</text>
-               <text>21</text>
-               <text>22</text>
-               <text>23</text>
-               <text>24</text>
-               <text>25</text>
-               <text>26</text>
-               <text>27</text>
-               <text>28</text>
-               <text>29</text>
-               <text>30</text>
-               <text>31</text>
-               <text>32</text>
-               <text>33</text>
-               <text>34</text>
-               <text>35</text>
-               <text>36</text>
-               <text>37</text>
-               <text>38</text>
-               <text>39</text>
-               <text>40</text>
-               <text>41</text>
-               <text>42</text>
-               <text>43</text>
-               <text>44</text>
-               <text>45</text>
-               <text>46</text>
-               <text>47</text>
-               <text>48</text>
-               <text>49</text>
-               <text>50</text>
-               <text>51</text>
-               <text>52</text>
-               <text>53</text>
-               <text>54</text>
-               <text>55</text>
-               <text>56</text>
-               <text>57</text>
-               <text>58</text>
-               <text>59</text>
-               <text>60</text>
-               <text>61</text>
-               <text>62</text>
-               <text>63</text>
-               <text>64</text>
-               <text>65</text>
-               <text>66</text>
-               <text>67</text>
-               <text>68</text>
-               <text>69</text>
-               <text>70</text>
-               <text>71</text>
-               <text>72</text>
-               <text>73</text>
-               <text>74</text>
-               <text>75</text>
-               <text>76</text>
-               <text>77</text>
-               <text>78</text>
-               <text>79</text>
-               <text>80</text>
-               <text>81</text>
-               <text>82</text>
-               <text>83</text>
-               <text>84</text>
-               <text>85</text>
-               <text>86</text>
-               <text>87</text>
-               <text>88</text>
+               <text xliff:rid="556D1C03-BFD6-4DDD-A3B3-6311BBA2DC8E">1</text>
+               <text xliff:rid="3B634D05-7C1C-4458-BDCE-B95C9A5EC52B">2</text>
+               <text xliff:rid="93EAB09A-9AB5-48CB-AB78-41E67872F8D0">3</text>
+               <text xliff:rid="B53F084E-97BE-470F-A5ED-317C7A993A67">4</text>
+               <text xliff:rid="32CFCC7D-94D6-46CF-A8C5-A9160179F0E7">5</text>
+               <text xliff:rid="96674665-8288-4AEF-8B50-9C03D1AE05F0">6</text>
+               <text xliff:rid="3E535F4E-9CB5-4191-938F-17F0A801DD7B">7</text>
+               <text xliff:rid="1D99541F-1804-4E8B-B820-DF6C20928C22">8</text>
+               <text xliff:rid="F55F1932-6722-41E5-82AB-9B6DF1B5F5D3">9</text>
+               <text xliff:rid="CDF6DB52-1225-46F9-B6AB-0B5919C45AAC">10</text>
+               <text xliff:rid="7BDBFC5E-C568-493F-9E4A-695D66E4F6D3">11</text>
+               <text xliff:rid="6AC50781-70F1-4483-BA65-5D94F1A7E787">12</text>
+               <text xliff:rid="63D9D293-35C8-45A8-A98D-CA4AF42A7E2F">13</text>
+               <text xliff:rid="546C12BB-163D-40D0-9119-BAD24DAD4CAF">14</text>
+               <text xliff:rid="23320AE5-B68B-40C1-85AB-1A7B5AEB7268">15</text>
+               <text xliff:rid="AD9137A7-6A6C-472F-812A-52D09ACB9317">16</text>
+               <text xliff:rid="6FACAC51-708B-4C9D-80DB-510C9235A842">17</text>
+               <text xliff:rid="4E84E6D6-0CBA-486D-945C-9A1CF096F184">18</text>
+               <text xliff:rid="6E729162-27E6-400A-B572-9C1114B71D16">19</text>
+               <text xliff:rid="F73C6E36-8DD8-46A4-B433-60ECD735E3DF">20</text>
+               <text xliff:rid="7D5CCB72-6FBC-45DF-B2DD-D461D0868139">21</text>
+               <text xliff:rid="4A102469-FCD5-4FC1-B8B6-C1BC75C02006">22</text>
+               <text xliff:rid="B47D9119-B1D5-43DA-B71D-E64487E272A1">23</text>
+               <text xliff:rid="E07BC57A-4D5C-47E4-B0AB-B5F274086CFB">24</text>
+               <text xliff:rid="5ACD77B0-CF98-4097-B470-7A81FEC93B89">25</text>
+               <text xliff:rid="0855DA50-4963-4FA9-A612-73E6C1D0FD9A">26</text>
+               <text xliff:rid="88DC2DF0-193D-4764-9E1A-6C7C37ED22A7">27</text>
+               <text xliff:rid="A74B4F9A-F5AF-430A-8E56-F56332EF9BFF">28</text>
+               <text xliff:rid="F8D9E366-5B9E-4F00-88FE-D2ADCD405BA2">29</text>
+               <text xliff:rid="9D02DD58-378F-4F88-B668-9C95ABE0132E">30</text>
+               <text xliff:rid="F96AD5FF-E727-4FCA-9A31-283ED44C5E84">31</text>
+               <text xliff:rid="967C89A4-6163-4D30-A329-1126401AB95C">32</text>
+               <text xliff:rid="6C5BEA85-96DC-41F4-89D6-767F335A8088">33</text>
+               <text xliff:rid="F371176E-DE1D-4FB6-BD63-07170D1C250E">34</text>
+               <text xliff:rid="9CC40860-2AFA-474C-9462-ADC5DFE74B0A">35</text>
+               <text xliff:rid="3A4C5A06-AC8F-4998-BFC5-4E945399F6D1">36</text>
+               <text xliff:rid="6D3401CA-E222-4695-A395-299E8449D58B">37</text>
+               <text xliff:rid="50A60278-420A-4A4B-BF01-E0EA994ADAB1">38</text>
+               <text xliff:rid="AF1A9870-B44A-4F81-B8B0-C96CF9B63BA5">39</text>
+               <text xliff:rid="2FC3BCE8-4D1D-474B-BA17-E1FB5315E3CB">40</text>
+               <text xliff:rid="A5E15D63-1899-4496-AE7B-3A03FDB92724">41</text>
+               <text xliff:rid="70C3D58E-73D6-4368-95E0-964F60476BEC">42</text>
+               <text xliff:rid="AFFDA880-72BA-46AD-BAAE-BB952900D2EF">43</text>
+               <text xliff:rid="5289DAA3-0484-47EB-9401-B1D8BC7C4001">44</text>
+               <text xliff:rid="39BF2B6B-8132-44A9-A6BB-1670A7F7ECF3">45</text>
+               <text xliff:rid="7AA31373-0629-40E0-BAF0-66BEF0A2FFCA">46</text>
+               <text xliff:rid="759B5E3D-1774-4804-B456-8908B59B04B8">47</text>
+               <text xliff:rid="5C577C61-93B3-4606-B4F4-06CC76C9E5FF">48</text>
+               <text xliff:rid="3F28567D-DE91-430C-B99D-23DB263568EF">49</text>
+               <text xliff:rid="C4F5B380-5798-4F3E-9997-56FCB6D076BE">50</text>
+               <text xliff:rid="BA29FDE4-4EA4-49EB-9739-C9840A37F1D1">51</text>
+               <text xliff:rid="7095F11E-E3C8-46A6-9151-B1472DFE8783">52</text>
+               <text xliff:rid="11FA18F3-0861-4768-8867-97D529E8774F">53</text>
+               <text xliff:rid="50241912-DAA1-4041-BD0A-F8FF392877EF">54</text>
+               <text xliff:rid="665716C9-6761-421D-8B9E-45D3F19A21A0">55</text>
+               <text xliff:rid="1BA726A7-22B3-4F0A-A7D9-009B1ACCEF80">56</text>
+               <text xliff:rid="BC3C76A6-D52E-4502-8F51-54F13A710438">57</text>
+               <text xliff:rid="EA6588FF-46D8-4C41-AD5F-E5965FE8803B">58</text>
+               <text xliff:rid="797B6484-76D8-4BFA-9C79-3BD094AD48A3">59</text>
+               <text xliff:rid="809AD714-19DE-40A7-8B3D-47D17F52D667">60</text>
+               <text xliff:rid="B20614F6-8D4B-4BBB-985F-274C2391E354">61</text>
+               <text xliff:rid="1886BFF9-875C-4C9E-8A6F-CEFC8BA99CFB">62</text>
+               <text xliff:rid="68D62177-83A8-4931-9E12-FEE2D73459FF">63</text>
+               <text xliff:rid="62793780-F874-476B-83EB-E5EBFFF03CC8">64</text>
+               <text xliff:rid="8FA8B933-6B8E-41FA-8F9F-21697496F390">65</text>
+               <text xliff:rid="F9AAEFA6-E11B-4922-A097-0FED922F0A53">66</text>
+               <text xliff:rid="182C1F0F-1DD3-48DD-8FC7-079BA87213B0">67</text>
+               <text xliff:rid="F257E7AB-71F3-4C39-8442-F505CD23B3C0">68</text>
+               <text xliff:rid="7FDD0A34-FD46-4269-93AC-44609FA2DCCD">69</text>
+               <text xliff:rid="E3E05EBC-27C2-4905-846C-838B99D0095E">70</text>
+               <text xliff:rid="E1550813-4CF4-4C21-BDB0-7FB4D357C08F">71</text>
+               <text xliff:rid="7CCB35BB-ED0B-40D4-B666-186007E8FC42">72</text>
+               <text xliff:rid="28BA4CF8-CEB3-454B-8210-CE31A8DD18C2">73</text>
+               <text xliff:rid="6A8D8A0D-F9FC-4246-A165-1658467683EE">74</text>
+               <text xliff:rid="75B22BDA-C943-46BB-A055-1DF87D1BF365">75</text>
+               <text xliff:rid="2D2F5B8F-1E96-4E89-B951-FE4A5FE72EED">76</text>
+               <text xliff:rid="AE0B0224-467D-494F-967E-DCF3146C3627">77</text>
+               <text xliff:rid="7593A8AB-F084-49FB-B86E-281D0E05E7D6">78</text>
+               <text xliff:rid="2E330990-315D-496C-A6D1-848D7751B4E3">79</text>
+               <text xliff:rid="93FFD39D-E69E-41DF-8D1A-A5D6D98DFB0D">80</text>
+               <text xliff:rid="BF749C20-3F85-4E84-85F1-EF3D10676A35">81</text>
+               <text xliff:rid="E0B14C4B-D2FD-417B-A262-687B8D8282AB">82</text>
+               <text xliff:rid="01BF08F5-4BD8-443B-8E17-CF1FCEAB77F9">83</text>
+               <text xliff:rid="8A4155AB-A069-45B9-AB65-9025B25B5E59">84</text>
+               <text xliff:rid="260A95F0-782D-4F84-B967-7E129B209E81">85</text>
+               <text xliff:rid="0E0F5537-DCAD-4798-B974-F61D7175A2A3">86</text>
+               <text xliff:rid="DFE1305D-3D9A-49E8-A6D7-267BA7BB83AC">87</text>
+               <text xliff:rid="1AB06189-E7DB-4A78-A982-7021E22CA31A">88</text>
             </items>
             <bind match="dataRef" ref="$.Subject.PreviousResidenceAddress.GeneralAddressClass_type.CompletePlaceName.PlaceName[1]"/>
          </field>
@@ -1437,7 +1437,7 @@ County</text>
                <font typeface="Arial" size="6pt" baselineShift="0pt"/>
                <para marginLeft="0pt" marginRight="0pt" textIndent="0pt" spaceAbove="0pt" spaceBelow="0pt"/>
                <value>
-                  <text>Previous
+                  <text xliff:rid="5056C59C-4399-4C09-8CD1-C9340A856098">Previous
 State</text>
                </value>
             </caption>
@@ -1449,110 +1449,110 @@ State</text>
                <corner presence="hidden" thickness="0.0762mm"/>
             </border>
             <items>
-               <text>Alabama</text>
-               <text>Alaska</text>
-               <text>Arizona</text>
-               <text>Arkansas</text>
-               <text>California</text>
-               <text>Colorado</text>
-               <text>Connecticut</text>
-               <text>Delaware</text>
-               <text>District of Columbia</text>
-               <text>Florida</text>
-               <text>Georgia</text>
-               <text>Hawaii</text>
-               <text>Idaho</text>
-               <text>Illinois</text>
-               <text>Indiana</text>
-               <text>Iowa</text>
-               <text>Kansas</text>
-               <text>Kentucky</text>
-               <text>Louisiana</text>
-               <text>Maine</text>
-               <text>Maryland</text>
-               <text>Massachusetts</text>
-               <text>Michigan</text>
-               <text>Minnesota</text>
-               <text>Mississippi</text>
-               <text>Missouri</text>
-               <text>Montana</text>
-               <text>Nebraska</text>
-               <text>Nevada</text>
-               <text>New Hampshire</text>
-               <text>New Jersey</text>
-               <text>New Mexico</text>
-               <text>New York</text>
-               <text>North Carolina</text>
-               <text>North Dakota</text>
-               <text>Ohio</text>
-               <text>Oklahoma</text>
-               <text>Oregon</text>
-               <text>Pennsylvania</text>
-               <text>Rhode Island</text>
-               <text>South Carolina</text>
-               <text>South Dakota</text>
-               <text>Tennessee</text>
-               <text>Texas</text>
-               <text>Utah</text>
-               <text>Vermont</text>
-               <text>Virginia</text>
-               <text>Washington</text>
-               <text>West Virginia</text>
-               <text>Wisconsin</text>
-               <text>Wyoming</text>
+               <text xliff:rid="FF784ED2-6714-4855-9AD5-CA71E8FAF2CC">Alabama</text>
+               <text xliff:rid="29895E2A-F852-4BEA-8C78-99313C22303C">Alaska</text>
+               <text xliff:rid="A49DCB26-E813-4BC0-B5DD-E4CB37B99AF1">Arizona</text>
+               <text xliff:rid="F5DB60DC-E336-416C-980C-1924EC8C9F08">Arkansas</text>
+               <text xliff:rid="1769F902-0AD4-4492-80B8-3216770BC8D6">California</text>
+               <text xliff:rid="C797F8E1-588A-4F7A-BCD1-AFE818FB61A7">Colorado</text>
+               <text xliff:rid="F5ED4A8B-9143-4F3E-A4C3-8D70948C28C0">Connecticut</text>
+               <text xliff:rid="E8061840-1CF1-47BE-8269-5C7CE66B4A25">Delaware</text>
+               <text xliff:rid="931667CA-578E-49C4-B1BF-A68E75E9E04E">District of Columbia</text>
+               <text xliff:rid="05CCBB4D-D05E-4F64-B830-DBD0C2F189A2">Florida</text>
+               <text xliff:rid="9B83DCEF-E5ED-48D7-B06B-8E95AFC7DF44">Georgia</text>
+               <text xliff:rid="C5B75E79-218E-4B55-9260-646AD1A6DE39">Hawaii</text>
+               <text xliff:rid="14C08383-6C17-48A7-9CB1-08BC680B242F">Idaho</text>
+               <text xliff:rid="99BF5048-A122-4A78-9E04-7679AEE737CE">Illinois</text>
+               <text xliff:rid="9B7D0672-FFFB-47E0-9581-05EFA34995D8">Indiana</text>
+               <text xliff:rid="C26575DC-6B67-4CB1-936F-483CB11CD959">Iowa</text>
+               <text xliff:rid="84E76D71-B0BD-47CB-9BF0-40C787807058">Kansas</text>
+               <text xliff:rid="C3CB7933-20A5-4FA2-8EC7-A2C49636032C">Kentucky</text>
+               <text xliff:rid="80F4ACEB-6F5F-4200-BF57-C0821DE75906">Louisiana</text>
+               <text xliff:rid="6AFCC1DC-98C9-45EF-9D35-D1DB23FFB7B2">Maine</text>
+               <text xliff:rid="D4EAD815-0CB3-41E8-ACA0-CC52C521BB5F">Maryland</text>
+               <text xliff:rid="D395F570-D5EA-47B2-B613-8096D400860F">Massachusetts</text>
+               <text xliff:rid="D12A17FF-42E8-41D6-A9CC-F491024C3DAF">Michigan</text>
+               <text xliff:rid="B8560AF2-ACE5-4D82-92DC-949AA2239E18">Minnesota</text>
+               <text xliff:rid="266ABF9B-D2D5-4FF9-B1D1-A73DDD4773E5">Mississippi</text>
+               <text xliff:rid="820315E9-13E6-4506-B8EC-8571F129D178">Missouri</text>
+               <text xliff:rid="BB55CC50-4298-4C98-B1F9-379DDDC4DB67">Montana</text>
+               <text xliff:rid="344062B8-B272-4EA7-B067-EA46C540F562">Nebraska</text>
+               <text xliff:rid="47C40F4D-1736-41F5-81F0-7F86927F97A0">Nevada</text>
+               <text xliff:rid="2DA03335-A727-45F8-97AD-51159F34329C">New Hampshire</text>
+               <text xliff:rid="E029885F-B380-49B2-AA55-2B2C37FC7A70">New Jersey</text>
+               <text xliff:rid="992A229B-222F-4A6C-9001-CACA700E38EA">New Mexico</text>
+               <text xliff:rid="991EA123-EA57-4F8F-B089-2526D409877D">New York</text>
+               <text xliff:rid="DDBE8DB0-88AD-4C15-98F1-29AD5AFF9CC6">North Carolina</text>
+               <text xliff:rid="747019FF-7551-4B03-8534-3EAE65F05318">North Dakota</text>
+               <text xliff:rid="4080FB2D-49ED-487D-A4B9-D506CFA935EE">Ohio</text>
+               <text xliff:rid="CB7E2FEF-C605-4C66-B0B4-2D9718DBBB30">Oklahoma</text>
+               <text xliff:rid="A2775E31-A665-45A3-AE38-BDAED9899681">Oregon</text>
+               <text xliff:rid="9921A4D7-8F12-4C4B-9B95-04A43A65FD6E">Pennsylvania</text>
+               <text xliff:rid="BF20E234-57F6-4D29-8022-C11A403386C7">Rhode Island</text>
+               <text xliff:rid="B3A4C072-3E64-4175-9107-D1095C5D9D0C">South Carolina</text>
+               <text xliff:rid="4437F253-6104-49BC-9AC0-1818AD717FBC">South Dakota</text>
+               <text xliff:rid="9DB18972-66CA-4629-A9BB-7585F3129208">Tennessee</text>
+               <text xliff:rid="BABA9022-ECB5-40D2-BEED-330E267C5658">Texas</text>
+               <text xliff:rid="AFAFD0BE-0116-4C52-B56C-777D7F4D74F4">Utah</text>
+               <text xliff:rid="0C54720B-1E6F-48E0-ACDB-13CABD4CA08B">Vermont</text>
+               <text xliff:rid="8068AAB7-08AE-4CBB-AED6-816E8C23507F">Virginia</text>
+               <text xliff:rid="88F300D1-6BFC-4886-83D8-97D7C4C79798">Washington</text>
+               <text xliff:rid="DFCD62C0-F63B-4FA0-9C22-F62CC43EBB81">West Virginia</text>
+               <text xliff:rid="C5E985C3-B77C-49E8-9683-863EB06F40B4">Wisconsin</text>
+               <text xliff:rid="395F9E83-AD6C-479E-B95B-A851DAEB2677">Wyoming</text>
             </items>
             <items save="1" presence="hidden">
-               <text>AL</text>
-               <text>AK</text>
-               <text>AZ</text>
-               <text>AR</text>
-               <text>CA</text>
-               <text>CO</text>
-               <text>CT</text>
-               <text>DE</text>
-               <text>DC</text>
-               <text>FL</text>
-               <text>GA</text>
-               <text>HI</text>
-               <text>ID</text>
-               <text>IL</text>
-               <text>IN</text>
-               <text>IA</text>
-               <text>KS</text>
-               <text>KY</text>
-               <text>LA</text>
-               <text>ME</text>
-               <text>MD</text>
-               <text>MA</text>
-               <text>MI</text>
-               <text>MN</text>
-               <text>MS</text>
-               <text>MO</text>
-               <text>MT</text>
-               <text>NE</text>
-               <text>NV</text>
-               <text>NH</text>
-               <text>NJ</text>
-               <text>NM</text>
-               <text>NY</text>
-               <text>NC</text>
-               <text>ND</text>
-               <text>OH</text>
-               <text>OK</text>
-               <text>OR</text>
-               <text>PA</text>
-               <text>RI</text>
-               <text>SC</text>
-               <text>SD</text>
-               <text>TN</text>
-               <text>TX</text>
-               <text>UT</text>
-               <text>VT</text>
-               <text>VA</text>
-               <text>WA</text>
-               <text>WV</text>
-               <text>WI</text>
-               <text>WY</text>
+               <text xliff:rid="34139E81-39F1-40B6-A6E0-39BA4F406DDC">AL</text>
+               <text xliff:rid="483670EE-E478-498E-9CF0-AACDA41813EE">AK</text>
+               <text xliff:rid="0AC1044F-0A22-4C76-88AF-DDD436F4CDA8">AZ</text>
+               <text xliff:rid="F66764E4-5FC5-4416-AC65-7E7A101AE2EE">AR</text>
+               <text xliff:rid="1C15F951-7A82-4A82-B371-F7D00CABE7E2">CA</text>
+               <text xliff:rid="17CD6931-513E-46E6-949F-03F6ABD05AD9">CO</text>
+               <text xliff:rid="DA7BBD8F-CF4C-4EA1-A926-386984BC5302">CT</text>
+               <text xliff:rid="ED0FAFD9-E46C-472C-ABD5-012537B8C7C4">DE</text>
+               <text xliff:rid="44853629-2EF0-4896-9445-95D88166648A">DC</text>
+               <text xliff:rid="80484A64-CBC2-442C-BB4E-328283E5777A">FL</text>
+               <text xliff:rid="BAA9B1BB-82B7-4A13-A6A7-C4AB46D8DF71">GA</text>
+               <text xliff:rid="20C68339-4B9B-4D33-A315-9D4317338F79">HI</text>
+               <text xliff:rid="35002763-2A8D-459A-8814-60276B9D6DC2">ID</text>
+               <text xliff:rid="FD689EA1-5E06-4C24-98A4-5D03B6388984">IL</text>
+               <text xliff:rid="8A50D1B6-6117-44B9-849A-44F23AE6D7C7">IN</text>
+               <text xliff:rid="1A4C197A-6E08-49B4-8FFB-D08B3F8D90C4">IA</text>
+               <text xliff:rid="6C24AAF7-80BE-4577-8E96-647911E155FC">KS</text>
+               <text xliff:rid="DB80CD1E-B518-4CD5-8A1A-247E143E34FA">KY</text>
+               <text xliff:rid="831C3E09-67EE-403C-A392-5C889DD10615">LA</text>
+               <text xliff:rid="F19C34A3-9FDD-456D-B982-0C1DE3BE7914">ME</text>
+               <text xliff:rid="53E41EBE-F606-46C5-B9F4-89A72EA5A308">MD</text>
+               <text xliff:rid="55FDE50D-6DA5-47B4-A2C0-6F00B0D272AC">MA</text>
+               <text xliff:rid="987E7088-0EEA-44C6-8C9D-8294FE736266">MI</text>
+               <text xliff:rid="768AA93C-3401-404A-8FBE-89275EC7404B">MN</text>
+               <text xliff:rid="27FCC294-33D8-4B01-98B8-275465B1FC87">MS</text>
+               <text xliff:rid="ABA04789-10CB-4D76-9F0E-5DCCC73E951D">MO</text>
+               <text xliff:rid="C089278F-8E7B-4770-B906-6C50D172ED28">MT</text>
+               <text xliff:rid="36DC8297-63EC-40E5-9B6C-93F3B9D214B8">NE</text>
+               <text xliff:rid="1BE920F4-719C-4B48-9E42-84337EBD3DAC">NV</text>
+               <text xliff:rid="E4F6FE92-F96E-4EFC-A262-F7546AB1EB8A">NH</text>
+               <text xliff:rid="E07EB182-7C72-4759-A66F-A29FF613B503">NJ</text>
+               <text xliff:rid="27FB1079-AD76-4D75-99A9-7F4267D4BA48">NM</text>
+               <text xliff:rid="5B743654-9D0B-4DA4-8378-BA5D0BCBC436">NY</text>
+               <text xliff:rid="7424587D-3AF1-49B5-8E02-715101A52027">NC</text>
+               <text xliff:rid="634B0459-EA6C-4851-957E-F1DF7DA5F7FD">ND</text>
+               <text xliff:rid="AE2D12BE-253D-4564-99B7-BEE6BC723644">OH</text>
+               <text xliff:rid="706689C5-B4EC-4A1D-A392-B33E04F0496C">OK</text>
+               <text xliff:rid="0C8D7F68-A33C-46FE-AE6D-16DE0D7C9D2C">OR</text>
+               <text xliff:rid="1E966695-8D39-4F8F-B7F8-81D028368DB9">PA</text>
+               <text xliff:rid="F64E19D0-38A8-4D2C-8AB4-27BBB41F612F">RI</text>
+               <text xliff:rid="C566F5DF-F2AF-465A-8201-F958B33ECD34">SC</text>
+               <text xliff:rid="FA190FAB-1471-4F49-A7E2-1B3AC6007C52">SD</text>
+               <text xliff:rid="0F934E16-C4A3-4B75-8B7A-EB1D5A1BC9D5">TN</text>
+               <text xliff:rid="EF7A991A-B4C4-4FBE-AFA0-3645DD28EC2C">TX</text>
+               <text xliff:rid="646E1DFA-395C-4CF6-BB57-72EF1D6A9AC1">UT</text>
+               <text xliff:rid="AFDDCEFF-054E-49DF-ADBE-B26B91098559">VT</text>
+               <text xliff:rid="E5E96DA7-4AA7-45AB-9A91-A1C10A427F10">VA</text>
+               <text xliff:rid="9CD64150-6B3C-497C-8942-84EAA8EEE22D">WA</text>
+               <text xliff:rid="9CC9639C-79A0-4391-B96C-7B3D6EA7B0E6">WV</text>
+               <text xliff:rid="C140F7B4-9EBC-46D4-B1FA-F246BCB0E521">WI</text>
+               <text xliff:rid="C732B2D4-D495-4AF3-9810-9A3B38E0607C">WY</text>
             </items>
             <bind match="dataRef" ref="$.Subject.PreviousResidenceAddress.GeneralAddressClass_type.StateName"/>
          </field>
@@ -1575,7 +1575,7 @@ State</text>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="68616FFB-64EE-4DB8-907C-8B787C0633E8">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">13.<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">CHANGE OF NAME ONLY</span> Former Legal Name</p></body>
                   </exData>
                </value>
@@ -1595,7 +1595,7 @@ State</text>
                <textEdit/>
             </ui>
             <value>
-               <text>Former Signature</text>
+               <text xliff:rid="6516704E-FF93-420C-B1BC-C40B86F699C6">Former Signature</text>
             </value>
             <font size="7pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1620,7 +1620,7 @@ State</text>
                <textEdit/>
             </ui>
             <value>
-               <text>14.  I declare under penalty of election falsification I am a citizen of the United States, will have lived in this state for 30 days immediately preceding the next election, and will be at least 18 years of age at the time of the general election.</text>
+               <text xliff:rid="30748FAA-30D1-4077-86AE-AED47BB8DDB4">14.  I declare under penalty of election falsification I am a citizen of the United States, will have lived in this state for 30 days immediately preceding the next election, and will be at least 18 years of age at the time of the general election.</text>
             </value>
             <font size="7pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1644,7 +1644,7 @@ State</text>
                <textEdit/>
             </ui>
             <value>
-               <text>Your Signature</text>
+               <text xliff:rid="EE23D104-4E5C-4C60-80F4-2FB3BF3CD940">Your Signature</text>
             </value>
             <font size="11pt" typeface="Arial" weight="bold" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1676,7 +1676,7 @@ State</text>
             <caption reserve="15.7258mm">
                <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="80EB079B-7309-4A2B-ADBE-6D06BEBCB512">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in">Date</p><p style="font-size:6pt;font-weight:normal;text-decoration:none;letter-spacing:0in">(MM/DD/YYYY)</p></body>
                   </exData>
                </value>
@@ -1751,7 +1751,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <exData contentType="text/html">
+                  <exData contentType="text/html" xliff:rid="7CE6B8E5-9188-4725-935D-E7CE3050B74A">
                      <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in">FOR BOARD</p><p style="text-decoration:none;letter-spacing:0in">USE ONLY</p><p style="font-size:6pt;text-decoration:none;letter-spacing:0in">SEC4010 (rev. 4/15)</p></body>
                   </exData>
                </value>
@@ -1771,7 +1771,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <text>City, Village, Twp.</text>
+                  <text xliff:rid="41E5628A-6903-4FD2-A07E-F6FBBB33ABD6">City, Village, Twp.</text>
                </value>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1790,7 +1790,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <text>Ward</text>
+                  <text xliff:rid="53332526-AE01-4A62-AC0D-4541F6056BEB">Ward</text>
                </value>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1809,7 +1809,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <text>Precinct</text>
+                  <text xliff:rid="30EA8105-8720-44A0-B095-1CE9B7408C7C">Precinct</text>
                </value>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1828,7 +1828,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <text>School Dist.</text>
+                  <text xliff:rid="5E07ECFB-EF75-4CD5-AB04-14EED11356F8">School Dist.</text>
                </value>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1847,7 +1847,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <text>Cong. Dist.</text>
+                  <text xliff:rid="1F65D876-450B-4182-988F-BCEEE434F2B9">Cong. Dist.</text>
                </value>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1866,7 +1866,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <text>Senate Dist.</text>
+                  <text xliff:rid="778283BF-E484-4331-949D-31D5351C2C12">Senate Dist.</text>
                </value>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1885,7 +1885,7 @@ State</text>
                   <textEdit/>
                </ui>
                <value>
-                  <text>House Dist.</text>
+                  <text xliff:rid="0DBDA938-1457-4939-8AF7-FBF7F38A3BF8">House Dist.</text>
                </value>
                <font size="6pt" typeface="Arial" baselineShift="0pt"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -1924,24 +1924,24 @@ State</text>
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Type</text>
+                     <text xliff:rid="01CD0A54-FE75-4A9E-8F91-3A7F72283B04">Type</text>
                   </value>
                </caption>
                <value>
-                  <text>united-states-citizen</text>
+                  <text xliff:rid="D4FC713D-BE82-42B7-9D52-34EF7D75E9D7">united-states-citizen</text>
                </value>
                <bind match="dataRef" ref="$.Subject.VoterClassification[0].Type"/>
                <items save="1">
-                  <text>deceased</text>
-                  <text>declared-incompetent</text>
-                  <text>disabled</text>
-                  <text>18-on-election-day</text>
-                  <text>non-felon</text>
-                  <text>permanently-denied</text>
-                  <text>protected</text>
-                  <text>restored-felon</text>
-                  <text>united-states-citizen</text>
-                  <text>other</text>
+                  <text xliff:rid="CB86DEB7-3ECA-42E6-988E-67AE092DD898">deceased</text>
+                  <text xliff:rid="73596FC2-1A8A-444B-9672-ACBBC8FA0005">declared-incompetent</text>
+                  <text xliff:rid="E183A561-82BC-4AD6-A132-543954DB6415">disabled</text>
+                  <text xliff:rid="29AE9213-D30A-4305-981D-02054E2D84DA">18-on-election-day</text>
+                  <text xliff:rid="F739B9CA-19B1-4617-995E-5078A010BB29">non-felon</text>
+                  <text xliff:rid="F8D7D65D-E617-44C1-8C61-C63340E48FCE">permanently-denied</text>
+                  <text xliff:rid="C07B3A94-4CB2-47B9-863B-CE53A4A4009F">protected</text>
+                  <text xliff:rid="B0EBAE7F-C469-4640-B6DB-1E3F7A26C257">restored-felon</text>
+                  <text xliff:rid="248E8E2D-32F8-4A57-BD66-F13C62A3E4CC">united-states-citizen</text>
+                  <text xliff:rid="71C897E2-8C84-4A44-AFE3-0ED6924B3531">other</text>
                </items>
             </field>
             <field name="GeneratedDate" w="62mm" h="9mm" presence="hidden" access="protected">
@@ -1962,7 +1962,7 @@ State</text>
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Generated Date</text>
+                     <text xliff:rid="77B7146A-5394-4B0C-B5EC-6637466DA144">Generated Date</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.GeneratedDate">
@@ -1993,7 +1993,7 @@ State</text>
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>State Name</text>
+                     <text xliff:rid="05699937-4874-4EFA-848A-E8F655BFBA50">State Name</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Subject.ResidenceAddress.GeneralAddressClass_type.StateName"/>
@@ -2023,17 +2023,17 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Type</text>
+                     <text xliff:rid="3EA3968C-59E8-4A82-96E2-283B552F1945">Type</text>
                   </value>
                </caption>
                <value>
-                  <text>phone</text>
+                  <text xliff:rid="03F8381D-7CFA-4409-9152-D20C97DA470C">phone</text>
                </value>
                <bind match="dataRef" ref="$.Subject.ContactMethod[*].Type"/>
                <items save="1">
-                  <text>email</text>
-                  <text>phone</text>
-                  <text>other</text>
+                  <text xliff:rid="6FE6FF2A-5A2E-421B-8E97-EB128C410D58">email</text>
+                  <text xliff:rid="BF8D923A-6BA2-4845-A717-E1C12871CCCC">phone</text>
+                  <text xliff:rid="DF2C9744-38B6-4A0A-B671-0284E785AAE4">other</text>
                </items>
             </field>
             <field name="VoterClassificationType" w="62mm" h="9mm" access="protected" presence="hidden">
@@ -2051,24 +2051,24 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Type</text>
+                     <text xliff:rid="A3464814-A80E-4C3D-9928-DA67AE1BCC71">Type</text>
                   </value>
                </caption>
                <value>
-                  <text>eighteen-on-election-day</text>
+                  <text xliff:rid="F2A9D2F2-0AA1-4A45-A6D2-1BDFFD20A962">eighteen-on-election-day</text>
                </value>
                <bind match="dataRef" ref="$.Subject.VoterClassification[1].Type"/>
                <items save="1">
-                  <text>deceased</text>
-                  <text>declared-incompetent</text>
-                  <text>disabled</text>
-                  <text>eighteen-on-election-day</text>
-                  <text>non-felon</text>
-                  <text>permanently-denied</text>
-                  <text>protected</text>
-                  <text>restored-felon</text>
-                  <text>united-states-citizen</text>
-                  <text>other</text>
+                  <text xliff:rid="E7BD67FF-F98D-4246-8ED1-B8D113E00B00">deceased</text>
+                  <text xliff:rid="D1ADE94A-ABD9-43E9-BCB6-922F12CEC381">declared-incompetent</text>
+                  <text xliff:rid="EB7E0FF2-30FF-4EC7-A039-839C5E39F7CC">disabled</text>
+                  <text xliff:rid="1009129F-CDCA-45C5-A61D-26F30E7793B3">eighteen-on-election-day</text>
+                  <text xliff:rid="61761332-D2BF-4DCA-BB8B-BA83D6FDEBB0">non-felon</text>
+                  <text xliff:rid="7D93721A-56C0-450A-8849-9F3BB2606C2E">permanently-denied</text>
+                  <text xliff:rid="3E78B901-9278-468A-BBB1-E0E5D47FB184">protected</text>
+                  <text xliff:rid="351DE380-9467-4E8B-9905-72A159950015">restored-felon</text>
+                  <text xliff:rid="963FE062-63BC-4116-AB0F-20E77C026767">united-states-citizen</text>
+                  <text xliff:rid="0030067E-367C-404C-9D36-6BB425293FD8">other</text>
                </items>
             </field>
             <field name="RegUSPSGeneralDeliveryPoint" w="62mm" h="9mm" access="readOnly" presence="hidden">
@@ -2086,7 +2086,7 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>USPS General Delivery Point</text>
+                     <text xliff:rid="71680FB0-748D-4FF8-812E-623F1E38A61F">USPS General Delivery Point</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Subject.ResidenceAddress.GeneralAddressClass_type.USPSGeneralDeliveryPoint"/>
@@ -2115,21 +2115,21 @@ addr;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Type</text>
+                     <text xliff:rid="936BEFC5-20FF-4CC2-BBF3-9727013711DE">Type</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Subject.VoterId[*].Type"/>
                <items save="1">
-                  <text>drivers-license</text>
-                  <text>local-voter-registration-id</text>
-                  <text>ssn</text>
-                  <text>ssn4</text>
-                  <text>state-id</text>
-                  <text>state-voter-registration-id</text>
-                  <text>unspecified-document-with-name-and-address</text>
-                  <text>unspecified-document-with-photo-identification</text>
-                  <text>unknown</text>
-                  <text>other</text>
+                  <text xliff:rid="952198B0-A4AC-4FB7-B8A4-BE8DF324CBE0">drivers-license</text>
+                  <text xliff:rid="E0FFDF44-3BC0-447B-BDCF-66DD13F3D9F4">local-voter-registration-id</text>
+                  <text xliff:rid="51E73B08-74B4-423E-9543-1CB8FA795EA5">ssn</text>
+                  <text xliff:rid="27DCE876-7448-4E2E-AD63-F77BD6B85AA2">ssn4</text>
+                  <text xliff:rid="AEBD8CB7-8D89-49C3-B005-73F174509D2B">state-id</text>
+                  <text xliff:rid="45A771EB-463D-4A78-8D32-85D351717CEB">state-voter-registration-id</text>
+                  <text xliff:rid="1739A47D-2239-4338-B787-766093BEB4C3">unspecified-document-with-name-and-address</text>
+                  <text xliff:rid="E723203E-550B-4B5D-848D-46BF00F357C0">unspecified-document-with-photo-identification</text>
+                  <text xliff:rid="91A9D602-E983-4435-8978-A30889EE7EC6">unknown</text>
+                  <text xliff:rid="5004C281-1DF9-4C83-BE38-941D815185E8">other</text>
                </items>
                <calculate>
                   <script contentType="application/x-javascript"> var retVal = "";
@@ -2161,14 +2161,14 @@ addr;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Place Name Type</text>
+                     <text xliff:rid="E4FF3F09-EBE1-4D5E-9EC9-EF1F0E8C79E8">Place Name Type</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Subject.PreviousResidenceAddress.GeneralAddressClass_type.CompletePlaceName.PlaceName[0].PlaceNameType"/>
                <items save="1">
-                  <text>USPSCommunity</text>
-                  <text>MunicipalJurisdiction</text>
-                  <text>County</text>
+                  <text xliff:rid="48744B89-2DDD-49BA-B51F-A84E463F3E90">USPSCommunity</text>
+                  <text xliff:rid="DDB17562-C8FC-4606-96D3-C6653A85B78C">MunicipalJurisdiction</text>
+                  <text xliff:rid="E93A6084-BF7B-415E-B440-FECCFCAD13C5">County</text>
                </items>
                <calculate>
                   <script contentType="application/x-javascript">var retVal = "";
@@ -2196,14 +2196,14 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Place Name Type</text>
+                     <text xliff:rid="86821524-A610-4FA3-9C73-848C0E9C008E">Place Name Type</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Subject.PreviousResidenceAddress.GeneralAddressClass_type.CompletePlaceName.PlaceName[1].PlaceNameType"/>
                <items save="1">
-                  <text>USPSCommunity</text>
-                  <text>MunicipalJurisdiction</text>
-                  <text>County</text>
+                  <text xliff:rid="22B2ABF4-A9F2-4836-BF0B-7B5BB694F238">USPSCommunity</text>
+                  <text xliff:rid="55F55E30-4050-4D29-B010-D0330916FBAC">MunicipalJurisdiction</text>
+                  <text xliff:rid="1E1D4D40-C09E-4725-B072-5B40271FA3BF">County</text>
                </items>
                <calculate>
                   <script contentType="application/x-javascript">var retVal = "";
@@ -2230,14 +2230,14 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Place Name Type</text>
+                     <text xliff:rid="48E1E89B-7B8B-40A0-A389-644F5FDF5F3A">Place Name Type</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Subject.ResidenceAddress.GeneralAddressClass_type.CompletePlaceName.PlaceName[0].PlaceNameType"/>
                <items save="1">
-                  <text>USPSCommunity</text>
-                  <text>MunicipalJurisdiction</text>
-                  <text>County</text>
+                  <text xliff:rid="B8C5D87D-83E2-450F-8FF0-FE53C3E6EB28">USPSCommunity</text>
+                  <text xliff:rid="34D7DDFC-EB3F-4DAA-903A-08F45F14A713">MunicipalJurisdiction</text>
+                  <text xliff:rid="075CC194-3871-49FE-B8C9-8E78850F3C03">County</text>
                </items>
                <calculate>
                   <script contentType="application/x-javascript">var retVal = "";
@@ -2264,14 +2264,14 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Place Name Type</text>
+                     <text xliff:rid="D9C94118-2DFE-4165-8883-E297928B1EB6">Place Name Type</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Subject.ResidenceAddress.GeneralAddressClass_type.CompletePlaceName.PlaceName[1].PlaceNameType"/>
                <items save="1">
-                  <text>USPSCommunity</text>
-                  <text>MunicipalJurisdiction</text>
-                  <text>County</text>
+                  <text xliff:rid="A8739CCA-ED3C-4E09-8092-F50191540A90">USPSCommunity</text>
+                  <text xliff:rid="81B667BD-0DF1-441A-8130-E9AE6A8045FE">MunicipalJurisdiction</text>
+                  <text xliff:rid="7036C053-232F-47A2-A326-D5666543EC65">County</text>
                </items>
                <calculate>
                   <script contentType="application/x-javascript">var retVal = "";
@@ -2300,27 +2300,27 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Registration Method</text>
+                     <text xliff:rid="C2813473-34DB-41E3-928A-41E9C76E9F1C">Registration Method</text>
                   </value>
                </caption>
                <value>
-                  <text>unknown</text>
+                  <text xliff:rid="46595085-EAEE-4541-BC90-3083EB27DC30">unknown</text>
                </value>
                <bind match="dataRef" ref="$.RequestMethod"/>
                <items save="1">
-                  <text>armed-forces-recruitment-office</text>
-                  <text>motor-vehicle-office</text>
-                  <text>other-agency-designated-by-state</text>
-                  <text>public-assistance-office</text>
-                  <text>registration-drive-from-advocacy-group-or-political-party</text>
-                  <text>state-funded-agency-serving-persons-with-disabilities</text>
-                  <text>voter-via-election-registrars-office</text>
-                  <text>voter-via-email</text>
-                  <text>voter-via-fax</text>
-                  <text>voter-via-internet</text>
-                  <text>voter-via-mail</text>
-                  <text>other</text>
-                  <text>unknown</text>
+                  <text xliff:rid="EE6203F4-176B-4027-847C-DA7836DC71A7">armed-forces-recruitment-office</text>
+                  <text xliff:rid="C0AE0BA8-C2BF-4E5A-B266-082B6849CFFF">motor-vehicle-office</text>
+                  <text xliff:rid="04E8E631-EB01-4A5B-A654-416E3B24FE3C">other-agency-designated-by-state</text>
+                  <text xliff:rid="A464D5D6-6579-4C8B-9C04-44EDB7FB30DF">public-assistance-office</text>
+                  <text xliff:rid="DC779D62-696C-4F7E-A519-3919CF235DCD">registration-drive-from-advocacy-group-or-political-party</text>
+                  <text xliff:rid="6CC08ADF-417D-4269-852E-356AFA303F4B">state-funded-agency-serving-persons-with-disabilities</text>
+                  <text xliff:rid="43CB2765-407C-41CB-96DB-8C036B5E39DC">voter-via-election-registrars-office</text>
+                  <text xliff:rid="10AC7632-7F0A-47CA-85DB-608DC76F0A41">voter-via-email</text>
+                  <text xliff:rid="99EEA580-E4E0-4765-86B7-BCCB939BD1FB">voter-via-fax</text>
+                  <text xliff:rid="B0C152B2-02A7-4454-BECF-3334D9B5B653">voter-via-internet</text>
+                  <text xliff:rid="5A8AD231-77CF-492E-93E2-629B19D035D6">voter-via-mail</text>
+                  <text xliff:rid="BA58E7F5-A52F-42A9-9AAC-04A6B810D2AA">other</text>
+                  <text xliff:rid="E4D975FC-979A-462D-A83D-BC974826E504">unknown</text>
                </items>
             </field>
             <field name="RegType" w="62mm" h="9mm">
@@ -2338,13 +2338,13 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Type</text>
+                     <text xliff:rid="805CDC24-09C2-45F5-8751-E1373705BBAF">Type</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.Type[*]"/>
                <items save="1">
-                  <text>registration</text>
-                  <text>other</text>
+                  <text xliff:rid="AF40B592-B861-4046-A398-2A3602479C8B">registration</text>
+                  <text xliff:rid="06ECC8E4-314A-4FB3-8E7C-1DA3389C1818">other</text>
                </items>
                <desc>
                   <exData name="Schema Annotation">The specific type of request that is being made. Each type indicates a desired result by the system receiving the message. The meanings of each type will need to be explicitly stated.
@@ -2371,7 +2371,7 @@ retVal;
                <caption reserve="25mm">
                   <para vAlign="middle"/>
                   <value>
-                     <text>Other Type</text>
+                     <text xliff:rid="0A0DA0A6-3F5B-4B38-8808-A60D7D516E99">Other Type</text>
                   </value>
                </caption>
                <bind match="dataRef" ref="$.OtherType"/>
@@ -2391,7 +2391,7 @@ retVal;
                <traverse ref="TwoRequiredQuestions[0]"/>
             </traversal>
             <assist>
-               <speak>Type of registration</speak>
+               <speak xliff:rid="2FE6C111-F715-447C-8A6D-98FB310778B6">Type of registration</speak>
             </assist>
             <bind match="none"/>
             <field w="63.445mm" h="6mm" name="UpdatingName" x="101.695mm" access="readOnly">
@@ -2410,11 +2410,11 @@ retVal;
                   <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                   <font typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
                   <value>
-                     <text>Updating my name</text>
+                     <text xliff:rid="FB8DE5C8-1972-46B9-B280-44978CC7D853">Updating my name</text>
                   </value>
                </caption>
                <items>
-                  <text>name</text>
+                  <text xliff:rid="2F8829EE-133E-4A16-B4B1-F63346BF7024">name</text>
                </items>
             </field>
             <field w="46.517mm" h="6mm" name="UpdatingAddress" x="55.178mm" y="0.178mm">
@@ -2433,14 +2433,14 @@ retVal;
                   <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                   <font typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
                   <value>
-                     <text>Updating my address</text>
+                     <text xliff:rid="EB2DF3BE-285F-416C-B6B4-D3FEFC22216A">Updating my address</text>
                   </value>
                </caption>
                <value>
                   <text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                </value>
                <items>
-                  <text>address</text>
+                  <text xliff:rid="F5B65894-D89D-4690-A1F8-836B53C293FD">address</text>
                </items>
             </field>
             <field w="54.981mm" h="6mm" name="OhioVoter" x="0mm">
@@ -2459,14 +2459,14 @@ retVal;
                   <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
                   <font typeface="Myriad Pro" weight="bold" baselineShift="0pt"/>
                   <value>
-                     <text>Registering as an Ohio voter</text>
+                     <text xliff:rid="8B4A5B4A-E41B-419A-B81F-ED181C6B3965">Registering as an Ohio voter</text>
                   </value>
                </caption>
                <value>
                   <text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                </value>
                <items>
-                  <text>registration</text>
+                  <text xliff:rid="1DA6C090-9AE7-44FE-BB06-46E96438D49E">registration</text>
                </items>
             </field>
             <event activity="change" name="event__change">
@@ -2489,7 +2489,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="7C49B3A6-F9EB-4979-B70B-C8B7D0EA7E42">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-align:center;text-decoration:none;letter-spacing:0in">TO ENSURE YOUR INFORMATION IS RECEIVED,</p><p style="text-align:center;text-decoration:none;letter-spacing:0in">PLEASE DO THE FOLLOWING:</p></body>
                </exData>
             </value>
@@ -2503,7 +2503,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="284D4C4B-1565-4AA5-88EC-07B0397B4C3E">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><ol style="letter-spacing:0in"><li>Print this form.</li><li>Make sure all required fields are complete.</li><li>Sign and date your form.</li><li>Fold and insert your form into an envelope.</li><li>Mail your form to your county board of elections.<span style="xfa-spacerun:yes"> </span></li></ol></body>
                </exData>
             </value>
@@ -2516,7 +2516,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="FC65C397-FD30-4E2B-B4C3-57F21DAEA187">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">For your county board's address please visit<span style="xfa-spacerun:yes"> </span><a href="www.OhioSecretaryofState.gov/boards.htm" style="font-style:italic">www.OhioSecretaryofState.gov/boards.htm</a></p></body>
                </exData>
             </value>
@@ -2529,7 +2529,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <text>If you have additional questions, please call the office of the Ohio Secretary of State at (877) SOS-OHIO (877-767-6446).</text>
+               <text xliff:rid="98076FC7-5A13-44FE-958C-02D7C9EECB05">If you have additional questions, please call the office of the Ohio Secretary of State at (877) SOS-OHIO (877-767-6446).</text>
             </value>
             <font size="12pt" typeface="Arial" baselineShift="0pt"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="12.7mm" rightInset="12.7mm"/>
@@ -2542,7 +2542,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <text>HOW TO OBTAIN AN OHIO ABSENTEE BALLOT</text>
+               <text xliff:rid="23220A08-E563-4DBD-A45C-AB85D7781AF8">HOW TO OBTAIN AN OHIO ABSENTEE BALLOT</text>
             </value>
             <font size="14pt" typeface="Arial" baselineShift="0pt" weight="bold"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="12.7mm" rightInset="12.7mm"/>
@@ -2555,7 +2555,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="42DEB8BE-B0BD-465F-AD4A-6D7714A2497E">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">You are entitled to vote by absentee ballot in Ohio without providing a reason. Absentee ballot applications may be obtained from your county board of elections or from the Secretary of State at:<span style="xfa-spacerun:yes"> </span><a href="www.OhioSecretaryofState.gov" style="font-style:italic">www.OhioSecretaryofState.gov</a> or by calling (877) 767-6446.</p></body>
                </exData>
             </value>
@@ -2568,7 +2568,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <text>OHIO VOTER IDENTIFICATION REQUIREMENTS</text>
+               <text xliff:rid="F2E9CB2D-9F3A-4B89-A17E-A300EC4F81A0">OHIO VOTER IDENTIFICATION REQUIREMENTS</text>
             </value>
             <font size="14pt" typeface="Arial" baselineShift="0pt" weight="bold"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="12.7mm" rightInset="12.7mm"/>
@@ -2581,7 +2581,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <exData contentType="text/html">
+               <exData contentType="text/html" xliff:rid="7AC9C26A-F35A-404B-810D-0E07A7AFC905">
                   <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in">Voters must bring identification to the polls in order to verify identity. Identification may include current and valid photo identification, a military identification, or a copy of a current (within the last 12 months) utility bill, bank statement, government check, paycheck, or other government document (other than a notice of voter registration mailed by a board of elections) that shows the voter’s name and current address. Voters who do not provide one of these documents will still be able to vote by providing the last four digits of the voter’s Social Security number and by casting a provisional ballot pursuant to R.C. 3505.181. For more information on voter identification requirements, please consult the Secretary of State’s website at:<span style="xfa-spacerun:yes"> </span><a href="www.OhioSecretaryofState.gov" style="font-style:italic">www.OhioSecretaryofState.gov</a> or call (877) 767-6446.</p></body>
                </exData>
             </value>
@@ -2594,7 +2594,7 @@ else{
                <textEdit/>
             </ui>
             <value>
-               <text>WHOEVER COMMITS ELECTION FALSIFICATION IS GUILTY OF A FELONY OF THE FIFTH DEGREE.</text>
+               <text xliff:rid="5B245608-3DAB-473E-9333-D215A235F6DF">WHOEVER COMMITS ELECTION FALSIFICATION IS GUILTY OF A FELONY OF THE FIFTH DEGREE.</text>
             </value>
             <font size="14pt" typeface="Arial" baselineShift="0pt" weight="bold"/>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="12.7mm" rightInset="12.7mm"/>
@@ -2616,9 +2616,6 @@ else{
    <?templateDesigner Grid show:0, snap:0, units:0, color:ff8080, origin:(0,0), interval:(125000,125000), objsnap:0, guidesnap:0, pagecentersnap:0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
    <?templateDesigner SavePDFWithLog 0?>
-   <?templateDesigner Zoom 83?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner DefaultLanguage JavaScript?>
    <?templateDesigner DefaultRunAt client?>
    <?acrobat JavaScript strictScoping?>
@@ -2633,7 +2630,10 @@ else{
    <?templateDesigner XDPPreviewFormat 19?>
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
-   <?templateDesigner SaveTaggedPDF 0?></template>
+   <?templateDesigner SaveTaggedPDF 0?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 65?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -2785,7 +2785,7 @@ else{
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
    <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="VoterRecordsRequest">
-      <VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd">
+      <VoterRecordsRequest xmlns="http://itl.nist.gov/ns/voting/1500-102/v1">
          <AdditionalInfo dd:minOccur="0" dd:maxOccur="-1">
             <FileValue dd:minOccur="0" FileName="" MimeType=""/>
             <Name/>
@@ -8245,19 +8245,19 @@ else{
    <xsdConnection name="DataConnection" dataDescription="VoterRecordsRequest">
       <uri>..\NIST_V0_voter_records_interchange.xsd</uri>
       <rootElement>VoterRecordsRequest</rootElement>
-      <?templateDesigner fileDigest shaHash="7PzzDQc+6HQUveErkYmhhfnvM8U="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="rjzgP0GCEgx5/lBBcAYL2ug13DI="?></xsdConnection>
 </connectionSet>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.156067, 2014/03/04-12:38:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2018-11-28T18:57:57Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-09-09T12:00:11Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:4a6c59cd-4023-4322-bdd1-71b21d715a7c</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:30870041-20f6-489b-880d-4b854ce161f0</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:aab734c3-0199-468c-bcf9-1b69ee1e305e</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">

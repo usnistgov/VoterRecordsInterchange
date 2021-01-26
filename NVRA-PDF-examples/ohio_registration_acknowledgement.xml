@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DISCLAIMER: All persons and places listed below are fictitious -->
-<VoterRecordsResponse xsi:type="RegistrationSuccess" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xsi:schemaLocation="NIST_V0_voter_records_interchange.xsd file:///C:/Users/john/Documents/GitHub/VoterRecordsInterchange/NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsResponse xsi:type="RequestSuccess" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://itl.nist.gov/ns/voting/1500-102/v1" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type">
 	<Action>registration-created</Action>
-	<Districts>
+	<District>
 		<Name>Akron</Name>
 		<Type>municipality</Type>
-	</Districts>
+	</District>
 	<EffectiveDate>2017-07-31</EffectiveDate>
 	<ElectionAdministration>
 		<ContactMethod>
@@ -22,6 +22,10 @@
 		</Location>
 		<Name>Summit</Name>
 	</ElectionAdministration>
+	<Locality>
+		<Name>AKRON 4-F</Name>
+		<Type>precinct</Type>
+	</Locality>
 	<PollingPlace>
 		<Location>
 			<Address>
@@ -33,9 +37,5 @@
 		</Location>
 		<Name>PERKINS BUILDING</Name>
 		<Type>polling-place</Type>
-	</PollingPlace>
-	<Locality>
-		<Name>AKRON 4-F</Name>
-		<Type>precinct</Type>
-	</Locality>
+	</PollingPlace>	
 </VoterRecordsResponse>
