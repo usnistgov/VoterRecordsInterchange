@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VoterRecordsRequest xmlns="NIST_V0_voter_records_interchange.xsd"
+<VoterRecordsRequest xmlns="http://itl.nist.gov/ns/voting/1500-102/v1"
 ><GeneratedDate
 >2018-11-28</GeneratedDate
 ><RequestMethod

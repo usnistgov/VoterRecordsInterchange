@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema elementFormDefault="qualified" targetNamespace="NIST_V0_voter_records_interchange.xsd" version="0.0" xmlns="NIST_V0_voter_records_interchange.xsd" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://itl.nist.gov/ns/voting/1500-102/v1" version="1.0.3" xmlns="http://itl.nist.gov/ns/voting/1500-102/v1" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <!-- ========== Imports ========== -->
   <xsd:import namespace="http://www.fgdc.gov/schemas/address/addr" schemaLocation="https://www.fgdc.gov/schemas/address/addr.xsd"/>
   <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/2000/09/xmldsig#"/>
